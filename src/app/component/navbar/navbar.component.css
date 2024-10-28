@@ -1,0 +1,60 @@
+/* navbar.component.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 40px; /* Ajusta el tamaño según necesites */
+    width: 40px;
+    margin-right: 10px;
+    display: inline-block;
+    
+  }
+  
+  .nav-items {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-items a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .auth-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .auth-buttons button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .auth-buttons button:hover {
+    background-color: #777;
+  }
+  
+  .search-bar {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .search-bar input {
+    width: 50%; /* Ajusta según necesites */
+    padding: 10px;
+  }
+  

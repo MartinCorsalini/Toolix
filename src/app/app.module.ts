@@ -6,17 +6,21 @@ import { Router, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginRegisterComponent } from './component/login-register/login-register.component';// Ajusta el path
 import { OlvidasteContraseniaComponent } from './component/olvidaste-contrasenia/olvidaste-contrasenia.component';// Ajusta el path
+import { NavbarComponent } from './component/navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginRegisterComponent,
-    OlvidasteContraseniaComponent
+    OlvidasteContraseniaComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     RouterModule,
+    Router,
     AppRoutingModule
   ],
   bootstrap: [AppComponent]
