@@ -1,0 +1,53 @@
+<div class="wrapper">
+  <div class="container" id="container">
+
+    <div class="form-container sign-up-container">
+      <form [formGroup]="signUpForm" (ngSubmit)="onSignUpSubmit()">
+        <h1>Crear una cuenta</h1>
+        <div class="social-container">
+          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <span>O usa tu email para registrarte</span>
+        <input type="text" placeholder="Nombre" formControlName="nombre" />
+        <input type="email" placeholder="Email" formControlName="email" />
+        <input type="password" placeholder="Contraseña" formControlName="password" />
+        <button type="submit">Registrarse</button>
+      </form>
+    </div>
+
+    <div class="form-container sign-in-container">
+      <form [formGroup]="signInForm" (ngSubmit)="onSignInSubmit()">
+        <h1>Iniciar sesión</h1>
+        <div class="social-container">
+          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <span>o usa tu cuenta</span>
+        <input type="email" placeholder="Email" formControlName="email" />
+        <input type="password" placeholder="Contraseña" formControlName="password" />
+        <a routerLink='/olvidaste-contrasenia' class="go-to-olvidaste-contrasenia">¿Olvidaste tu contraseña?</a>
+
+        <button type="submit">Iniciar sesión</button>
+      </form>
+    </div>
+
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Bienvenido!</h1>
+          <p>Para mantenerse conectado con nosotros, inicie sesión con su información personal</p>
+          <button class="ghost" (click)="toggleForms()">Iniciar sesión</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Hola, Tooler!</h1>
+          <p>Introduce tus datos personales y comienza tu viaje con nosotros.</p>
+          <button class="ghost" (click)="toggleForms()">Registrarse</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
