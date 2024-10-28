@@ -23,7 +23,7 @@ export class LoginRegisterComponent implements OnInit {
     this.signUpForm = this.fb.nonNullable.group({
       nombre: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required, Validators.minLength(7)]
+      password: ['', [Validators.required, Validators.minLength(7)]]
     });
 
     this.signInForm = this.fb.nonNullable.group({
