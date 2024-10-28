@@ -10,9 +10,41 @@
           <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
         </div>
         <span>O usa tu email para registrarte</span>
+
         <input type="text" placeholder="Nombre" formControlName="nombre" />
+        <!--control de errores-->
+        @if (signUpForm.controls["nombre"].getError('required') && signUpForm.controls["nombre"].touched) {
+          <div class="error"> 
+            * Campo obligatorio.
+           </div>
+        }
+
         <input type="email" placeholder="Email" formControlName="email" />
+        <!--control de errores-->
+        @if (signUpForm.controls["email"].getError('required') && signUpForm.controls["email"].touched ){
+          <div class="error"> 
+            * Campo obligatorio.
+           </div>
+        }
+        @if ( signUpForm.controls["email"].getError('email') && signUpForm.controls["email"].touched) {
+          <div class="error"> 
+            * El correo electrónico que ingresaste no está conectado a una cuenta. 
+           </div>
+        }
+
         <input type="password" placeholder="Contraseña" formControlName="password" />
+        <!--control de errores-->
+        @if (signUpForm.controls["password"].getError('required') && signUpForm.controls["password"].touched) {
+          <div class="error"> 
+            * Campo obligatorio. 
+          </div>
+        }
+        @if (signUpForm.controls["password"].getError('minlength') && signUpForm.controls["password"].touched) {
+          <div class="error"> 
+            * La contraseña debe contener un mínimo de 7 caracteres.
+          </div>
+        }
+        
         <button type="submit">Registrarse</button>
       </form>
     </div>

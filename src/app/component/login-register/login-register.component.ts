@@ -20,13 +20,13 @@ export class LoginRegisterComponent implements OnInit {
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    this.signUpForm = this.fb.group({
+    this.signUpForm = this.fb.nonNullable.group({
       nombre: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
+      password: ['', Validators.required, Validators.minLength(7)]
     });
 
-    this.signInForm = this.fb.group({
+    this.signInForm = this.fb.nonNullable.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });

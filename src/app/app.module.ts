@@ -20,7 +20,6 @@ import { NavbarComponent } from './component/navbar/navbar.component';
     BrowserModule,
     ReactiveFormsModule,
     RouterModule,
-    Router,
     AppRoutingModule
   ],
   bootstrap: [AppComponent]
