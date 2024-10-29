@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule ,FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CommonModule } from '@angular/common'; // Importa CommonModule
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login-register',
   standalone: true,
   templateUrl: './login-register.component.html',
   styleUrls: ['./login-register.component.css'],
-  imports: [ReactiveFormsModule, CommonModule] // Asegúrate de importar CommonModule aquí
+  imports: [ReactiveFormsModule, CommonModule]
 
 })
 
