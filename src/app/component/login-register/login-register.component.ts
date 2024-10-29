@@ -32,16 +32,18 @@ export class LoginRegisterComponent implements OnInit {
     });
   }
 
+
+
   onSignUpSubmit() {
-    if (this.signUpForm.valid) {
-      console.log(this.signUpForm.value);
-    }
+    if (this.signUpForm.invalid) return;
+    const usuario = this.signUpForm.getRawValue();
+
   }
 
   onSignInSubmit() {
-    if (this.signInForm.valid) {
-      console.log(this.signInForm.value);
-    }
+    if (this.signInForm.invalid) return;
+
+
   }
 
   toggleForms() {
