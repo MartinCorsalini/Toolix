@@ -1,60 +1,80 @@
 /* navbar.component.css */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #333;
+    background-color: #f8f9fa;
     color: white;
   }
-  
+
   .logo {
     display: flex;
     align-items: center;
   }
-  
+
+  .logo span {
+    color:#FF416C;
+    font-weight:bold;
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+  }
   .logo img {
     height: 40px; /* Ajusta el tamaño según necesites */
     width: 40px;
     margin-right: 10px;
     display: inline-block;
-    
+
   }
-  
+
   .nav-items {
     display: flex;
     gap: 20px;
   }
-  
+
   .nav-items a {
-    color: white;
+    color: black;
+    font-size: 16px; /* Tamaño de texto más grande */
     text-decoration: none;
+    font-weight:500;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    font-family: 'Montserrat', sans-serif;
   }
-  
+
+  .nav-items a:hover {
+    color: #FF416C;
+}
+
   .auth-buttons {
     display: flex;
     gap: 10px;
   }
-  
+
   .auth-buttons button {
-    padding: 5px 10px;
+    padding: 7px 10px;
     border: none;
-    background-color: #555;
+    border-radius: 7px;
+    background-color: #FF416C;
     color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
     cursor: pointer;
-  }
-  
-  .auth-buttons button:hover {
-    background-color: #777;
-  }
-  
-  .search-bar {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .search-bar input {
-    width: 50%; /* Ajusta según necesites */
-    padding: 10px;
-  }
-  
+    font-weight: 500; /* Un poco de grosor para mejor visibilidad */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+.auth-buttons button:hover {
+    background-color: #E6395F;
+    transform: scale(1.05); /* Ligeramente más grande al pasar el cursor */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3); /* Sombra más intensa en hover */
+}
+
+.auth-buttons button:active {
+    transform: scale(1); /* Evita el efecto de "rebote" al hacer clic */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra más pequeña al hacer clic */
+}
