@@ -1,13 +1,10 @@
-/* navbar.component.css */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #f8f9fa;
+    background-color: #e9ecef;
     color: white;
   }
 
