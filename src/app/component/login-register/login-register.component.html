@@ -14,7 +14,7 @@
         <input type="text" placeholder="Nombre" formControlName="nombre" />
         <!--control de errores-->
         @if (signUpForm.controls["nombre"].getError('required') && signUpForm.controls["nombre"].touched) {
-          <div class="error"> 
+          <div class="error">
             * Campo obligatorio.
            </div>
         }
@@ -22,29 +22,29 @@
         <input type="email" placeholder="Email" formControlName="email" />
         <!--control de errores-->
         @if (signUpForm.controls["email"].getError('required') && signUpForm.controls["email"].touched ){
-          <div class="error"> 
+          <div class="error">
             * Campo obligatorio.
            </div>
         }
         @if ( signUpForm.controls["email"].getError('email') && signUpForm.controls["email"].touched) {
-          <div class="error"> 
-            * El correo electrónico no es válido. 
+          <div class="error">
+            * El correo electrónico no es válido.
            </div>
         }
 
         <input type="password" placeholder="Contraseña" formControlName="password" />
         <!--control de errores-->
         @if (signUpForm.controls["password"].getError('required') && signUpForm.controls["password"].touched) {
-          <div class="error"> 
-            * Campo obligatorio. 
+          <div class="error">
+            * Campo obligatorio.
           </div>
         }
         @if (signUpForm.controls["password"].getError('minlength') && signUpForm.controls["password"].touched) {
-          <div class="error"> 
+          <div class="error">
             * La contraseña debe contener un mínimo de 7 caracteres.
           </div>
         }
-        
+
         <button type="submit">Registrarse</button>
       </form>
     </div>
@@ -60,7 +60,7 @@
         <span>o usa tu cuenta</span>
         <input type="email" placeholder="Email" formControlName="email" />
         <input type="password" placeholder="Contraseña" formControlName="password" />
-        <a routerLink='/olvidaste-contrasenia' class="go-to-olvidaste-contrasenia">¿Olvidaste tu contraseña?</a>
+        <a routerLink="olvidaste-contrasenia" class="go-to-olvidaste-contrasenia">¿Olvidaste tu contraseña?</a>
 
         <button type="submit">Iniciar sesión</button>
       </form>
