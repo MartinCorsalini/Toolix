@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';  // Importa Router
 
 @Component({
   selector: 'app-navbar',
@@ -11,11 +12,13 @@ export class NavbarComponent {
 
   logoUrl: string = 'assets/images/logo.jpeg';
 
+  constructor(private router: Router) {}  // Inyecta Router
+
   iniciarSesion() {
-    // Lógica para iniciar sesión
+    this.router.navigate(['/login']);
   }
 
   registrarse() {
-    // Lógica para registrarse
+    this.router.navigate(['/olvidaste-contrasenia']);
   }
 }
