@@ -19,6 +19,6 @@ export class NavbarComponent {
   }
 
   registrarse() {
-    this.router.navigate(['/olvidaste-contrasenia']);
+    this.router.navigate(['/login']);
   }
 }

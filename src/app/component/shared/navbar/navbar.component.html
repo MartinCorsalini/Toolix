@@ -1,8 +1,11 @@
 <nav class="navbar">
   <div class="logo">
-    <img [src]="logoUrl" alt="logo">
-    <span>Toolix</span>
+    <a routerLink="/home">
+      <img [src]="logoUrl" alt="logo">
+      <span>Toolix</span>
+    </a>
   </div>
+
   <div class="nav-items">
     <a routerLink="/home ">Inicio</a>
     <a routerLink="/preguntas-frecuentes">Preguntas frecuentes</a>

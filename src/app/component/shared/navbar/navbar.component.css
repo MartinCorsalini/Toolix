@@ -13,6 +13,12 @@
     align-items: center;
   }
 
+  .logo a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  
   .logo span {
     color:#FF416C;
     font-weight:bold;

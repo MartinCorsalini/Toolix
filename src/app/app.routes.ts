@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
-import { LoginRegisterComponent } from './component/login-register/login-register.component';
-import { OlvidasteContraseniaComponent } from './component/olvidaste-contrasenia/olvidaste-contrasenia.component';
+
 import { InicioPageComponent } from './pages/inicio-page/inicio-page.component';
+import { LoginRegisterComponent } from './component/LOGIN/login-register/login-register.component';
+import { OlvidasteContraseniaComponent } from './component/LOGIN/olvidaste-contrasenia/olvidaste-contrasenia.component';
 
 export const appRoutes: Routes = [
 
