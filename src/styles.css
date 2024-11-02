@@ -1,3 +1,40 @@
 body {
     margin:0 0;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Aplica estilos personalizados al contenedor del cuadro de diálogo */
+.custom-dialog-container .mat-mdc-dialog-surface {
+  border-radius: 10px; /* Bordes redondeados para el cuadro de diálogo */
+  padding: 20px;
+  background: linear-gradient(to right, #FF6A3A, #FF4B2B);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para el contenido */
+.custom-dialog-container [mat-dialog-content] p {
+  font-size: 16px;
+  color: black;
+  margin: 0;
+}
+
+/* Estilos para la sección de acciones */
+.custom-dialog-container [mat-dialog-actions] {
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+}
+
+/* Estilos para el botón en las acciones */
+.custom-dialog-container [mat-dialog-actions] button {
+  background-color: #1976d2;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.custom-dialog-container [mat-dialog-actions] button:hover {
+  background-color: #115293;
+}

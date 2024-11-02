@@ -7,17 +7,21 @@ import { Usuario } from '../interface/usuario';
   providedIn: 'root'
 })
 export class UsuariosService {
-  
-  urlBase: string = "htpp://localhost:4200/usuarios"
+
+  urlBase: string = "http://localhost:3000/usuarios"
   constructor(private http: HttpClient) {}
-   
-   getUsuarios(): Observable<Usuario[]>{
-     return this.http.get<Usuario[]>(this.urlBase);
-   }
-    
+
+  getUsuarios(): Observable<Usuario[]>{
+    return this.http.get<Usuario[]>(this.urlBase);
+  }
+
+  loginUsuario(email: string, password: string): Observable<Usuario> {
+    return this.http.post<Usuario>(`${this.urlBase}/login`, { email, password });
+  }
+
   postUsuarios(usuario:Usuario): Observable<Usuario>{
      return this.http.post<Usuario>(this.urlBase,usuario);
   }
 
-  
+
 }

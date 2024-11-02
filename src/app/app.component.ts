@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
 import { LoginRegisterComponent } from './component/LOGIN/login-register/login-register.component';
 import { OlvidasteContraseniaComponent } from './component/LOGIN/olvidaste-contrasenia/olvidaste-contrasenia.component';
 import { FooterComponent } from "./component/shared/footer/footer.component";

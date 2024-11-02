@@ -1,15 +1,28 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+{
+  "usuarios": [
+    {
+      "id": "a78b",
+      "nombre": "juan",
+      "email": "juan@gmail.com",
+      "password": "1234567"
+    },
+    {
+      "id": "01cd",
+      "nombre": "sasse",
+      "email": "sasse@example.com",
+      "password": "2345678"
+    },
+    {
+      "id": "e96c",
+      "nombre": "axel",
+      "email": "axel@example.com",
+      "password": "1234567"
+    },
+    {
+      "id": "ed61",
+      "nombre": "Juan",
+      "email": "juan@yahoo.com",
+      "password": "1234567"
+    }
+  ]
+}
