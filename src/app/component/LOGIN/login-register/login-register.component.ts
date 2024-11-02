@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ReactiveFormsModule ,FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 import { Usuario } from '../../../interface/usuario';
 import { UsuariosService } from '../../../service/usuarios.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -12,7 +12,7 @@ import { DialogoComponent } from '../../HOME/pages/inicio/cuadro-dialogo/cuadro-
   standalone: true,
   templateUrl: './login-register.component.html',
   styleUrls: ['./login-register.component.css'],
-  imports: [ReactiveFormsModule, CommonModule,RouterModule]
+  imports: [ReactiveFormsModule, CommonModule, RouterLink, RouterModule]
 
 })
 
