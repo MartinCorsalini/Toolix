@@ -7,12 +7,18 @@ import { UsuariosService } from '../../../service/usuarios.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogoComponent } from '../../HOME/pages/inicio/cuadro-dialogo/cuadro-dialogo.component';
 
+
 @Component({
   selector: 'app-login-register',
   standalone: true,
   templateUrl: './login-register.component.html',
   styleUrls: ['./login-register.component.css'],
-  imports: [ReactiveFormsModule, CommonModule, RouterLink, RouterModule]
+  imports: [
+    ReactiveFormsModule,
+    CommonModule,
+    RouterModule,
+    RouterLink
+  ]
 
 })
 
@@ -50,6 +56,7 @@ export class LoginRegisterComponent implements OnInit {
     const usuario = this.signUpForm.getRawValue();
 
     this.addUsuarioDB(usuario);
+
   }
 
   // Método que se llama al enviar el formulario de inicio de sesión
@@ -62,7 +69,6 @@ export class LoginRegisterComponent implements OnInit {
 
     this.validarUsuarioLogin();
   }
-
 
   //-------METODO PARA LE MOVIMIENTO DE LA BARRA -----
 
