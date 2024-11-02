@@ -4,7 +4,7 @@ import { LoginRegisterComponent } from '../login-register/login-register.compone
 import { LoginSignInComponent } from '../login-signIn/login-sign-in/login-sign-in.component';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-login-animation',
   standalone: true,
   imports: [LoginRegisterComponent, LoginSignInComponent],
   templateUrl: './login-animation.component.html',

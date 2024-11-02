@@ -6,13 +6,14 @@ import { FooterComponent } from "./component/shared/footer/footer.component";
 import { NavbarComponent } from './component/shared/navbar/navbar.component';
 import { InicioComponent } from './component/HOME/pages/inicio/inicio.component';
 import { LoginAnimationComponent } from './component/LOGIN/login-animation/login-animation.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet,
-            LoginAnimationComponent,
+            LoginPageComponent,
             OlvidasteContraseniaComponent,
             NavbarComponent,
             FooterComponent,
