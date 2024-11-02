@@ -1,14 +1,18 @@
 import { Component,OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common'; // Importa CommonModule
-import { RouterModule } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-olvidaste-contrasenia',
   standalone: true, // Marcar el componente como standalone
   templateUrl: './olvidaste-contrasenia.component.html',
   styleUrls: ['./olvidaste-contrasenia.component.css'],
-  imports: [ReactiveFormsModule,RouterModule]
+  imports: [
+    ReactiveFormsModule,
+    RouterModule,
+    RouterLink
+  ]
 })
 export class OlvidasteContraseniaComponent implements OnInit {
   forgotPasswordForm!: FormGroup;  // ¡Aseguramos que se inicializa antes de usarse!

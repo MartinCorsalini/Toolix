@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule ,FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login-register',
   standalone: true,
   templateUrl: './login-register.component.html',
   styleUrls: ['./login-register.component.css'],
-  imports: [ReactiveFormsModule, CommonModule,RouterModule]
-
+  imports: [
+    ReactiveFormsModule,
+    CommonModule,
+    RouterModule,
+    RouterLink
+  ]
 })
 
 
@@ -40,12 +44,9 @@ export class LoginRegisterComponent implements OnInit {
 
 //------------------ Acá termina el onit---------------------
 
-
-
   onSignUpSubmit() {
     if (this.signUpForm.invalid) return;
     const usuario = this.signUpForm.getRawValue();
-
   }
 
   // Método que se llama al enviar el formulario de inicio de sesión
@@ -54,7 +55,6 @@ export class LoginRegisterComponent implements OnInit {
     if (this.signInForm.invalid) return;
     // Aquí se añadirían las acciones necesarias para iniciar sesión (por ejemplo, autenticación en el servidor)
   }
-
 
   //-------METODO PARA LE MOVIMIENTO DE LA BARRA -----
 
