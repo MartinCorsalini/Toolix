@@ -23,6 +23,18 @@
       "nombre": "Juan",
       "email": "juan@yahoo.com",
       "password": "1234567"
+    },
+    {
+      "id": "fe19",
+      "nombre": "lucas",
+      "email": "lucas@ex.com",
+      "password": "1234567"
+    },
+    {
+      "id": "2628",
+      "nombre": "sasse2",
+      "email": "sasse2@gmail.com",
+      "password": "1234567"
     }
   ]
 }

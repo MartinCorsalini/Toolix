@@ -1,0 +1,37 @@
+<div class="wrapper">
+  <!-- Contenedor principal con el ID `container` -->
+  <div class="container" id="container">
+
+    <!-- Componente de Inicio de Sesión -->
+    <div class="form-container sign-in-container">
+      <app-login-sign-in></app-login-sign-in>
+    </div>
+
+    <!-- Componente de Registro -->
+    <div class="form-container sign-up-container">
+      <app-login-register></app-login-register>
+    </div>
+
+    <!-- Contenedor de superposición con los paneles de alternancia -->
+    <div class="overlay-container">
+      <div class="overlay">
+
+        <!-- Panel izquierdo para la opción de "Iniciar sesión" -->
+        <div class="overlay-panel overlay-left">
+          <h1>Bienvenido!</h1>
+          <p>Para mantenerse conectado con nosotros, inicie sesión con su información personal</p>
+          <button class="ghost" (click)="toggleForms()">Iniciar sesión</button>
+        </div>
+
+        <!-- Panel derecho para la opción de "Registrarse" -->
+        <div class="overlay-panel overlay-right">
+          <h1>Hola, Tooler!</h1>
+          <p>Introduce tus datos personales y comienza tu viaje con nosotros.</p>
+          <button class="ghost" (click)="toggleForms()">Registrarse</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -19,12 +19,11 @@ import { DialogoComponent } from '../../HOME/pages/inicio/cuadro-dialogo/cuadro-
 
 export class LoginRegisterComponent implements OnInit {
   signUpForm!: FormGroup;  // ¡Aseguramos que se inicializa antes de usarse!
-  signInForm!: FormGroup;  // ¡Aseguramos que se inicializa antes de usarse!
 
   // Bandera para alternar el estilo visual del formulario entre login y registro
   //creo que no se usa
   isRightPanelActive: boolean = false;
-  listaUsuarios: Usuario[] = [];
+
 
 
   // Inyectamos el servicio FormBuilder para crear los formularios
@@ -37,10 +36,6 @@ export class LoginRegisterComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(7)]]
     });
 
-    this.signInForm = this.fb.nonNullable.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
-    });
   }
 
 //------------------ Acá termina el onit---------------------
@@ -50,32 +45,6 @@ export class LoginRegisterComponent implements OnInit {
     const usuario = this.signUpForm.getRawValue();
 
     this.addUsuarioDB(usuario);
-  }
-
-  // Método que se llama al enviar el formulario de inicio de sesión
-  onSignInSubmit() {
-    // Si el formulario de inicio de sesión es inválido, detenemos el proceso
-    if (this.signInForm.invalid) return;
-    const { email, password } = this.signInForm.getRawValue();
-
-    this.listarUsuarios();
-
-    this.validarUsuarioLogin();
-  }
-
-
-  //-------METODO PARA LE MOVIMIENTO DE LA BARRA -----
-
-  // Método para alternar entre los formularios de inicio de sesión y registro
-  toggleForms() {
-    // Seleccionamos el contenedor que contiene los formularios
-    const container = document.getElementById('container');
-
-    // Si el contenedor existe, alternamos la clase 'right-panel-active'
-    if (container) {
-      container.classList.toggle('right-panel-active');
-    }
-    // Esta clase se puede usar en CSS para aplicar diferentes estilos (por ejemplo, mostrar u ocultar el panel)
   }
 
     addUsuarioDB(usuario: Usuario){
@@ -94,44 +63,5 @@ export class LoginRegisterComponent implements OnInit {
       }
     )
 
-  }
-
-  listarUsuarios() {
-    this.us.getUsuarios().subscribe(
-      {
-        next: (usuarios: Usuario[]) => {
-          this.listaUsuarios = usuarios;
-        },
-        error: (e: Error) => {
-          console.log("Error", e.message);
-        }
-      }
-    )
-  }
-
-  validarUsuarioLogin(): boolean {
-    const { email, password } = this.signInForm.getRawValue(); // Obtiene los datos "criterio" que va a usar para hacer la busqueda en la lista de usuarios
-
-  // Busca en listaUsuarios si hay un usuario que coincide con el email y password
-  const usuarioValido = this.listaUsuarios.find(
-    user => user.email === email && user.password === password
-  );
-
-  if (usuarioValido) {
-    this.dialog.open(DialogoComponent, {
-      panelClass: "custom-dialog-container",
-      data: {
-        message: "Inicio de sesión con éxito 😊"
-      }})
-    // Redigir al usuario a la vista de mejores trabajadores
-    return true;
-  } else {
-    this.dialog.open(DialogoComponent, {
-      panelClass: "custom-dialog-container",
-      data: {
-        message: 'Email y/o Contraseña incorrectos. Intentelo nuevamente.'
-      }})
-    return false;
-  }
   }
 }

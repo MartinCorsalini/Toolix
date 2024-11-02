@@ -5,13 +5,14 @@ import { OlvidasteContraseniaComponent } from './component/LOGIN/olvidaste-contr
 import { FooterComponent } from "./component/shared/footer/footer.component";
 import { NavbarComponent } from './component/shared/navbar/navbar.component';
 import { InicioComponent } from './component/HOME/pages/inicio/inicio.component';
+import { LoginAnimationComponent } from './component/LOGIN/login-animation/login-animation.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet,
-            LoginRegisterComponent,
+            LoginAnimationComponent,
             OlvidasteContraseniaComponent,
             NavbarComponent,
             FooterComponent,

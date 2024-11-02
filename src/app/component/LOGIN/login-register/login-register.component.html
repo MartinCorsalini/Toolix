@@ -1,47 +1,6 @@
 
-
-
-<div class="wrapper">
-  <!-- Contenedor principal con el ID `container` -->
-  <div class="container" id="container">
-
-
-
-      <!------------------------ FORMULARIO INICIAR SESION ------------------------------->
-  <div class="form-container sign-in-container">
-    <form [formGroup]="signInForm" (ngSubmit)="onSignInSubmit()">
-      <h1>Iniciar sesión</h1>
-
-      <!-- -----ENTRAR CON FACEBOOK, GOOGLE Y LINKEDIN --------->
-      <div class="social-container">
-        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-
-      <!----------- ENTRAR CON EMAIL Y CONTRASEÑA ------------->
-      <span>O usa tu cuenta de Toolix</span>
-      <input
-      type="email"
-      placeholder="Email"
-      formControlName="email" />
-
-      <input
-      type="password"
-      placeholder="Contraseña"
-      formControlName="password" />
-
-      <!--------------- OLVIDASTE CONTRASEÑA ------------------>
-      <a routerLink="/olvidaste-contrasenia" class="go-to-olvidaste-contrasenia">¿Olvidaste tu contraseña?</a>
-
-      <!----------- BOTON ------------->
-      <button type="submit">Iniciar sesión</button>
-
-    </form>
-  </div>
-
         <!---------------- FORMULARIO DE REGISTRO  --------->
-  <div class="form-container sign-up-container">
+
     <!-- Formulario de registro usando Reactive Forms de Angular -->
     <form [formGroup]="signUpForm" (ngSubmit)="onSignUpSubmit()">
       <!-- Título del formulario -->
@@ -100,46 +59,6 @@
       <button type="submit">Registrarse</button>
 
     </form>
-  </div>
-
-
-
-    <!------------------------ PANELES LATERALES ------------------------------->
-    <!-- Contenedor principal de la superposición -->
-  <div class="overlay-container">
-
-    <!-- Contenedor de la superposición, que se moverá hacia la izquierda o derecha -->
-    <div class="overlay">
-
-
-        <!-- Panel (IZQUIERDO) de la superposición para la opción de INICIAR SESION -->
-        <div class="overlay-panel overlay-left">
-            <!-- Título del panel izquierdo -->
-            <h1>Bienvenido!</h1>
-            <!-- Descripción del panel izquierdo -->
-            <p>Para mantenerse conectado con nosotros, inicie sesión con su información personal</p>
-            <!-- Botón para alternar al formulario de inicio de sesión -->
-
-            <button class="ghost" (click)="toggleForms()">Iniciar sesión</button>
-             <!-- (click)="toggleForms()" llama a una función en Angular para alternar la vista -->
-        </div>
-
-
-        <!-- Panel (DERECHO) de la superposición para la opción de REGISTRARTE -->
-        <div class="overlay-panel overlay-right">
-            <!-- Título del panel derecho -->
-            <h1>Hola, Tooler!</h1>
-            <p>Introduce tus datos personales y comienza tu viaje con nosotros.</p>
-            <!-- Botón para alternar al formulario de registro -->
-
-            <button class="ghost" (click)="toggleForms()">Registrarse</button>
-            <!-- (click)="toggleForms()" llama a la misma función para alternar la vista -->
-        </div>
-
-
-  </div>
-</div>
-
 
 
 
@@ -206,7 +125,7 @@
         }
         @if (signUpForm.controls["password"].getError('minlength') && signUpForm.controls["password"].touched) {
           <div class="error">
-            * La contraseña debe contener un mínimo de 7 caracteres.
+            *  La contraseña debe contener un mínimo de 7 caracteres.
           </div>
         }
 
