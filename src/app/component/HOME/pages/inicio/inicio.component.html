@@ -7,14 +7,19 @@
     <button type="button" (click)="onSearch()">
       <i class="fas fa-search"></i>
     </button>
-  </div>
+  </div>  
 
   <div class="suggestions-container" [ngClass]="{'show': filteredCategories.length > 0}">
     <ul class="suggestions">
       <li *ngFor="let category of filteredCategories">{{ category }}</li>
     </ul>
   </div>
+  
 </div>
+
+
+
+
 
 
 
