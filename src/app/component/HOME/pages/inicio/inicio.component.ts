@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 
 
 export class InicioComponent {
+
   searchControl = new FormControl('');
   categories = ['Electricista', 'Plomero', 'Peluquero'];
   filteredCategories: string[] = [];
@@ -28,4 +29,12 @@ export class InicioComponent {
     const query = this.searchControl.value;
     console.log('Búsqueda:', query); // Reemplaza esto con la lógica de búsqueda que desees
   }
+
+  onInputChange() {
+    const searchValue = this.searchControl.value?.toLowerCase() || '';
+    this.filteredCategories = this.categories.filter(category =>
+      category.toLowerCase().includes(searchValue)
+    );
+  }
+  
 }
