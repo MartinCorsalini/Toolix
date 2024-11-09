@@ -1,0 +1,19 @@
+<nav class="navbar">
+    <div class="logo">
+      <a routerLink="/home">
+        <img [src]="logoUrl" alt="logo">
+        <span>Toolix</span>
+      </a>
+    </div>
+  
+    <div class="nav-items">
+      <a routerLink="/home">Inicio</a>
+      <a routerLink="/preguntas-frecuentes">Preguntas frecuentes</a>
+      <a routerLink="/nosotros">Nosotros</a>
+    </div>
+    <div class="auth-buttons">
+      <button (click)="iniciarSesion()">Iniciar sesión</button>
+      <button (click)="registrarse()">Registrarse</button>
+    </div>
+  </nav>
+  

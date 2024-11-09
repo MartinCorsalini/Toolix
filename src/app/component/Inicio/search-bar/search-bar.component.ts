@@ -1,17 +1,15 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-inicio',
+  selector: 'app-search-bar',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, FormsModule,CommonModule ],
-  templateUrl: './inicio.component.html',
-  styleUrl: './inicio.component.css'
+  imports: [FormsModule,ReactiveFormsModule,CommonModule],
+  templateUrl: './search-bar.component.html',
+  styleUrl: './search-bar.component.css'
 })
-
-
-export class InicioComponent {
+export class SearchBarComponent {
 
   searchControl = new FormControl('');
   categories = ['Electricista', 'Plomero', 'Peluquero'];
@@ -36,5 +34,4 @@ export class InicioComponent {
       category.toLowerCase().includes(searchValue)
     );
   }
-  
 }

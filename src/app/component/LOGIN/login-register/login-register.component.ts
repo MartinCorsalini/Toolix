@@ -5,7 +5,7 @@ import { RouterLink, RouterModule } from '@angular/router';
 import { Usuario } from '../../../interface/usuario';
 import { UsuariosService } from '../../../service/usuarios.service';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogoComponent } from '../../HOME/pages/inicio/cuadro-dialogo/cuadro-dialogo.component';
+import { DialogoComponent } from '../../Inicio/cuadro-dialogo/cuadro-dialogo.component';
 
 
 @Component({

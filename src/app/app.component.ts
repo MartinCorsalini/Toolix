@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LoginRegisterComponent } from './component/LOGIN/login-register/login-register.component';
 import { OlvidasteContraseniaComponent } from './component/LOGIN/olvidaste-contrasenia/olvidaste-contrasenia.component';
-import { FooterComponent } from "./component/shared/footer/footer.component";
-import { NavbarComponent } from './component/shared/navbar/navbar.component';
-import { InicioComponent } from './component/HOME/pages/inicio/inicio.component';
+
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { InicioPageComponent } from './component/Inicio/pages/inicio-page/inicio-page.component';
 
 
 @Component({
@@ -15,7 +16,7 @@ import { InicioComponent } from './component/HOME/pages/inicio/inicio.component'
             OlvidasteContraseniaComponent,
             NavbarComponent,
             FooterComponent,
-            InicioComponent
+            InicioPageComponent
             ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
