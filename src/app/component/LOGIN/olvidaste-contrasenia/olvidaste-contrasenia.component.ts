@@ -3,7 +3,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 import { CommonModule } from '@angular/common'; // Importa CommonModule
 import { RouterLink, RouterModule } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogoComponent } from '../../HOME/pages/inicio/cuadro-dialogo/cuadro-dialogo.component';
+import { DialogoComponent } from '../../Inicio/cuadro-dialogo/cuadro-dialogo.component';
 
 
 @Component({

@@ -5,6 +5,7 @@
       "nombre": "juan",
       "email": "juan@gmail.com",
       "password": "1234567"
+
     },
     {
       "id": "01cd",
@@ -25,6 +26,7 @@
       "password": "1234567"
     },
     {
+<<<<<<< HEAD
       "id": "fe19",
       "nombre": "lucas",
       "email": "lucas@ex.com",
@@ -34,6 +36,18 @@
       "id": "2628",
       "nombre": "sasse2",
       "email": "sasse2@gmail.com",
+=======
+
+      "id": "c193",
+      "nombre": "abru1",
+      "email": "abru1@gmail.com",
+      "password": "abru111"
+    },
+    {
+      "id": "991c",
+      "nombre": "lean",
+      "email": "lean@gmail.com",
+>>>>>>> 73937365beabdf86f90c494acfe49506edff4a3e
       "password": "1234567"
     }
   ]

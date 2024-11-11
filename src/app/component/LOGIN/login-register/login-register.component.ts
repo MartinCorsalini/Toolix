@@ -5,7 +5,7 @@ import { RouterLink, RouterModule } from '@angular/router';
 import { Usuario } from '../../../interface/usuario';
 import { UsuariosService } from '../../../service/usuarios.service';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogoComponent } from '../../HOME/pages/inicio/cuadro-dialogo/cuadro-dialogo.component';
+import { DialogoComponent } from '../../Inicio/cuadro-dialogo/cuadro-dialogo.component';
 
 
 @Component({
@@ -58,17 +58,26 @@ export class LoginRegisterComponent implements OnInit {
     this.us.postUsuarios(usuario).subscribe(
       {
         next: (usuario: Usuario) => {
+
+          console.log("Usuario registrado correctamente:", usuario);
+
           this.dialog.open(DialogoComponent, {
             panelClass: "custom-dialog-container",
             data: {
               message: 'Se ha registrado exitosamente.\n🎉¡Muchas gracias por su confianza! 🎉'
-            }})
+            }
+          });
         },
         error: (e: Error) => {
-          console.log(e.message);
+          console.log("Error al registrar usuario:", e.message);
+          this.dialog.open(DialogoComponent, {
+            panelClass: "custom-dialog-container",
+            data: {
+              message: 'Ocurrió un error al registrar. Por favor, intente de nuevo.'
+            }
+          });
         }
       }
-    )
-
+    );
   }
 }
