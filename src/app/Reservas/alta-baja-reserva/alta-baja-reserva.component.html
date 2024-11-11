@@ -1,1 +1,24 @@
-<p>alta-baja-reserva works!</p>
+<form [formGroup]="reservaForm" (ngSubmit)="realizarReserva()">
+    <div>
+      <label for="fecha">Fecha</label>
+      <input type="date" id="fecha" formControlName="fecha">
+      <div class="error" *ngIf="reservaForm.get('fecha')?.hasError('required')">La fecha es obligatoria.</div>
+    </div>
+  
+    <div>
+      <label for="horario">Horario</label>
+      <input type="time" id="horario" formControlName="horario">
+      <div class="error" *ngIf="reservaForm.get('horario')?.hasError('required')">El horario es obligatorio.</div>
+    </div>
+  
+    <div>
+      <label for="direccion">Dirección</label>
+      <input type="text" id="direccion" formControlName="direccion">
+      <div class="error" *ngIf="reservaForm.get('direccion')?.hasError('required')">La dirección es obligatoria.</div>
+    </div>
+  
+    <div>
+      <button type="submit" [disabled]="reservaForm.invalid">Aceptar</button>
+      <button type="button" (click)="closeDialog()">Cancelar</button>
+    </div>
+  </form>
