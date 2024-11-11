@@ -15,11 +15,11 @@ export class NavbarPrivateComponent {
   constructor(private router: Router) {}  // Inyecta Router
 
   iniciarSesion() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/signIn']);
   }
 
   registrarse() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/signUp']);
   }
     */
 }

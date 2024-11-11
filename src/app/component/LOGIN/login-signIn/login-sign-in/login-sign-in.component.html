@@ -1,0 +1,34 @@
+
+    <!------------------------ FORMULARIO INICIAR SESION ------------------------------->
+
+      <form [formGroup]="signInForm" (ngSubmit)="onSignInSubmit()">
+        <h1>Iniciar sesión</h1>
+
+        <!-- -----ENTRAR CON FACEBOOK, GOOGLE Y LINKEDIN --------->
+        <div class="social-container">
+          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+
+        <!----------- ENTRAR CON EMAIL Y CONTRASEÑA ------------->
+        <span>---- O usa tu cuenta de Toolix ----</span>
+        <input
+        type="email"
+        placeholder="Email"
+        formControlName="email" />
+
+        <input
+        type="password"
+        placeholder="Contraseña"
+        formControlName="password" />
+
+        <!--------------- OLVIDASTE CONTRASEÑA ------------------>
+        <a routerLink="/olvidaste-contrasenia" class="go-to-olvidaste-contrasenia">¿Olvidaste tu contraseña?</a>
+
+        <!----------- BOTON ------------->
+        <button type="submit" routerLink='home'>Iniciar sesión</button>
+
+      </form>
+
+

@@ -1,12 +1,13 @@
 import { Routes } from '@angular/router';
-import { LoginRegisterComponent } from './component/LOGIN/login-register/login-register.component';
 import { OlvidasteContraseniaComponent } from './component/LOGIN/olvidaste-contrasenia/olvidaste-contrasenia.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { FaqComponent } from './component/Inicio/faq/faq.component';
-import { InicioPageComponent } from './component/Inicio/pages/inicio-page/inicio-page.component';
+import { InicioPageComponent } from './pages/inicio-page/inicio-page.component';
+
 
 export const appRoutes: Routes = [
 
-    {path: 'login',component: LoginRegisterComponent},
+    {path: 'login',component: LoginPageComponent},
     {path: 'olvidaste-contrasenia',component: OlvidasteContraseniaComponent},
     {path: 'home', component: InicioPageComponent},
     {path: 'preguntas-frecuentes', component: FaqComponent },
