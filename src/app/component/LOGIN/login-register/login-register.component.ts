@@ -86,7 +86,11 @@ export class LoginRegisterComponent implements OnInit {
     this.us.postUsuarios(usuario).subscribe(
       {
         next: (usuario: Usuario) => {
+
+          this.listarUsuarios(); // Después de registrar el usuario, recargamos la lista de usuarios
+
           console.log("Usuario registrado correctamente:", usuario);
+
           this.dialog.open(DialogoComponent, {
             panelClass: "custom-dialog-container",
             data: {
