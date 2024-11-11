@@ -1,0 +1,59 @@
+{
+  "trabajadores": [
+    {
+      "id": 1,
+      "nombre": "Juan Pérez",
+      "edad": 34,
+      "profesion": "Electricista",
+      "direccion": "Calle Falsa 123, Buenos Aires",
+      "telefono": "+54 11 5555-1234",
+      "email": "juan.perez@example.com",
+      "salario": 75000,
+      "fechaContratacion": "2020-05-10"
+    },
+    {
+      "id": 2,
+      "nombre": "María García",
+      "edad": 28,
+      "profesion": "Plomera",
+      "direccion": "Avenida Siempre Viva 456, Córdoba",
+      "telefono": "+54 351 1234-5678",
+      "email": "maria.garcia@example.com",
+      "salario": 68000,
+      "fechaContratacion": "2021-08-15"
+    },
+    {
+      "id": 3,
+      "nombre": "Pedro Gómez",
+      "edad": 42,
+      "profesion": "Albañil",
+      "direccion": "Boulevard Central 789, Rosario",
+      "telefono": "+54 341 8765-4321",
+      "email": "pedro.gomez@example.com",
+      "salario": 82000,
+      "fechaContratacion": "2019-11-20"
+    },
+    {
+      "id": 4,
+      "nombre": "Ana Fernández",
+      "edad": 31,
+      "profesion": "Pintora",
+      "direccion": "Calle del Sol 321, Mendoza",
+      "telefono": "+54 261 4321-8765",
+      "email": "ana.fernandez@example.com",
+      "salario": 70000,
+      "fechaContratacion": "2022-01-10"
+    },
+    {
+      "id": 5,
+      "nombre": "Carlos López",
+      "edad": 37,
+      "profesion": "Jardinero",
+      "direccion": "Avenida de los Pinos 654, La Plata",
+      "telefono": "+54 221 5678-1234",
+      "email": "carlos.lopez@example.com",
+      "salario": 72000,
+      "fechaContratacion": "2018-07-05"
+    }
+  ]
+}

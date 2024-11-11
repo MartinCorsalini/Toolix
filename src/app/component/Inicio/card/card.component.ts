@@ -9,9 +9,5 @@ import { Component } from '@angular/core';
 })
 export class CardComponent {
 
-  isFavorite: boolean = false;
 
-  toggleFavorite(): void {
-    this.isFavorite = !this.isFavorite;
-  }
 }
