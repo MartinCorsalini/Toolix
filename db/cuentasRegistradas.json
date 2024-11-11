@@ -5,6 +5,7 @@
       "nombre": "juan",
       "email": "juan@gmail.com",
       "password": "1234567"
+
     },
     {
       "id": "01cd",
@@ -25,10 +26,17 @@
       "password": "1234567"
     },
     {
+
       "id": "c193",
       "nombre": "abru1",
       "email": "abru1@gmail.com",
       "password": "abru111"
+    },
+    {
+      "id": "991c",
+      "nombre": "lean",
+      "email": "lean@gmail.com",
+      "password": "1234567"
     }
   ]
 }

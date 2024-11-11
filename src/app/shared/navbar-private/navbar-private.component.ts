@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';  // Importa Router
+import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-navbar',
+  selector: 'app-navbar-private',
   standalone: true,
   imports: [RouterModule],
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  templateUrl: './navbar-private.component.html',
+  styleUrl: './navbar-private.component.css'
 })
-export class NavbarComponent {
-
+export class NavbarPrivateComponent {
   logoUrl: string = 'assets/images/logo.jpeg';
 
+  /*
   constructor(private router: Router) {}  // Inyecta Router
 
   iniciarSesion() {
@@ -21,4 +21,5 @@ export class NavbarComponent {
   registrarse() {
     this.router.navigate(['/login']);
   }
+    */
 }

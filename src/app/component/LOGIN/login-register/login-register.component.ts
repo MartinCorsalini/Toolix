@@ -5,7 +5,7 @@ import { RouterLink, RouterModule } from '@angular/router';
 import { Usuario } from '../../../interface/usuario';
 import { UsuariosService } from '../../../service/usuarios.service';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogoComponent } from '../../HOME/pages/inicio/cuadro-dialogo/cuadro-dialogo.component';
+import { DialogoComponent } from '../../Inicio/cuadro-dialogo/cuadro-dialogo.component';
 
 
 @Component({
@@ -60,13 +60,11 @@ export class LoginRegisterComponent implements OnInit {
   }
 
   // Método que se llama al enviar el formulario de inicio de sesión
-  onSignInSubmit() {
-    // Si el formulario de inicio de sesión es inválido, detenemos el proceso
+  //Permite iniciar sesion correctamente el async
+  async onSignInSubmit() {
     if (this.signInForm.invalid) return;
-    const { email, password } = this.signInForm.getRawValue();
-
-    this.listarUsuarios();
-
+  
+    await this.listarUsuarios();  // Esperamos a que los usuarios se carguen antes de validar el login
     this.validarUsuarioLogin();
   }
 
@@ -84,36 +82,49 @@ export class LoginRegisterComponent implements OnInit {
     // Esta clase se puede usar en CSS para aplicar diferentes estilos (por ejemplo, mostrar u ocultar el panel)
   }
 
-    addUsuarioDB(usuario: Usuario){
+  addUsuarioDB(usuario: Usuario) {
     this.us.postUsuarios(usuario).subscribe(
       {
         next: (usuario: Usuario) => {
+
           this.listarUsuarios(); // Después de registrar el usuario, recargamos la lista de usuarios
+
+          console.log("Usuario registrado correctamente:", usuario);
+
           this.dialog.open(DialogoComponent, {
             panelClass: "custom-dialog-container",
             data: {
               message: 'Se ha registrado exitosamente.\n🎉¡Muchas gracias por su confianza! 🎉'
-            }})
+            }
+          });
         },
         error: (e: Error) => {
-          console.log(e.message);
+          console.log("Error al registrar usuario:", e.message);
+          this.dialog.open(DialogoComponent, {
+            panelClass: "custom-dialog-container",
+            data: {
+              message: 'Ocurrió un error al registrar. Por favor, intente de nuevo.'
+            }
+          });
         }
       }
-    )
-
+    );
   }
 
-  listarUsuarios() {
-    this.us.getUsuarios().subscribe(
-      {
+  async listarUsuarios(): Promise<void> {
+    return new Promise<void>((resolve, reject) => {
+      this.us.getUsuarios().subscribe({
         next: (usuarios: Usuario[]) => {
           this.listaUsuarios = usuarios;
+          console.log("Usuarios cargados:", this.listaUsuarios); // Verificar la carga en consola
+          resolve();
         },
         error: (e: Error) => {
-          console.log("Error", e.message);
+          console.log("Error al cargar usuarios:", e.message);
+          reject(e); // Opcionalmente, podemos manejar el error aquí
         }
-      }
-    )
+      });
+    });
   }
 
   validarUsuarioLogin(): boolean {

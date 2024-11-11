@@ -1,6 +1,5 @@
 
 
-
 <div class="wrapper">
   <!-- Contenedor principal con el ID `container` -->
   <div class="container" id="container">
@@ -14,9 +13,9 @@
 
       <!-- -----ENTRAR CON FACEBOOK, GOOGLE Y LINKEDIN --------->
       <div class="social-container">
-        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        <a routerLink="/inicio-page" class="social"><i class="fab fa-facebook-f"></i></a>
+        <a routerLink="/inicio-page" class="social"><i class="fab fa-google-plus-g"></i></a>
+        <a routerLink="/inicio-page" class="social"><i class="fab fa-linkedin-in"></i></a>
       </div>
 
       <!----------- ENTRAR CON EMAIL Y CONTRASEÑA ------------->
@@ -36,7 +35,9 @@
 
 
       <!----------- BOTON ------------->
-      <button type="submit">Iniciar sesión</button>
+      <button type="button" routerLink="/inicio-page">
+        Iniciar sesión
+    </button>
 
     </form>
   </div>

@@ -1,0 +1,12 @@
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 50px; /* Espaciado entre las tarjetas */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    max-width: 900px; /* Establece un límite máximo al ancho del grid */
+    margin: 0 auto; /* Centrado horizontal */
+    padding: 20px;
+    align-content: center;
+  }
