@@ -26,6 +26,18 @@
       "password": "1234567"
     },
     {
+      "id": "fe19",
+      "nombre": "lucas",
+      "email": "lucas@ex.com",
+      "password": "1234567"
+    },
+    {
+      "id": "c193",
+      "nombre": "abru1",
+      "email": "abru1@gmail.com",
+      "password": "abru111"
+    },
+    {
       "id": "991c",
       "nombre": "lean",
       "email": "lean@gmail.com",
