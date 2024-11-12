@@ -5,7 +5,6 @@
       "nombre": "juan",
       "email": "juan@gmail.com",
       "password": "1234567"
-
     },
     {
       "id": "01cd",
@@ -24,6 +23,17 @@
       "nombre": "Juan",
       "email": "juan@yahoo.com",
       "password": "1234567"
+    },
+    {
+      "nombre": "Emilio",
+      "profesion": "Gasistaa",
+      "disponibilidad": "10 hs a 18 hs",
+      "zona": "Centro, Guemes, Puerto",
+      "descripcion": "dejo todo impecable",
+      "email": "emiliomernes@hotmail.com",
+      "password": null,
+      "rol": null,
+      "id": "732b"
     }
   ]
 }

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 
 @Component({
@@ -13,6 +13,7 @@ export class NavbarPrivateComponent {
   logoUrl: string = 'assets/images/logo.jpeg';
 
   isProfileOpen = false;
+  route = inject(Router)
 
   constructor(private router: Router) {}
 
@@ -28,5 +29,11 @@ export class NavbarPrivateComponent {
     console.log('Cerrar sesión');
     this.closeDropdown();
     this.router.navigate(['/login']);
+  }
+
+
+  irADetalles(id:string)
+  {
+    this.route.navigate([`detalles/${id}`]);
   }
 }
