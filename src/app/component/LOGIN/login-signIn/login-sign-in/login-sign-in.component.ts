@@ -46,6 +46,7 @@ export class LoginSignInComponent implements OnInit{
     this.listarUsuarios();
 
     this.validarUsuarioLogin();
+    
   }
 
   listarUsuarios() {

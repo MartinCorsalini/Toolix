@@ -71,11 +71,6 @@ export class LoginRegisterComponent implements OnInit {
 
     this.addUsuarioDB(usuario2); // Agrego el usuario a la base de datos
 
-    console.log(usuario2.email);
-    this.buscarEmail(usuario2.email)
-
-    this.iniciarSesion();
-
   }
 
     addUsuarioDB(usuario: Usuario)
