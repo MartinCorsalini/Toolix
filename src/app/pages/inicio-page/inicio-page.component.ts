@@ -55,7 +55,7 @@ export class InicioPageComponent implements OnInit {
           },
           error: () =>
           {
-            alert('Error al acceder a los datos');
+            //alert('Error al acceder a los datos');
           }
         }
     )

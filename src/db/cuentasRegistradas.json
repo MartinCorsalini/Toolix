@@ -25,18 +25,6 @@
       "password": "1234567"
     },
     {
-      "id": "fe19",
-      "nombre": "lucas",
-      "email": "lucas@ex.com",
-      "password": "1234567"
-    },
-    {
-      "id": "c193",
-      "nombre": "abru1",
-      "email": "abru1@gmail.com",
-      "password": "abru111"
-    },
-    {
       "nombre": "Emilio",
       "profesion": "Gasistaa",
       "disponibilidad": "10 hs a 18 hs",
@@ -159,21 +147,44 @@
       "id": "a1f8"
     },
     {
-      "nombre": "asda",
-      "profesion": "Hola",
-      "disponibilidad": "asd",
-      "zona": "asd",
-      "descripcion": "asd",
-      "email": "lean23@gmail.com",
-      "password": "1234567",
-      "rol": null,
-      "id": "8b43"
+      "id": "601c",
+      "nombre": "Lourdes",
+      "email": "lourddd@hotmail.com",
+      "password": "alksnaklsda"
     },
     {
-      "id": "370a",
-      "nombre": "asda",
-      "email": "lean23@gmail.com",
-      "password": "1234567"
+      "id": "bbc0",
+      "nombre": "Lauuuu",
+      "email": "lauuuuuri@hotmail.com",
+      "password": "alskdmalksd"
+    },
+    {
+      "id": "06fc",
+      "nombre": "Lauuuu",
+      "email": "lauuri@hotmail.com",
+      "password": "alskdmalksd"
+    },
+    {
+      "nombre": "Juanita Pepes",
+      "profesion": "Peluquera",
+      "disponibilidad": "10 hs a 20 hs",
+      "zona": "Guemes",
+      "descripcion": "Quedas re fachera",
+      "email": "pepesju@hotmail.com",
+      "password": "alksnaslkd",
+      "rol": null,
+      "id": "55d4"
+    },
+    {
+      "nombre": "Jose",
+      "profesion": "Electricista",
+      "disponibilidad": "10 hs a 15 hs",
+      "zona": "Constitucion",
+      "descripcion": "Arreglo todo super bien",
+      "email": "jose@hotmail.com",
+      "password": "alskdnalsd",
+      "rol": null,
+      "id": "8eb5"
     }
   ]
 }
