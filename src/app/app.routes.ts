@@ -6,6 +6,7 @@ import { InicioPageComponent } from './pages/inicio-page/inicio-page.component';
 import { PerfilTrabajadorComponent } from './component/perfil/perfil-trabajador/perfil-trabajador.component';
 import { PerfilPropioComponent } from './component/perfil/perfil-propio/perfil-propio.component';
 import { ModificarPerfilComponent } from './component/perfil/modificar-perfil/modificar-perfil.component';
+import { NotificacionesPageComponent } from './pages/notificaciones-page/notificaciones-page.component';
 
 
 
@@ -13,10 +14,12 @@ export const appRoutes: Routes = [
 
     {path: 'login',component: LoginPageComponent},
     {path: 'olvidaste-contrasenia',component: OlvidasteContraseniaComponent},
+    {path: 'home', component: InicioPageComponent},
     {path: 'home/:id', component: InicioPageComponent},
     {path: 'preguntas-frecuentes', component: FaqComponent },
     {path: 'perfil-trabajador/:id', component: PerfilTrabajadorComponent },
     {path: 'perfil-propio/:id', component: PerfilPropioComponent },
     {path: 'modificar/:id', component: ModificarPerfilComponent },
+    {path: 'notificaciones', component: NotificacionesPageComponent},
     {path: '**', redirectTo:'login'}
 ];
