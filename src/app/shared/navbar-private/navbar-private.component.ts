@@ -1,25 +1,32 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-navbar-private',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule,CommonModule],
   templateUrl: './navbar-private.component.html',
   styleUrl: './navbar-private.component.css'
 })
 export class NavbarPrivateComponent {
   logoUrl: string = 'assets/images/logo.jpeg';
 
-  /*
-  constructor(private router: Router) {}  // Inyecta Router
+  isProfileOpen = false;
 
-  iniciarSesion() {
-    this.router.navigate(['/signIn']);
+  constructor(private router: Router) {}
+
+  openDropdown() {
+    this.isProfileOpen = true;
   }
 
-  registrarse() {
-    this.router.navigate(['/signUp']);
+  closeDropdown() {
+    this.isProfileOpen = false;
   }
-    */
+
+  logout() {
+    console.log('Cerrar sesión');
+    this.closeDropdown();
+    this.router.navigate(['/login']);
+  }
 }
