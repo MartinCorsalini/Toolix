@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { NavbarPrivateComponent } from '../../../shared/navbar-private/navbar-private.component';
 
 @Component({
   selector: 'app-faq',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,NavbarPrivateComponent],
   templateUrl: './faq.component.html',
   styleUrls: ['./faq.component.css']
 })
