@@ -38,4 +38,13 @@ export class UsuariosService {
    return this.http.put<Usuario>(`${this.urlBase}/${id}`, usuario);
  }
 
+ getUsuarioByEmail(email: string | null): Observable<Usuario[]> {
+  // Verifica que el email no sea null antes de hacer la solicitud
+  if (!email) {
+    throw new Error("El email no puede ser null");
+  }
+
+  return this.http.get<Usuario[]>(`${this.urlBase}?email=${encodeURIComponent(email)}`);
+}
+
 }

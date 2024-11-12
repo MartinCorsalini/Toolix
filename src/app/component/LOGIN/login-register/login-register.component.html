@@ -1,62 +1,62 @@
 
-        <!---------------- FORMULARIO DE REGISTRO  --------->
+   <!---------------- FORMULARIO DE REGISTRO  --------->
 
     <!-- Formulario de registro usando Reactive Forms de Angular -->
     <form [formGroup]="signUpForm" (ngSubmit)="onSignUpSubmit()">
-      <!-- Título del formulario -->
-      <h1>Crear una cuenta</h1>
+          <!-- Título del formulario -->
+          <h1>Crear una cuenta</h1>
 
-      <!-- Iconos de redes sociales para registro -->
-      <div class="social-container">
-        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-      </div>
+          <!-- Iconos de redes sociales para registro -->
+          <div class="social-container">
+            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+          </div>
 
-      <!-- Texto que invita a usar el correo electrónico para el registro -->
-      <span>---- O usa tu email para registrarte ----</span>
+          <!-- Texto que invita a usar el correo electrónico para el registro -->
+          <span>---- O usa tu email para registrarte ----</span>
 
-      <!------- NOMBRE ---------->
-      <input
-        type="text"
-        placeholder="Nombre"
-        formControlName="nombre"
-      />
-      <!-- Control de errores para el campo de nombre -->
-      <div *ngIf="signUpForm.controls['nombre'].hasError('required') && signUpForm.controls['nombre'].touched" class="error">
-        * Campo obligatorio.
-      </div>
+          <!------- NOMBRE ---------->
+          <input
+            type="text"
+            placeholder="Nombre"
+            formControlName="nombre"
+          />
+          <!-- Control de errores para el campo de nombre -->
+          <div *ngIf="signUpForm.controls['nombre'].hasError('required') && signUpForm.controls['nombre'].touched" class="error">
+            * Campo obligatorio.
+          </div>
 
-      <!------- CORREO ELECTRONICO ---------->
-      <input
-        type="email"
-        placeholder="Email"
-        formControlName="email"
-      />
-      <!-- Control de ERRORES para el campo de correo electrónico -->
-      <div *ngIf="signUpForm.controls['email'].hasError('required') && signUpForm.controls['email'].touched" class="error">
-        * Campo obligatorio.
-      </div>
-      <div *ngIf="signUpForm.controls['email'].hasError('email') && signUpForm.controls['email'].touched" class="error">
-        * El correo electrónico no es válido.
-      </div>
+          <!------- CORREO ELECTRONICO ---------->
+          <input
+            type="email"
+            placeholder="Email"
+            formControlName="email"
+          />
+          <!-- Control de ERRORES para el campo de correo electrónico -->
+          <div *ngIf="signUpForm.controls['email'].hasError('required') && signUpForm.controls['email'].touched" class="error">
+            * Campo obligatorio.
+          </div>
+          <div *ngIf="signUpForm.controls['email'].hasError('email') && signUpForm.controls['email'].touched" class="error">
+            * El correo electrónico no es válido.
+          </div>
 
-      <!---------- CONTRASEÑA ------------>
-      <input
-        type="password"
-        placeholder="Contraseña"
-        formControlName="password"
-      />
-      <!-- Control de ERRORES para el campo de contraseña -->
-      <div *ngIf="signUpForm.controls['password'].hasError('required') && signUpForm.controls['password'].touched" class="error">
-        * Campo obligatorio.
-      </div>
-      <div *ngIf="signUpForm.controls['password'].hasError('minlength') && signUpForm.controls['password'].touched" class="error">
-        * La contraseña debe contener un mínimo de 7 caracteres.
-      </div>
+          <!---------- CONTRASEÑA ------------>
+          <input
+            type="password"
+            placeholder="Contraseña"
+            formControlName="password"
+          />
+          <!-- Control de ERRORES para el campo de contraseña -->
+          <div *ngIf="signUpForm.controls['password'].hasError('required') && signUpForm.controls['password'].touched" class="error">
+            * Campo obligatorio.
+          </div>
+          <div *ngIf="signUpForm.controls['password'].hasError('minlength') && signUpForm.controls['password'].touched" class="error">
+            * La contraseña debe contener un mínimo de 7 caracteres.
+          </div>
 
-      <!------- BOTON ------->
-      <button type="submit">Registrarse</button>
+          <!------- BOTON ------->
+          <button type="submit">Registrarse</button>
 
     </form>
 

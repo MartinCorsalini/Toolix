@@ -16,13 +16,14 @@ export class PerfilTrabajadorComponent implements OnInit {
 
   ngOnInit(): void {
     this.accederAlosDatos();
-    this.stars = Array(Math.round(this.usuario?.valoracion!)).fill(1);  // Calcula el número de estrellas
+    //this.stars = Array(Math.round(this.usuario?.valoracion!)).fill(1);  // Calcula el número de estrellas
   }
+    //stars: number[] = [];
+
 
   service= inject(UsuariosService);
   ar= inject(ActivatedRoute);
   router = inject(Router);
-  retirado :boolean = false;
 
   usuario?: Usuario;
   id : string | null = null;
@@ -30,9 +31,6 @@ export class PerfilTrabajadorComponent implements OnInit {
 
   fotoUrl = 'assets/images/electricista.jpeg';  // Ruta de la foto de perfil
 
-  valoracion = 4.5;  // Valoración entre 1 y 5
-
-  stars: number[] = [];
 
 
   accederAlosDatos()

@@ -13,10 +13,10 @@ export const appRoutes: Routes = [
 
     {path: 'login',component: LoginPageComponent},
     {path: 'olvidaste-contrasenia',component: OlvidasteContraseniaComponent},
-    {path: 'home', component: InicioPageComponent},
+    {path: 'home/:id', component: InicioPageComponent},
     {path: 'preguntas-frecuentes', component: FaqComponent },
     {path: 'perfil-trabajador/:id', component: PerfilTrabajadorComponent },
     {path: 'perfil-propio/:id', component: PerfilPropioComponent },
     {path: 'modificar/:id', component: ModificarPerfilComponent },
-    {path: '**', redirectTo:'home'}
+    {path: '**', redirectTo:'login'}
 ];
