@@ -15,6 +15,8 @@ import { DialogoComponent } from '../../component/Inicio/cuadro-dialogo/cuadro-d
 export class AltaBajaReservaComponent {
   reservaForm!: FormGroup; 
   listaReservas: Reserva[] = [];
+closeDialog: any;
+  dialogRef: any;
 
   constructor(
    
@@ -65,5 +67,8 @@ export class AltaBajaReservaComponent {
     );
   }
 
-
+// 
+closeDialogR(): void {
+  this.dialogRef.close(); // Cierra el diálogo
+}
 }

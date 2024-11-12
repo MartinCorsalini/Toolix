@@ -1,4 +1,4 @@
-<form [formGroup]="reservaForm" (ngSubmit)="realizarReserva()">
+<form [formGroup]="reservaForm" (ngSubmit)="addReserva()">
     <div>
       <label for="fecha">Fecha</label>
       <input type="date" id="fecha" formControlName="fecha">
@@ -19,6 +19,6 @@
   
     <div>
       <button type="submit" [disabled]="reservaForm.invalid">Aceptar</button>
-      <button type="button" (click)="closeDialog()">Cancelar</button>
+       <button type="button" (click)="closeDialog()">Cancelar</button>
     </div>
   </form>
