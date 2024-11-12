@@ -56,15 +56,10 @@ button {
 button:hover {
     transform: scale(1.05);
     background-color: #c13525;
-    color: #FFFFFF;
 }
 
 button:active {
     transform: scale(0.95);
-}
-
-button:focus {
-    outline: none;
 }
 
 button.ghost {
@@ -72,6 +67,7 @@ button.ghost {
     border-color: #FFFFFF;
 }
 
+/* Estilos para el formulario */
 form {
     background-color: #FFFFFF;
     display: flex;
@@ -91,21 +87,65 @@ input {
     width: 100%;
 }
 
-.form-container .sign-up-container{
-  position: absolute;
-  height: 100%;
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.6s ease-in-out;
+.wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 20px 0 20px 150px;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    min-height: 500px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Configuración de flexbox para los formularios */
+.form-container {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Estilo y transición para el contenedor de Sign In */
+.sign-in-container {
+    left: 0;
+    z-index: 2;
+}
+
+/* Estilo y transición para el contenedor de Sign Up */
+.sign-up-container {
+    right: 0;
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.right-panel-active .sign-in-container {
+    transform: translateX(6%);
+    opacity: 0;
+    z-index: 1;
 }
 
 .container.right-panel-active .sign-up-container {
-    transform: translateX(-100%);
+    transform: translateX(4%);
     opacity: 1;
     z-index: 5;
-    animation: show 0.6s;
+    animation: show 0.4s;
 }
 
 @keyframes show {
@@ -119,15 +159,17 @@ input {
     }
 }
 
+/* Estilo para la superposición */
 .overlay-container {
     position: absolute;
     top: 0;
     left: 50%;
     width: 50%;
-    height: 100%;
+    height: 90%;
     overflow: hidden;
     transition: transform 0.6s ease-in-out;
     z-index: 100;
+    border-radius: 10px;
 }
 
 .container.right-panel-active .overlay-container {
@@ -135,12 +177,7 @@ input {
 }
 
 .overlay {
-    background: #FF416C;
-    background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
     background: linear-gradient(to right, #FF4B2B, #FF416C);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0 0;
     color: #FFFFFF;
     position: relative;
     left: -100%;
@@ -165,7 +202,6 @@ input {
     top: 0;
     height: 100%;
     width: 50%;
-    transform: translateX(0);
     transition: transform 0.6s ease-in-out;
 }
 

@@ -1,0 +1,76 @@
+<p>modificar-perfil works!</p>
+
+<app-navbar-public></app-navbar-public>
+
+<div class="perfil-container">
+  <div class="perfil-box">
+    <div class="perfil-header">
+      <img [src]="fotoUrl" alt="Foto de perfil" class="perfil-foto">
+      <div class="perfil-info">
+        <h2>{{ usuario?.nombre }}</h2>
+        <p class="profesion">{{ usuario?.profesion }}</p>
+      </div>
+    </div>
+
+   <!-------------------- FORMULARIO ---------------------->
+    <div class="perfil-detalles">
+      <form [formGroup]="formulario" (ngSubmit)="actualizar()">
+
+           <!--------- Nombre ---------->
+        <div>
+          <label for="nombre">Nombre: </label>
+          <input type="text" formControlName="nombre" id="nombre">
+
+          @if(formulario.controls['nombre'].getError('required') && formulario.controls['nombre'].touched)
+          {
+              <div class="colorRojo">Campo requerido...</div>
+          }
+        </div>
+          <!--------- Profesion ---------->
+        <div>
+          <label for="profesion">Profesion: </label>
+          <input type="text" formControlName="profesion" id="profesion">
+
+          @if(formulario.controls['profesion'].getError('required') && formulario.controls['profesion'].touched)
+          {
+              <div class="colorRojo">Campo requerido...</div>
+          }
+        </div>
+        <!--------- Disponibilidad ---------->
+        <div>
+          <label for="disponibilidad">Disponibilidad: </label>
+          <input type="text" formControlName="disponibilidad" id="disponibilidad">
+
+          @if(formulario.controls['disponibilidad'].getError('required') && formulario.controls['disponibilidad'].touched)
+          {
+              <div class="colorRojo">Campo requerido...</div>
+          }
+        </div>
+
+        <!--------- Zona ---------->
+        <div>
+          <label for="zona">Zona: </label>
+          <input type="text" formControlName="zona" id="zona">
+
+          @if(formulario.controls['zona'].getError('required') && formulario.controls['zona'].touched)
+          {
+              <div class="colorRojo">Campo requerido...</div>
+          }
+        </div>
+
+        <!------- Descripcion -------->
+        <div>
+          <label for="descripcion">Descripcion: </label>
+          <input type="text" formControlName="descripcion" id="descripcion">
+        </div>
+
+        <button type="submit">Moficar datos</button>
+
+      </form>
+      <!-- <p><strong>Email:</strong> {{ usuario?.email }}</p>
+      <p><strong>Disponibilidad:</strong> {{ usuario?.disponibilidad }}</p>
+      <p><strong>Zonas de trabajo:</strong> {{ usuario?.zona }}</p>
+      <p><strong>Descripción:</strong> {{ usuario?.descripcion }}</p> -->
+    </div>
+  </div>
+</div>

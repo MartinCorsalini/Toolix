@@ -5,17 +5,30 @@
         <span>Toolix</span>
       </a>
     </div>
-  
+
     <div class="nav-items">
       <a routerLink="/home">Inicio</a>
       <a routerLink="/preguntas-frecuentes">Preguntas frecuentes</a>
       <a routerLink="/nosotros">Nosotros</a>
     </div>
-    <!--
-    <div class="auth-buttons">
-      <button (click)="iniciarSesion()">Iniciar sesión</button>
-      <button (click)="registrarse()">Registrarse</button>
+
+    <!-- Notificaciones -->
+  <<!-- Íconos de perfil y notificaciones -->
+  <div class="nav-icons">
+    <a routerLink="/notificaciones" class="icon-link">
+      <i class="fas fa-bell"></i>
+    </a>
+
+    <!-- Menú de perfil con eventos de hover -->
+    <div class="dropdown">
+      <a class="icon-link">
+        <i class="fas fa-user"></i>
+      </a>
+      <div class="dropdown-menu">
+        <a routerLink="/perfil-propio/:id">Ver perfil</a>
+        <a (click)="logout()">Cerrar sesión</a>
+      </div>
     </div>
-    -->
-    
+  </div>
+
   </nav>

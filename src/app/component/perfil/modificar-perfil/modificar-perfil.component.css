@@ -1,0 +1,77 @@
+.perfil-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  flex-grow: 1; /* Ocupa el espacio restante entre navbar y footer */
+  background-color: #f9f9f9;
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+  margin: 0; /* Elimina márgenes */
+  padding: 20px;
+}
+
+
+/* Cuadro alrededor del perfil */
+.perfil-box {
+  border: 3px solid #FF416C; /* Borde del mismo color que las letras */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  max-width: 600px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ajusta el encabezado del perfil */
+.perfil-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px; /* Más separación hacia abajo */
+}
+
+.perfil-foto {
+  width: 120px; /* Tamaño más grande */
+  height: 120px;
+  border-radius: 50%;
+  margin-right: 20px;
+  object-fit: cover;
+}
+
+.perfil-info h2 {
+  margin: 0;
+  color: #333;
+  font-size: 28px; /* Tamaño más grande */
+  font-weight: bold;
+}
+
+.profesion {
+  margin: 5px 0;
+  color: #555;
+  font-size: 18px; /* Tamaño más grande */
+}
+
+.perfil-rating {
+  display: flex;
+  align-items: center;
+  color: #FFD700;
+  font-size: 20px; /* Tamaño más grande */
+}
+
+/* Detalles del perfil con texto más grande */
+.perfil-detalles p {
+  margin: 12px 0;
+  color: #444;
+  font-size: 16px;
+}
+
+.perfil-detalles p strong {
+  color: #FF416C;
+}
+
+
+.colorRojo{
+  color:red;
+}

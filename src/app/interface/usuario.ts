@@ -12,7 +12,7 @@ export interface Usuario {
     valoracion?: number,
     profesion?: string,
     disponibilidad?: string,
-    zona?: string,
+    zona?: string, // telefono
     descripcion?: string,
 
 }

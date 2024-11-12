@@ -14,11 +14,13 @@ import { DialogoComponent } from '../../Inicio/cuadro-dialogo/cuadro-dialogo.com
   imports: [
     ReactiveFormsModule,
     RouterModule,
-    RouterLink
+    RouterLink,
+    CommonModule
   ]
 
 })
 export class OlvidasteContraseniaComponent implements OnInit {
+  signUpForm!: FormGroup;  // ¡Aseguramos que se inicializa antes de usarse!
   forgotPasswordForm!: FormGroup;  // ¡Aseguramos que se inicializa antes de usarse!
 
   constructor(private fb: FormBuilder, private dialog: MatDialog) {}
@@ -38,6 +40,13 @@ export class OlvidasteContraseniaComponent implements OnInit {
           message: 'Te hemos enviado un link para restaurar tu contraseña.'
         }
     });
+  } else {
+    this.dialog.open(DialogoComponent, {
+      panelClass: "custom-dialog-container",
+      data: {
+        message: 'Email invalido.'
+      }
+  });
   }
-  }
+}
 }

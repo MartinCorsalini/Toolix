@@ -1,29 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LoginRegisterComponent } from './component/LOGIN/login-register/login-register.component';
-import { OlvidasteContraseniaComponent } from './component/LOGIN/olvidaste-contrasenia/olvidaste-contrasenia.component';
-
-import { FooterComponent } from './shared/footer/footer.component';
-import { InicioPageComponent } from './component/Inicio/pages/inicio-page/inicio-page.component';
-import { NavbarPublicComponent } from "./shared/navbar-public/navbar-public.component";
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { NavbarPrivateComponent } from './shared/navbar-private/navbar-private.component';
-
-
+import { NavbarPublicComponent } from './shared/navbar-public/navbar-public.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { AuthService } from './service/auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet,
-    LoginRegisterComponent,
-    OlvidasteContraseniaComponent,
     NavbarPrivateComponent,
     NavbarPublicComponent,
     FooterComponent,
-    InicioPageComponent],
+    LoginPageComponent,CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 
-export class AppComponent {
-  title = 'prueba';
+export class AppComponent implements OnInit {
+
+  /*
+  isAuthenticated$ = this.authService.isAuthenticated$;
+*/
+  constructor(private authService: AuthService) {}
+
+  ngOnInit() {
+    this.authService.checkAuthStatus();
+  }
 }

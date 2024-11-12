@@ -1,0 +1,28 @@
+
+<app-navbar-private></app-navbar-private>
+
+<div class="perfil-container">
+  <div class="perfil-box">
+    <div class="perfil-header">
+      <img [src]="fotoUrl" alt="Foto de perfil" class="perfil-foto">
+      <div class="perfil-info">
+        <h2>{{ usuario?.nombre }}</h2>
+        <p class="profesion">{{ usuario?.profesion }}</p>
+        <div class="perfil-rating">
+          <span>Valoración: </span>
+          <!-- <span *ngFor="let star of stars">&#9733;</span> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="perfil-detalles">
+      <p><strong>Email:</strong> {{ usuario?.email }}</p>
+      <!-- <p><strong>Teléfono:</strong> {{ usuario.telefono }}</p> -->
+      <p><strong>Disponibilidad:</strong> {{ usuario?.disponibilidad }}</p>
+      <p><strong>Zonas de trabajo:</strong> {{ usuario?.zona }}</p>
+      <p><strong>Descripción:</strong> {{ usuario?.descripcion }}</p>
+
+      <button (click)="irAreservar(usuario?.id!)" >Reservar</button>
+    </div>
+  </div>
+</div>

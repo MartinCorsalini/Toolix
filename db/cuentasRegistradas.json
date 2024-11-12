@@ -5,7 +5,6 @@
       "nombre": "juan",
       "email": "juan@gmail.com",
       "password": "1234567"
-
     },
     {
       "id": "01cd",
@@ -41,7 +40,127 @@
       "id": "991c",
       "nombre": "lean",
       "email": "lean@gmail.com",
-      "password": "1234567"
+      "password": "1234567",
+      "nombre": "Emilio",
+      "profesion": "Gasistaa",
+      "disponibilidad": "10 hs a 18 hs",
+      "zona": "Centro, Guemes, Puerto",
+      "descripcion": "dejo todo impecable",
+      "email": "emiliomernes@hotmail.com",
+      "password": null,
+      "rol": null,
+      "id": "732b"
+    },
+    {
+      "nombre": "Juanito",
+      "profesion": "dcdz",
+      "disponibilidad": "sdfsd",
+      "zona": "sdfsd",
+      "descripcion": "dsfsdf",
+      "email": "juanito@lalala",
+      "password": "lalalal",
+      "rol": null,
+      "id": "ed2a"
+    },
+    {
+      "id": "11b5",
+      "nombre": "Mica",
+      "email": "miicaprietto@gmail.com",
+      "password": "lallarytrty"
+    },
+    {
+      "id": "7aca",
+      "nombre": "Lolo",
+      "email": "loloperez@outlook.com",
+      "password": "lalalallala"
+    },
+    {
+      "id": "8e72",
+      "nombre": "Loloo",
+      "email": "loloperezz@outlook.com",
+      "password": "lalalallala"
+    },
+    {
+      "id": "88dc",
+      "nombre": "Leando",
+      "email": "leandrolopez@gmail.com",
+      "password": "lalalaallal"
+    },
+    {
+      "id": "3e86",
+      "nombre": "Pedro Perez",
+      "email": "pedrito@hotmail.com",
+      "password": "lulullululu"
+    },
+    {
+      "id": "ecfc",
+      "nombre": "Marcelo",
+      "email": "marcelito@otulook.com",
+      "password": "123456lsks"
+    },
+    {
+      "id": "58ac",
+      "nombre": "Juancho Alvarez",
+      "email": "juanchoo@gmail.com",
+      "password": "12394kakak"
+    },
+    {
+      "id": "f2ec",
+      "nombre": "Juancito",
+      "email": "juancitooo@hotmail.com",
+      "password": "laskdasdasnkda"
+    },
+    {
+      "id": "4b7f",
+      "nombre": "Maria",
+      "email": "lamari@hotmail.com",
+      "password": "sadasdkanslda"
+    },
+    {
+      "id": "7162",
+      "nombre": "Ludmila",
+      "email": "luli@outlook.com",
+      "password": "laksdalsdkas"
+    },
+    {
+      "id": "22fd",
+      "nombre": "Juanita",
+      "email": "juannni@hotmail.com",
+      "password": "aafsdfdfsdf"
+    },
+    {
+      "id": "208b",
+      "nombre": "Maria Lopez",
+      "email": "marilo@hotmail.com",
+      "password": "lasdlasdas"
+    },
+    {
+      "id": "2bd9",
+      "nombre": "Lolito",
+      "email": "lolitojuarezp@gmail.com",
+      "password": "alksdmalskdasd"
+    },
+    {
+      "nombre": "Martin Corsalini",
+      "profesion": "Electricista",
+      "disponibilidad": "10 hs a 18 hs",
+      "zona": "La perla",
+      "descripcion": "tipaso",
+      "email": "martincorsa@outlook.com",
+      "password": "laskdamlsdanslkd",
+      "rol": null,
+      "id": "18e9"
+    },
+    {
+      "nombre": "Juanito",
+      "profesion": "Gasista",
+      "disponibilidad": "10 hs a 18 hs",
+      "zona": "Centro, Guemes, La perla",
+      "descripcion": "otro tipaso",
+      "email": "juanirelok@hotmail.com",
+      "password": "alskdnalskdna",
+      "rol": null,
+      "id": "a1f8"
     }
   ]
 }
