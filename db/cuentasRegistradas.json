@@ -34,6 +34,17 @@
       "password": null,
       "rol": null,
       "id": "732b"
+    },
+    {
+      "nombre": "Juanito",
+      "profesion": "dcdz",
+      "disponibilidad": "sdfsd",
+      "zona": "sdfsd",
+      "descripcion": "dsfsdf",
+      "email": "juanito@lalala",
+      "password": "lalalal",
+      "rol": null,
+      "id": "ed2a"
     }
   ]
 }
