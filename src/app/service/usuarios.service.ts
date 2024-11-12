@@ -23,5 +23,19 @@ export class UsuariosService {
      return this.http.post<Usuario>(this.urlBase,usuario);
   }
 
+  getUsuarioById(id: string | null): Observable<Usuario>
+  {
+    return this.http.get<Usuario>(`${this.urlBase}/${id}`);
+  }
+
+ deletePiloto(id: string): Observable<void>
+ {
+   return this.http.delete<void>(`${this.urlBase}/${id}`);
+ }
+
+ putPiloto(usuario: Usuario, id: string | null): Observable<Usuario>
+ {
+   return this.http.put<Usuario>(`${this.urlBase}/${id}`, usuario);
+ }
 
 }

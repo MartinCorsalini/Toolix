@@ -5,6 +5,7 @@ import { NavbarPrivateComponent } from './shared/navbar-private/navbar-private.c
 import { NavbarPublicComponent } from './shared/navbar-public/navbar-public.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { AuthService } from './service/auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -13,15 +14,16 @@ import { AuthService } from './service/auth.service';
     NavbarPrivateComponent,
     NavbarPublicComponent,
     FooterComponent,
-    LoginPageComponent],
+    LoginPageComponent,CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 
 export class AppComponent implements OnInit {
 
+  /*
   isAuthenticated$ = this.authService.isAuthenticated$;
-
+*/
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
