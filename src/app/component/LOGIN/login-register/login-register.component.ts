@@ -6,6 +6,7 @@ import { Usuario } from '../../../interface/usuario';
 import { UsuariosService } from '../../../service/usuarios.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogoComponent } from '../../Inicio/cuadro-dialogo/cuadro-dialogo.component';
+import { AuthService } from '../../../service/auth.service';
 
 
 @Component({
@@ -31,11 +32,17 @@ export class LoginRegisterComponent implements OnInit {
   isRightPanelActive: boolean = false;
 
 
-
   // Inyectamos el servicio FormBuilder para crear los formularios
   constructor(private fb: FormBuilder, private us: UsuariosService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
+
+    // Si el usuario ya está autenticado, redirigir a la página de inicio
+   if (this.auth.estaLogeado()) {
+    this.router.navigateByUrl('home');
+  }
+
+  //me caga en vacio los elementos del formulario
     this.signUpForm = this.fb.nonNullable.group({
       nombre: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -67,9 +74,9 @@ export class LoginRegisterComponent implements OnInit {
     console.log(usuario2.email);
     this.buscarEmail(usuario2.email)
 
+    this.iniciarSesion();
 
   }
-
 
     addUsuarioDB(usuario: Usuario)
     {
@@ -103,25 +110,41 @@ export class LoginRegisterComponent implements OnInit {
   //----- Hago un GET para acceder al ID asginado------
   // para eso busco con el mail, ya que el id se lo asigna al hacer el get y no se cual es ------
 
-  buscarEmail(email: string) {
+  buscarEmail(email: string)
+   {
     this.service.getUsuarioByEmail(email).subscribe({
       next: (usuarios: Usuario[]) =>
         {
-        if (usuarios.length > 0) {
-          this.usuario = usuarios[0];
-          alert('EMAIL ENCONTRADO CORRECTAMENTE');
-          console.log("Email:", this.usuario.email);
-          console.log("Nombre:", this.usuario.nombre);
-          console.log("ID", this.usuario.id);
-          this.router.navigate([`modificar/${this.usuario?.id}`]);
-        } else {
-          alert('No se encontró un usuario con ese email');
-        }
+            if (usuarios.length > 0)
+            {
+                this.usuario = usuarios[0];
+                alert('EMAIL ENCONTRADO CORRECTAMENTE');
+                console.log("Email:", this.usuario.email);
+                console.log("Nombre:", this.usuario.nombre);
+                console.log("ID", this.usuario.id);
+                this.router.navigate([`modificar/${this.usuario?.id}`]);
+            } else
+            {
+                alert('No se encontró un usuario con ese email');
+            }
       },
       error: () => {
         alert('Error al buscar por email');
       }
     });
   }
+
+
+
+
+  //---------RUTAS PRIVADAS -------
+   // probando...
+   auth = inject(AuthService);
+
+   iniciarSesion ()
+   {
+    this.auth.logIn() //Me logeo. Coloca el "estoyLogeado" del service en true
+    //this.router.navigateByUrl('home'); // al logearme me lleva a esta pagina
+   }
 
 }
