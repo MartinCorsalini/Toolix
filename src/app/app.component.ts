@@ -19,14 +19,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.css'
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-  /*
-  isAuthenticated$ = this.authService.isAuthenticated$;
-*/
-  constructor(private authService: AuthService) {}
-
-  ngOnInit() {
-    this.authService.checkAuthStatus();
-  }
 }

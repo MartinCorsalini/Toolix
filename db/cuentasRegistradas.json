@@ -145,6 +145,46 @@
       "password": "alskdnalskdna",
       "rol": null,
       "id": "a1f8"
+    },
+    {
+      "id": "601c",
+      "nombre": "Lourdes",
+      "email": "lourddd@hotmail.com",
+      "password": "alksnaklsda"
+    },
+    {
+      "id": "bbc0",
+      "nombre": "Lauuuu",
+      "email": "lauuuuuri@hotmail.com",
+      "password": "alskdmalksd"
+    },
+    {
+      "id": "06fc",
+      "nombre": "Lauuuu",
+      "email": "lauuri@hotmail.com",
+      "password": "alskdmalksd"
+    },
+    {
+      "nombre": "Juanita Pepes",
+      "profesion": "Peluquera",
+      "disponibilidad": "10 hs a 20 hs",
+      "zona": "Guemes",
+      "descripcion": "Quedas re fachera",
+      "email": "pepesju@hotmail.com",
+      "password": "alksnaslkd",
+      "rol": null,
+      "id": "55d4"
+    },
+    {
+      "nombre": "Jose",
+      "profesion": "Electricista",
+      "disponibilidad": "10 hs a 15 hs",
+      "zona": "Constitucion",
+      "descripcion": "Arreglo todo super bien",
+      "email": "jose@hotmail.com",
+      "password": "alskdnalsd",
+      "rol": null,
+      "id": "8eb5"
     }
   ]
 }
