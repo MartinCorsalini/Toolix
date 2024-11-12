@@ -6,6 +6,7 @@ import { InicioPageComponent } from './pages/inicio-page/inicio-page.component';
 import { PerfilTrabajadorComponent } from './component/perfil/perfil-trabajador/perfil-trabajador.component';
 import { PerfilPropioComponent } from './component/perfil/perfil-propio/perfil-propio.component';
 import { ModificarPerfilComponent } from './component/perfil/modificar-perfil/modificar-perfil.component';
+import { NotificacionesPageComponent } from './pages/notificaciones-page/notificaciones-page.component';
 import { authGuard } from './guard/auth.guard';
 
 
@@ -42,6 +43,9 @@ export const appRoutes: Routes = [
     {
       path: 'modificar/:id',
        component: ModificarPerfilComponent
+    },
+    { path: 'notificaciones', 
+      component: NotificacionesPageComponent
     },
     {
       path: '**',
