@@ -1,11 +1,11 @@
 import { Component, Inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
-import { Reserva } from '../../interface/reserva';
-import { ReservasService } from '../../service/reservas.service';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogoComponent } from '../../component/Inicio/cuadro-dialogo/cuadro-dialogo.component';
 import { CommonModule } from '@angular/common';
-import { CardComponent } from "../../component/Inicio/card/card.component";
+import { CardComponent } from '../../Inicio/card/card.component';
+import { Reserva } from '../../../interface/reserva';
+import { ReservasService } from '../../../service/reservas.service';
+import { DialogoComponent } from '../../Inicio/cuadro-dialogo/cuadro-dialogo.component';
 
 @Component({
   selector: 'app-alta-baja-reserva',

@@ -21,7 +21,7 @@ export class UsuariosService {
   }
 
   postUsuarios(usuario:Usuario): Observable<Usuario>{
-     return this.http.post<Usuario>('${this.urlBase}',usuario);
+     return this.http.post<Usuario>(this.urlBase ,usuario);
   }
 
   getUsuarioById(id: string | null): Observable<Usuario>
@@ -48,11 +48,11 @@ export class UsuariosService {
   return this.http.get<Usuario[]>(`${this.urlBase}?email=${encodeURIComponent(email)}`);
 }
 
-  putUsuario(usuario:Usuario, id:number): Observable<Usuario>{
+  putUsuario(usuario:Usuario, id:string): Observable<Usuario>{
     return this.http.put<Usuario>(`${this.urlBase}/${id}`,usuario);
   }
 
-  deleteUsuario(id:number): Observable<void>{
+  deleteUsuario(id:string): Observable<void>{
     return this.http.delete<void>(`${this.urlBase}/${id}`);
   
   }

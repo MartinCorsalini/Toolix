@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { AltaBajaReservaComponent } from '../../../Reservas/alta-baja-reserva/alta-baja-reserva.component';
 import { RouterModule } from '@angular/router';
+import { AltaBajaReservaComponent } from '../../Reservas/alta-baja-reserva/alta-baja-reserva.component';
 
 @Component({
   selector: 'app-card',

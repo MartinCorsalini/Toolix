@@ -1,7 +1,7 @@
 import { Reserva } from "./reserva";
 
 export interface Usuario {
-    id?: number,
+    id?: string,
     nombre: string,
     email: string,
     password: string,

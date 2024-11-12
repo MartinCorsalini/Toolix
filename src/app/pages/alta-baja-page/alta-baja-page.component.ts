@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AltaBajaReservaComponent } from '../../alta-baja-reserva/alta-baja-reserva.component';
+import { AltaBajaReservaComponent } from '../../component/Reservas/alta-baja-reserva/alta-baja-reserva.component';
 
 @Component({
   selector: 'app-alta-baja-page',
