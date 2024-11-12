@@ -1,19 +1,20 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AltaBajaReservaComponent } from '../../../Reservas/alta-baja-reserva/alta-baja-reserva.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [AltaBajaReservaComponent],
+  imports: [AltaBajaReservaComponent, RouterModule],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })
 export class CardComponent {
-  @Input() trabajador: any;
+  @Input() idTrabajador: number | undefined = undefined; // inicializa
   @Output() eventReserva= new EventEmitter<number>();
 
   reservar(): void{
-    this.eventReserva.emit(this.trabajador.id) //emite el id del trabajador
+    this.eventReserva.emit(this.idTrabajador) //emite el id del trabajador
     
   }
 

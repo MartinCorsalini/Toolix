@@ -4,11 +4,13 @@ import { Reserva } from '../../interface/reserva';
 import { ReservasService } from '../../service/reservas.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogoComponent } from '../../component/Inicio/cuadro-dialogo/cuadro-dialogo.component';
+import { CommonModule } from '@angular/common';
+import { CardComponent } from "../../component/Inicio/card/card.component";
 
 @Component({
   selector: 'app-alta-baja-reserva',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule, CardComponent],
   templateUrl: './alta-baja-reserva.component.html',
   styleUrl: './alta-baja-reserva.component.css'
 })

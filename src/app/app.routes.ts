@@ -4,6 +4,7 @@ import { OlvidasteContraseniaComponent } from './component/LOGIN/olvidaste-contr
 import { FaqComponent } from './component/Inicio/faq/faq.component';
 import { InicioPageComponent } from './component/Inicio/pages/inicio-page/inicio-page.component';
 import { AltaBajaReservaComponent } from './Reservas/alta-baja-reserva/alta-baja-reserva.component';
+import { AltaBajaPageComponent } from './Reservas/pages/alta-baja-page/alta-baja-page.component';
 
 export const appRoutes: Routes = [
 
@@ -11,7 +12,7 @@ export const appRoutes: Routes = [
     {path: 'olvidaste-contrasenia',component: OlvidasteContraseniaComponent},
     {path: 'home', component: InicioPageComponent},
     {path: 'preguntas-frecuentes', component: FaqComponent },
-    {path: 'realizar-reserva', component: AltaBajaReservaComponent},
+    {path: 'realizar-reserva', component: AltaBajaPageComponent},
     //{path: 'modificar-reserva', component: },
     {path: '**', redirectTo:'home'}
 ];
