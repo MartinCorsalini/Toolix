@@ -55,8 +55,26 @@
             * La contraseña debe contener un mínimo de 7 caracteres.
           </div>
 
-          <!------- BOTON ------->
-          <button type="submit">Registrarse</button>
+          <!---------- ROL ------------>
+          <select
+            type="text"
+            placeholder="Tipo de Cuenta"
+            formControlName="rol"
+          >
+         <option value="" selected hidden>Seleccione el tipo de Cuenta</option>
+         <option type="option">Cliente</option>
+         <option type="option">Trabajador</option>
+        </select>
+
+        <div *ngIf="signUpForm.controls['rol'].hasError('required') && signUpForm.controls['password'].touched" class="error">
+          * Campo obligatorio.
+        </div>
+
+
+
+         <!-- BOTONES SEGÚN EL ROL SELECCIONADO -->
+         <button type="submit" *ngIf="selectedRole === 'Cliente' || selectedRole === ''">Registrarse</button>
+         <button type="button" *ngIf="selectedRole === 'Trabajador'" (click)="openContinuarRegistroDialog()" [disabled]="!signUpForm.valid">Continuar Registro</button>
 
     </form>
 

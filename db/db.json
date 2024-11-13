@@ -175,6 +175,50 @@
       "nombre": "Juan",
       "email": "juan@gmail.com",
       "password": "1234567"
+    },
+    {
+      "id": "e837",
+      "nombre": "juan",
+      "email": "juan@gmail.com",
+      "password": "2345678",
+      "rol": "Trabajador"
+    },
+    {
+      "nombre": "mahone",
+      "profesion": "Otro (aclarar en descripcion)",
+      "disponibilidad": "16:48",
+      "zona": "Barrio San José",
+      "descripcion": "fbi",
+      "rol": null,
+      "id": "56f2"
+    },
+    {
+      "id": "6d49",
+      "profesion": "afffafaf",
+      "disponibilidad": "16:52",
+      "descripcion": "dafdafafa",
+      "zona": "Alfar",
+      "telefono": "12414141"
+    },
+    {
+      "id": "c257",
+      "profesion": "fbi",
+      "disponibilidad": "17:02",
+      "descripcion": "fbi",
+      "zona": "Barrio San José",
+      "telefono": "1234567"
+    },
+    {
+      "id": "d031",
+      "nombre": "mahone",
+      "email": "mahone@fbi.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "fbi",
+      "disponibilidad": "17:11",
+      "descripcion": "fbi",
+      "zona": "Faro Norte",
+      "telefono": "13141414"
     }
   ]
 }

@@ -12,7 +12,8 @@ export interface Usuario {
     valoracion?: number,
     profesion?: string,
     disponibilidad?: string,
-    zona?: string, // telefono
+    zona?: string,
     descripcion?: string,
+    telefono?: string
 
 }
