@@ -57,7 +57,11 @@ export class UsuariosService {
 
   deleteUsuario(id:string): Observable<void>{
     return this.http.delete<void>(`${this.urlBase}/${id}`);
-  
+
   }
-    
+
+  agregarValoracion(id: string, valoracion: number): Observable<any> {
+    return this.http.post(`${this.urlBase}/${id}`, { valoracion });
+  }
+
 }

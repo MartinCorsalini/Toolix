@@ -137,3 +137,22 @@
   border-color: #007bff;
   outline: none;
 }
+
+
+
+.media-estrella {
+  position: relative;
+  display: inline-block;
+  color: #FFD700;  /* Color dorado */
+  font-size: 18px;
+  width: 10px;    /* Ajusta el ancho a la mitad */
+  overflow: hidden;
+}
+
+.media-estrella::after {
+  content: '\u2605';  /* Carácter Unicode para una estrella llena */
+  position: absolute;
+  left: 0;
+  width: 50%;       /* Solo pinta la mitad de la estrella */
+  color: #FFD700;   /* Color dorado */
+}
