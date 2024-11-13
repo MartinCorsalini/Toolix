@@ -22,8 +22,24 @@
       <p><strong>Zonas de trabajo:</strong> {{ usuario?.zona }}</p>
       <p><strong>Descripción:</strong> {{ usuario?.descripcion }}</p>
 
-      <button (click)="irAreservar(usuario?.id!)" >Reservar</button>
-      <button [routerLink]="['/home', usuario?.id]">Atrás</button>
+      <button class="valoracion-btn" (click)="mostrarInput()">Agregar Valoración</button>
+      <!-- Input de valoración, visible según el estado de mostrarValoracionInput -->
+      <input
+        *ngIf="mostrarValoracionInput"
+        type="number"
+        [(ngModel)]="valoracion"
+        placeholder="Ingrese su valoración (1-10)"
+        (blur)="validarValoracion()"
+        class="valoracion-input"
+        min="1"
+        max="10"
+      />
+
+      <div class="botones">
+        <button (click)="irAreservar(usuario?.id!)" >Reservar</button>
+        <button [routerLink]="['/home', usuario?.id]">Atrás</button>
+      </div>
+
     </div>
   </div>
 </div>
