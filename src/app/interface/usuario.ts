@@ -8,7 +8,7 @@ export interface Usuario {
     rol : string,
     reservas?: Reserva[],
 
-    calificaciones?: number[],
+    valoraciones?: number[],
     valoracion?: number,
     profesion?: string,
     disponibilidad?: string,

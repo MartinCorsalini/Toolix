@@ -8,10 +8,17 @@
       <div class="perfil-info">
         <h2>{{ usuario?.nombre }}</h2>
         <p class="profesion">{{ usuario?.profesion }}</p>
-        <div class="perfil-rating">
-          <span>Valoración: </span>
-          <!-- <span *ngFor="let star of stars">&#9733;</span> -->
-        </div>
+
+       <div class="perfil-rating">
+        <span>Valoración: </span>
+        <span>{{ calcularPromedioValoracion() | number:'1.1-1' }}</span>
+        <ng-container *ngFor="let star of stars">
+          <span *ngIf="star === 1">&#9733;</span>       <!-- Estrella llena -->
+          <span *ngIf="star === 0.5">&#x272E;</span>    <!-- Media estrella (estrella de diferente estilo) -->
+          <span *ngIf="star === 0">&#9734;</span>       <!-- Estrella vacía -->
+        </ng-container>
+      </div>
+
       </div>
     </div>
 
@@ -23,17 +30,20 @@
       <p><strong>Descripción:</strong> {{ usuario?.descripcion }}</p>
 
       <button class="valoracion-btn" (click)="mostrarInput()">Agregar Valoración</button>
-      <!-- Input de valoración, visible según el estado de mostrarValoracionInput -->
-      <input
-        *ngIf="mostrarValoracionInput"
-        type="number"
-        [(ngModel)]="valoracion"
-        placeholder="Ingrese su valoración (1-10)"
-        (blur)="validarValoracion()"
-        class="valoracion-input"
-        min="1"
-        max="10"
-      />
+
+      <!-- Input y botón para enviar valoración, visibles cuando `mostrarValoracionInput` es true -->
+      <div *ngIf="mostrarValoracionInput">
+        <input
+          type="number"
+          [(ngModel)]="valoracion"
+          placeholder="Ingrese su valoración (1-10)"
+          (blur)="validarValoracion()"
+          class="valoracion-input"
+          min="1"
+          max="10"
+        />
+        <button  (click)="cargarValoracionDB()" class="valoracion-btn">Cargar valoración</button>
+      </div>
 
       <div class="botones">
         <button (click)="irAreservar(usuario?.id!)" >Reservar</button>
