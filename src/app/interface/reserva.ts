@@ -1,3 +1,4 @@
+import { Time } from "@angular/common";
 
 
 export interface Reserva {
@@ -6,6 +7,6 @@ export interface Reserva {
     idUs:string | undefined,
     direccion: string,
     fecha: Date,
-    hora:number,
+    horario:Time,
     aceptada: boolean // aceptada true, rechazada false
 }
