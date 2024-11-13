@@ -172,7 +172,7 @@
     },
     {
       "nombre": "ferchu",
-      "profesion": "Pintor/a",
+      "profesion": "peluquera",
       "disponibilidad": "10 a 20",
       "zona": "centro",
       "descripcion": "asdasdas",
@@ -278,6 +278,38 @@
       "direccion": "asdasd",
       "idUs": "520f",
       "idTr": "732b"
+    },
+    {
+      "id": "f0aa",
+      "fecha": "2024-11-01",
+      "horario": "23:51",
+      "direccion": "sad",
+      "idUs": "520f",
+      "idTr": "732b"
+    },
+    {
+      "id": "2605",
+      "fecha": "2024-11-15",
+      "horario": "23:02",
+      "direccion": "asd",
+      "idUs": "a2ef",
+      "idTr": "732b"
+    },
+    {
+      "id": "a6cf",
+      "fecha": "2024-11-15",
+      "horario": "18:03",
+      "direccion": "asd",
+      "idUs": "a2ef",
+      "idTr": "18e9"
+    },
+    {
+      "id": "f43b",
+      "fecha": "2024-11-15",
+      "horario": "18:03",
+      "direccion": "asd",
+      "idUs": "a2ef",
+      "idTr": "18e9"
     }
   ]
 }
