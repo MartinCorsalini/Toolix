@@ -7,6 +7,7 @@ import { Reserva } from '../../../interface/reserva';
 import { ReservasService } from '../../../service/reservas.service';
 import { DialogoComponent } from '../../Inicio/cuadro-dialogo/cuadro-dialogo.component';
 import { AuthService } from '../../../service/auth.service';
+import { NavbarPrivateComponent } from "../../../shared/navbar-private/navbar-private.component";
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { UsuariosService } from '../../../service/usuarios.service';
 
@@ -14,16 +15,15 @@ import { UsuariosService } from '../../../service/usuarios.service';
 @Component({
   selector: 'app-alta-baja-reserva',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, CardComponent, RouterLink],
+  imports: [ReactiveFormsModule, CommonModule, CardComponent, NavbarPrivateComponent,RouterLink],
   templateUrl: './alta-baja-reserva.component.html',
   styleUrl: './alta-baja-reserva.component.css'
 })
-export class AltaBajaReservaComponent implements OnInit{
-  reservaForm!: FormGroup; 
+export class AltaBajaReservaComponent implements OnInit {
+  reservaForm!: FormGroup;
   listaReservas: Reserva[] = [];
   closeDialog: any;
   dialogRef: any;
-
   usuarioActualId: string | undefined = undefined; // Variable para almacenar el ID del usuario
   service= Inject(UsuariosService);
 
@@ -32,30 +32,26 @@ export class AltaBajaReservaComponent implements OnInit{
   
  
   constructor(
-   
+
     private fb: FormBuilder,
     private rs: ReservasService,
     private dialog: MatDialog,
     private authService: AuthService,
     private route: ActivatedRoute
   ) {}
-
-
   ngOnInit(): void{
-  
     this.usuarioActualId = this.authService.getUserId();
 
     this.trabajadorId=this.route.snapshot.paramMap.get('id') // metodo para obtener el ID del trabajador desde la URL
 
     this.reservaForm = this.fb.group({
-      fecha: ['', Validators.required], 
-      horario: ['', Validators.required], 
-      direccion: ['', Validators.required] 
+      fecha: ['', Validators.required],
+      horario: ['', Validators.required],
+      direccion: ['', Validators.required]
     });
   }
 
-
-    //
+  //
 
   addReserva(){
     if(this.reservaForm.invalid)return;
@@ -92,7 +88,7 @@ export class AltaBajaReservaComponent implements OnInit{
     );
   }
 
-// 
+//
 closeDialogR(): void {
   this.dialogRef.close(); // Cierra el diálogo
 }

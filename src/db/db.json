@@ -2,7 +2,7 @@
   "usuarios": [
     {
       "nombre": "Emilio",
-      "profesion": "Gasistaa",
+      "profesion": "Gasista",
       "disponibilidad": "10 hs a 18 hs",
       "zona": "Centro, Guemes, Puerto",
       "descripcion": "dejo todo impecable",
@@ -205,6 +205,21 @@
       "fecha": "2024-11-21",
       "horario": "16:46",
       "direccion": "asd",
+      "idUs": "520f",
+      "idTr": "732b"
+    },
+    {
+      "id": "0cd5",
+      "fecha": "2024-11-23",
+      "horario": "20:06",
+      "direccion": "asda",
+      "idUs": "520f"
+    },
+    {
+      "id": "8dec",
+      "fecha": "2024-10-31",
+      "horario": "17:04",
+      "direccion": "asdasd",
       "idUs": "520f",
       "idTr": "732b"
     }
