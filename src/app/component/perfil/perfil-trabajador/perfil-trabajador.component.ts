@@ -65,6 +65,7 @@ cargarValoracionDB()
             alert('Actualizado correctamente');
             this.valoracion = null; // Limpia el campo de valoración
             this.mostrarValoracionInput = false; // Oculta el input después de enviar
+            this.actualizarEstrellas();
           },
           error: (e: Error)=>{
             alert('Se ha producido un error al actualizar: '+ e.message);
