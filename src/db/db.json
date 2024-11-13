@@ -163,6 +163,12 @@
       "password": "ajsdnkaskd",
       "rol": null,
       "id": "e858"
+    },
+    {
+      "id": "a2ef",
+      "nombre": "juan",
+      "email": "juan@example.com",
+      "password": "1234567"
     }
   ]
 }

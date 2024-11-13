@@ -8,12 +8,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from '../../interface/usuario';
 
 
+
 @Component({
   selector: 'app-inicio-page',
   standalone: true,
-
-  imports: [SearchBarComponent, GridComponent, NavbarPrivateComponent],
-
+  imports: [SearchBarComponent, NavbarPrivateComponent, CardComponent],
   templateUrl: './inicio-page.component.html',
   styleUrl: './inicio-page.component.css'
 })

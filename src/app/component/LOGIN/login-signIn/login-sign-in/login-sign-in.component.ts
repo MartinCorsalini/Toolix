@@ -65,7 +65,7 @@ export class LoginSignInComponent implements OnInit {
           this.router.navigate(['/home', usuarioID]);
 
           // Llama al método logIn() del AuthService para guardar el token
-          this.authService.logIn();
+          this.authService.logIn(usuarioID!);
         } else {
           // Usuario no encontrado
           this.dialog.open(DialogoComponent, {
@@ -79,4 +79,6 @@ export class LoginSignInComponent implements OnInit {
       error: (e: Error) => {
         console.log("Error", e.message);
       }
+    });
+  }
 }

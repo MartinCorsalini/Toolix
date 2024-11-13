@@ -13,6 +13,9 @@ html, body {
     height: 100%;
     margin: 0;
 }
+.wrapper{
+  background-image: url('../../../../assets/images/toolix.webp');
+}
 
 .container {
     background-color: #fff;
