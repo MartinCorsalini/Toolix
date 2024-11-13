@@ -1,4 +1,17 @@
 
+/* Configura el body para ocupar toda la altura de la pantalla */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Establece que el contenido ocupe el espacio restante */
+.container {
+  flex: 1;
+}
+
 .footer {
     background-color: #e9ecef;
     color: black;

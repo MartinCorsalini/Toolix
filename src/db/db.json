@@ -307,47 +307,6 @@
       "password": "ksnflaksdnas",
       "rol": null,
       "id": "996a"
-    },
-    {
-      "id": "33a3",
-      "nombre": "lean",
-      "email": "lean@xds.com",
-      "password": "1234567"
-    }
-  ],
-  "reservas": [
-    {
-      "id": "e71b",
-      "fecha": "2024-10-30",
-      "horario": "02:38",
-      "direccion": "asdasd"
-    },
-    {
-      "id": "4688",
-      "fecha": "2024-10-30",
-      "horario": "05:42",
-      "direccion": "Hipolito"
-    },
-    {
-      "id": "56a6",
-      "fecha": "2024-11-15",
-      "horario": "02:00",
-      "direccion": "ssss",
-      "idUs": "33a3"
-    },
-    {
-      "id": "3a33",
-      "fecha": "2024-11-21",
-      "horario": "03:11",
-      "direccion": "asd",
-      "idUs": "33a3"
-    },
-    {
-      "id": "d08b",
-      "fecha": "2027-10-13",
-      "horario": "07:43",
-      "direccion": "dsa",
-      "idUs": "33a3"
     }
   ]
 }
