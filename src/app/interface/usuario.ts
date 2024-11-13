@@ -5,7 +5,7 @@ export interface Usuario {
     nombre: string,
     email: string,
     password: string,
-    rol: string,
+    rol : string,
     reservas?: Reserva[],
 
     calificaciones?: number[],

@@ -1,7 +1,9 @@
 <app-navbar-private></app-navbar-private>
+<h2 class="titulos">Notificaciones</h2>
+
 <div class="container">
     <div class="header">
-        <h2>Notificaciones</h2>
+        
     </div>
     <ul class="notification-list">
         <li class="notification-item">
@@ -26,6 +28,24 @@
             <div class="actions">
                 <button class="accept-btn">Aceptar</button>
                 <button class="reject-btn">Rechazar</button>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+<h2 class="titulos">Reservas enviadas</h2>
+
+<div class="container">
+    <div class="header"></div>
+    <ul class="notification-list">
+        <li class="notification-item" *ngFor = "let reserva of reservasEnviadas">
+            <p>Reserva para {{ reserva.direccion }}</p>
+            <p>Fecha: <span>{{ reserva.fecha }}</span></p>
+            <p>Horario: <span>{{ reserva.hora }}</span></p>
+            <div class="actions">
+                <button class="accept-btn">Modificar</button>
+                <button class="reject-btn">Eliminar</button>
             </div>
         </li>
     </ul>

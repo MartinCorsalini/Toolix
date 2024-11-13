@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
@@ -29,7 +29,9 @@ export class AltaBajaReservaComponent implements OnInit {
 
   trabajadorId: string | null = null;
 
-  
+  // @Output () reservaCreada= new EventEmitter<Reserva>(); 
+  // evento que envia reserva como usuario o trabajador, y se envia a lista de reservas enviadas
+
  
   constructor(
 
@@ -37,7 +39,8 @@ export class AltaBajaReservaComponent implements OnInit {
     private rs: ReservasService,
     private dialog: MatDialog,
     private authService: AuthService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private reservasService: ReservasService
   ) {}
   ngOnInit(): void{
     this.usuarioActualId = this.authService.getUserId();
@@ -56,7 +59,8 @@ export class AltaBajaReservaComponent implements OnInit {
   addReserva(){
     if(this.reservaForm.invalid)return;
     const reserva= this.reservaForm.getRawValue();
-    this.addReservaDB(reserva)
+    this.addReservaDB(reserva);
+    this.reservasService.agregarReserva(reserva);
 
   }
   //
