@@ -19,11 +19,12 @@ export class NavbarPrivateComponent implements OnInit {
 
   }
 
-  userId: string | null = null;
+  userId: string | undefined = undefined;
 
   constructor(private authService: AuthService) {}
 
   logoUrl: string = 'assets/images/logo.jpeg';
+
 
   isProfileOpen = false;
   route = inject(Router)

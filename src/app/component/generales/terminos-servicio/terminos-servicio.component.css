@@ -1,0 +1,111 @@
+
+.terms-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #ffffff;
+}
+
+
+.terms-content {
+  background-color: #e9ecef;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.terms-title {
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.last-updated {
+  color: #666;
+  text-align: center;
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+.terms-section {
+  margin-bottom: 40px;
+}
+
+.terms-content h1{
+  color: #FF416C;
+}
+
+.terms-section h2 {
+  color: #FF416C;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.terms-section p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.terms-section ul {
+  list-style-type: none;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.terms-section ul li {
+  color: #666;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.terms-section ul li:before {
+  content: "•";
+  color: #FF416C; /* Usa el color de tu marca */
+  font-weight: bold;
+  position: absolute;
+  left: -15px;
+}
+
+.contact-info {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 6px;
+  margin-top: 15px;
+}
+
+.contact-info p {
+  margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .privacy-container {
+    padding: 20px 15px;
+  }
+
+  .privacy-title {
+    font-size: 2rem;
+  }
+
+  .privacy-section h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacy-content {
+    padding: 20px;
+  }
+
+  .privacy-title {
+    font-size: 1.8rem;
+  }
+
+  .privacy-section h2 {
+    font-size: 1.2rem;
+  }
+}

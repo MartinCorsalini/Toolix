@@ -6,6 +6,8 @@ import { CardComponent } from '../../Inicio/card/card.component';
 import { Reserva } from '../../../interface/reserva';
 import { ReservasService } from '../../../service/reservas.service';
 import { DialogoComponent } from '../../Inicio/cuadro-dialogo/cuadro-dialogo.component';
+import { AuthService } from '../../../service/auth.service';
+
 
 @Component({
   selector: 'app-alta-baja-reserva',
@@ -19,14 +21,17 @@ export class AltaBajaReservaComponent {
   listaReservas: Reserva[] = [];
 closeDialog: any;
   dialogRef: any;
+  usuarioActualId: string | undefined = undefined; // Variable para almacenar el ID del usuario
 
   constructor(
    
     private fb: FormBuilder,
     private rs: ReservasService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private authService: AuthService
   ) {}
   ngOnInit(): void{
+    this.usuarioActualId = this.authService.getUserId();
 
     this.reservaForm = this.fb.group({
       fecha: ['', Validators.required], 
@@ -45,6 +50,9 @@ closeDialog: any;
   }
   //
   addReservaDB(reserva: Reserva) {
+    reserva.idUs = this.usuarioActualId;
+
+    //reserva.trabajadorId = this.trabajadorSeleccionadoId; /
     this.rs.postReserva(reserva).subscribe(
       {
         next: (reserva: Reserva) => {
