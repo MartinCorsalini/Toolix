@@ -33,7 +33,24 @@
       "rol": null,
       "id": "18e9",
       "valoraciones": [
-        7
+        7,
+        2,
+        1,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
       ]
     },
     {
@@ -78,7 +95,12 @@
       "email": "leonardo@outlook.com",
       "password": "laskndalksd",
       "rol": null,
-      "id": "bb75"
+      "id": "bb75",
+      "valoraciones": [
+        1,
+        10,
+        10
+      ]
     },
     {
       "nombre": "juanooo",
