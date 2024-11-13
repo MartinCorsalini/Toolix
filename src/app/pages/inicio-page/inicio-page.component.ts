@@ -19,7 +19,7 @@ import { Usuario } from '../../interface/usuario';
 export class InicioPageComponent implements OnInit {
 
   ngOnInit(): void {
-    this.accederAlosDatos();
+   // this.accederAlosDatos();
   }
 
   service= inject(UsuariosService);
