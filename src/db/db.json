@@ -62,7 +62,10 @@
       "email": "juanirelok@hotmail.com",
       "password": "alskdnalskdna",
       "rol": null,
-      "id": "a1f8"
+      "id": "a1f8",
+      "valoraciones": [
+        9
+      ]
     },
     {
       "nombre": "Juanita Pepes",
@@ -216,17 +219,6 @@
       "password": "123123123",
       "rol": null,
       "id": "a110"
-    },
-    {
-      "nombre": "Lean",
-      "profesion": "Plomero",
-      "disponibilidad": "A",
-      "zona": "a",
-      "descripcion": "a",
-      "email": "leo@x.com",
-      "password": "1234567",
-      "rol": null,
-      "id": "520f"
     },
     {
       "id": "ed60",
