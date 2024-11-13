@@ -22,7 +22,8 @@
   
     <div class="form-buttons">
       <button type="submit" [disabled]="reservaForm.invalid" class="submit-button">Aceptar</button>
-       <button type="button" (click)="closeDialog()" class="cancel-button">Cancelar</button>
+       <button  [routerLink]="['/perfil-trabajador/:id', usuarioActualId]" type="button" class="cancel-button">Cancelar</button>
+      
     </div>
   </form>
 </div>

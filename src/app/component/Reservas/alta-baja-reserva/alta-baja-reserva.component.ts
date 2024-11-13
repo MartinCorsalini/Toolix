@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
@@ -7,31 +7,45 @@ import { Reserva } from '../../../interface/reserva';
 import { ReservasService } from '../../../service/reservas.service';
 import { DialogoComponent } from '../../Inicio/cuadro-dialogo/cuadro-dialogo.component';
 import { AuthService } from '../../../service/auth.service';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { UsuariosService } from '../../../service/usuarios.service';
 
 
 @Component({
   selector: 'app-alta-baja-reserva',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, CardComponent],
+  imports: [ReactiveFormsModule, CommonModule, CardComponent, RouterLink],
   templateUrl: './alta-baja-reserva.component.html',
   styleUrl: './alta-baja-reserva.component.css'
 })
-export class AltaBajaReservaComponent {
+export class AltaBajaReservaComponent implements OnInit{
   reservaForm!: FormGroup; 
   listaReservas: Reserva[] = [];
-closeDialog: any;
+  closeDialog: any;
   dialogRef: any;
-  usuarioActualId: string | undefined = undefined; // Variable para almacenar el ID del usuario
 
+  usuarioActualId: string | undefined = undefined; // Variable para almacenar el ID del usuario
+  service= Inject(UsuariosService);
+
+  trabajadorId: string | null = null;
+
+  
+ 
   constructor(
    
     private fb: FormBuilder,
     private rs: ReservasService,
     private dialog: MatDialog,
-    private authService: AuthService
+    private authService: AuthService,
+    private route: ActivatedRoute
   ) {}
+
+
   ngOnInit(): void{
+  
     this.usuarioActualId = this.authService.getUserId();
+
+    this.trabajadorId=this.route.snapshot.paramMap.get('id') // metodo para obtener el ID del trabajador desde la URL
 
     this.reservaForm = this.fb.group({
       fecha: ['', Validators.required], 
@@ -40,7 +54,8 @@ closeDialog: any;
     });
   }
 
-  //
+
+    //
 
   addReserva(){
     if(this.reservaForm.invalid)return;
@@ -51,7 +66,7 @@ closeDialog: any;
   //
   addReservaDB(reserva: Reserva) {
     reserva.idUs = this.usuarioActualId;
-
+    reserva.idTr= this.trabajadorId;
     //reserva.trabajadorId = this.trabajadorSeleccionadoId; /
     this.rs.postReserva(reserva).subscribe(
       {

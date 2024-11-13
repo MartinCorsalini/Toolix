@@ -180,6 +180,33 @@
       "password": "123123123",
       "rol": null,
       "id": "a110"
+    },
+    {
+      "nombre": "Lean",
+      "profesion": "Plomero",
+      "disponibilidad": "A",
+      "zona": "a",
+      "descripcion": "a",
+      "email": "leo@x.com",
+      "password": "1234567",
+      "rol": null,
+      "id": "520f"
+    },
+    {
+      "id": "ed60",
+      "nombre": "Lean",
+      "email": "leo@x.com",
+      "password": "1234567"
+    }
+  ],
+  "reservas": [
+    {
+      "id": "47c9",
+      "fecha": "2024-11-21",
+      "horario": "16:46",
+      "direccion": "asd",
+      "idUs": "520f",
+      "idTr": "732b"
     }
   ]
 }

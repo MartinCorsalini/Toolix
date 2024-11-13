@@ -60,13 +60,9 @@ export class AuthService {
 
   }
 
-
   // Método para obtener el ID actual del usuario
   getUserId(): string | undefined {
     return this.idUsuario.getValue();
   }
-
-
-
 
 }
