@@ -13,7 +13,6 @@ import { authGuard } from './guard/auth.guard';
 
 
 export const appRoutes: Routes = [
-
     {
       path: 'login',
       component: LoginPageComponent,
@@ -50,6 +49,6 @@ export const appRoutes: Routes = [
     },
     {
       path: '**',
-      redirectTo:'home'
+      redirectTo:'home/:id'
     }
 ];

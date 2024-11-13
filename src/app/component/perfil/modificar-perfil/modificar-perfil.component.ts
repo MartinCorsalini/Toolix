@@ -4,11 +4,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UsuariosService } from '../../../service/usuarios.service';
 import { Usuario } from '../../../interface/usuario';
 import { NavbarPublicComponent } from "../../../shared/navbar-public/navbar-public.component";
+import { NavbarPrivateComponent } from "../../../shared/navbar-private/navbar-private.component";
 
 @Component({
   selector: 'app-modificar-perfil',
   standalone: true,
-  imports: [NavbarPublicComponent, ReactiveFormsModule],
+  imports: [NavbarPublicComponent, ReactiveFormsModule, NavbarPrivateComponent],
   templateUrl: './modificar-perfil.component.html',
   styleUrl: './modificar-perfil.component.css'
 })

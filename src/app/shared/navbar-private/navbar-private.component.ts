@@ -11,15 +11,25 @@ import { AuthService } from '../../service/auth.service';
   styleUrl: './navbar-private.component.css'
 })
 export class NavbarPrivateComponent implements OnInit {
-  ngOnInit(): void  //Verfica el token, si estoy logueado o no
+  ngOnInit(): void
   {
+    this.authService.currentUserId$.subscribe(id => {
+      this.userId = id;
+    });
+
+    /*
     if(localStorage.getItem('token'))
     {//Se fija si tengo un token en el localStorage
       //this.textButton= 'LogOut'
-      this.auth.logIn() //Me logeo. Coloca el "estoyLogeado" del service en true
+      // this.auth.logIn() //Me logeo. Coloca el "estoyLogeado" del service en true
       //this.route.navigateByUrl('home'); // al logearme me lleva a esta pagina
     }
+      */
   }
+
+  userId: string | null = null;
+
+  constructor(private authService: AuthService) {}
 
   logoUrl: string = 'assets/images/logo.jpeg';
 
@@ -44,9 +54,16 @@ export class NavbarPrivateComponent implements OnInit {
   }
 */
 
-  irADetalles(id:string)
+  irADetalles()
   {
-    this.route.navigate([`detalles/${id}`]);
+    this.route.navigate([`perfil-propio/${this.userId}`]);
+  }
+
+  irAHome()
+  {
+    alert('Al ir al home el id es este : ' + this.userId);
+    console.log('id'+ this.userId);
+    this.route.navigate([`home/${this.userId}`]);
   }
 
 

@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, Output } from '@angular/core';
 import { ReactiveFormsModule ,FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterModule } from '@angular/router';
@@ -31,23 +31,23 @@ export class LoginRegisterComponent implements OnInit {
   //creo que no se usa
   isRightPanelActive: boolean = false;
 
-
   // Inyectamos el servicio FormBuilder para crear los formularios
   constructor(private fb: FormBuilder, private us: UsuariosService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
 
-    // Si el usuario ya está autenticado, redirigir a la página de inicio
-   if (this.auth.estaLogeado()) {
-    this.router.navigateByUrl('home');
-  }
+      // Si el usuario ya está autenticado, redirigir a la página de inicio
+    if (this.auth.estaLogeado())
+      {
+         this.router.navigateByUrl('home');
+      }
 
-  //me caga en vacio los elementos del formulario
-    this.signUpForm = this.fb.nonNullable.group({
-      nombre: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(7)]]
-    });
+    //me caga en vacio los elementos del formulario
+      this.signUpForm = this.fb.nonNullable.group({
+        nombre: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', [Validators.required, Validators.minLength(7)]]
+      });
 
   }
 
@@ -70,6 +70,8 @@ export class LoginRegisterComponent implements OnInit {
     const usuario2 = this.signUpForm.getRawValue();
 
     this.addUsuarioDB(usuario2); // Agrego el usuario a la base de datos
+    console.log(usuario2.email);
+    this.buscarEmail(usuario2.email)
 
   }
 
@@ -117,6 +119,8 @@ export class LoginRegisterComponent implements OnInit {
                 console.log("Email:", this.usuario.email);
                 console.log("Nombre:", this.usuario.nombre);
                 console.log("ID", this.usuario.id);
+
+                this.iniciarSesion(this.usuario?.id!);
                 this.router.navigate([`modificar/${this.usuario?.id}`]);
             } else
             {
@@ -136,9 +140,9 @@ export class LoginRegisterComponent implements OnInit {
    // probando...
    auth = inject(AuthService);
 
-   iniciarSesion ()
+   iniciarSesion (id: string)
    {
-    this.auth.logIn() //Me logeo. Coloca el "estoyLogeado" del service en true
+    this.auth.logIn(id) //Me logeo. Coloca el "estoyLogeado" del service en true
     //this.router.navigateByUrl('home'); // al logearme me lleva a esta pagina
    }
 
