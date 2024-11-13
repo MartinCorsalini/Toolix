@@ -1,11 +1,9 @@
-
-
 export interface Reserva {
-    id?: number,
+    id: string,
     idTr: string | null,
     idUs:string | undefined,
     direccion: string,
     fecha: Date,
-    hora:number,
+    horario:number,
     aceptada: boolean // aceptada true, rechazada false
 }
