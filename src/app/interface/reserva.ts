@@ -1,7 +1,7 @@
 
 
 export interface Reserva {
-    id?: number,
+    id: string,
     idTr: string | null,
     idUs:string | undefined,
     direccion: string,

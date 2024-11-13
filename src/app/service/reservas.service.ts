@@ -66,7 +66,7 @@ export class ReservasService {
   return this.http.put<Reserva>(`${this.urlBase}/${id}`,reserva);
 }
 
-deleteReserva(id:number): Observable<void>{
+deleteReserva(id:string): Observable<void>{
   return this.http.delete<void>(`${this.urlBase}/${id}`);
 
 }
