@@ -9,7 +9,13 @@
       "email": "emiliomernes@hotmail.com",
       "password": null,
       "rol": null,
-      "id": "732b"
+      "id": "732b",
+      "valoraciones": [
+        8,
+        5,
+        10,
+        5
+      ]
     },
     {
       "nombre": "Martin Corsalini",
@@ -20,7 +26,10 @@
       "email": "martincorsa@outlook.com",
       "password": "laskdamlsdanslkd",
       "rol": null,
-      "id": "18e9"
+      "id": "18e9",
+      "valoraciones": [
+        7
+      ]
     },
     {
       "nombre": "Juanito",
@@ -222,6 +231,14 @@
       "direccion": "asdasd",
       "idUs": "520f",
       "idTr": "732b"
+    },
+    {
+      "id": "3e90",
+      "fecha": "2024-11-28",
+      "horario": "07:54",
+      "direccion": "San Martín 2267       ",
+      "idUs": "732b",
+      "idTr": "a1f8"
     }
   ]
 }

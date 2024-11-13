@@ -28,7 +28,6 @@ export class SearchBarComponent {
     });
     */
   }
-
    // Muestra las sugerencias al hacer clic en el campo de búsqueda
    showSuggestionsDropdown() {
     this.showSuggestions = true;

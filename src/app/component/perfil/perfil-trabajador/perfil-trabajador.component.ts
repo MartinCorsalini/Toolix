@@ -5,6 +5,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { NavbarPrivateComponent } from '../../../shared/navbar-private/navbar-private.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { CloseScrollStrategy } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-perfil-trabajador',
@@ -14,13 +15,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './perfil-trabajador.component.css'
 })
 export class PerfilTrabajadorComponent implements OnInit {
-
-  ngOnInit(): void {
-    this.accederAlosDatos();
-    //this.stars = Array(Math.round(this.usuario?.valoracion!)).fill(1);  // Calcula el número de estrellas
-  }
-    //stars: number[] = [];
-
+  fotoUrl = 'assets/avatar/avatar.png';  // Ruta de la foto de perfil
 
   service= inject(UsuariosService);
   ar= inject(ActivatedRoute);
@@ -29,15 +24,19 @@ export class PerfilTrabajadorComponent implements OnInit {
   usuario?: Usuario;
   id : string | null = null;
 
-  mostrarValoracionInput = signal(false); // Controla visibilidad del input de valoración
+  mostrarValoracionInput = false; // Cambiado a booleano // Controla visibilidad del input de valoración
   valoracion: number | null = null;       // Valor de la valoración
+  stars: number[] = [];
 
-  fotoUrl = 'assets/avatar/avatar.png';  // Ruta de la foto de perfil
 
+  ngOnInit(): void {
+    this.accederAlosDatos();
+    this.actualizarEstrellas(); // Cálculo de estrellas al iniciar
+  }
 
 // Alterna visibilidad del input de valoración
 mostrarInput() {
-  this.mostrarValoracionInput.update((visible) => !visible);
+  this.mostrarValoracionInput = !this.mostrarValoracionInput;
 }
 
 // Valida que el valor esté entre 1 y 10
@@ -46,6 +45,58 @@ validarValoracion() {
     this.valoracion = Math.min(10, Math.max(1, this.valoracion));
   }
 }
+
+//HAGO UN PUT para actualizar las validaciones (se agrega la nueva validacion al array)
+cargarValoracionDB()
+    {
+
+      if (!this.usuario?.valoraciones) {
+        this.usuario!.valoraciones = this.usuario?.valoraciones ?? []; // Inicializa el array si está undefined
+      }
+
+      this.usuario!.valoraciones.push(this.valoracion!);
+
+      console.log('VALORACION CARGADA AL ARRAY: '+ this.valoracion + '   --ARRAY:' + this.usuario?.valoraciones);
+
+      this.service.putPiloto(this.usuario!, this.usuario?.id!).subscribe(
+        {
+          next: ()=>
+          {
+            alert('Actualizado correctamente');
+            this.valoracion = null; // Limpia el campo de valoración
+            this.mostrarValoracionInput = false; // Oculta el input después de enviar
+          },
+          error: (e: Error)=>{
+            alert('Se ha producido un error al actualizar: '+ e.message);
+          }
+        }
+      )
+    }
+
+
+  // Calcula el promedio de valoraciones
+  calcularPromedioValoracion(): number {
+    if (this.usuario?.valoraciones?.length) {
+      const suma = this.usuario.valoraciones.reduce((acc, val) => acc + val, 0);
+      return suma / this.usuario.valoraciones.length;
+    }
+    return 0;
+  }
+
+    // Convierte el promedio en estrellas llenas, medias y vacías
+    actualizarEstrellas() {
+      const promedio = this.calcularPromedioValoracion() / 2; // Promedio en una escala de 5
+      const estrellasLlenas = Math.floor(promedio);
+      const mediaEstrella = promedio % 1 >= 0.5 ? 1 : 0;
+      const estrellasVacias = 5 - estrellasLlenas - mediaEstrella;
+
+      this.stars = [
+        ...Array(estrellasLlenas).fill(1),  // Estrellas llenas
+        ...Array(mediaEstrella).fill(0.5),  // Media estrella (si aplica)
+        ...Array(estrellasVacias).fill(0),  // Estrellas vacías
+      ];
+    }
+
 
 // Carga datos del usuario
   accederAlosDatos()
@@ -72,6 +123,7 @@ validarValoracion() {
           next: (usuario : Usuario)=>
           {
             this.usuario = usuario;
+            this.actualizarEstrellas(); // Actualiza las estrellas
           },
           error: () =>
           {
@@ -86,5 +138,27 @@ validarValoracion() {
     {
       this.router.navigate([`realizar-reserva/${id}`]);
     }
+
+
+
+   // Envía la valoración al servicio y la añade a la lista de valoraciones
+   /*
+  enviarValoracion() {
+    this.validarValoracion();
+    if (this.valoracion !== null && this.usuario) {
+      this.service.agregarValoracion(this.usuario.id!, this.valoracion).subscribe(
+        (response) => {
+          // Añade la nueva valoración al array y calcula el promedio
+          this.usuario?.valoraciones!.push(this.valoracion!);
+          this.valoracion = null; // Limpia el campo de valoración
+          this.mostrarValoracionInput = false; // Oculta el input después de enviar
+        },
+        (error) => {
+          console.error('Error al enviar la valoración:', error);
+        }
+      );
+    }
+  }
+*/
 
 }
