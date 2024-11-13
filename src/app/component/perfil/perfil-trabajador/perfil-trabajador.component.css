@@ -58,7 +58,7 @@
   display: flex; /* Usa Flexbox */
   align-items: center; /* Alinea los elementos en el centro */
   color: #FFD700; /* Color dorado */
-  font-size: 20px; /* Tamaño de fuente */
+  font-size: 18px; /* Tamaño de fuente */
 }
 
 .perfil-detalles {
@@ -69,7 +69,7 @@
 }
 
 .perfil-detalles p {
-  margin: 10px 0; /* Margen vertical de 10px */
+  margin: 5px 0; /* Margen vertical de 10px */
   color: #444; /* Color gris oscuro */
   font-size: 16px; /* Tamaño de fuente */
 }
@@ -78,13 +78,8 @@
   color: #FF416C; /* Color rosado oscuro para el texto en negrita */
 }
 
-.perfil-detalles-buttons {
-  display: flex; /* Usa Flexbox */
-  justify-content: center; /* Centra los botones */
-  margin-top: 1rem; /* Espacio de 1 rem arriba */
-}
-
 .perfil-detalles button {
+  display: inline-block;
   padding: 8px 16px; /* Espacio interno de 8px vertical y 16px horizontal */
   border: none; /* Sin borde */
   border-radius: 4px; /* Esquinas redondeadas de 4px */
@@ -94,9 +89,44 @@
   font-weight: 900; /* Fuente muy gruesa */
   transition: all 0.3s ease; /* Transición suave de 0.3 segundos */
   margin-right: 0.7rem; /* Espacio a la derecha de 0.7 rem */
+  margin-top: 1rem;
 }
 
 .perfil-detalles button:hover {
   background-color: #C02348; /* Cambia el fondo al pasar el mouse */
   transform: scale(1.1); /* Agranda el botón un 10% al pasar el mouse */
+}
+
+/* Estilo del botón de valoración */
+.valoracion-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.valoracion-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo del input de valoración */
+.valoracion-input {
+  margin-top: 10px;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 200px;
+  transition: border-color 0.3s ease;
+}
+
+.valoracion-input:focus {
+  border-color: #007bff;
+  outline: none;
 }
