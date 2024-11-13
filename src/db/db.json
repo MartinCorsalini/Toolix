@@ -181,7 +181,7 @@
     },
     {
       "nombre": "ferchu",
-      "profesion": "peluquera",
+      "profesion": "Pintor/a",
       "disponibilidad": "10 a 20",
       "zona": "centro",
       "descripcion": "asdasdas",
@@ -231,14 +231,6 @@
       "direccion": "asdasd",
       "idUs": "520f",
       "idTr": "732b"
-    },
-    {
-      "id": "3e90",
-      "fecha": "2024-11-28",
-      "horario": "07:54",
-      "direccion": "San Martín 2267       ",
-      "idUs": "732b",
-      "idTr": "a1f8"
     }
   ]
 }

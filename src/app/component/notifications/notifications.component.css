@@ -75,3 +75,10 @@ body {
     background-color: #f44336;
     color: white;
 }
+
+.titulos {
+    margin: 100; /* Sin margen */
+    color: #333; /* Color gris oscuro */
+    font-size: 28px; /* Tamaño de fuente */
+    font-weight: bold; /* Texto en negrita */
+  }

@@ -1,43 +1,52 @@
+/* Aseguramos que html y body ocupen toda la altura de la ventana */
+html, body {
+  height: 100%;
+  margin: 0; /* Eliminar márgenes por defecto */
+  padding: 0; /* Eliminar padding por defecto */
+  display: grid; /* Usar grid para el centrado */
+  place-items: center; /* Centrado horizontal y vertical */
+  background-color: #f4f6f9; /* Fondo de página suave */
+}
+
 /* Contenedor principal */
 .faq-container {
-  max-width: 800px;
-  max-height: 800px;
-  margin: 0 auto;
+  width: 100%; /* Asegurar que el contenedor se ajusta al 100% disponible */
   padding: 20px;
-  background-color: #FFF3E0;
+  background-color: #FFF3E0; /* Fondo cálido y suave */
   border-radius: 8px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Para que padding no afecte el tamaño */
 }
 
 /* Título principal */
 .faq-container h1 {
   font-size: 2em;
   text-align: center;
-  color: #FF6F00;
+  color: #FF4B8C; /* Un tono similar al #FF416C, más suave pero aún vibrante */
   margin-bottom: 20px;
 }
 
 /* Pregunta de FAQ */
 .faq-item {
-  border-bottom: 1px solid #FFAB40;
+  border-bottom: 1px solid #FF6F61; /* Un rosa cálido que complementa bien */
   padding: 15px 0;
 }
 
 .faq-question {
   cursor: pointer;
-  background-color: #FFE0B2;
+  background-color: #FFCCBC; /* Un color suave y cálido, similar al tono de la pregunta */
   padding: 10px;
   border-radius: 4px;
   transition: background-color 0.3s;
 }
 
 .faq-question:hover {
-  background-color: #FFD54F;
+  background-color: #FF8A80; /* Un rosa más intenso en hover */
 }
 
 .faq-question h2 {
   font-size: 1.2em;
-  color: #E65100;
+  color: #FF4B8C; /* Mismo color para el texto del título de la pregunta */
   margin: 0;
 }
 
@@ -45,12 +54,12 @@
 .faq-answer {
   margin-top: 10px;
   padding: 10px;
-  background-color: #FFF8E1;
+  background-color: #FFEBEE; /* Un color más suave y claro para las respuestas */
   border-radius: 4px;
 }
 
 .faq-answer p {
-  color: #6D4C41;
+  color: black; /* Un marrón suave, cálido para las respuestas */
   font-size: 1em;
   margin: 0;
 }

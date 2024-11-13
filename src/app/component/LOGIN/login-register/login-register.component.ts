@@ -7,6 +7,7 @@ import { UsuariosService } from '../../../service/usuarios.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogoComponent } from '../../Inicio/cuadro-dialogo/cuadro-dialogo.component';
 import { AuthService } from '../../../service/auth.service';
+import { LoginContinuarRegistroComponent } from '../login-continuar-registro/login-continuar-registro.component';
 
 
 @Component({
@@ -29,6 +30,7 @@ export class LoginRegisterComponent implements OnInit {
   // Bandera para alternar el estilo visual del formulario entre login y registro
   //creo que no se usa
   isRightPanelActive: boolean = false;
+  selectedRole: string = '';
 
   // Inyectamos el servicio FormBuilder para crear los formularios
   constructor(private fb: FormBuilder, private us: UsuariosService, private dialog: MatDialog) {}
@@ -45,24 +47,27 @@ export class LoginRegisterComponent implements OnInit {
       this.signUpForm = this.fb.nonNullable.group({
         nombre: ['', Validators.required],
         email: ['', [Validators.required, Validators.email]],
-        password: ['', [Validators.required, Validators.minLength(7)]]
+        password: ['', [Validators.required, Validators.minLength(7)]],
+        rol: ['', [Validators.required]]
       });
+
+       // Escuchar cambios en el campo `rol` del formulario
+    this.signUpForm.get('rol')?.valueChanges.subscribe(value => {
+      this.selectedRole = value;
+    });
 
   }
 
   router = inject(Router);
   id : string | null = null;
-
   service= inject(UsuariosService);
-
   usuario? : Usuario;
-
-
+  userData: any = {}; // Variable para guardar los datos del primer formulario
 
   onSignUpSubmit()
   {
     if (this.signUpForm.invalid) return;
-    
+
     const usuario2 = this.signUpForm.getRawValue();
 
     this.addUsuarioDB(usuario2); // Agrego el usuario a la base de datos
@@ -97,6 +102,36 @@ export class LoginRegisterComponent implements OnInit {
           }
         }
       );
+  }
+
+  openContinuarRegistroDialog(): void {
+    if (this.signUpForm.valid) {
+      // Guarda los datos del primer formulario
+      this.userData = this.signUpForm.value;
+
+      // Abre el pop-up para el segundo formulario
+      const dialogRef = this.dialog.open(LoginContinuarRegistroComponent, {
+        panelClass: "custom-dialog-container"
+      });;
+
+      // Maneja el cierre del diálogo y recibe los datos del segundo formulario
+      dialogRef.afterClosed().subscribe(secondFormData => {
+        if (secondFormData) {
+          // Combina los datos de ambos formularios
+          const completeUserData = { ...this.userData, ...secondFormData };
+
+          // Envía los datos combinados a la base de datos
+          this.addUsuarioDB(completeUserData);
+        }
+      });
+    } else {
+      this.dialog.open(DialogoComponent, {
+        panelClass: "custom-dialog-container",
+        data: {
+          message: 'Ocurrió un error al registrar. Por favor, intente completar los datos del primer formulario.'
+        }
+      });
+    }
   }
 
 

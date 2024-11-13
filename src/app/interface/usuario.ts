@@ -5,14 +5,15 @@ export interface Usuario {
     nombre: string,
     email: string,
     password: string,
-    rol: string,
+    rol : string,
     reservas?: Reserva[],
 
     valoraciones?: number[],
     valoracion?: number,
     profesion?: string,
     disponibilidad?: string,
-    zona?: string, // telefono
+    zona?: string,
     descripcion?: string,
+    telefono?: string
 
 }

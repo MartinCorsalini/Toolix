@@ -1,77 +1,135 @@
 .perfil-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  flex-grow: 1; /* Ocupa el espacio restante entre navbar y footer */
-  background-color: #f9f9f9;
-  font-family: 'Montserrat', sans-serif;
-  box-sizing: border-box;
-  margin: 0; /* Elimina márgenes */
-  padding: 20px;
+  display: flex; /* Usa Flexbox para organizar los elementos hijos */
+  flex-direction: column; /* Coloca los elementos hijos en una columna */
+  align-items: center; /* Centra los elementos hijos horizontalmente */
+  justify-content: center; /* Centra los elementos hijos verticalmente */
+  width: 100vw; /* Hace que el ancho ocupe el 100% del viewport */
+  flex-grow: 1; /* Permite que este contenedor crezca si es necesario */
+  background-color: #f9f9f9; /* Fondo color gris claro */
+  font-family: 'Montserrat', sans-serif; /* Aplica la fuente Montserrat */
+  box-sizing: border-box; /* Incluye el padding y borde dentro del ancho/alto */
+  margin: 0; /* Elimina el margen externo */
+  padding: 20px; /* Agrega 20px de espacio alrededor del contenido */
 }
 
-
-/* Cuadro alrededor del perfil */
 .perfil-box {
-  border: 3px solid #FF416C; /* Borde del mismo color que las letras */
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: white;
-  max-width: 600px;
-  width: 100%;
-  box-sizing: border-box;
+  border: 3px solid #FF416C; /* Borde de 3px color rosado oscuro */
+  padding: 20px; /* Espacio interno de 20px */
+  border-radius: 8px; /* Esquinas redondeadas de 8px */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del cuadro */
+  background-color: #f8f9fb; /* Fondo blanco */
+  max-width: 600px; /* Ancho máximo de 600px */
+  width: 100%; /* Ancho completo disponible del contenedor */
+  box-sizing: border-box; /* Incluye el padding y borde en el ancho total */
 }
 
-/* Ajusta el encabezado del perfil */
 .perfil-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px; /* Más separación hacia abajo */
+  display: flex; /* Usa Flexbox para organizar los elementos hijos */
+  flex-direction: column; /* Coloca los elementos en una columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  margin-bottom: 20px; /* Espacio de 20px debajo del contenedor */
 }
 
 .perfil-foto {
-  width: 120px; /* Tamaño más grande */
-  height: 120px;
-  border-radius: 50%;
-  margin-right: 20px;
-  object-fit: cover;
+  width: 120px; /* Ancho de la foto */
+  height: 120px; /* Alto de la foto */
+  border-radius: 50%; /* Hace que la imagen sea circular */
+  margin-right: 0; /* Sin margen derecho */
+  margin-bottom: 10px; /* Espacio de 10px debajo de la imagen */
+  object-fit: cover; /* Asegura que la imagen mantenga su aspecto */
 }
 
 .perfil-info h2 {
-  margin: 0;
-  color: #333;
-  font-size: 28px; /* Tamaño más grande */
-  font-weight: bold;
+  margin: 0; /* Sin margen */
+  color: #FF416C; /* Color gris oscuro */
+  font-size: 28px; /* Tamaño de fuente */
+  font-weight: bold; /* Texto en negrita */
 }
 
 .profesion {
-  margin: 5px 0;
-  color: #555;
-  font-size: 18px; /* Tamaño más grande */
-}
-
-.perfil-rating {
-  display: flex;
-  align-items: center;
-  color: #FFD700;
-  font-size: 20px; /* Tamaño más grande */
-}
-
-/* Detalles del perfil con texto más grande */
-.perfil-detalles p {
-  margin: 12px 0;
-  color: #444;
-  font-size: 16px;
-}
-
-.perfil-detalles p strong {
-  color: #FF416C;
+  margin: 5px 0; /* Margen vertical de 5px */
+  color: #555; /* Color gris medio */
+  font-size: 18px; /* Tamaño de fuente */
 }
 
 
-.colorRojo{
-  color:red;
+.perfil-detalles {
+  display: flex; /* Usa Flexbox */
+  flex-direction: column; /* Coloca los elementos en columna */
+  align-items: center; /* Centra horizontalmente */
+  margin-top: 20px; /* Espacio de 20px arriba */
+  width: 100%; /* Ocupa el 100% del ancho del contenedor */
+}
+
+.perfil-detalles div {
+  width: 100%; /* Hace que los inputs ocupen todo el ancho disponible */
+  margin-bottom: 10px; /* Espacio entre cada input */
+}
+
+.perfil-detalles label {
+  display: block; /* Hace que los labels ocupen toda la línea */
+  font-weight: bold; /* Pone los labels en negrita */
+  color: #FF416C; /* Color especificado */
+  margin-bottom: 5px; /* Espacio debajo del label */
+}
+
+.perfil-detalles input,
+.perfil-detalles select {
+  width: 100%; /* Asegura que los inputs ocupen todo el ancho disponible */
+  padding: 8px; /* Espaciado interno */
+  border: 1px solid #ddd; /* Borde suave */
+  border-radius: 4px; /* Bordes redondeados */
+  font-size: 16px; /* Tamaño de fuente */
+}
+
+.perfil-detalles input[type="text"],
+.perfil-detalles select {
+  margin-bottom: 5px; /* Margen inferior */
+}
+
+.colorRojo {
+  color: red; /* Color rojo para los errores */
+  font-size: 12px; /* Tamaño pequeño para los errores */
+}
+
+.perfil-detalles button {
+  display: block; /* Hace que el botón ocupe toda la línea */
+  width: 200px; /* Tamaño fijo para el botón */
+  padding: 12px; /* Relleno interno */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Bordes redondeados */
+  background-color: #FF416C; /* Fondo rosado oscuro */
+  color: white; /* Texto blanco */
+  cursor: pointer; /* Puntero cuando pasas el ratón */
+  font-weight: 900; /* Fuente en negrita */
+  margin: 20px auto 0; /* Centra el botón y da margen superior */
+  transition: all 0.3s ease; /* Efecto de transición */
+}
+
+.perfil-detalles button:hover {
+  background-color: #C02348; /* Cambia el fondo al pasar el mouse */
+  transform: scale(1.1); /* Agranda el botón un 10% al pasar el mouse */
+}
+
+.perfil-detalles select {
+  width: 100%; /* Asegura que el select ocupe todo el ancho disponible */
+  padding: 8px; /* Espaciado interno igual al de los inputs */
+  border: 1px solid #ddd; /* Borde suave */
+  border-radius: 4px; /* Bordes redondeados */
+  font-size: 16px; /* Tamaño de fuente igual al de los inputs */
+  background-color: white; /* Fondo blanco para que coincida con el input */
+}
+
+.perfil-detalles select::-ms-expand {
+  display: none; /* Oculta el triángulo de la flecha en IE y Edge */
+}
+
+input, select {
+  width: 100%; /* Asegura que ocupen el 100% del ancho disponible */
+  padding: 8px; /* Relleno interno igual para ambos */
+  border: 1px solid #ddd; /* Borde suave */
+  border-radius: 4px; /* Bordes redondeados */
+  font-size: 16px; /* Tamaño de fuente igual para todos */
+  background-color: white; /* Fondo blanco para todos */
+  box-sizing: border-box; /* Incluye padding y border en el tamaño total */
 }
