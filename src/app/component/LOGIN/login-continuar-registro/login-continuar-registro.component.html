@@ -1,0 +1,77 @@
+<div mat-dialog-content>
+  <form [formGroup]="signUpForm2" (ngSubmit)="onSubmit()">
+    <!-- Profesión -->
+    <input
+      type="text"
+      placeholder="Profesión"
+      formControlName="profesion"
+    />
+    <div *ngIf="signUpForm2.controls['profesion'].hasError('required') && signUpForm2.controls['profesion'].touched" class="error">
+      * Campo obligatorio.
+    </div>
+
+    <!-- Disponibilidad -->
+    <input
+      type="time"
+      class="time-placeholder"
+      formControlName="disponibilidad"
+    />
+    <div *ngIf="signUpForm2.controls['disponibilidad'].hasError('required') && signUpForm2.controls['disponibilidad'].touched" class="error">
+      * Campo obligatorio.
+    </div>
+
+    <!-- Descripción -->
+    <input
+      type="text"
+      placeholder="Descripción del Servicio"
+      formControlName="descripcion"
+    />
+    <div *ngIf="signUpForm2.controls['descripcion'].hasError('required') && signUpForm2.controls['descripcion'].touched" class="error">
+      * Campo obligatorio.
+    </div>
+    <div *ngIf="signUpForm2.controls['descripcion'].hasError('maxlength') && signUpForm2.controls['descripcion'].touched" class="error">
+      * La descripción no debe exceder el límite de caracteres permitido.
+    </div>
+
+    <!-- Zona -->
+    <select
+      formControlName="zona"
+    >
+      <option value="" selected hidden>Seleccione una Zona</option>
+      <option>Centro</option>
+      <option>La Perla</option>
+      <option>Playa Grande</option>
+      <option>Los Troncos</option>
+      <option>Punta Mogotes</option>
+      <option>Constitución</option>
+      <option>Barrio Chauvin</option>
+      <option>Bosque Peralta Ramos</option>
+      <option>Alfar</option>
+      <option>Camet</option>
+      <option>San Carlos</option>
+      <option>Caisamar</option>
+      <option>Faro Norte</option>
+      <option>Barrio San José</option>
+      <option>Otro</option>
+    </select>
+    <div *ngIf="signUpForm2.controls['zona'].hasError('required') && signUpForm2.controls['zona'].touched" class="error">
+      * Campo obligatorio.
+    </div>
+
+    <!-- Teléfono -->
+    <input
+      type="text"
+      placeholder="Teléfono"
+      formControlName="telefono"
+    />
+    <div *ngIf="signUpForm2.controls['telefono'].hasError('required') && signUpForm2.controls['telefono'].touched" class="error">
+      * Campo obligatorio.
+    </div>
+
+    <!-- Botón de acción -->
+    <div mat-dialog-actions>
+      <button mat-button type="submit">Terminar Registro</button>
+      <button mat-button type="button" (click)="closeDialog()">Cancelar</button>
+    </div>
+  </form>
+</div>
