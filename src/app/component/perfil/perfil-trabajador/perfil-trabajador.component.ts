@@ -29,7 +29,7 @@ export class PerfilTrabajadorComponent implements OnInit {
   id : string | null = null;
 
 
-  fotoUrl = 'assets/images/electricista.jpeg';  // Ruta de la foto de perfil
+  fotoUrl = 'assets/avatar/avatar.png';  // Ruta de la foto de perfil
 
 
 

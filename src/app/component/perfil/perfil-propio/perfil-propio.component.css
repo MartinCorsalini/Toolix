@@ -72,3 +72,21 @@
 .perfil-detalles p strong {
   color: #FF416C;
 }
+
+.perfil-detalles button{
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #FF416C;
+  color: white;
+  cursor: pointer;
+  font-weight: 900;
+  transition: all 0.3s ease;
+  margin-right: 0.7rem;
+}
+
+.perfil-detalles button:hover{
+  background-color: #C02348;
+  transform: scale(1.1);
+}
+
