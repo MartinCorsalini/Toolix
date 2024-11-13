@@ -1,1 +1,12 @@
-{}
+{
+  "reservas": [
+    {
+      "id": "de71",
+      "fecha": "2024-11-13",
+      "horario": "17:56",
+      "direccion": "DSDd",
+      "idUs": "5dde",
+      "idTr": "732b"
+    }
+  ]
+}

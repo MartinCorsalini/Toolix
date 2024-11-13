@@ -6,7 +6,10 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "db1": "json-server --watch db/usuarios.json --port 3000",
+    "db2": "json-server --watch db/reservas.json --port 4000",
+    "start:all": "npx npm-run-all --parallel db1 db2"
   },
   "private": true,
   "dependencies": {
