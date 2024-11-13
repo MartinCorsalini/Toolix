@@ -62,8 +62,8 @@ export class AltaBajaReservaComponent implements OnInit {
   //
   addReservaDB(reserva: Reserva) {
     reserva.idUs = this.usuarioActualId;
-    reserva.idTr= this.trabajadorId;
-    //reserva.trabajadorId = this.trabajadorSeleccionadoId; /
+    reserva.idTr = this.trabajadorId;
+
     this.rs.postReserva(reserva).subscribe(
       {
         next: (reserva: Reserva) => {
