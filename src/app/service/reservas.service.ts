@@ -21,7 +21,7 @@ export class ReservasService {
   }
 
   postReserva(reserva:Reserva): Observable<Reserva>{
-    return this.http.post<Reserva>('${this.urlBase}',reserva);
+    return this.http.post<Reserva>(this.urlBase, reserva);
  }
       
   

@@ -3,12 +3,16 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsuariosService } from '../../../service/usuarios.service';
 import { Usuario } from '../../../interface/usuario';
+
 import { NavbarPrivateComponent } from '../../../shared/navbar-private/navbar-private.component';
+
 
 @Component({
   selector: 'app-modificar-perfil',
   standalone: true,
+
   imports: [NavbarPrivateComponent, ReactiveFormsModule],
+
   templateUrl: './modificar-perfil.component.html',
   styleUrl: './modificar-perfil.component.css'
 })

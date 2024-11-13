@@ -18,6 +18,7 @@ import { AuthService } from '../../../../service/auth.service';
 export class LoginSignInComponent implements OnInit {
 
   signInForm!: FormGroup;  // ¡Aseguramos que se inicializa antes de usarse!
+
   auth = inject(AuthService);
   router = inject(Router);
 
@@ -78,6 +79,4 @@ export class LoginSignInComponent implements OnInit {
       error: (e: Error) => {
         console.log("Error", e.message);
       }
-    });
-  }
 }

@@ -11,22 +11,24 @@ import { AuthService } from '../../service/auth.service';
   styleUrl: './navbar-private.component.css'
 })
 export class NavbarPrivateComponent implements OnInit {
-  ngOnInit(): void  //Verfica el token, si estoy logueado o no
+  ngOnInit(): void
   {
-    if(localStorage.getItem('token'))
-    {//Se fija si tengo un token en el localStorage
-      //this.textButton= 'LogOut'
-      this.auth.logIn() //Me logeo. Coloca el "estoyLogeado" del service en true
-      //this.route.navigateByUrl('home'); // al logearme me lleva a esta pagina
-    }
+    this.authService.currentUserId$.subscribe(id => {
+      this.userId = id;
+    });
+
   }
 
+  userId: string | undefined = undefined;
+
+  constructor(private authService: AuthService) {}
+
   logoUrl: string = 'assets/images/logo.jpeg';
+
 
   isProfileOpen = false;
   route = inject(Router)
 
-  //constructor(private router: Router) {} //! CREO QUE ESTO LO TENEMOS QUE BORRAR, CHECKEAR
 
   openDropdown() {
     this.isProfileOpen = true;
@@ -36,17 +38,15 @@ export class NavbarPrivateComponent implements OnInit {
     this.isProfileOpen = false;
   }
 
-  /*
-  logout() {
-    console.log('Cerrar sesión');
-    this.closeDropdown();
-    this.route.navigate(['/login']);
-  }
-*/
-
-  irADetalles(id:string)
+  irADetalles()
   {
-    this.route.navigate([`detalles/${id}`]);
+    this.route.navigate([`perfil-propio/${this.userId}`]);
+  }
+
+  irAHome()
+  {
+    console.log('id'+ this.userId);
+    this.route.navigate([`home/${this.userId}`]);
   }
 
 

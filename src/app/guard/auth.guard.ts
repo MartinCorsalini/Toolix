@@ -14,6 +14,7 @@ export const authGuard = (requisito: boolean = true)=>{
     const router = inject(Router);
 
     const isAuthenticated = authService.estaLogeado(); // Verifica el estado de autenticación
+    const userId = authService.getUserId(); // Obtén el userId del servicio de autenticación
 
     //Va al AuthService y se fija en que estado se encuentra el atributo "estoyLogeado"
     if(requisito && isAuthenticated)
@@ -33,7 +34,7 @@ export const authGuard = (requisito: boolean = true)=>{
         // lo redirigimos a la página de `login`.
         // Si la ruta NO requiere autenticación (requisito = false) pero el usuario ESTÁ autenticado,
         // lo redirigimos a la página de `home`.
-       const redirectRoute = requisito ? 'login' : 'home';
+       const redirectRoute = requisito ? 'login' : `/home/${userId}`;
        // - Si requisito es true: La ruta requiere autenticación, pero el usuario no está autenticado. Por lo tanto, redirigimos a login.
        // - Si requisito es false: La ruta no debería permitir acceso a usuarios autenticados, pero el usuario ya está autenticado. Por lo tanto, redirigimos a home.
        router.navigateByUrl(redirectRoute);

@@ -1,0 +1,168 @@
+{
+  "usuarios": [
+    {
+      "nombre": "Emilio",
+      "profesion": "Gasistaa",
+      "disponibilidad": "10 hs a 18 hs",
+      "zona": "Centro, Guemes, Puerto",
+      "descripcion": "dejo todo impecable",
+      "email": "emiliomernes@hotmail.com",
+      "password": null,
+      "rol": null,
+      "id": "732b"
+    },
+    {
+      "nombre": "Martin Corsalini",
+      "profesion": "Electricista",
+      "disponibilidad": "10 hs a 18 hs",
+      "zona": "La perla",
+      "descripcion": "tipaso",
+      "email": "martincorsa@outlook.com",
+      "password": "laskdamlsdanslkd",
+      "rol": null,
+      "id": "18e9"
+    },
+    {
+      "nombre": "Juanito",
+      "profesion": "Gasista",
+      "disponibilidad": "10 hs a 18 hs",
+      "zona": "Centro, Guemes, La perla",
+      "descripcion": "otro tipaso",
+      "email": "juanirelok@hotmail.com",
+      "password": "alskdnalskdna",
+      "rol": null,
+      "id": "a1f8"
+    },
+    {
+      "nombre": "Juanita Pepes",
+      "profesion": "Peluquera",
+      "disponibilidad": "10 hs a 20 hs",
+      "zona": "Guemes",
+      "descripcion": "Quedas re fachera",
+      "email": "pepesju@hotmail.com",
+      "password": "alksnaslkd",
+      "rol": null,
+      "id": "55d4"
+    },
+    {
+      "nombre": "Jose",
+      "profesion": "Electricista",
+      "disponibilidad": "10 hs a 15 hs",
+      "zona": "Constitucion",
+      "descripcion": "Arreglo todo super bien",
+      "email": "jose@hotmail.com",
+      "password": "alskdnalsd",
+      "rol": null,
+      "id": "8eb5"
+    },
+    {
+      "nombre": "Leonardo",
+      "profesion": "Gasista",
+      "disponibilidad": "10 hs a 15 hs",
+      "zona": "La perla",
+      "descripcion": "excelente servicio",
+      "email": "leonardo@outlook.com",
+      "password": "laskndalksd",
+      "rol": null,
+      "id": "bb75"
+    },
+    {
+      "nombre": "juanooo",
+      "profesion": "Limpieza",
+      "disponibilidad": "10 hs a 20 hs",
+      "zona": "Centro, Guemes, Puerto",
+      "descripcion": "Otro tipaso",
+      "email": "juanooooo@hotmail.com",
+      "password": "lksdfnskdf",
+      "rol": null,
+      "id": "ef56"
+    },
+    {
+      "nombre": "fgfg",
+      "profesion": "sfg",
+      "disponibilidad": "sdg",
+      "zona": "sg",
+      "descripcion": "sdg",
+      "email": "aaaaaaaa@hotmail.com",
+      "password": "dfgdfgdfgdgf",
+      "rol": null,
+      "id": "6ec4"
+    },
+    {
+      "nombre": "Luli",
+      "profesion": "sdf",
+      "disponibilidad": "sdf",
+      "zona": "dsf",
+      "descripcion": "sdf",
+      "email": "lulita@hotmail.com",
+      "password": "kalnsdlkasd",
+      "rol": null,
+      "id": "ae9e"
+    },
+    {
+      "nombre": "Julietaaaa",
+      "profesion": "Limpieza",
+      "disponibilidad": "10 hs a 15 hs",
+      "zona": "La perla",
+      "descripcion": "sdf",
+      "email": "juli@hotmail.com",
+      "password": "anfalksfnaklfs",
+      "rol": null,
+      "id": "236c"
+    },
+    {
+      "nombre": "Pepeeeeeee",
+      "profesion": "Gasista",
+      "disponibilidad": "10 hs a 20 hs",
+      "zona": "La perla",
+      "descripcion": "mmmmmmm",
+      "email": "pepe@outlook.com",
+      "password": "skndalskdiuhi",
+      "rol": null,
+      "id": "3f87"
+    },
+    {
+      "nombre": "njknk",
+      "profesion": "klml",
+      "disponibilidad": "10 hs a 20 hs",
+      "zona": "Centro, Guemes, Puerto",
+      "email": "micaelaprieto@outlook.com",
+      "password": "jnkkjnn kkjnk",
+      "rol": null,
+      "id": "5592"
+    },
+    {
+      "nombre": "Lau",
+      "profesion": "Limpieza",
+      "disponibilidad": "10 hs a 15 hs",
+      "zona": "Centro, Guemes, Puerto",
+      "descripcion": "afsdf",
+      "email": "lauuu@hotmail.com",
+      "password": "klsmdklasda",
+      "rol": null,
+      "id": "1547"
+    },
+    {
+      "nombre": "Roqueeeeeeee",
+      "profesion": "Gasista",
+      "disponibilidad": "10 hs a 20 hs",
+      "zona": "La perla",
+      "descripcion": "sefsefs",
+      "email": "roquefif@hotmail.com",
+      "password": "ksnflaksdnas",
+      "rol": null,
+      "id": "996a"
+    },
+    {
+      "nombre": " Micaela",
+      "profesion": "Limpieza",
+      "disponibilidad": "10 hs a 20 hs",
+      "zona": "Centro, Guemes, Puerto",
+      "descripcion": "Dejo todo super limpio",
+      "email": "micael@hotmail.com",
+      "password": "ajsdnkaskd",
+      "rol": null,
+      "id": "e858"
+    }
+  ]
+}

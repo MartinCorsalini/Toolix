@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { NavbarPrivateComponent } from '../../../shared/navbar-private/navbar-private.component';
+import { NavbarPrivateComponent } from '../../shared/navbar-private/navbar-private.component';
 
 @Component({
   selector: 'app-faq',
