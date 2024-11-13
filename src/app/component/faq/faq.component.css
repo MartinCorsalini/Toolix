@@ -1,65 +1,59 @@
-/* Aseguramos que html y body ocupen toda la altura de la ventana */
-html, body {
-  height: 100%;
-  margin: 0; /* Eliminar márgenes por defecto */
-  padding: 0; /* Eliminar padding por defecto */
-  display: grid; /* Usar grid para el centrado */
-  place-items: center; /* Centrado horizontal y vertical */
-  background-color: #f4f6f9; /* Fondo de página suave */
-}
-
-/* Contenedor principal */
+/* Estilos generales, sin modificar el grid en html y body */
 .faq-container {
-  width: 100%; /* Asegurar que el contenedor se ajusta al 100% disponible */
+  display: flex; /* Usamos flexbox para asegurarnos que el contenido se adapte */
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px; /* Limitar el ancho máximo del contenedor */
+  margin: 0 auto  ; /* Centrado en la página */
   padding: 20px;
-  background-color: #FFF3E0; /* Fondo cálido y suave */
+  background-color: #FFF3E0;
   border-radius: 8px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box; /* Para que padding no afecte el tamaño */
+  box-sizing: border-box;
+  flex-grow: 1; /* Permite que el contenedor de FAQ ocupe el espacio disponible */
 }
 
-/* Título principal */
 .faq-container h1 {
   font-size: 2em;
   text-align: center;
-  color: #FF4B8C; /* Un tono similar al #FF416C, más suave pero aún vibrante */
+  color: #FF4B8C;
   margin-bottom: 20px;
 }
 
-/* Pregunta de FAQ */
+/* Agregamos esta clase para evitar que el contenido sobresalga */
 .faq-item {
-  border-bottom: 1px solid #FF6F61; /* Un rosa cálido que complementa bien */
+  border-bottom: 1px solid #FF6F61;
   padding: 15px 0;
+
 }
 
 .faq-question {
   cursor: pointer;
-  background-color: #FFCCBC; /* Un color suave y cálido, similar al tono de la pregunta */
+  background-color: #FFCCBC;
   padding: 10px;
   border-radius: 4px;
   transition: background-color 0.3s;
 }
 
 .faq-question:hover {
-  background-color: #FF8A80; /* Un rosa más intenso en hover */
+  background-color: #FF8A80;
 }
 
 .faq-question h2 {
   font-size: 1.2em;
-  color: #FF4B8C; /* Mismo color para el texto del título de la pregunta */
+  color: #FF4B8C;
   margin: 0;
 }
 
-/* Respuesta de FAQ */
 .faq-answer {
   margin-top: 10px;
   padding: 10px;
-  background-color: #FFEBEE; /* Un color más suave y claro para las respuestas */
+  background-color: #FFEBEE;
   border-radius: 4px;
 }
 
 .faq-answer p {
-  color: black; /* Un marrón suave, cálido para las respuestas */
+  color: black;
   font-size: 1em;
   margin: 0;
 }
