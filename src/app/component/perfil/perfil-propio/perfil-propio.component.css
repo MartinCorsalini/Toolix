@@ -1,92 +1,98 @@
 /* Asegura que el componente ocupe toda la pantalla */
 /* perfil-container ocupa todo el espacio disponible */
 .perfil-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  flex-grow: 1; /* Ocupa el espacio restante entre navbar y footer */
-  background-color: #f9f9f9;
-  font-family: 'Montserrat', sans-serif;
-  box-sizing: border-box;
-  margin: 0; /* Elimina márgenes */
-  padding: 20px;
+  display: flex; /* Usa Flexbox para organizar los elementos hijos */
+  flex-direction: column; /* Coloca los elementos hijos en una columna */
+  align-items: center; /* Centra los elementos hijos horizontalmente */
+  justify-content: center; /* Centra los elementos hijos verticalmente */
+  width: 100vw; /* Hace que el ancho ocupe el 100% del viewport */
+  flex-grow: 1; /* Permite que este contenedor crezca si es necesario */
+  background-color: #f9f9f9; /* Fondo color gris claro */
+  font-family: 'Montserrat', sans-serif; /* Aplica la fuente Montserrat */
+  box-sizing: border-box; /* Incluye el padding y borde dentro del ancho/alto */
+  margin: 0; /* Elimina el margen externo */
+  padding: 20px; /* Agrega 20px de espacio alrededor del contenido */
 }
 
-
-/* Cuadro alrededor del perfil */
 .perfil-box {
-  border: 3px solid #FF416C; /* Borde del mismo color que las letras */
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: white;
-  max-width: 600px;
-  width: 100%;
-  box-sizing: border-box;
+  border: 3px solid #FF416C; /* Borde de 3px color rosado oscuro */
+  padding: 20px; /* Espacio interno de 20px */
+  border-radius: 8px; /* Esquinas redondeadas de 8px */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del cuadro */
+  background-color: #f8f9fb; /* Fondo blanco */
+  max-width: 600px; /* Ancho máximo de 600px */
+  width: 100%; /* Ancho completo disponible del contenedor */
+  box-sizing: border-box; /* Incluye el padding y borde en el ancho total */
 }
 
-/* Ajusta el encabezado del perfil */
 .perfil-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px; /* Más separación hacia abajo */
+  display: flex; /* Usa Flexbox para organizar los elementos hijos */
+  flex-direction: column; /* Coloca los elementos en una columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  margin-bottom: 20px; /* Espacio de 20px debajo del contenedor */
 }
 
 .perfil-foto {
-  width: 120px; /* Tamaño más grande */
-  height: 120px;
-  border-radius: 50%;
-  margin-right: 20px;
-  object-fit: cover;
+  width: 120px; /* Ancho de la foto */
+  height: 120px; /* Alto de la foto */
+  border-radius: 50%; /* Hace que la imagen sea circular */
+  margin-right: 0; /* Sin margen derecho */
+  margin-bottom: 10px; /* Espacio de 10px debajo de la imagen */
+  object-fit: cover; /* Asegura que la imagen mantenga su aspecto */
 }
 
 .perfil-info h2 {
-  margin: 0;
-  color: #333;
-  font-size: 28px; /* Tamaño más grande */
-  font-weight: bold;
+  margin: 0; /* Sin margen */
+  color: #333; /* Color gris oscuro */
+  font-size: 28px; /* Tamaño de fuente */
+  font-weight: bold; /* Texto en negrita */
 }
 
 .profesion {
-  margin: 5px 0;
-  color: #555;
-  font-size: 18px; /* Tamaño más grande */
+  margin: 5px 0; /* Margen vertical de 5px */
+  color: #555; /* Color gris medio */
+  font-size: 18px; /* Tamaño de fuente */
 }
 
 .perfil-rating {
-  display: flex;
-  align-items: center;
-  color: #FFD700;
-  font-size: 20px; /* Tamaño más grande */
+  display: flex; /* Usa Flexbox */
+  align-items: center; /* Alinea los elementos en el centro */
+  color: #FFD700; /* Color dorado */
+  font-size: 18px; /* Tamaño de fuente */
 }
 
-/* Detalles del perfil con texto más grande */
+.perfil-detalles {
+  display: flex; /* Usa Flexbox */
+  flex-direction: column; /* Coloca los elementos en columna */
+  align-items: center; /* Centra horizontalmente */
+  margin-top: 20px; /* Espacio de 20px arriba */
+}
+
 .perfil-detalles p {
-  margin: 12px 0;
-  color: #444;
-  font-size: 16px;
+  margin: 5px 0; /* Margen vertical de 10px */
+  color: #444; /* Color gris oscuro */
+  font-size: 16px; /* Tamaño de fuente */
 }
 
 .perfil-detalles p strong {
-  color: #FF416C;
+  color: #FF416C; /* Color rosado oscuro para el texto en negrita */
 }
 
-.perfil-detalles button{
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  background-color: #FF416C;
-  color: white;
-  cursor: pointer;
-  font-weight: 900;
-  transition: all 0.3s ease;
-  margin-right: 0.7rem;
+.perfil-detalles button {
+  display: inline-block;
+  padding: 8px 16px; /* Espacio interno de 8px vertical y 16px horizontal */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Esquinas redondeadas de 4px */
+  background-color: #FF416C; /* Fondo rosado oscuro */
+  color: white; /* Texto blanco */
+  cursor: pointer; /* Muestra un cursor de mano */
+  font-weight: 900; /* Fuente muy gruesa */
+  transition: all 0.3s ease; /* Transición suave de 0.3 segundos */
+  margin-right: 0.7rem; /* Espacio a la derecha de 0.7 rem */
+  margin-top: 1rem;
 }
 
-.perfil-detalles button:hover{
-  background-color: #C02348;
-  transform: scale(1.1);
+.perfil-detalles button:hover {
+  background-color: #C02348; /* Cambia el fondo al pasar el mouse */
+  transform: scale(1.1); /* Agranda el botón un 10% al pasar el mouse */
 }
-
