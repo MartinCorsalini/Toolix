@@ -6,59 +6,67 @@ import { NavbarPrivateComponent } from "../../shared/navbar-private/navbar-priva
 import { UsuariosService } from '../../service/usuarios.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from '../../interface/usuario';
-
-
+import { MatDialog } from '@angular/material/dialog';
+import { DialogoComponent } from '../../component/Inicio/cuadro-dialogo/cuadro-dialogo.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-inicio-page',
   standalone: true,
-  imports: [SearchBarComponent, NavbarPrivateComponent, CardComponent],
+  imports: [SearchBarComponent, NavbarPrivateComponent, CardComponent, CommonModule],
   templateUrl: './inicio-page.component.html',
   styleUrl: './inicio-page.component.css'
 })
 export class InicioPageComponent implements OnInit {
 
+  perfiles: Usuario[] = [];           // Todos los perfiles de usuarios
+  perfilesFiltrados: Usuario[] = [];   // Perfiles filtrados según el término de búsqueda
+  service = inject(UsuariosService);
+  ar = inject(ActivatedRoute);
+  router = inject(Router);
+  dialog = inject(MatDialog);
+
   ngOnInit(): void {
-   // this.accederAlosDatos();
+    this.cargarPerfiles();
   }
 
-  service= inject(UsuariosService);
-  ar= inject(ActivatedRoute);
-  router = inject(Router);
+  // Carga todos los perfiles al inicializar el componente
+  cargarPerfiles(): void {
+    this.service.getUsuarios().subscribe(
+      (usuarios: Usuario[]) => {
+        this.perfiles = usuarios;
+        this.perfilesFiltrados = usuarios; // Inicialmente muestra todos los perfiles
+      },
+      error => {
+        console.error('Error al cargar los perfiles:', error);
+      }
+    );
+  }
 
-  usuario?: Usuario; // Dejo los datos del usuario acá por si los necesitamos para algo
-  id : string | null = null;
+  // Filtra los perfiles según el término de búsqueda
+  filtrarPerfiles(profesion: string): void {
+    const termino = profesion.toLowerCase();
+    this.perfilesFiltrados = this.perfiles.filter(perfil =>
+      perfil.profesion?.toLowerCase().includes(termino)
+    );
 
-  accederAlosDatos()
-    {
-      this.ar.paramMap.subscribe(
-        {
-          next: (param)=>
-          {
-              this.id = param.get('id'); // Acá se guarda el id sacado de la ruta
-              this.getById()
-          },
-          error: ()=>{
-            alert('Error al acceder a los datos');
-          }
-        }
-      )
+    if (this.perfilesFiltrados.length === 0) {
+      this.mostrarMSJError(); // Muestra el diálogo si no hay resultados
     }
+  }
 
-    getById() //ESTO POR AHORA NO SE USA, ya que no hacemos nada con los datos del usuario en la page
-    {
-      this.service.getUsuarioById(this.id).subscribe(
-        {
-          next: (usuario : Usuario)=>
-          {
-            this.usuario = usuario;
-          },
-          error: () =>
-          {
-            //alert('Error al acceder a los datos');
-          }
-        }
-    )
-    }
+  resetFiltro(): void {
+    this.perfilesFiltrados = this.perfiles; // Restablece la lista completa de perfiles
+  }
 
+  mostrarMSJError(){
+    this.dialog.open(DialogoComponent, {
+      panelClass: "custom-dialog-container",
+      data: {
+        message: 'No existen perfiles con esa profesión. Por favor, intente de nuevo.'
+      }
+    });
+  }
+
+   
 }

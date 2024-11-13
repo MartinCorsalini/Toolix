@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-perfil-trabajador',
   standalone: true,
-  imports: [NavbarPrivateComponent, CommonModule],
+  imports: [NavbarPrivateComponent, CommonModule, RouterLink],
   templateUrl: './perfil-trabajador.component.html',
   styleUrl: './perfil-trabajador.component.css'
 })
