@@ -1,11 +1,13 @@
-<div class="container">
-  <div class="forgot-password-container">
-    <form [formGroup]="forgotPasswordForm" (ngSubmit)="onForgotPasswordSubmit()">
-      <h1>Olvidaste tu Contraseña</h1>
-      <span>Ingresa tu correo electrónico para recibir un enlace para restablecer tu contraseña.</span>
-      <input formControlName="email" type="email" placeholder="Email" required />
-      <button type="submit">Enviar</button>
-      <a routerLink="/signIn" class="back-to-login">Volver a Iniciar Sesión</a>
-    </form>
+<div class="wrapper">
+  <div class="container">
+    <div class="forgot-password-container">
+      <form [formGroup]="forgotPasswordForm" (ngSubmit)="onForgotPasswordSubmit()">
+        <h1>Olvidaste tu Contraseña</h1>
+        <span>Ingresa tu correo electrónico para recibir un enlace para restablecer tu contraseña.</span>
+        <input formControlName="email" type="email" placeholder="Email" required />
+        <button type="submit">Enviar</button>
+        <a routerLink="/signIn" class="back-to-login">Volver a Iniciar Sesión</a>
+      </form>
+    </div>
   </div>
 </div>
