@@ -11,3 +11,4 @@ main {
     padding: 0 20px; /* Opcional: para añadir espacio alrededor del grid */
     box-sizing: border-box; /* Asegura que el padding no se sume al ancho */
   }
+

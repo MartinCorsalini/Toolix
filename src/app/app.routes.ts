@@ -21,7 +21,7 @@ export const appRoutes: Routes = [
     {
       path: 'login',
       component: LoginPageComponent,
-      //canActivate: [() => authGuard(false)]  
+      //canActivate: [() => authGuard(false)]
     },
     {
       path: 'olvidaste-contrasenia',
@@ -53,12 +53,6 @@ export const appRoutes: Routes = [
       path: 'terminos-servicio',
       component: TerminosServicioComponent
     },
-
-
-
-
-
-
     {
       path: 'perfil-trabajador/:id',
       component: PerfilTrabajadorComponent,
@@ -79,7 +73,6 @@ export const appRoutes: Routes = [
        canActivate : [authGuard] //SI ESTOY LOGEADO
 
     },
-
     {
       path: 'realizar-reserva/:id',
       component: AltaBajaPageComponent,

@@ -13,6 +13,7 @@
     background-color:#F5F5F5;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 0.5rem;
+    transform: translateX(50px);
   }
 
   .image {
@@ -117,8 +118,9 @@
   grid-template-columns: repeat(3, 1fr); /* 3 columnas */
   gap: 50px; /* Espaciado entre las tarjetas */
   width: 100%; /* Asegura que ocupe todo el ancho disponible */
-  max-width: 900px; /* Establece un límite máximo al ancho del grid */
+  max-width: 1500px; /* Establece un límite máximo al ancho del grid */
   margin: 0 auto; /* Centrado horizontal */
   padding: 20px;
   align-content: center;
+  background-image: url('../../../../assets/images/seccion-perfiles.webp');
 }

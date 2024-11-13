@@ -1,21 +1,25 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-search-bar',
   standalone: true,
-  imports: [FormsModule,ReactiveFormsModule,CommonModule],
+  imports: [FormsModule, ReactiveFormsModule, CommonModule],
   templateUrl: './search-bar.component.html',
-  styleUrl: './search-bar.component.css'
+  styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent {
-
   searchControl = new FormControl('');
+  showSuggestions: boolean = false; 
   categories = ['Electricista', 'Plomero', 'Peluquero'];
-  filteredCategories: string[] = [];
 
-  constructor() {
+  @Input()  filteredCategories: string[] = [];// Recibe la lista de categorías filtradas
+  @Output() search = new EventEmitter<string>(); 
+  @Output() reset = new EventEmitter<void>(); // Emite el evento de reset hacia el componente padre
+  
+
+  constructor() { 
     this.searchControl.valueChanges.subscribe(value => {
       this.filteredCategories = this.categories.filter(category =>
         category.toLowerCase().includes(value?.toLowerCase() || '')
@@ -25,7 +29,12 @@ export class SearchBarComponent {
 
   onSearch() {
     const query = this.searchControl.value;
-    console.log('Búsqueda:', query); // Reemplaza esto con la lógica de búsqueda que desees
+    this.search.emit(query!); // Emitir el término de búsqueda 
+  }
+
+  onReset() {
+    this.searchControl.setValue(''); // Limpia el campo de búsqueda
+    this.reset.emit(); // Emite el evento de reset
   }
 
   onInputChange() {

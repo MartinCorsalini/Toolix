@@ -6,22 +6,23 @@
     height: 12%;
     width: 100%;
   }
-  
+
   .search-container {
     display: flex;
     padding: 15px;
     width: 360px;
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
   }
-  
+
   .suggestions-container {
     position: relative;
     top: 100%; /* Posicionar justo debajo del input */
     left: 0; /* Alinear a la izquierda del contenedor */
-    width: 360px; /* Ancho igual al del contenedor de búsqueda */
+    width: 250px; /* Ancho igual al del contenedor de búsqueda */
     z-index: 1; /* Asegura que se muestre por encima de otros elementos */
     display: none; /* Ocultar por defecto, se mostrará cuando haya sugerencias */
   }
-  
+
   .suggestions {
     list-style: none;
     padding: 0;
@@ -31,27 +32,27 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: white;
   }
-  
+
   .suggestions-container.show { /* Clase para mostrar las sugerencias */
     margin: -85px;
-    display: block; /* Cambia a block cuando haya sugerencias */
+    display: block; /* Cambia a block cuando haya sugerencias */ 
+    transform: translate(0px, 5px);
   }
-  
-  
+
   .search-container input {
     width: 360px;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ddd;
-    border-radius: 10px 0 0 10px;
+    border-radius: 0px 0px 0px 0px;
     outline: none;
     transition: border-color 0.3s;
   }
-  
+
   .search-container input:focus {
     border-color: #007bff; /* Cambia de color al enfocarse */
   }
-  
+
   .search-container button {
     padding: 10px;
     font-size: 16px;
@@ -63,17 +64,33 @@
     cursor: pointer;
     transition: background-color 0.3s;
   }
-  
+
   .search-container button:hover {
     background-color: #E03A5F;
   }
-  
+
   .suggestions li {
     padding: 8px;
     cursor: pointer;
   }
-  
+
   .suggestions li:hover {
     background-color: #f0f0f0;
+  }
+
+  .search-container .reset-button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #FF416C;
+    color: white;
+    border: 1px solid #FF416C;
+    border-right: none; /* Sin borde en el lado derecho para unir con el input */
+    border-radius: 10px 0 0 10px; /* Esquinas redondeadas en el lado izquierdo */
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .search-container .reset-button:hover {
+    background-color: #E03A5F;
   }
   

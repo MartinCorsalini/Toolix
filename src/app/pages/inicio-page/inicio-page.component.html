@@ -1,3 +1,9 @@
 <app-navbar-private></app-navbar-private>
-<app-search-bar></app-search-bar>
-<app-card></app-card>
+<app-search-bar 
+  (search)="filtrarPerfiles($event)"
+  (reset)="resetFiltro()">
+</app-search-bar>
+<app-card [listaUsuarios]="perfilesFiltrados"></app-card>
+
+
+

@@ -5,6 +5,7 @@ import { Usuario } from '../../../interface/usuario';
 import { UsuariosService } from '../../../service/usuarios.service';
 import { CommonModule } from '@angular/common';
 
+
 @Component({
   selector: 'app-card',
   standalone: true,
@@ -17,9 +18,12 @@ export class CardComponent implements OnInit{
     this.accederApilotos()
   }
 
+  @Input()
   listaUsuarios : Usuario[] =[];
+
   service = inject(UsuariosService);
   router = inject(Router);
+  
 
   accederApilotos()
   {

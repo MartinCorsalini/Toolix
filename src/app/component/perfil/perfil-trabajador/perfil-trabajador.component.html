@@ -23,6 +23,7 @@
       <p><strong>Descripción:</strong> {{ usuario?.descripcion }}</p>
 
       <button (click)="irAreservar(usuario?.id!)" >Reservar</button>
+      <button [routerLink]="['/home', usuario?.id]">Atrás</button>
     </div>
   </div>
 </div>
