@@ -1,13 +1,13 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { UsuariosService } from '../../../service/usuarios.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Usuario } from '../../../interface/usuario';
 import { NavbarPrivateComponent } from "../../../shared/navbar-private/navbar-private.component";
 
 @Component({
   selector: 'app-perfil-propio',
   standalone: true,
-  imports: [NavbarPrivateComponent],
+  imports: [NavbarPrivateComponent,RouterLink],
   templateUrl: './perfil-propio.component.html',
   styleUrl: './perfil-propio.component.css'
 })
@@ -26,7 +26,7 @@ export class PerfilPropioComponent implements OnInit{
   id : string | null = null;
 
 
-  fotoUrl = 'assets/images/electricista.jpeg';  // Ruta de la foto de perfil
+  fotoUrl = 'assets/avatar/avatar.png';  // Ruta de la foto de perfil
 
 
 

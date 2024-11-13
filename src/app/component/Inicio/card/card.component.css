@@ -1,20 +1,41 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
 
-  .card {
-    width: 250px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    background-color:#F5F5F5;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 0.5rem;
-    transform: translateX(50px);
-  }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  background-image: url('../../../../assets/images/seccion-perfiles.webp');
+}
+
+.card {
+  width: 290px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #F5F5F5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateX(0) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
 
   .image {
     width: 130px; /* Ajusta el tamaño del contenedor de la imagen */
@@ -111,16 +132,4 @@
 
 .fav-button.active i {
     color: #ff0000; /* Cambia el color cuando está activo */
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
-  gap: 50px; /* Espaciado entre las tarjetas */
-  width: 100%; /* Asegura que ocupe todo el ancho disponible */
-  max-width: 1500px; /* Establece un límite máximo al ancho del grid */
-  margin: 0 auto; /* Centrado horizontal */
-  padding: 20px;
-  align-content: center;
-  background-image: url('../../../../assets/images/seccion-perfiles.webp');
 }

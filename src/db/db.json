@@ -169,6 +169,17 @@
       "nombre": "juan",
       "email": "juan@example.com",
       "password": "1234567"
+    },
+    {
+      "nombre": "ferchu",
+      "profesion": "peluquera",
+      "disponibilidad": "10 a 20",
+      "zona": "centro",
+      "descripcion": "asdasdas",
+      "email": "asdasd@asd",
+      "password": "123123123",
+      "rol": null,
+      "id": "a110"
     }
   ]
 }

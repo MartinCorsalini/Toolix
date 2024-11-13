@@ -21,7 +21,8 @@
       <p><strong>Zonas de trabajo:</strong> {{ usuario?.zona }}</p>
       <p><strong>Descripción:</strong> {{ usuario?.descripcion }}</p>
 
-      <button (click)="irAModificar(usuario?.id!)" >Moficar datos</button>
+      <button (click)="irAModificar(usuario?.id!)" >Modificar datos</button>
+      <button [routerLink]="['/home', usuario?.id]">Atrás</button>
     </div>
   </div>
 </div>
