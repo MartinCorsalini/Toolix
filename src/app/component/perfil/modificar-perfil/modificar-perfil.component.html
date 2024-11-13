@@ -26,15 +26,38 @@
           }
         </div>
           <!--------- Profesion ---------->
+
         <div>
-          <label for="profesion">Profesion: </label>
-          <input type="text" formControlName="profesion" id="profesion">
+          <label for="profesion">Profesion:</label>
+          <select type="text" id="profesion" formControlName="profesion">
+            <option value="">Seleccione una opción</option>
+            <option>Abogado/a</option>
+            <option>Albañil</option>
+            <option>Carpintero/a</option>
+            <option>Centro de estetica</option>
+            <option>Contador/a</option>
+            <option>Costurero/a</option>
+            <option>Electricista</option>
+            <option>Gasista</option>
+            <option>Limpieza</option>
+            <option>Niñero/a</option>
+            <option>Paseador/a de perros</option>
+            <option>Peluquero/a</option>
+            <option>Pintor/a</option>
+            <option>Plomero/a</option>
+            <option>Psicologo/a</option>
+            <option>Tapicero/a</option>
+            <option>Techista</option>
+            <option>Uñas</option>
+            <option>Otro (aclarar en descripcion)</option>
+          </select>
 
           @if(formulario.controls['profesion'].getError('required') && formulario.controls['profesion'].touched)
           {
               <div class="colorRojo">Campo requerido...</div>
           }
         </div>
+
         <!--------- Disponibilidad ---------->
         <div>
           <label for="disponibilidad">Disponibilidad: </label>

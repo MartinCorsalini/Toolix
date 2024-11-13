@@ -7,24 +7,25 @@ import { Reserva } from '../../../interface/reserva';
 import { ReservasService } from '../../../service/reservas.service';
 import { DialogoComponent } from '../../Inicio/cuadro-dialogo/cuadro-dialogo.component';
 import { AuthService } from '../../../service/auth.service';
+import { NavbarPrivateComponent } from "../../../shared/navbar-private/navbar-private.component";
 
 
 @Component({
   selector: 'app-alta-baja-reserva',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, CardComponent],
+  imports: [ReactiveFormsModule, CommonModule, CardComponent, NavbarPrivateComponent],
   templateUrl: './alta-baja-reserva.component.html',
   styleUrl: './alta-baja-reserva.component.css'
 })
 export class AltaBajaReservaComponent {
-  reservaForm!: FormGroup; 
+  reservaForm!: FormGroup;
   listaReservas: Reserva[] = [];
 closeDialog: any;
   dialogRef: any;
   usuarioActualId: string | undefined = undefined; // Variable para almacenar el ID del usuario
 
   constructor(
-   
+
     private fb: FormBuilder,
     private rs: ReservasService,
     private dialog: MatDialog,
@@ -34,9 +35,9 @@ closeDialog: any;
     this.usuarioActualId = this.authService.getUserId();
 
     this.reservaForm = this.fb.group({
-      fecha: ['', Validators.required], 
-      horario: ['', Validators.required], 
-      direccion: ['', Validators.required] 
+      fecha: ['', Validators.required],
+      horario: ['', Validators.required],
+      direccion: ['', Validators.required]
     });
   }
 
@@ -77,7 +78,7 @@ closeDialog: any;
     );
   }
 
-// 
+//
 closeDialogR(): void {
   this.dialogRef.close(); // Cierra el diálogo
 }
