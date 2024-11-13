@@ -27,7 +27,7 @@ export class NavbarPrivateComponent implements OnInit {
       */
   }
 
-  userId: string | null = null;
+  userId: string | undefined = undefined;
 
   constructor(private authService: AuthService) {}
 
