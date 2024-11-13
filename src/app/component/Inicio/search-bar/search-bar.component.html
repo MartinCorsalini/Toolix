@@ -1,23 +1,36 @@
-<div class="search-wrapper">  
+<div class="search-wrapper">  <!-- Contenedor principal del componente de búsqueda -->
 
+        <!-- Contenedor de la barra de búsqueda y botones -->
       <div class="search-container">
-        <button type="button" (click)="onReset()" class="reset-button">
-          <i class="fas fa-arrow-circle-left"></i>
-        </button>
+          <button type="button" (click)="onReset()" class="reset-button">
+            <!-- Icono de FontAwesome para la flecha hacia la izquierda -->
+            <i class="fas fa-arrow-circle-left"></i>
+          </button>
 
-        <input type="text" [formControl]="searchControl" placeholder="Buscar..."/>
-        
-        <button type="button" (click)="onSearch()">
-          <i class="fas fa-search"></i>
-        </button>
+          <!-- Campo de entrada de texto para la búsqueda -->
+          <input type="text"
+          [formControl]="searchControl"
+          placeholder="Buscar..."
+          (focus)="showSuggestionsDropdown()"
+          (input)="onInputChange()"/>  <!-- Filtra al escribir -->
+
+          <!-- Botón para iniciar la búsqueda -->
+          <button type="button" (click)="onSearch()">
+            <!-- Icono de FontAwesome de lupa para representar la búsqueda -->
+            <i class="fas fa-search"></i>
+          </button>
       </div>
-    
-    
-      <div class="suggestions-container" [ngClass]="{'show': filteredCategories.length > 0}">
+
+      <!-- Contenedor para mostrar las sugerencias -->
+      <div class="suggestions-container" [ngClass]="{'show': showSuggestions}">
+        <!-- Lista de sugerencias de búsqueda -->
         <ul class="suggestions">
-          <li *ngFor="let category of filteredCategories" (click)="search.emit(category)">
-            {{ category }}
-          </li>
-        </ul>
-      </div>     
+            <li *ngFor="let category of filteredCategories" (click)="search.emit(category)">
+             <!-- Emite un evento con la categoría seleccionada -->
+              {{ category }} <!-- Muestra el nombre de la categoría -->
+            </li>
+          </ul>
+      </div>
+
+
 </div>

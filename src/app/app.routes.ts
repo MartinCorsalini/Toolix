@@ -21,7 +21,7 @@ export const appRoutes: Routes = [
     {
       path: 'login',
       component: LoginPageComponent,
-      //canActivate: [() => authGuard(false)]
+      canActivate: [() => authGuard(false)]
     },
     {
       path: 'olvidaste-contrasenia',

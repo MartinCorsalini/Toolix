@@ -10,7 +10,7 @@
   .search-container {
     display: flex;
     padding: 15px;
-    width: 360px;
+    width: 550px;
     box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
   }
 
@@ -35,7 +35,7 @@
 
   .suggestions-container.show { /* Clase para mostrar las sugerencias */
     margin: -85px;
-    display: block; /* Cambia a block cuando haya sugerencias */ 
+    display: block; /* Cambia a block cuando haya sugerencias */
     transform: translate(0px, 5px);
   }
 
@@ -89,8 +89,8 @@
     cursor: pointer;
     transition: background-color 0.3s;
   }
-  
+
   .search-container .reset-button:hover {
     background-color: #E03A5F;
   }
-  
+
