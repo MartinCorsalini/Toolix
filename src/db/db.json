@@ -186,7 +186,7 @@
     },
     {
       "nombre": "ferchu",
-      "profesion": "Pintor/a",
+      "profesion": "peluquera",
       "disponibilidad": "10 a 20",
       "zona": "centro",
       "descripcion": "asdasdas",
@@ -237,5 +237,5 @@
       "idUs": "520f",
       "idTr": "732b"
     }
-  ]
-}
+   ]
+  }  
