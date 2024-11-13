@@ -19,7 +19,7 @@
   padding: 20px; /* Espacio interno de 20px */
   border-radius: 8px; /* Esquinas redondeadas de 8px */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del cuadro */
-  background-color: white; /* Fondo blanco */
+  background-color: #f8f9fb; /* Fondo blanco */
   max-width: 600px; /* Ancho máximo de 600px */
   width: 100%; /* Ancho completo disponible del contenedor */
   box-sizing: border-box; /* Incluye el padding y borde en el ancho total */
@@ -96,6 +96,13 @@
   background-color: #C02348; /* Cambia el fondo al pasar el mouse */
   transform: scale(1.1); /* Agranda el botón un 10% al pasar el mouse */
 }
+
+
+
+
+
+
+
 
 /* Estilo del botón de valoración */
 .valoracion-btn {

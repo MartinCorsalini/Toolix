@@ -25,7 +25,7 @@ export class ModificarPerfilComponent implements OnInit {
   id : string | null = null;
   activatedRoute = inject(ActivatedRoute);
 
-  fotoUrl = 'assets/images/electricista.jpeg';
+  fotoUrl = 'assets/avatar/avatar.png';
 
   fb= inject(FormBuilder);
   service= inject(UsuariosService);
