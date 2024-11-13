@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 export class AuthService {
 
   //-------------------MANEJO DEL USER ID --------------------
-  idUsuario = new BehaviorSubject<string | null>(null);
+  idUsuario = new BehaviorSubject<string | undefined>(undefined);
   currentUserId$ = this.idUsuario.asObservable();
   //----------------------------------------------------------
 
@@ -33,7 +33,7 @@ export class AuthService {
   //Esto asegura que el usuario quede completamente desconectado.
   LogOut() {
     this.estoyLogeado = false;
-    this.idUsuario.next(null);
+    this.idUsuario.next(undefined);
 
     localStorage.removeItem('token'); // Elimina el token de localStorage al cerrar sesión
     localStorage.removeItem('userId'); // Elimina el userId de localStorage
@@ -62,7 +62,7 @@ export class AuthService {
 
 
   // Método para obtener el ID actual del usuario
-  getUserId(): string | null {
+  getUserId(): string | undefined {
     return this.idUsuario.getValue();
   }
 

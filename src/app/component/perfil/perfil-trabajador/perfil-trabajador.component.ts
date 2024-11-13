@@ -67,7 +67,7 @@ export class PerfilTrabajadorComponent implements OnInit {
 
     irAreservar(id:string)
     {
-      this.router.navigate([`reservar/${id}`]);
+      this.router.navigate([`realizar-reserva/${id}`]);
     }
 
 }

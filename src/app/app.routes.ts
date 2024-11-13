@@ -53,6 +53,11 @@ export const appRoutes: Routes = [
 
     },
     {
+      path: 'realizar-reserva/:id',
+      component: AltaBajaPageComponent,
+      canActivate : [authGuard] //SI ESTOY LOGEADO
+    },
+    {
       path: '**',
       redirectTo:'login'
     }

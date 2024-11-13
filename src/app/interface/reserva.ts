@@ -2,8 +2,8 @@
 
 export interface Reserva {
     id?: number,
-    idTr: number,
-    idUs:number,
+    idTr: string | undefined,
+    idUs:string | undefined,
     direccion: string,
     fecha: Date,
     hora:number,
