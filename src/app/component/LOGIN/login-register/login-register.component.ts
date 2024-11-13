@@ -70,7 +70,6 @@ export class LoginRegisterComponent implements OnInit {
     const usuario2 = this.signUpForm.getRawValue();
 
     this.addUsuarioDB(usuario2); // Agrego el usuario a la base de datos
-
     console.log(usuario2.email);
     this.buscarEmail(usuario2.email)
 

@@ -4,6 +4,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { Router, RouterModule } from '@angular/router';
 import { MatDialogModule } from '@angular/material/dialog';
+import { PopUpComponent } from './Reservas/pop-up/pop-up.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field'; // Asegúrate de importar MatFormFieldModule
 
 
 @NgModule({
