@@ -307,6 +307,29 @@
       "password": "ksnflaksdnas",
       "rol": null,
       "id": "996a"
+    },
+    {
+      "nombre": "titittii",
+      "profesion": "gasista",
+      "disponibilidad": "10 a 20",
+      "zona": "centro",
+      "descripcion": "asdasd",
+      "email": "tititti@hotmail.com",
+      "password": "12321312312",
+      "rol": null,
+      "id": "8609"
+    },
+    {
+      "id": "d38e",
+      "nombre": "titittii",
+      "email": "tititti@hotmail.com",
+      "password": "12321312312"
+    },
+    {
+      "id": "a032",
+      "nombre": "skadmklsad",
+      "email": "juanito@zkldmzlkm",
+      "password": "klzmdkls"
     }
   ]
 }

@@ -33,6 +33,7 @@ export class NavbarPrivateComponent implements OnInit {
 
   logoUrl: string = 'assets/images/logo.jpeg';
 
+
   isProfileOpen = false;
   route = inject(Router)
 
