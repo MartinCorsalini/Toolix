@@ -109,31 +109,29 @@ export class LoginRegisterComponent implements OnInit {
 
   buscarEmail(email: string)
    {
-    this.service.getUsuarioByEmail(email).subscribe({
-      next: (usuarios: Usuario[]) =>
-        {
-            if (usuarios.length > 0)
-            {
-                this.usuario = usuarios[0];
-                alert('EMAIL ENCONTRADO CORRECTAMENTE');
-                console.log("Email:", this.usuario.email);
-                console.log("Nombre:", this.usuario.nombre);
-                console.log("ID", this.usuario.id);
+      this.service.getUsuarioByEmail(email).subscribe({
+        next: (usuarios: Usuario[]) =>
+          {
+              if (usuarios.length > 0)
+              {
+                  this.usuario = usuarios[0];
+                  console.log('EMAIL ENCONTRADO CORRECTAMENTE');
+                  console.log("Email:", this.usuario.email);
+                  console.log("Nombre:", this.usuario.nombre);
+                  console.log("ID", this.usuario.id);
 
-                this.iniciarSesion(this.usuario?.id!);
-                this.router.navigate([`modificar/${this.usuario?.id}`]);
-            } else
-            {
-                alert('No se encontró un usuario con ese email');
-            }
-      },
-      error: () => {
-        alert('Error al buscar por email');
-      }
-    });
-  }
-
-
+                  this.iniciarSesion(this.usuario?.id!);
+                  this.router.navigate([`modificar/${this.usuario?.id}`]);
+              } else
+              {
+                  alert('No se encontró un usuario con ese email');
+              }
+        },
+        error: () => {
+          alert('Error al buscar por email');
+        }
+      });
+    }
 
 
   //---------RUTAS PRIVADAS -------

@@ -1,30 +1,6 @@
 {
   "usuarios": [
     {
-      "id": "a78b",
-      "nombre": "juan",
-      "email": "juan@gmail.com",
-      "password": "1234567"
-    },
-    {
-      "id": "01cd",
-      "nombre": "sasse",
-      "email": "sasse@example.com",
-      "password": "2345678"
-    },
-    {
-      "id": "e96c",
-      "nombre": "axel",
-      "email": "axel@example.com",
-      "password": "1234567"
-    },
-    {
-      "id": "ed61",
-      "nombre": "Juan",
-      "email": "juan@yahoo.com",
-      "password": "1234567"
-    },
-    {
       "nombre": "Emilio",
       "profesion": "Gasistaa",
       "disponibilidad": "10 hs a 18 hs",
@@ -34,95 +10,6 @@
       "password": null,
       "rol": null,
       "id": "732b"
-    },
-    {
-      "nombre": "Juanito",
-      "profesion": "dcdz",
-      "disponibilidad": "sdfsd",
-      "zona": "sdfsd",
-      "descripcion": "dsfsdf",
-      "email": "juanito@lalala",
-      "password": "lalalal",
-      "rol": null,
-      "id": "ed2a"
-    },
-    {
-      "id": "11b5",
-      "nombre": "Mica",
-      "email": "miicaprietto@gmail.com",
-      "password": "lallarytrty"
-    },
-    {
-      "id": "7aca",
-      "nombre": "Lolo",
-      "email": "loloperez@outlook.com",
-      "password": "lalalallala"
-    },
-    {
-      "id": "8e72",
-      "nombre": "Loloo",
-      "email": "loloperezz@outlook.com",
-      "password": "lalalallala"
-    },
-    {
-      "id": "88dc",
-      "nombre": "Leando",
-      "email": "leandrolopez@gmail.com",
-      "password": "lalalaallal"
-    },
-    {
-      "id": "3e86",
-      "nombre": "Pedro Perez",
-      "email": "pedrito@hotmail.com",
-      "password": "lulullululu"
-    },
-    {
-      "id": "ecfc",
-      "nombre": "Marcelo",
-      "email": "marcelito@otulook.com",
-      "password": "123456lsks"
-    },
-    {
-      "id": "58ac",
-      "nombre": "Juancho Alvarez",
-      "email": "juanchoo@gmail.com",
-      "password": "12394kakak"
-    },
-    {
-      "id": "f2ec",
-      "nombre": "Juancito",
-      "email": "juancitooo@hotmail.com",
-      "password": "laskdasdasnkda"
-    },
-    {
-      "id": "4b7f",
-      "nombre": "Maria",
-      "email": "lamari@hotmail.com",
-      "password": "sadasdkanslda"
-    },
-    {
-      "id": "7162",
-      "nombre": "Ludmila",
-      "email": "luli@outlook.com",
-      "password": "laksdalsdkas"
-    },
-    {
-      "id": "22fd",
-      "nombre": "Juanita",
-      "email": "juannni@hotmail.com",
-      "password": "aafsdfdfsdf"
-    },
-    {
-      "id": "208b",
-      "nombre": "Maria Lopez",
-      "email": "marilo@hotmail.com",
-      "password": "lasdlasdas"
-    },
-    {
-      "id": "2bd9",
-      "nombre": "Lolito",
-      "email": "lolitojuarezp@gmail.com",
-      "password": "alksdmalskdasd"
     },
     {
       "nombre": "Martin Corsalini",
@@ -145,24 +32,6 @@
       "password": "alskdnalskdna",
       "rol": null,
       "id": "a1f8"
-    },
-    {
-      "id": "601c",
-      "nombre": "Lourdes",
-      "email": "lourddd@hotmail.com",
-      "password": "alksnaklsda"
-    },
-    {
-      "id": "bbc0",
-      "nombre": "Lauuuu",
-      "email": "lauuuuuri@hotmail.com",
-      "password": "alskdmalksd"
-    },
-    {
-      "id": "06fc",
-      "nombre": "Lauuuu",
-      "email": "lauuri@hotmail.com",
-      "password": "alskdmalksd"
     },
     {
       "nombre": "Juanita Pepes",
@@ -218,30 +87,6 @@
       "password": "dfgdfgdfgdgf",
       "rol": null,
       "id": "6ec4"
-    },
-    {
-      "id": "18d7",
-      "nombre": "Carla",
-      "email": "carlita@nanana.con",
-      "password": "aksfnasf"
-    },
-    {
-      "id": "51fa",
-      "nombre": "Carla",
-      "email": "carlita@hotmail.com",
-      "password": "aksfnasf"
-    },
-    {
-      "id": "ad9b",
-      "nombre": "Juanita JO",
-      "email": "juanitajo@hotmail.com",
-      "password": "laksdmlasd"
-    },
-    {
-      "id": "04ea",
-      "nombre": "Lara",
-      "email": "lara@hotmail.com",
-      "password": "alknfalksa"
     },
     {
       "nombre": "Luli",
@@ -307,6 +152,17 @@
       "password": "ksnflaksdnas",
       "rol": null,
       "id": "996a"
+    },
+    {
+      "nombre": " Micaela",
+      "profesion": "Limpieza",
+      "disponibilidad": "10 hs a 20 hs",
+      "zona": "Centro, Guemes, Puerto",
+      "descripcion": "Dejo todo super limpio",
+      "email": "micael@hotmail.com",
+      "password": "ajsdnkaskd",
+      "rol": null,
+      "id": "e858"
     }
   ]
 }

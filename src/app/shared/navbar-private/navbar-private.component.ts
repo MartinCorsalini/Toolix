@@ -17,14 +17,6 @@ export class NavbarPrivateComponent implements OnInit {
       this.userId = id;
     });
 
-    /*
-    if(localStorage.getItem('token'))
-    {//Se fija si tengo un token en el localStorage
-      //this.textButton= 'LogOut'
-      // this.auth.logIn() //Me logeo. Coloca el "estoyLogeado" del service en true
-      //this.route.navigateByUrl('home'); // al logearme me lleva a esta pagina
-    }
-      */
   }
 
   userId: string | undefined = undefined;
@@ -37,7 +29,6 @@ export class NavbarPrivateComponent implements OnInit {
   isProfileOpen = false;
   route = inject(Router)
 
-  //constructor(private router: Router) {} //! CREO QUE ESTO LO TENEMOS QUE BORRAR, CHECKEAR
 
   openDropdown() {
     this.isProfileOpen = true;
@@ -47,14 +38,6 @@ export class NavbarPrivateComponent implements OnInit {
     this.isProfileOpen = false;
   }
 
-  /*
-  logout() {
-    console.log('Cerrar sesión');
-    this.closeDropdown();
-    this.route.navigate(['/login']);
-  }
-*/
-
   irADetalles()
   {
     this.route.navigate([`perfil-propio/${this.userId}`]);
@@ -62,7 +45,6 @@ export class NavbarPrivateComponent implements OnInit {
 
   irAHome()
   {
-    alert('Al ir al home el id es este : ' + this.userId);
     console.log('id'+ this.userId);
     this.route.navigate([`home/${this.userId}`]);
   }
