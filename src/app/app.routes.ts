@@ -20,7 +20,8 @@ export const appRoutes: Routes = [
     },
     {
       path: 'olvidaste-contrasenia',
-      component: OlvidasteContraseniaComponent
+      component: OlvidasteContraseniaComponent,
+      canActivate: [() => authGuard(false)] // Solo permite acceso si NO está logueado. y me lleva a home
     },
     {
       path: 'home/:id',
@@ -33,7 +34,8 @@ export const appRoutes: Routes = [
     },
     {
       path: 'perfil-trabajador/:id',
-      component: PerfilTrabajadorComponent
+      component: PerfilTrabajadorComponent,
+      canActivate : [authGuard] //SI ESTOY LOGEADO
     },
     {
       path: 'perfil-propio/:id',
@@ -42,13 +44,16 @@ export const appRoutes: Routes = [
     },
     {
       path: 'modificar/:id',
-       component: ModificarPerfilComponent
+       component: ModificarPerfilComponent,
+       canActivate : [authGuard] //SI ESTOY LOGEADO
     },
-    { path: 'notificaciones', 
-      component: NotificacionesPageComponent
+    { path: 'notificaciones',
+      component: NotificacionesPageComponent,
+       canActivate : [authGuard] //SI ESTOY LOGEADO
+
     },
     {
       path: '**',
-      redirectTo:'home/:id'
+      redirectTo:'login'
     }
 ];
