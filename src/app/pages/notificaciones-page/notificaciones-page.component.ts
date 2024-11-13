@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NotificationsComponent } from '../../component/notifications/notifications.component';
 
 @Component({
-  selector: 'app-notifiaciones-page',
+  selector: 'app-notificaciones-page',
   standalone: true,
   imports: [NotificationsComponent],
   templateUrl: './notificaciones-page.component.html',

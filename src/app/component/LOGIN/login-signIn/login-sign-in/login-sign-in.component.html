@@ -18,6 +18,10 @@
         placeholder="Email"
         formControlName="email" />
 
+        <div *ngIf="signInForm.controls['email'].hasError('email')" class="error">
+          * El correo electrónico no es válido.
+        </div>
+
         <input
         type="password"
         placeholder="Contraseña"

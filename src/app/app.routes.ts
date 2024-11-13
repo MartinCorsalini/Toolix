@@ -21,7 +21,7 @@ export const appRoutes: Routes = [
     {
       path: 'login',
       component: LoginPageComponent,
-      canActivate: [() => authGuard(false)] // Solo permite acceso si NO está logueado. y me lleva a home
+      //canActivate: [() => authGuard(false)]  
     },
     {
       path: 'olvidaste-contrasenia',

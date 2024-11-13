@@ -18,7 +18,6 @@ import { AuthService } from '../../../service/auth.service';
     ReactiveFormsModule,
     CommonModule,
     RouterModule,
-    RouterLink
   ]
 
 })
@@ -62,11 +61,8 @@ export class LoginRegisterComponent implements OnInit {
 
   onSignUpSubmit()
   {
-    if (this.signUpForm.invalid)
-      {
-        alert('Ha ocurrido un error al cargar registrarse. Intente nuevamente')
-        return;
-      }
+    if (this.signUpForm.invalid) return;
+    
     const usuario2 = this.signUpForm.getRawValue();
 
     this.addUsuarioDB(usuario2); // Agrego el usuario a la base de datos
