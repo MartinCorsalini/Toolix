@@ -90,13 +90,41 @@ input {
 .wrapper {
     position: relative;
     width: 100%;
-    max-width: 900px;
+    max-width: 1400px;
     min-height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    margin: 20px 0 20px 150px;
+    margin: 0px 0px 0px 0px;
+    background-image: url('../../../../assets/images/toolix.webp');
+}
+
+.textContainer{
+  transform: translateX(10px);
+}
+
+.introText {
+  font-family: 'Montserrat', sans-serif; /* Usa una fuente bonita */
+  font-size: 15px; /* Tamaño grande */
+  font-weight: 600; /* Peso de la letra */
+  line-height: 1.5; /* Espaciado entre líneas */
+  color: #333; /* Color oscuro para legibilidad */
+  text-align: center; /* Centrar el texto */
+  margin: 20px 0; /* Espaciado superior e inferior */
+  letter-spacing: 1px; /* Espacio entre letras */
+}
+
+.title {
+  font-family: 'Montserrat', sans-serif; /* Fuente elegante */
+  font-size: 3rem; /* Tamaño grande */
+  font-weight: 700; /* Negrita */
+  text-align: center; /* Centrar el texto */
+  background-image: linear-gradient(to right, orange, #ff0000); /* Gradiente de claro a rojo */
+  background-clip: text;
+  -webkit-background-clip: text; /* Soporte para WebKit */
+  color: transparent; /* Hace que solo el gradiente sea visible */
+  display: inline-block; /* Para que el gradiente se aplique correctamente al texto */
 }
 
 .container {
@@ -104,10 +132,14 @@ input {
     border-radius: 10px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
     display: flex;
-    min-height: 500px;
-    width: 100%;
+    min-height: 470px;
+    width: 150%;
     position: relative;
     overflow: hidden;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    margin-left: 80px;
+    margin-top: 20px;
     transition: transform 0.6s ease-in-out;
 }
 
@@ -165,7 +197,7 @@ input {
     top: 0;
     left: 50%;
     width: 50%;
-    height: 90%;
+    height: 100%;
     overflow: hidden;
     transition: transform 0.6s ease-in-out;
     z-index: 100;

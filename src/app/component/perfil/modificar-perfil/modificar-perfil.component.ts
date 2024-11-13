@@ -3,12 +3,12 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsuariosService } from '../../../service/usuarios.service';
 import { Usuario } from '../../../interface/usuario';
-import { NavbarPublicComponent } from "../../../shared/navbar-public/navbar-public.component";
+import { NavbarPrivateComponent } from '../../../shared/navbar-private/navbar-private.component';
 
 @Component({
   selector: 'app-modificar-perfil',
   standalone: true,
-  imports: [NavbarPublicComponent, ReactiveFormsModule],
+  imports: [NavbarPrivateComponent, ReactiveFormsModule],
   templateUrl: './modificar-perfil.component.html',
   styleUrl: './modificar-perfil.component.css'
 })
@@ -19,7 +19,7 @@ export class ModificarPerfilComponent implements OnInit {
   }
 
   id : string | null = null;
-  activatedRoute = inject(ActivatedRoute );
+  activatedRoute = inject(ActivatedRoute);
 
   fotoUrl = 'assets/images/electricista.jpeg';
 

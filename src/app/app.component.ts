@@ -13,8 +13,7 @@ import { CommonModule } from '@angular/common';
   imports: [RouterOutlet,
     NavbarPrivateComponent,
     NavbarPublicComponent,
-    FooterComponent,
-    LoginPageComponent,CommonModule],
+    FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -15,6 +15,9 @@ export class UsuariosService {
     return this.http.get<Usuario[]>(this.urlBase);
   }
 
+  getUsuarioByEmailAndPassword(email: string, password: string): Observable<Usuario[]> {
+    return this.http.get<Usuario[]>(`${this.urlBase}?email=${email}&password=${password}`);
+  }
 
   loginUsuario(email: string, password: string): Observable<Usuario> {
     return this.http.post<Usuario>(`${this.urlBase}/login`, { email, password });

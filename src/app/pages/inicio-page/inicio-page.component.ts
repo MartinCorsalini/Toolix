@@ -12,7 +12,7 @@ import { Usuario } from '../../interface/usuario';
 @Component({
   selector: 'app-inicio-page',
   standalone: true,
-  imports: [SearchBarComponent, GridComponent, NavbarPublicComponent, NavbarPrivateComponent],
+  imports: [SearchBarComponent, GridComponent, NavbarPrivateComponent],
   templateUrl: './inicio-page.component.html',
   styleUrl: './inicio-page.component.css'
 })
