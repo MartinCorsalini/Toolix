@@ -99,4 +99,6 @@ export class PerfilPropioComponent implements OnInit{
     {
       this.router.navigate([`modificar/${id}`]);
     }
+
+   
 }

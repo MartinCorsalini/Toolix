@@ -1,22 +1,11 @@
 {
   "usuarios": [
     {
-      "nombre": "Emilio",
-      "profesion": "Gasistaa",
-      "disponibilidad": "10 hs a 18 hs",
-      "zona": "Centro, Guemes, Puerto",
-      "descripcion": "dejo todo impecable",
-      "email": "emiliomernes@hotmail.com",
-      "password": null,
-      "rol": null,
-      "id": "732b",
-      "valoraciones": [
-        7,
-        2,
-        9,
-        1,
-        10
-      ]
+      "nombre": "Administrador 1",
+      "email": "admin1@gmail.com",
+      "password": "1234567",
+      "rol": "Admin",
+      "id": "42m1"
     },
     {
       "nombre": "Martin Corsalini",
@@ -33,20 +22,6 @@
       ]
     },
     {
-      "nombre": "Juanito",
-      "profesion": "Gasista",
-      "disponibilidad": "10 hs a 18 hs",
-      "zona": "Centro, Guemes, La perla",
-      "descripcion": "otro tipaso",
-      "email": "juanirelok@hotmail.com",
-      "password": "alskdnalskdna",
-      "rol": null,
-      "id": "a1f8",
-      "valoraciones": [
-        9
-      ]
-    },
-    {
       "nombre": "Juanita Pepes",
       "profesion": "Peluquera",
       "disponibilidad": "10 hs a 20 hs",
@@ -58,34 +33,6 @@
       "id": "55d4",
       "valoraciones": [
         6
-      ]
-    },
-    {
-      "nombre": "Jose",
-      "profesion": "Electricista",
-      "disponibilidad": "10 hs a 15 hs",
-      "zona": "Constitucion",
-      "descripcion": "Arreglo todo super bien",
-      "email": "jose@hotmail.com",
-      "password": "alskdnalsd",
-      "rol": null,
-      "id": "8eb5",
-      "valoraciones": [
-        3
-      ]
-    },
-    {
-      "nombre": "Leonardo",
-      "profesion": "Gasista",
-      "disponibilidad": "10 hs a 15 hs",
-      "zona": "La perla",
-      "descripcion": "excelente servicio",
-      "email": "leonardo@outlook.com",
-      "password": "laskndalksd",
-      "rol": null,
-      "id": "bb75",
-      "valoraciones": [
-        7
       ]
     },
     {
@@ -332,6 +279,14 @@
       "direccion": "UNA",
       "idUs": "a110",
       "idTr": "e858"
+    },
+    {
+      "id": "5de5",
+      "fecha": "2024-11-05",
+      "horario": "23:02",
+      "direccion": "m",
+      "idUs": "f86b",
+      "idTr": "ef56"
     }
   ]
 }
