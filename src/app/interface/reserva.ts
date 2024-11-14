@@ -2,7 +2,7 @@ import { Time } from "@angular/common";
 
 
 export interface Reserva {
-    id: string,
+    id: string | null ,
     idTr: string | null,
     idUs:string | undefined,
     direccion: string,
