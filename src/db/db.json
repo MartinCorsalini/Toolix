@@ -190,7 +190,8 @@
       "zona": "a",
       "descripcion": "a",
       "email": "leo@x.com",
-      "password": "1234567"
+      "password": "1234567",
+      "id": "5dac"
     },
     {
       "id": "f86b",
@@ -203,6 +204,68 @@
       "descripcion": "Tipazo",
       "zona": "Faro Norte",
       "telefono": "223456789"
+    },
+    {
+      "id": "72d0",
+      "nombre": "Mica",
+      "email": "micaelaprieto@outlook.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Peluquera",
+      "disponibilidad": "22:27",
+      "descripcion": "Te dejo hermosa",
+      "zona": "Centro",
+      "telefono": "2235952534"
+    },
+    {
+      "id": "fb58",
+      "nombre": "Juliana",
+      "email": "juli@hotmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Limpieza",
+      "disponibilidad": "12:42",
+      "descripcion": "Dejo todo re lindo",
+      "zona": "La Perla",
+      "telefono": "22359854"
+    },
+    {
+      "id": "a768",
+      "nombre": "Pepe",
+      "email": "pepe@outlook.com",
+      "password": "alksdkmasd",
+      "rol": "Trabajador",
+      "profesion": "Gasista",
+      "disponibilidad": "21:45",
+      "descripcion": "Ok",
+      "zona": "Barrio San José",
+      "telefono": "223545646"
+    },
+    {
+      "id": "748d",
+      "nombre": "Pepe",
+      "email": "pepe@outlook.com",
+      "password": "alksdkmasd",
+      "rol": "Trabajador",
+      "profesion": "asfdfsd",
+      "disponibilidad": "22:08",
+      "descripcion": "fsdf",
+      "zona": "Punta Mogotes",
+      "telefono": "2235468545"
+    },
+    {
+      "id": "35d0",
+      "nombre": "Pepe",
+      "email": "pepe@outlook.com",
+      "password": "alksdkmasd",
+      "rol": "Cliente"
+    },
+    {
+      "id": "9c87",
+      "nombre": "Oscar",
+      "email": "oscarsito@hotmail.com",
+      "password": "1234567",
+      "rol": "Cliente"
     }
   ],
   "reservas": [
@@ -240,7 +303,8 @@
       "horario": "21:24",
       "direccion": "sadas",
       "idUs": "a110",
-      "idTr": "f86b"
+      "idTr": "f86b",
+      "id": "13c5"
     },
     {
       "id": "a7d8",
@@ -311,15 +375,6 @@
       "direccion": "UNA",
       "idUs": "a110",
       "idTr": "e858"
-    },
-    {
-      "id": "5de5",
-      "fecha": "2024-11-05",
-      "horario": "23:02",
-      "direccion": "m",
-      "idUs": "f86b",
-      "idTr": "ef56"
->>>>>>> e3e04ba45addbfc497d7cc6b693d718fea842d56
     }
   ]
 }
