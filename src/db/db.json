@@ -234,7 +234,7 @@
       "descripcion": "Tipazo",
       "email": "le@aaa.com",
       "password": "1234567",
-      "rol": null,
+      "rol": "Trabajador",
       "id": "f86b"
     }
   ],
@@ -328,6 +328,14 @@
       "direccion": "QUINTA",
       "idUs": "a2ef",
       "idTr": "f86b"
+    },
+    {
+      "id": "89e9",
+      "fecha": "2024-11-05",
+      "horario": "17:36",
+      "direccion": "UNA",
+      "idUs": "a110",
+      "idTr": "e858"
     }
   ]
 }

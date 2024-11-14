@@ -3,11 +3,11 @@
    <h2 class="title">Notificaciones</h2> 
   </div>
 
-  <div  class="center-container">
+  <div *ngIf="esTrabajador==true" class="center-container">
     <h2  class="titulos">Reservas recibidas</h2>
    </div>
 
-  <div  class="center-container">     
+  <div *ngIf="esTrabajador==true" class="center-container">     
         
     <div ng class="container">
         <div class="header">
@@ -29,7 +29,7 @@
    </div>
 
 
-<!----->
+<!--     --->
 
 
 <div class="center-container">
