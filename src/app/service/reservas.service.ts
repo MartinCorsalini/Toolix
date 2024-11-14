@@ -45,6 +45,9 @@ export class ReservasService {
     return this.reservasSer;
   }
 
+  getUserRole(): string | undefined {
+    return this.authService.getUserRole();
+  }
 
   //////// peticiones http client
   getReserva(): Observable<Reserva[]>{

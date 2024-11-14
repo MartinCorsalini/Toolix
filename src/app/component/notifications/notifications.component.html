@@ -4,16 +4,16 @@
   </div>
 
   <div class="center-container">
-    <h2 class="titulos">Reservas recibidas</h2>
+    <h2 *ngIf="esTrabajador" class="titulos">Reservas recibidas</h2>
    </div>
 
   <div class="center-container">     
         
-    <div class="container">
+    <div *ngIf="esTrabajador" class="container">
         <div class="header">
             
         </div>
-        <ul class="notification-list">
+        <ul *ngIf="esTrabajador" class="notification-list">
             <li class="notification-item">
                 <p>Dirección:   </p>
                 <p>Fecha: <span></span></p>

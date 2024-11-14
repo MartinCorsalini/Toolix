@@ -113,7 +113,7 @@
       "descripcion": "Otro tipaso",
       "email": "juanooooo@hotmail.com",
       "password": "lksdfnskdf",
-      "rol": null,
+      "rol": "Trabajador",
       "id": "ef56"
     },
     {
@@ -124,7 +124,7 @@
       "descripcion": "sdg",
       "email": "aaaaaaaa@hotmail.com",
       "password": "dfgdfgdfgdgf",
-      "rol": null,
+      "rol": "Trabajador",
       "id": "6ec4"
     },
     {
@@ -135,7 +135,7 @@
       "descripcion": "sdf",
       "email": "lulita@hotmail.com",
       "password": "kalnsdlkasd",
-      "rol": null,
+      "rol": "Trabajador",
       "id": "ae9e"
     },
     {
@@ -146,7 +146,7 @@
       "descripcion": "sdf",
       "email": "juli@hotmail.com",
       "password": "anfalksfnaklfs",
-      "rol": null,
+      "rol": "Trabajador",
       "id": "236c"
     },
     {
@@ -157,7 +157,7 @@
       "descripcion": "mmmmmmm",
       "email": "pepe@outlook.com",
       "password": "skndalskdiuhi",
-      "rol": null,
+      "rol": "Trabajador",
       "id": "3f87"
     },
     {
@@ -167,7 +167,7 @@
       "zona": "Centro, Guemes, Puerto",
       "email": "micaelaprieto@outlook.com",
       "password": "jnkkjnn kkjnk",
-      "rol": null,
+      "rol": "Trabajador",
       "id": "5592"
     },
     {
@@ -178,7 +178,7 @@
       "descripcion": "afsdf",
       "email": "lauuu@hotmail.com",
       "password": "klsmdklasda",
-      "rol": null,
+      "rol": "Trabajador",
       "id": "1547"
     },
     {
@@ -189,7 +189,7 @@
       "descripcion": "sefsefs",
       "email": "roquefif@hotmail.com",
       "password": "ksnflaksdnas",
-      "rol": null,
+      "rol": "Trabajador",
       "id": "996a"
     },
     {
@@ -200,7 +200,7 @@
       "descripcion": "Dejo todo super limpio",
       "email": "micael@hotmail.com",
       "password": "ajsdnkaskd",
-      "rol": null,
+      "rol": "Trabajador",
       "id": "e858"
     },
     {
@@ -217,7 +217,7 @@
       "descripcion": "asdasdas",
       "email": "asdasd@asd",
       "password": "123123123",
-      "rol": null,
+      "rol": "Trabajador",
       "id": "a110"
     },
     {
@@ -225,6 +225,18 @@
       "nombre": "Lean",
       "email": "leo@x.com",
       "password": "1234567"
+    },
+    {
+      "id": "f86b",
+      "nombre": "leann",
+      "email": "le@aaa.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Plomero",
+      "disponibilidad": "17:16",
+      "descripcion": "Tipazo",
+      "zona": "Faro Norte",
+      "telefono": "223456789"
     }
   ],
   "reservas": [
@@ -258,11 +270,57 @@
       "idTr": "732b"
     },
     {
-      "fecha": "2024-11-06",
-      "horario": "06:27",
-      "direccion": "66",
-      "id": "b845",
+      "fecha": "2024-11-22",
+      "horario": "14:51",
+      "direccion": "FFF",
+      "id": "fda5",
       "idTr": "732b"
+    },
+    {
+      "id": "dc9b",
+      "fecha": "2024-11-06",
+      "horario": "21:24",
+      "direccion": "sadas",
+      "idUs": "a110",
+      "idTr": "f86b"
+    },
+    {
+      "id": "a7d8",
+      "fecha": "2024-11-06",
+      "horario": "21:35",
+      "direccion": "sasd",
+      "idUs": "a2ef",
+      "idTr": "18e9"
+    },
+    {
+      "fecha": "2024-11-14",
+      "horario": "21:46",
+      "direccion": "ZZZ",
+      "id": "6ee9",
+      "idTr": "732b"
+    },
+    {
+      "fecha": "2024-11-13",
+      "horario": "20:47",
+      "direccion": "AA",
+      "id": "26c0",
+      "idTr": "732b",
+      "idUs": "f86b"
+    },
+    {
+      "fecha": "2024-11-22",
+      "horario": "21:53",
+      "direccion": "CCC",
+      "id": "b7c8",
+      "idTr": "18e9"
+    },
+    {
+      "fecha": "2024-11-11",
+      "horario": "06:00",
+      "direccion": "Hipolito",
+      "id": "45f2",
+      "idTr": "732b",
+      "idUs": "f86b"
     }
   ]
 }
