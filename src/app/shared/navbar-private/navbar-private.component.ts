@@ -22,12 +22,13 @@ export class NavbarPrivateComponent implements OnInit {
   userId: string | undefined = undefined;
 
   constructor(private authService: AuthService) {}
+  route = inject(Router)
 
   logoUrl: string = 'assets/images/logo.jpeg';
 
 
   isProfileOpen = false;
-  route = inject(Router)
+
 
 
   openDropdown() {

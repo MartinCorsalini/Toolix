@@ -1,96 +1,98 @@
 .search-wrapper {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-    height: 12%;
-    width: 100%;
-  }
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center; /* Centra el search-wrapper horizontalmente */
+  width: 100%;
+  margin: 0; /* Añade margen superior para separarlo de otros elementos */
+  background-color: #e9ecef;
+}
 
-  .search-container {
-    display: flex;
-    padding: 15px;
-    width: 550px;
-    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
-  }
+.search-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  max-width: 550px; /* Ancho máximo del search-container */
+  box-sizing: border-box;
+  
+}
 
-  .suggestions-container {
-    position: relative;
-    top: 100%; /* Posicionar justo debajo del input */
-    left: 0; /* Alinear a la izquierda del contenedor */
-    width: 250px; /* Ancho igual al del contenedor de búsqueda */
-    z-index: 1; /* Asegura que se muestre por encima de otros elementos */
-    display: none; /* Ocultar por defecto, se mostrará cuando haya sugerencias */
-  }
+.search-container input {
+  flex: 1; /* Ocupa el ancho disponible */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-right: none; /* Sin borde derecho para unir con el botón */
+  border-radius: 0; /* Sin esquinas redondeadas para los lados */
+  outline: none;
+  transition: border-color 0.3s;
+}
 
-  .suggestions {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    border: 1px solid #ddd;
-    border-radius: 0 0 10px 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: white;
-  }
+.search-container input:focus {
+  border-color: #FF416C; /* Cambia de color al enfocar */
+}
 
-  .suggestions-container.show { /* Clase para mostrar las sugerencias */
-    margin: -85px;
-    display: block; /* Cambia a block cuando haya sugerencias */
-    transform: translate(0px, 5px);
-  }
+.search-container button {
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #FF416C;
+  color: white;
+  border: 1px solid #FF416C;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-  .search-container input {
-    width: 360px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 0px 0px 0px 0px;
-    outline: none;
-    transition: border-color 0.3s;
-  }
+/* Botón de búsqueda (derecho) */
+.search-container button:last-child {
+  border-radius: 0 10px 10px 0; /* Bordes redondeados a la derecha */
+}
 
-  .search-container input:focus {
-    border-color: #007bff; /* Cambia de color al enfocarse */
-  }
+/* Botón de reinicio (izquierdo) */
+.search-container .reset-button {
+  border-radius: 10px 0 0 10px; /* Bordes redondeados a la izquierda */
+  border-right: none; /* Sin borde derecho para unir con el input */
+}
 
-  .search-container button {
-    padding: 10px;
-    font-size: 16px;
-    background-color: #FF416C;
-    color: white;
-    border: 1px solid #FF416C;
-    border-left: none;
-    border-radius: 0 10px 10px 0;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
+.search-container button:hover,
+.search-container .reset-button:hover {
+  background-color: #E03A5F; /* Color de fondo al pasar el cursor */
+}
 
-  .search-container button:hover {
-    background-color: #E03A5F;
-  }
+/* Contenedor de sugerencias */
+.suggestions-container {
+  position: absolute;
+  top: 100%; /* Posiciona justo debajo del search-container */
+  width: 100%;
+  max-width: 550px; /* Coincide con el ancho del contenedor de búsqueda */
+  z-index: 10; /* Superposición para que aparezca por encima de otros elementos */
+  display: none; /* Oculto por defecto */
+}
 
-  .suggestions li {
-    padding: 8px;
-    cursor: pointer;
-  }
+.suggestions-container.show { /* Clase para mostrar las sugerencias */
+  display: block; /* Muestra el contenedor cuando hay sugerencias */
+}
 
-  .suggestions li:hover {
-    background-color: #f0f0f0;
-  }
+.suggestions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ddd;
+  border-top: none; /* Sin borde superior para unir con el input */
+  border-radius: 0 0 10px 10px; /* Bordes redondeados en la parte inferior */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  max-height: 200px; /* Limita la altura máxima de la lista */
+  overflow-y: auto; /* Habilita el desplazamiento vertical */
+}
 
-  .search-container .reset-button {
-    padding: 10px;
-    font-size: 16px;
-    background-color: #FF416C;
-    color: white;
-    border: 1px solid #FF416C;
-    border-right: none; /* Sin borde en el lado derecho para unir con el input */
-    border-radius: 10px 0 0 10px; /* Esquinas redondeadas en el lado izquierdo */
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
+/* Estilos individuales para los elementos de la lista de sugerencias */
+.suggestions li {
+  padding: 8px;
+  cursor: pointer;
+}
 
-  .search-container .reset-button:hover {
-    background-color: #E03A5F;
-  }
-
+.suggestions li:hover {
+  background-color: #f0f0f0;
+  color: #FF416C;
+}

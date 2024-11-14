@@ -1,6 +1,28 @@
 {
   "usuarios": [
     {
+      "nombre": "Emilio",
+      "profesion": "Gasista",
+      "disponibilidad": "10 hs a 18 hs",
+      "zona": "Centro, Guemes, Puerto",
+      "descripcion": "dejo todo impecable",
+      "email": "emiliomernes@hotmail.com",
+      "password": null,
+      "rol": null,
+      "id": "732b",
+      "valoraciones": [
+        8,
+        5,
+        10,
+        5,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]}.
+    }
       "nombre": "Administrador 1",
       "email": "admin1@gmail.com",
       "password": "1234567",
@@ -166,18 +188,70 @@
       "zona": "a",
       "descripcion": "a",
       "email": "leo@x.com",
-      "password": "1234567"
+      "password": "1234567",
+      "id": "5dac"
     },
     {
-      "nombre": "leann",
-      "profesion": "Plomero",
-      "disponibilidad": "de 19:00 a 21:00",
-      "zona": "Faro Norte",
-      "descripcion": "Tipazo",
-      "email": "le@aaa.com",
+      "id": "72d0",
+      "nombre": "Mica",
+      "email": "micaelaprieto@outlook.com",
       "password": "1234567",
-      "rol": null,
-      "id": "f86b"
+      "rol": "Trabajador",
+      "profesion": "Peluquera",
+      "disponibilidad": "22:27",
+      "descripcion": "Te dejo hermosa",
+      "zona": "Centro",
+      "telefono": "2235952534"
+    },
+    {
+      "id": "fb58",
+      "nombre": "Juliana",
+      "email": "juli@hotmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Limpieza",
+      "disponibilidad": "12:42",
+      "descripcion": "Dejo todo re lindo",
+      "zona": "La Perla",
+      "telefono": "22359854"
+    },
+    {
+      "id": "a768",
+      "nombre": "Pepe",
+      "email": "pepe@outlook.com",
+      "password": "alksdkmasd",
+      "rol": "Trabajador",
+      "profesion": "Gasista",
+      "disponibilidad": "21:45",
+      "descripcion": "Ok",
+      "zona": "Barrio San José",
+      "telefono": "223545646"
+    },
+    {
+      "id": "748d",
+      "nombre": "Pepe",
+      "email": "pepe@outlook.com",
+      "password": "alksdkmasd",
+      "rol": "Trabajador",
+      "profesion": "asfdfsd",
+      "disponibilidad": "22:08",
+      "descripcion": "fsdf",
+      "zona": "Punta Mogotes",
+      "telefono": "2235468545"
+    },
+    {
+      "id": "35d0",
+      "nombre": "Pepe",
+      "email": "pepe@outlook.com",
+      "password": "alksdkmasd",
+      "rol": "Cliente"
+    },
+    {
+      "id": "9c87",
+      "nombre": "Oscar",
+      "email": "oscarsito@hotmail.com",
+      "password": "1234567",
+      "rol": "Cliente"
     }
   ],
   "reservas": [
@@ -215,7 +289,8 @@
       "horario": "21:24",
       "direccion": "sadas",
       "idUs": "a110",
-      "idTr": "f86b"
+      "idTr": "f86b",
+      "id": "13c5"
     },
     {
       "id": "a7d8",
@@ -233,6 +308,12 @@
       "idTr": "732b"
     },
     {
+      "id": "711e",
+      "fecha": "2024-11-21",
+      "horario": "20:57",
+      "direccion": "asd",
+      "idUs": "18e9",
+      "idTr": "732b"
       "fecha": "2024-11-22",
       "horario": "21:53",
       "direccion": "CCC",
