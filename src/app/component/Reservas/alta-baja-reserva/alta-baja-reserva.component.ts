@@ -8,7 +8,7 @@ import { ReservasService } from '../../../service/reservas.service';
 import { DialogoComponent } from '../../Inicio/cuadro-dialogo/cuadro-dialogo.component';
 import { AuthService } from '../../../service/auth.service';
 import { NavbarPrivateComponent } from "../../../shared/navbar-private/navbar-private.component";
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink, Router } from '@angular/router';
 import { UsuariosService } from '../../../service/usuarios.service';
 
 
@@ -40,6 +40,7 @@ export class AltaBajaReservaComponent implements OnInit {
     private dialog: MatDialog,
     private authService: AuthService,
     private route: ActivatedRoute,
+    private router: Router,
     private reservasService: ReservasService
   ) {}
   ngOnInit(): void{
@@ -78,6 +79,8 @@ export class AltaBajaReservaComponent implements OnInit {
               message: 'Se ha realizado la reserva exitosamente.\n🎉¡Muchas gracias por su confianza! 🎉'
             }
           });
+
+          this.router.navigate(['/home', this.usuarioActualId]);
         },
         error: (e: Error) => {
           console.log("Error al realizar la reserva:", e.message);
