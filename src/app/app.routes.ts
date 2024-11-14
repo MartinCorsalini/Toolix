@@ -14,6 +14,7 @@ import { ContactoComponent } from './component/generales/contacto/contacto.compo
 import { PoliticasPrivacidadComponent } from './component/generales/politicas-privacidad/politicas-privacidad.component';
 import { TerminosServicioComponent } from './component/generales/terminos-servicio/terminos-servicio.component';
 import { ModificarReservaPageComponent } from './pages/modificar-reserva-page/modificar-reserva-page.component';
+import { EliminarCuentaPageComponent } from './pages/eliminar-cuenta-page/eliminar-cuenta-page.component';
 
 
 
@@ -87,6 +88,12 @@ export const appRoutes: Routes = [
         component: ModificarReservaPageComponent,
        canActivate : [authGuard] //SI ESTOY LOGEADO
     },
+    {
+
+      path: 'eliminar-cuenta/:id',
+       component: EliminarCuentaPageComponent,
+      canActivate : [authGuard] //SI ESTOY LOGEADO
+   },
     {
 
       path: '**',

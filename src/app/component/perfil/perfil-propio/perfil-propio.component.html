@@ -29,6 +29,8 @@
       <div>
         <button (click)="irAModificar(usuario?.id!)" >Modificar datos</button>
         <button [routerLink]="['/home', usuario?.id]">Atrás</button>
+
+        <button [routerLink]="['/eliminar-cuenta', usuario?.id] ">Eliminar mi cuenta</button>
       </div>
 
     </div>

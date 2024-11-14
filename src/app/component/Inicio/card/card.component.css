@@ -18,7 +18,8 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
-  background-image: url('../../../../assets/images/seccion-perfiles.webp');
+  background-color: #e9ecef;
+  /*background-image: url('../../../../assets/images/seccion-perfiles.webp');*/
 }
 
 .card {

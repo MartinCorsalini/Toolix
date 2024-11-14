@@ -55,7 +55,7 @@ export class UsuariosService {
     return this.http.put<Usuario>(`${this.urlBase}/${id}`,usuario);
   }
 
-  deleteUsuario(id:string): Observable<void>{
+  deleteUsuario(id?:string): Observable<void>{
     return this.http.delete<void>(`${this.urlBase}/${id}`);
 
   }

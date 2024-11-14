@@ -4,7 +4,7 @@
   flex-direction: column;
   width: 100%;
   max-width: 1200px; /* Limitar el ancho máximo del contenedor */
-  margin: 0 auto  ; /* Centrado en la página */
+  margin:0 auto  ; /* Centrado en la página */
   padding: 20px;
   background-color: #FFF3E0;
   border-radius: 8px;
