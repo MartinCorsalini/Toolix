@@ -13,6 +13,9 @@ import { NosotrosComponent } from './component/generales/nosotros/nosotros.compo
 import { ContactoComponent } from './component/generales/contacto/contacto.component';
 import { PoliticasPrivacidadComponent } from './component/generales/politicas-privacidad/politicas-privacidad.component';
 import { TerminosServicioComponent } from './component/generales/terminos-servicio/terminos-servicio.component';
+import { ModificarReservaPageComponent } from './pages/modificar-reserva-page/modificar-reserva-page.component';
+
+
 
 
 
@@ -79,6 +82,13 @@ export const appRoutes: Routes = [
       canActivate : [authGuard] //SI ESTOY LOGEADO
     },
     {
+
+       path: 'modificar-reserva/:id/:trabajadorId',
+        component: ModificarReservaPageComponent,
+       canActivate : [authGuard] //SI ESTOY LOGEADO
+    },
+    {
+
       path: '**',
       redirectTo:'login'
     }

@@ -1,27 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { NavbarPrivateComponent } from "../../shared/navbar-private/navbar-private.component";
 import { Reserva } from '../../interface/reserva';
 import { CommonModule } from '@angular/common';
 import { AltaBajaReservaComponent } from "../Reservas/alta-baja-reserva/alta-baja-reserva.component";
 import { ReservasService } from '../../service/reservas.service';
 
+import { MatDialog } from '@angular/material/dialog';
+import { DialogoComponent } from '../Inicio/cuadro-dialogo/cuadro-dialogo.component';
+import { Router, RouterModule } from '@angular/router';
+
+
+
 @Component({
   selector: 'app-notifications',
   standalone: true,
-  imports: [NavbarPrivateComponent, CommonModule, AltaBajaReservaComponent],
+  imports: [NavbarPrivateComponent, CommonModule, AltaBajaReservaComponent,RouterModule],
   templateUrl: './notifications.component.html',
   styleUrl: './notifications.component.css'
 })
 export class NotificationsComponent implements OnInit{
   reservasEnviadas: Reserva[]=[];
-
-  constructor(private reservasService: ReservasService) {}
+  
+  constructor(private reservasService: ReservasService,private dialog: MatDialog,private router: Router) {}
   
   ngOnInit(): void {
     this.reservasService.cargarReservas();
     // Obtener las reservas enviadas
-    this.reservasService.obtenerReservas().subscribe((reservas) => {
-      this.reservasEnviadas = reservas;
+    this.reservasService.getReserva().subscribe((reservas) => {
+      this.reservasEnviadas = reservas
     });
   }
 
@@ -29,19 +35,52 @@ export class NotificationsComponent implements OnInit{
       this.reservasEnviadas.push(reserva);
      
   }
- 
 
-  modificarReserva(reserva: Reserva){
-
-  }
-  eliminarReserva(reserva: Reserva){
+  irAModificarReserva(reserva: Reserva){
+    
+    this.router.navigate(['modificar-reserva', reserva.id,reserva.idTr]);
 
   }
 
+  eliminarReserva(id: string | null ){
+    this.reservasService.deleteReserva(id).subscribe(
+      {
+        next: () => {
+          console.log('Eliminando');
+          this.cargarReservas();
+          this.dialog.open(DialogoComponent, {
+            panelClass: "custom-dialog-container",
+            data: {
+              message: "La reserva se ha eliminado correctamente"
+            }
+          });
+        },
+        error: (e: Error) => {
+          console.log('Fallo eliminar');
+        }
+        });
+
   }
+
+  cargarReservas() {
+    this.reservasService.getReserva().subscribe({
+      next: (reservas: Reserva[]) => {
+        this.reservasEnviadas = reservas; // Asigna las reservas obtenidas del servidor
+      },
+     error: (e : Error) => {
+        console.log('Error al cargar las reservas', e.message);
+      }
+    }
+      
+    );
+  }
+
+
+  }
+
+
 
   
-
 
 
 

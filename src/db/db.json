@@ -31,7 +31,10 @@
       "email": "juanirelok@hotmail.com",
       "password": "alskdnalskdna",
       "rol": null,
-      "id": "a1f8"
+      "id": "a1f8",
+      "valoraciones": [
+        9
+      ]
     },
     {
       "nombre": "Juanita Pepes",
@@ -184,13 +187,15 @@
       "rol": "Trabajador"
     },
     {
-      "nombre": "mahone",
-      "profesion": "Otro (aclarar en descripcion)",
-      "disponibilidad": "16:48",
-      "zona": "Barrio San José",
-      "descripcion": "fbi",
+      "nombre": "Lean",
+      "profesion": "Plomero",
+      "disponibilidad": "A",
+      "zona": "a",
+      "descripcion": "a",
+      "email": "leo@x.com",
+      "password": "1234567",
       "rol": null,
-      "id": "56f2"
+      "id": "520f"
     },
     {
       "id": "6d49",
@@ -201,24 +206,27 @@
       "telefono": "12414141"
     },
     {
-      "id": "c257",
-      "profesion": "fbi",
-      "disponibilidad": "17:02",
-      "descripcion": "fbi",
-      "zona": "Barrio San José",
-      "telefono": "1234567"
+      "id": "47c9",
+      "fecha": "2024-11-21",
+      "horario": "16:46",
+      "direccion": "asd",
+      "idUs": "520f",
+      "idTr": "732b"
     },
     {
-      "id": "d031",
-      "nombre": "mahone",
-      "email": "mahone@fbi.com",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "fbi",
-      "disponibilidad": "17:11",
-      "descripcion": "fbi",
-      "zona": "Faro Norte",
-      "telefono": "13141414"
+      "id": "0cd5",
+      "fecha": "2024-11-23",
+      "horario": "20:06",
+      "direccion": "asda",
+      "idUs": "520f"
+    },
+    {
+      "id": "8dec",
+      "fecha": "2024-10-31",
+      "horario": "17:04",
+      "direccion": "asdasd",
+      "idUs": "520f",
+      "idTr": "732b"
     }
-  ]
-}
+   ]
+  }
