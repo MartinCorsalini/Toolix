@@ -23,7 +23,7 @@ export class AuthService {
   {
     this.usuariosService.getUsuarioById(userId).subscribe((usuario: Usuario) => {
       this.usuarioActual = usuario;
-    
+
     });
 
     this.estoyLogeado = true;
@@ -32,7 +32,7 @@ export class AuthService {
     localStorage.setItem('token', '123.456'); // Guarda el token en localStorage
     localStorage.setItem('userId', userId); // Guarda el userId en localStorage
     localStorage.setItem('userRole', this.usuarioActual?.rol);
-    
+
 
     console.log("Usuario logueado:", this.estoyLogeado); // Log para verificar que el usuario está logueado
     console.log("User ID guardado:", userId);
@@ -71,12 +71,13 @@ export class AuthService {
 
   }
 
-  // Método para obtener el ID actual del usuario
+  // Método para obtener el ID actual del usuarioo
   getUserId(): string | undefined {
     return this.idUsuario.getValue();
   }
 
   getUserRole(): string | undefined {
     return this.usuarioActual.rol;
+   // return this.usuarioActual && this.usuarioActual.rol ? this.usuarioActual.rol : undefined;
   }
 }

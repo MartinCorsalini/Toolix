@@ -25,7 +25,7 @@ export class NotificationsComponent implements OnInit{
   esTrabajador: boolean = false;
 
   constructor(private user : AuthService, private reservasService: ReservasService, private dialog: MatDialog,private router: Router) {}
-  
+
   ngOnInit(): void {
     if (this.user.estaLogeado()) {
       // Obtiene reservas después de que se cargue el usuario
@@ -34,7 +34,7 @@ export class NotificationsComponent implements OnInit{
         this.reservasEnviadas = reservas.filter((res) => res.idUs === userId);
         this.reservasRecibidas = reservas.filter((res) => res.idTr === userId);
       });
-  
+
       // Recupera el rol del usuario y ajusta `esTrabajador` según corresponda
       this.esTrabajador = this.user.getUserRole() === 'Trabajador';
     } else {
@@ -45,11 +45,11 @@ export class NotificationsComponent implements OnInit{
 
   recibirEventReserva(reserva: Reserva){
       this.reservasEnviadas.push(reserva);
-     
+
   }
 
   irAModificarReserva(reserva: Reserva){
-  
+
     this.router.navigate(['modificar-reserva', reserva.id,reserva.idTr]);
 
   }
@@ -83,16 +83,10 @@ export class NotificationsComponent implements OnInit{
         console.log('Error al cargar las reservas', e.message);
       }
     }
-      
+
     );
   }
 
 
 }
-
-
-
-  
-
-
 

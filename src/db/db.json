@@ -219,7 +219,8 @@
       "zona": "a",
       "descripcion": "a",
       "email": "leo@x.com",
-      "password": "1234567"
+      "password": "1234567",
+      "id": "5dac"
     },
     {
       "id": "f86b",
@@ -232,6 +233,68 @@
       "descripcion": "Tipazo",
       "zona": "Faro Norte",
       "telefono": "223456789"
+    },
+    {
+      "id": "72d0",
+      "nombre": "Mica",
+      "email": "micaelaprieto@outlook.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Peluquera",
+      "disponibilidad": "22:27",
+      "descripcion": "Te dejo hermosa",
+      "zona": "Centro",
+      "telefono": "2235952534"
+    },
+    {
+      "id": "fb58",
+      "nombre": "Juliana",
+      "email": "juli@hotmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Limpieza",
+      "disponibilidad": "12:42",
+      "descripcion": "Dejo todo re lindo",
+      "zona": "La Perla",
+      "telefono": "22359854"
+    },
+    {
+      "id": "a768",
+      "nombre": "Pepe",
+      "email": "pepe@outlook.com",
+      "password": "alksdkmasd",
+      "rol": "Trabajador",
+      "profesion": "Gasista",
+      "disponibilidad": "21:45",
+      "descripcion": "Ok",
+      "zona": "Barrio San José",
+      "telefono": "223545646"
+    },
+    {
+      "id": "748d",
+      "nombre": "Pepe",
+      "email": "pepe@outlook.com",
+      "password": "alksdkmasd",
+      "rol": "Trabajador",
+      "profesion": "asfdfsd",
+      "disponibilidad": "22:08",
+      "descripcion": "fsdf",
+      "zona": "Punta Mogotes",
+      "telefono": "2235468545"
+    },
+    {
+      "id": "35d0",
+      "nombre": "Pepe",
+      "email": "pepe@outlook.com",
+      "password": "alksdkmasd",
+      "rol": "Cliente"
+    },
+    {
+      "id": "9c87",
+      "nombre": "Oscar",
+      "email": "oscarsito@hotmail.com",
+      "password": "1234567",
+      "rol": "Cliente"
     }
   ],
   "reservas": [
@@ -269,7 +332,8 @@
       "horario": "21:24",
       "direccion": "sadas",
       "idUs": "a110",
-      "idTr": "f86b"
+      "idTr": "f86b",
+      "id": "13c5"
     },
     {
       "id": "a7d8",
@@ -332,6 +396,62 @@
       "direccion": "UNA",
       "idUs": "a110",
       "idTr": "e858"
+    },
+    {
+      "id": "ba32",
+      "fecha": "2024-11-21",
+      "horario": "20:56",
+      "direccion": "San Martín 2267       ",
+      "idUs": "732b",
+      "idTr": "18e9"
+    },
+    {
+      "id": "9667",
+      "fecha": "2024-11-21",
+      "horario": "18:05",
+      "direccion": "San Martín 2267       ",
+      "idUs": "e858",
+      "idTr": "f86b"
+    },
+    {
+      "id": "50b2",
+      "fecha": "2024-11-29",
+      "horario": "18:10",
+      "direccion": "San Martín 2267       ",
+      "idUs": "5dac",
+      "idTr": "e858"
+    },
+    {
+      "id": "4549",
+      "fecha": "2024-11-23",
+      "horario": "18:08",
+      "direccion": "PROBANDOO",
+      "idUs": "e858",
+      "idTr": "f86b"
+    },
+    {
+      "id": "4381",
+      "fecha": "2024-10-31",
+      "horario": "23:08",
+      "direccion": "leaan: id:f86b",
+      "idUs": "f86b",
+      "idTr": "996a"
+    },
+    {
+      "id": "fbf8",
+      "fecha": "2024-11-20",
+      "horario": "18:28",
+      "direccion": "Mica probando",
+      "idUs": "996a",
+      "idTr": "1547"
+    },
+    {
+      "id": "3966",
+      "fecha": "2024-11-07",
+      "horario": "18:34",
+      "direccion": "uno",
+      "idUs": "996a",
+      "idTr": "ef56"
     }
   ]
 }
