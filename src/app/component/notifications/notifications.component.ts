@@ -26,7 +26,7 @@ export class NotificationsComponent implements OnInit{
   ngOnInit(): void {
     this.reservasService.cargarReservas();
     // Obtener las reservas enviadas
-    this.reservasService.getReservas().subscribe((reservas) => {
+    this.reservasService.getReserva().subscribe((reservas) => {
       this.reservasEnviadas = reservas
     });
   }
@@ -63,7 +63,7 @@ export class NotificationsComponent implements OnInit{
   }
 
   cargarReservas() {
-    this.reservasService.getReservas().subscribe({
+    this.reservasService.getReserva().subscribe({
       next: (reservas: Reserva[]) => {
         this.reservasEnviadas = reservas; // Asigna las reservas obtenidas del servidor
       },

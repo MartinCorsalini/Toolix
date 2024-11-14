@@ -16,7 +16,7 @@ import { DialogoComponent } from '../../Inicio/cuadro-dialogo/cuadro-dialogo.com
   standalone: true,
   imports: [NavbarPrivateComponent,ReactiveFormsModule, CommonModule,RouterLink],
   templateUrl: './modificar-reserva.component.html',
-  styleUrls: './modificar-reserva.component.css'
+  styleUrl: './modificar-reserva.component.css'
 })
 
 export class ModificarReservaComponent implements OnInit {
