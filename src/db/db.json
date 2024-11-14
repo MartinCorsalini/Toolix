@@ -2,7 +2,7 @@
   "usuarios": [
     {
       "nombre": "Emilio",
-      "profesion": "Gasista",
+      "profesion": "Gasistaa",
       "disponibilidad": "10 hs a 18 hs",
       "zona": "Centro, Guemes, Puerto",
       "descripcion": "dejo todo impecable",
@@ -11,15 +11,11 @@
       "rol": null,
       "id": "732b",
       "valoraciones": [
-        8,
-        5,
-        10,
-        5,
+        7,
+        2,
+        9,
         1,
-        1,
-        1,
-        1,
-        1
+        10
       ]
     },
     {
@@ -33,24 +29,7 @@
       "rol": null,
       "id": "18e9",
       "valoraciones": [
-        7,
-        2,
-        1,
-        10,
-        10,
-        10,
-        10,
-        10,
-        10,
-        10,
-        10,
-        10,
-        10,
-        10,
-        10,
-        10,
-        10,
-        10
+        8
       ]
     },
     {
@@ -76,7 +55,10 @@
       "email": "pepesju@hotmail.com",
       "password": "alksnaslkd",
       "rol": null,
-      "id": "55d4"
+      "id": "55d4",
+      "valoraciones": [
+        6
+      ]
     },
     {
       "nombre": "Jose",
@@ -87,7 +69,10 @@
       "email": "jose@hotmail.com",
       "password": "alskdnalsd",
       "rol": null,
-      "id": "8eb5"
+      "id": "8eb5",
+      "valoraciones": [
+        3
+      ]
     },
     {
       "nombre": "Leonardo",
@@ -100,9 +85,7 @@
       "rol": null,
       "id": "bb75",
       "valoraciones": [
-        1,
-        10,
-        10
+        7
       ]
     },
     {
@@ -114,7 +97,10 @@
       "email": "juanooooo@hotmail.com",
       "password": "lksdfnskdf",
       "rol": "Trabajador",
-      "id": "ef56"
+      "id": "ef56",
+      "valoraciones": [
+        9
+      ]
     },
     {
       "nombre": "fgfg",
@@ -136,7 +122,10 @@
       "email": "lulita@hotmail.com",
       "password": "kalnsdlkasd",
       "rol": "Trabajador",
-      "id": "ae9e"
+      "id": "ae9e",
+      "valoraciones": [
+        1
+      ]
     },
     {
       "nombre": "Julietaaaa",
@@ -147,7 +136,10 @@
       "email": "juli@hotmail.com",
       "password": "anfalksfnaklfs",
       "rol": "Trabajador",
-      "id": "236c"
+      "id": "236c",
+      "valoraciones": [
+        5
+      ]
     },
     {
       "nombre": "Pepeeeeeee",
@@ -217,25 +209,29 @@
       "descripcion": "asdasdas",
       "email": "asdasd@asd",
       "password": "123123123",
-      "rol": "Trabajador",
+      "rol": null,
       "id": "a110"
     },
     {
-      "id": "ed60",
       "nombre": "Lean",
+      "profesion": "Plomero",
+      "disponibilidad": "A",
+      "zona": "a",
+      "descripcion": "a",
       "email": "leo@x.com",
       "password": "1234567"
     },
     {
+      "id": "f86b",
       "nombre": "leann",
-      "profesion": "Gasista",
-      "disponibilidad": "17:16",
-      "zona": "Faro Norte",
-      "descripcion": "Tipazo",
       "email": "le@aaa.com",
       "password": "1234567",
-      "rol": null,
-      "id": "f86b"
+      "rol": "Trabajador",
+      "profesion": "Plomero",
+      "disponibilidad": "17:16",
+      "descripcion": "Tipazo",
+      "zona": "Faro Norte",
+      "telefono": "223456789"
     }
   ],
   "reservas": [
@@ -269,19 +265,19 @@
       "idTr": "732b"
     },
     {
-      "fecha": "2024-11-22",
-      "horario": "14:51",
-      "direccion": "FFF",
-      "id": "fda5",
-      "idTr": "732b"
-    },
-    {
-      "id": "dc9b",
       "fecha": "2024-11-06",
       "horario": "21:24",
       "direccion": "sadas",
       "idUs": "a110",
       "idTr": "f86b"
+    },
+    {
+      "id": "a7d8",
+      "fecha": "2024-11-06",
+      "horario": "21:35",
+      "direccion": "sasd",
+      "idUs": "a2ef",
+      "idTr": "18e9"
     },
     {
       "fecha": "2024-11-14",
