@@ -11,6 +11,8 @@ body {
 /* Establece que el contenido ocupe el espacio restante */
 .container {
   flex: 1;
+  margin: 0;
+  height: 100%;
 }
 
 .footer {
@@ -19,6 +21,7 @@ body {
   padding: 15px 0;
   text-align: center;
   width: 100%;
+  margin-bottom: 0;
 }
 
   .footer a {

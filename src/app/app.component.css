@@ -19,5 +19,5 @@ main {
 
 /* Aseguramos que el footer esté al final */
 footer {
-  margin-top: auto;
+  margin-bottom: 0;
 }
