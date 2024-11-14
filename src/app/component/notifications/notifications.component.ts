@@ -18,6 +18,7 @@ export class NotificationsComponent implements OnInit{
   constructor(private reservasService: ReservasService) {}
   
   ngOnInit(): void {
+    this.reservasService.cargarReservas();
     // Obtener las reservas enviadas
     this.reservasService.obtenerReservas().subscribe((reservas) => {
       this.reservasEnviadas = reservas;

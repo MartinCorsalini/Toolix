@@ -2,25 +2,14 @@
   "usuarios": [
     {
       "nombre": "Emilio",
-      "profesion": "Gasista",
+      "profesion": "Gasistaa",
       "disponibilidad": "10 hs a 18 hs",
       "zona": "Centro, Guemes, Puerto",
       "descripcion": "dejo todo impecable",
       "email": "emiliomernes@hotmail.com",
       "password": null,
       "rol": null,
-      "id": "732b",
-      "valoraciones": [
-        8,
-        5,
-        10,
-        5,
-        1,
-        1,
-        1,
-        1,
-        1
-      ]
+      "id": "732b"
     },
     {
       "nombre": "Martin Corsalini",
@@ -31,27 +20,7 @@
       "email": "martincorsa@outlook.com",
       "password": "laskdamlsdanslkd",
       "rol": null,
-      "id": "18e9",
-      "valoraciones": [
-        7,
-        2,
-        1,
-        10,
-        10,
-        10,
-        10,
-        10,
-        10,
-        10,
-        10,
-        10,
-        10,
-        10,
-        10,
-        10,
-        10,
-        10
-      ]
+      "id": "18e9"
     },
     {
       "nombre": "Juanito",
@@ -95,12 +64,7 @@
       "email": "leonardo@outlook.com",
       "password": "laskndalksd",
       "rol": null,
-      "id": "bb75",
-      "valoraciones": [
-        1,
-        10,
-        10
-      ]
+      "id": "bb75"
     },
     {
       "nombre": "juanooo",
@@ -207,57 +171,54 @@
       "password": "1234567"
     },
     {
-      "nombre": "ferchu",
-      "profesion": "Pintor/a",
-      "disponibilidad": "10 a 20",
-      "zona": "centro",
-      "descripcion": "asdasdas",
-      "email": "asdasd@asd",
-      "password": "123123123",
-      "rol": null,
-      "id": "a110"
-    },
-    {
-      "nombre": "Lean",
-      "profesion": "Plomero",
-      "disponibilidad": "A",
-      "zona": "a",
-      "descripcion": "a",
-      "email": "leo@x.com",
-      "password": "1234567",
-      "rol": null,
-      "id": "520f"
-    },
-    {
-      "id": "ed60",
-      "nombre": "Lean",
-      "email": "leo@x.com",
+      "id": "5dde",
+      "nombre": "Juan",
+      "email": "juan@gmail.com",
       "password": "1234567"
-    }
-  ],
-  "reservas": [
-    {
-      "id": "47c9",
-      "fecha": "2024-11-21",
-      "horario": "16:46",
-      "direccion": "asd",
-      "idUs": "520f",
-      "idTr": "732b"
     },
     {
-      "id": "0cd5",
-      "fecha": "2024-11-23",
-      "horario": "20:06",
-      "direccion": "asda",
-      "idUs": "520f"
+      "id": "e837",
+      "nombre": "juan",
+      "email": "juan@gmail.com",
+      "password": "2345678",
+      "rol": "Trabajador"
     },
     {
-      "id": "8dec",
-      "fecha": "2024-10-31",
-      "horario": "17:04",
-      "direccion": "asdasd",
-      "idUs": "520f",
-      "idTr": "732b"
+      "nombre": "mahone",
+      "profesion": "Otro (aclarar en descripcion)",
+      "disponibilidad": "16:48",
+      "zona": "Barrio San José",
+      "descripcion": "fbi",
+      "rol": null,
+      "id": "56f2"
+    },
+    {
+      "id": "6d49",
+      "profesion": "afffafaf",
+      "disponibilidad": "16:52",
+      "descripcion": "dafdafafa",
+      "zona": "Alfar",
+      "telefono": "12414141"
+    },
+    {
+      "id": "c257",
+      "profesion": "fbi",
+      "disponibilidad": "17:02",
+      "descripcion": "fbi",
+      "zona": "Barrio San José",
+      "telefono": "1234567"
+    },
+    {
+      "id": "d031",
+      "nombre": "mahone",
+      "email": "mahone@fbi.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "fbi",
+      "disponibilidad": "17:11",
+      "descripcion": "fbi",
+      "zona": "Faro Norte",
+      "telefono": "13141414"
     }
   ]
 }
