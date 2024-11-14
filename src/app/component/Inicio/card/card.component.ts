@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
 })
 export class CardComponent implements OnInit{
   ngOnInit(): void {
-    this.accederApilotos()
+    this.accederAusuarios()
   }
 
   @Input()
@@ -23,9 +23,46 @@ export class CardComponent implements OnInit{
 
   service = inject(UsuariosService);
   router = inject(Router);
-  
+  stars: number[] = [];
 
-  accederApilotos()
+
+  // Calcula el promedio de valoraciones
+  calcularPromedioValoracion(valoraciones: number[] | undefined): number {
+    let promedio = 0;
+
+  if (Array.isArray(valoraciones) && valoraciones.length > 0) {
+    const suma = valoraciones.reduce((acc, val) => acc + val, 0);
+    promedio = suma / valoraciones.length;
+  }
+
+  // Actualizamos las estrellas con el promedio calculado (o 0 si no hay valoraciones)
+  this.actualizarEstrellas(promedio);
+
+  return promedio;
+  }
+
+  actualizarEstrellas(promedio : number) {
+
+    if (promedio === 0) {
+      // Si el promedio es 0, muestra 5 estrellas vacías
+      this.stars = [0, 0, 0, 0, 0];
+      return;
+    }
+
+    const promedioDividio = promedio / 2; // Promedio en una escala de 5
+    const estrellasLlenas = Math.floor(promedioDividio);
+    const mediaEstrella = promedioDividio % 1 >= 0.5 ? 1 : 0;
+    const estrellasVacias = 5 - estrellasLlenas - mediaEstrella;
+
+    this.stars = [
+      ...Array(estrellasLlenas).fill(1),  // Estrellas llenas
+      ...Array(mediaEstrella).fill(0.5),  // Media estrella (si aplica)
+      ...Array(estrellasVacias).fill(0),  // Estrellas vacías
+    ];
+  }
+
+
+  accederAusuarios()
   {
       this.service.getUsuarios().subscribe(
         {
@@ -38,7 +75,6 @@ export class CardComponent implements OnInit{
         }
       )
   }
-
 
 
   irADetalles(id:string)

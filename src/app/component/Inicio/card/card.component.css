@@ -134,3 +134,11 @@ body {
 .fav-button.active i {
     color: #ff0000; /* Cambia el color cuando está activo */
 }
+
+
+.perfil-rating {
+
+  align-items: center; /* Alinea los elementos en el centro */
+  color: #FFD700; /* Color dorado */
+  font-size: 18px; /* Tamaño de fuente */
+}

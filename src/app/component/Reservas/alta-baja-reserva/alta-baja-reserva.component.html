@@ -23,7 +23,8 @@
     </div>
   
     <div class="form-buttons">
-      <button type="submit" [disabled]="reservaForm.invalid" class="submit-button">Aceptar</button>
+
+      <button (click)="addReserva()" [routerLink]="['/notificaciones']" class="submit-button">Aceptar</button>
        <button  [routerLink]="['/perfil-trabajador', trabajadorId]" type="button" class="cancel-button">Cancelar</button>
       
     </div>

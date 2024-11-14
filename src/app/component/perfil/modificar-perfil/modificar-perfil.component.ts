@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { UsuariosService } from '../../../service/usuarios.service';
 import { Usuario } from '../../../interface/usuario';
 
@@ -11,7 +11,7 @@ import { NavbarPrivateComponent } from '../../../shared/navbar-private/navbar-pr
   selector: 'app-modificar-perfil',
   standalone: true,
 
-  imports: [NavbarPrivateComponent, ReactiveFormsModule],
+  imports: [NavbarPrivateComponent, ReactiveFormsModule,RouterLink],
 
   templateUrl: './modificar-perfil.component.html',
   styleUrl: './modificar-perfil.component.css'

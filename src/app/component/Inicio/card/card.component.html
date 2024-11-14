@@ -6,7 +6,7 @@
       @for (usuario of listaUsuarios; track $index)
       {
 
-        <div class="card">
+        <div *ngIf="usuario.rol == 'Trabajador'" class="card">
           <div class="image">
             <img src="assets/avatar/avatar.png" alt="Imagen de perfil" class="profile-img" />
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -25,9 +25,13 @@
             <hr>
             <div class="actions">
               <button class="detalles-button" (click)="irADetalles(usuario.id!)">Detalles</button>
-              <div class="rating">
-                <p>Valoración</p>
-                <p class="color">{{usuario.valoracion}}</p>
+              <div class="perfil-rating">
+                <span>{{ calcularPromedioValoracion(usuario.valoraciones) | number:'1.1-1' }}</span>
+                <ng-container *ngFor="let star of stars">
+                  <span *ngIf="star === 1">&#9733;</span>
+                  <span *ngIf="star === 0.5">&#x272E;</span>
+                  <span *ngIf="star === 0">&#9734;</span>
+                </ng-container>
               </div>
               <!--
               <button>utton class="fav-button" (click)="toggleFavorite()">

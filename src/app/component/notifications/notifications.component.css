@@ -23,7 +23,6 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 10px;
-    border-bottom: 1px solid #ddd;
 }
 
 .header h2 {
@@ -78,7 +77,26 @@ body {
 
 .titulos {
     margin: 100; /* Sin margen */
-    color: #333; /* Color gris oscuro */
+    color: #FF416C; /* Color gris oscuro */
     font-size: 28px; /* Tamaño de fuente */
     font-weight: bold; /* Texto en negrita */
+  }
+
+  .title {
+    font-family: 'Montserrat', sans-serif; /* Fuente elegante */
+    font-size: 2rem; /* Tamaño grande */
+    font-weight: 700; /* Negrita */
+    text-align: center; /* Centrar el texto */
+    background-image: linear-gradient(to right, orange, #ff0000); /* Gradiente de claro a rojo */
+    background-clip: text;
+    -webkit-background-clip: text; /* Soporte para WebKit */
+    color: transparent; /* Hace que solo el gradiente sea visible */
+    display: inline-block; /* Para que el gradiente se aplique correctamente al texto */
+  }
+
+  .center-container {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center;          /* Hace que el contenedor ocupe toda la altura de la ventana */
+    text-align: center;      /* Asegura que el texto también esté centrado */
   }
