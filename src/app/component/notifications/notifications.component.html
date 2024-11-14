@@ -3,21 +3,21 @@
    <h2 class="title">Notificaciones</h2> 
   </div>
 
-  <div class="center-container">
-    <h2 *ngIf="esTrabajador" class="titulos">Reservas recibidas</h2>
+  <div  class="center-container">
+    <h2  class="titulos">Reservas recibidas</h2>
    </div>
 
-  <div class="center-container">     
+  <div  class="center-container">     
         
-    <div *ngIf="esTrabajador" class="container">
+    <div ng class="container">
         <div class="header">
             
         </div>
-        <ul *ngIf="esTrabajador" class="notification-list">
-            <li class="notification-item">
-                <p>Dirección:   </p>
-                <p>Fecha: <span></span></p>
-                <p>Horario: <span></span></p>
+        <ul class="notification-list">
+            <li class="notification-item" *ngFor = "let reserva of reservasRecibidas">
+                <p>Dirección: {{ reserva.direccion }}</p>
+                <p>Fecha: <span>{{ reserva.fecha }}</span></p>
+                <p>Horario: <span>{{ reserva.horario }}</span></p>
                 <div class="actions">
                     <button class="accept-btn">Aceptar</button>
                     <button class="reject-btn">Rechazar</button>
