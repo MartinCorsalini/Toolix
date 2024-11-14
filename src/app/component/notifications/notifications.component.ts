@@ -21,21 +21,26 @@ import { AuthService } from '../../service/auth.service';
 })
 export class NotificationsComponent implements OnInit{
   reservasEnviadas: Reserva[]=[];
+  reservasRecibidas: Reserva[]=[];
   esTrabajador: boolean = false;
 
   constructor(private user : AuthService, private reservasService: ReservasService, private dialog: MatDialog,private router: Router) {}
   
   ngOnInit(): void {
-    this.reservasService.getReserva().subscribe((reservas) => {
-      const userId = this.user.getUserId();
-      this.reservasEnviadas = reservas.filter((res) => res.idUs === userId);
-  });
-
-    const rolUsuario = this.user.getUserRole();  // retorna el rol del usuario logueado
-    if(rolUsuario == 'Trabajador'){ 
-      this.esTrabajador = true;
+    if (this.user.estaLogeado()) {
+      // Obtiene reservas después de que se cargue el usuario
+      this.reservasService.getReserva().subscribe((reservas) => {
+        const userId = this.user.getUserId();
+        this.reservasEnviadas = reservas.filter((res) => res.idUs === userId);
+        this.reservasRecibidas = reservas.filter((res) => res.idTr === userId);
+      });
+  
+      // Recupera el rol del usuario y ajusta `esTrabajador` según corresponda
+      this.esTrabajador = this.user.getUserRole() === 'Trabajador';
+    } else {
+      // Si no está logueado, redirige a la página de login
+      this.router.navigate(['/login']);
     }
-     
   }
 
   recibirEventReserva(reserva: Reserva){
@@ -54,6 +59,7 @@ export class NotificationsComponent implements OnInit{
       {
         next: () => {
           console.log('Eliminando');
+           this.reservasEnviadas = this.reservasEnviadas.filter(res => res.id !== id);
           this.dialog.open(DialogoComponent, {
             panelClass: "custom-dialog-container",
             data: {

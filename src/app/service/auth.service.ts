@@ -32,6 +32,7 @@ export class AuthService {
     localStorage.setItem('token', '123.456'); // Guarda el token en localStorage
     localStorage.setItem('userId', userId); // Guarda el userId en localStorage
     localStorage.setItem('userRole', this.usuarioActual?.rol);
+    
 
     console.log("Usuario logueado:", this.estoyLogeado); // Log para verificar que el usuario está logueado
     console.log("User ID guardado:", userId);
