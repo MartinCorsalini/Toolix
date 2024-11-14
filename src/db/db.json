@@ -169,16 +169,15 @@
       "password": "1234567"
     },
     {
-      "id": "f86b",
       "nombre": "leann",
+      "profesion": "Plomero",
+      "disponibilidad": "de 19:00 a 21:00",
+      "zona": "Faro Norte",
+      "descripcion": "Tipazo",
       "email": "le@aaa.com",
       "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "Plomero",
-      "disponibilidad": "17:16",
-      "descripcion": "Tipazo",
-      "zona": "Faro Norte",
-      "telefono": "223456789"
+      "rol": null,
+      "id": "f86b"
     }
   ],
   "reservas": [
@@ -287,6 +286,14 @@
       "direccion": "m",
       "idUs": "f86b",
       "idTr": "ef56"
+    },
+    {
+      "id": "cb2c",
+      "fecha": "2024-11-13",
+      "horario": "22:35",
+      "direccion": "jyf",
+      "idUs": "f86b",
+      "idTr": "236c"
     }
   ]
 }
