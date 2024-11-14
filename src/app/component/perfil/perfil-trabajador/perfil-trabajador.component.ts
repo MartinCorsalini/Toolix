@@ -86,6 +86,7 @@ cargarValoracionDB()
 
     // Convierte el promedio en estrellas llenas, medias y vacías
     actualizarEstrellas() {
+
       const promedio = this.calcularPromedioValoracion() / 2; // Promedio en una escala de 5
       const estrellasLlenas = Math.floor(promedio);
       const mediaEstrella = promedio % 1 >= 0.5 ? 1 : 0;

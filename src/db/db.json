@@ -9,7 +9,14 @@
       "email": "emiliomernes@hotmail.com",
       "password": null,
       "rol": null,
-      "id": "732b"
+      "id": "732b",
+      "valoraciones": [
+        7,
+        2,
+        9,
+        1,
+        10
+      ]
     },
     {
       "nombre": "Martin Corsalini",
@@ -20,7 +27,10 @@
       "email": "martincorsa@outlook.com",
       "password": "laskdamlsdanslkd",
       "rol": null,
-      "id": "18e9"
+      "id": "18e9",
+      "valoraciones": [
+        8
+      ]
     },
     {
       "nombre": "Juanito",
@@ -45,7 +55,10 @@
       "email": "pepesju@hotmail.com",
       "password": "alksnaslkd",
       "rol": null,
-      "id": "55d4"
+      "id": "55d4",
+      "valoraciones": [
+        6
+      ]
     },
     {
       "nombre": "Jose",
@@ -56,7 +69,10 @@
       "email": "jose@hotmail.com",
       "password": "alskdnalsd",
       "rol": null,
-      "id": "8eb5"
+      "id": "8eb5",
+      "valoraciones": [
+        3
+      ]
     },
     {
       "nombre": "Leonardo",
@@ -67,7 +83,10 @@
       "email": "leonardo@outlook.com",
       "password": "laskndalksd",
       "rol": null,
-      "id": "bb75"
+      "id": "bb75",
+      "valoraciones": [
+        7
+      ]
     },
     {
       "nombre": "juanooo",
@@ -78,7 +97,10 @@
       "email": "juanooooo@hotmail.com",
       "password": "lksdfnskdf",
       "rol": "Trabajador",
-      "id": "ef56"
+      "id": "ef56",
+      "valoraciones": [
+        9
+      ]
     },
     {
       "nombre": "fgfg",
@@ -100,7 +122,10 @@
       "email": "lulita@hotmail.com",
       "password": "kalnsdlkasd",
       "rol": "Trabajador",
-      "id": "ae9e"
+      "id": "ae9e",
+      "valoraciones": [
+        1
+      ]
     },
     {
       "nombre": "Julietaaaa",
@@ -111,7 +136,10 @@
       "email": "juli@hotmail.com",
       "password": "anfalksfnaklfs",
       "rol": "Trabajador",
-      "id": "236c"
+      "id": "236c",
+      "valoraciones": [
+        5
+      ]
     },
     {
       "nombre": "Pepeeeeeee",
@@ -191,7 +219,8 @@
       "zona": "a",
       "descripcion": "a",
       "email": "leo@x.com",
-      "password": "1234567"
+      "password": "1234567",
+      "id": "1a78"
     }
   ],
   "reservas": [
@@ -254,5 +283,5 @@
       "idTr": "732b",
       "idUs": "f86b"
     }
-   ]
-  }
+  ]
+}
