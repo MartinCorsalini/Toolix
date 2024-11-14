@@ -47,7 +47,7 @@ export class AltaBajaReservaComponent implements OnInit {
 
     this.trabajadorId=this.route.snapshot.paramMap.get('id') // metodo para obtener el ID del trabajador desde la URL
 
-    this.reservaForm = this.fb.group({
+    this.reservaForm = this.fb.nonNullable.group({
       fecha: ['', Validators.required],
       horario: ['', Validators.required],
       direccion: ['', Validators.required]

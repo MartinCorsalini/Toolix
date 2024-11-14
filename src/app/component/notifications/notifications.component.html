@@ -31,6 +31,7 @@
 
 <!----->
 
+
 <div class="center-container">
     <h2 class="titulos">Reservas enviadas</h2>
    </div>
@@ -43,10 +44,14 @@
                 <p>Fecha: <span>{{ reserva.fecha }}</span></p>
                 <p>Horario: <span>{{ reserva.horario }}</span></p>
                 <div class="actions">
-                    <button class="accept-btn">Modificar</button>
+
+                    <button (click)="irAModificarReserva(reserva)" class="accept-btn">Modificar</button>
+
                     <button (click)="eliminarReserva(reserva.id)" class="reject-btn">Eliminar</button>
                 </div>
             </li>
         </ul>
     </div>
    </div>
+
+
