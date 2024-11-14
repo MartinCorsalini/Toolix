@@ -41,12 +41,17 @@ export class ReservasService {
     this.reservasSubject.next(reservas); // Actualiza la lista de reservas
   }
 
+  obtenerReservas(): Observable<Reserva[]> {
+    return this.reservasSer;
+  }
+
 
   //////// peticiones http client
-  getReservas(): Observable<Reserva[]>{
+  getReserva(): Observable<Reserva[]>{
     return this.http.get<Reserva[]>(this.urlBase);
   }
   
+
   getReservaById(id:string): Observable<Reserva>{
     return this.http.get<Reserva>(`${this.urlBase}/${id}`);
 
@@ -55,9 +60,7 @@ export class ReservasService {
   postReserva(reserva:Reserva): Observable<Reserva>{
     return this.http.post<Reserva>(this.urlBase, reserva);
  }
-
-
-
+      
  putReserva(reserva:Reserva, id:string | null): Observable<Reserva>{
   return this.http.put<Reserva>(`${this.urlBase}/${id}`,reserva);
 }
@@ -66,5 +69,5 @@ deleteReserva(id:string | null): Observable<void>{
   return this.http.delete<void>(`${this.urlBase}/${id}`);
 
 }
-
+  
 }

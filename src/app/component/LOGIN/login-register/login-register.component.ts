@@ -72,7 +72,7 @@ export class LoginRegisterComponent implements OnInit {
 
     this.addUsuarioDB(usuario2); // Agrego el usuario a la base de datos
     console.log(usuario2.email);
-    //this.buscarEmail(usuario2.email)
+    this.buscarEmail(usuario2.email)
 
   }
 
@@ -138,7 +138,7 @@ export class LoginRegisterComponent implements OnInit {
   //----- Hago un GET para acceder al ID asginado------
   // para eso busco con el mail, ya que el id se lo asigna al hacer el get y no se cual es ------
 
-  /* buscarEmail(email: string)
+  buscarEmail(email: string)
    {
       this.service.getUsuarioByEmail(email).subscribe({
         next: (usuarios: Usuario[]) =>
@@ -162,7 +162,7 @@ export class LoginRegisterComponent implements OnInit {
           alert('Error al buscar por email');
         }
       });
-    } */
+    }
 
 
   //---------RUTAS PRIVADAS -------

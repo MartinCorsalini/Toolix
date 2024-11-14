@@ -18,6 +18,8 @@ import { ModificarReservaPageComponent } from './pages/modificar-reserva-page/mo
 
 
 
+
+
 export const appRoutes: Routes = [
     {
       path: 'login',
@@ -80,11 +82,13 @@ export const appRoutes: Routes = [
       canActivate : [authGuard] //SI ESTOY LOGEADO
     },
     {
+
        path: 'modificar-reserva/:id/:trabajadorId',
         component: ModificarReservaPageComponent,
        canActivate : [authGuard] //SI ESTOY LOGEADO
     },
     {
+
       path: '**',
       redirectTo:'login'
     }
