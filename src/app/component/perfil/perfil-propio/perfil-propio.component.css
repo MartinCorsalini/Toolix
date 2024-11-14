@@ -1,98 +1,113 @@
-/* Asegura que el componente ocupe toda la pantalla */
-/* perfil-container ocupa todo el espacio disponible */
+/* Contenedor principal que ocupa toda la pantalla */
 .perfil-container {
-  display: flex; /* Usa Flexbox para organizar los elementos hijos */
-  flex-direction: column; /* Coloca los elementos hijos en una columna */
-  align-items: center; /* Centra los elementos hijos horizontalmente */
-  justify-content: center; /* Centra los elementos hijos verticalmente */
-  width: 100vw; /* Hace que el ancho ocupe el 100% del viewport */
-  flex-grow: 1; /* Permite que este contenedor crezca si es necesario */
-  background-color: #f9f9f9; /* Fondo color gris claro */
-  font-family: 'Montserrat', sans-serif; /* Aplica la fuente Montserrat */
-  box-sizing: border-box; /* Incluye el padding y borde dentro del ancho/alto */
-  margin: 0; /* Elimina el margen externo */
-  padding: 20px; /* Agrega 20px de espacio alrededor del contenido */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+  background-color: #f4f6f8; /* Fondo gris suave */
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 40px 20px; /* Más padding para dar espacio alrededor de la tarjeta */
+  box-sizing: border-box;
 }
 
+/* Estilo para la tarjeta de perfil */
 .perfil-box {
-  border: 3px solid #FF416C; /* Borde de 3px color rosado oscuro */
-  padding: 20px; /* Espacio interno de 20px */
-  border-radius: 8px; /* Esquinas redondeadas de 8px */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del cuadro */
-  background-color: #f8f9fb; /* Fondo blanco */
-  max-width: 600px; /* Ancho máximo de 600px */
-  width: 100%; /* Ancho completo disponible del contenedor */
-  box-sizing: border-box; /* Incluye el padding y borde en el ancho total */
+  background-color: #ffffff; /* Fondo blanco */
+  border: 1px solid #ddd; /* Borde gris claro */
+  border-radius: 12px; /* Bordes más redondeados */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15); /* Sombra para darle efecto de elevación */
+  padding: 25px;
+  max-width: 600px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center; /* Centra el contenido del texto */
 }
 
+/* Encabezado con foto e información del perfil */
 .perfil-header {
-  display: flex; /* Usa Flexbox para organizar los elementos hijos */
-  flex-direction: column; /* Coloca los elementos en una columna */
-  align-items: center; /* Centra los elementos horizontalmente */
-  margin-bottom: 20px; /* Espacio de 20px debajo del contenedor */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .perfil-foto {
-  width: 120px; /* Ancho de la foto */
-  height: 120px; /* Alto de la foto */
-  border-radius: 50%; /* Hace que la imagen sea circular */
-  margin-right: 0; /* Sin margen derecho */
-  margin-bottom: 10px; /* Espacio de 10px debajo de la imagen */
-  object-fit: cover; /* Asegura que la imagen mantenga su aspecto */
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 4px solid #FF416C; /* Borde color rosado oscuro */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar la foto */
+  object-fit: cover;
 }
 
 .perfil-info h2 {
-  margin: 0; /* Sin margen */
-  color: #333; /* Color gris oscuro */
-  font-size: 28px; /* Tamaño de fuente */
-  font-weight: bold; /* Texto en negrita */
+  margin: 0;
+  color: #333;
+  font-size: 26px;
+  font-weight: bold;
 }
 
 .profesion {
-  margin: 5px 0; /* Margen vertical de 5px */
-  color: #555; /* Color gris medio */
-  font-size: 18px; /* Tamaño de fuente */
+  margin: 4px 0 10px; /* Espacio superior e inferior */
+  color: #777; /* Color gris claro */
+  font-size: 18px;
 }
 
+/* Valoración del perfil */
 .perfil-rating {
-  display: flex; /* Usa Flexbox */
-  align-items: center; /* Alinea los elementos en el centro */
-  color: #FFD700; /* Color dorado */
-  font-size: 18px; /* Tamaño de fuente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFD700;
+  font-size: 18px;
+  margin-top: 5px;
 }
 
+/* Detalles de perfil */
 .perfil-detalles {
-  display: flex; /* Usa Flexbox */
-  flex-direction: column; /* Coloca los elementos en columna */
-  align-items: center; /* Centra horizontalmente */
-  margin-top: 20px; /* Espacio de 20px arriba */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  color: #555; /* Color gris oscuro para el texto */
 }
 
 .perfil-detalles p {
-  margin: 5px 0; /* Margen vertical de 10px */
-  color: #444; /* Color gris oscuro */
-  font-size: 16px; /* Tamaño de fuente */
+  margin: 5px 0;
+  font-size: 16px;
+  line-height: 1.4; /* Mejora la legibilidad del texto */
 }
 
 .perfil-detalles p strong {
-  color: #FF416C; /* Color rosado oscuro para el texto en negrita */
+  color: #FF416C; /* Texto destacado en rosado oscuro */
 }
 
+/* Botones de acción */
 .perfil-detalles button {
-  display: inline-block;
-  padding: 8px 16px; /* Espacio interno de 8px vertical y 16px horizontal */
-  border: none; /* Sin borde */
-  border-radius: 4px; /* Esquinas redondeadas de 4px */
-  background-color: #FF416C; /* Fondo rosado oscuro */
-  color: white; /* Texto blanco */
-  cursor: pointer; /* Muestra un cursor de mano */
-  font-weight: 900; /* Fuente muy gruesa */
-  transition: all 0.3s ease; /* Transición suave de 0.3 segundos */
-  margin-right: 0.7rem; /* Espacio a la derecha de 0.7 rem */
-  margin-top: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px; /* Bordes más redondeados */
+  background-color: #FF416C;
+  color: white;
+  cursor: pointer;
+  font-weight: 600; /* Grosor medio */
+  font-size: 15px;
+  transition: all 0.3s ease;
+  margin: 8px 5px; /* Espacio entre botones */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto de profundidad */
 }
 
 .perfil-detalles button:hover {
-  background-color: #C02348; /* Cambia el fondo al pasar el mouse */
-  transform: scale(1.1); /* Agranda el botón un 10% al pasar el mouse */
+  background-color: #C02348;
+  transform: translateY(-2px) scale(1.05); /* Efecto de elevar y agrandar */
+}
+
+.perfil-detalles button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 65, 108, 0.3); /* Resalta el botón al hacer foco */
 }

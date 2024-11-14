@@ -19,6 +19,7 @@
         1,
         1,
         1,
+        1,
         1
       ]
     },
@@ -235,6 +236,14 @@
       "horario": "17:04",
       "direccion": "asdasd",
       "idUs": "520f",
+      "idTr": "732b"
+    },
+    {
+      "id": "711e",
+      "fecha": "2024-11-21",
+      "horario": "20:57",
+      "direccion": "asd",
+      "idUs": "18e9",
       "idTr": "732b"
     }
   ]
