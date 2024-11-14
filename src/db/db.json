@@ -225,14 +225,16 @@
       "nombre": "Lean",
       "email": "leo@x.com",
       "password": "1234567"
-    },
-    {
-      "id": "9be4",
-      "nombre": "juan",
-      "email": "juan@gmail.com",
-      "password": "1234567",
-      "rol": "Cliente"
     }
   ],
-  "reservas": []
+  "reservas": [
+    {
+      "id": "13da",
+      "fecha": "2024-11-01",
+      "horario": "23:51",
+      "direccion": "aa",
+      "idUs": "ed60",
+      "idTr": "732b"
+    }
+  ]
 }
