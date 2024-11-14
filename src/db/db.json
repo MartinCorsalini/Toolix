@@ -1,7 +1,6 @@
 {
   "usuarios": [
     {
-<<<<<<< HEAD
       "nombre": "Emilio",
       "profesion": "Gasista",
       "disponibilidad": "10 hs a 18 hs",
@@ -22,14 +21,13 @@
         1,
         1,
         1
-      ]
-=======
+      ]}.
+    }
       "nombre": "Administrador 1",
       "email": "admin1@gmail.com",
       "password": "1234567",
       "rol": "Admin",
       "id": "42m1"
->>>>>>> e3e04ba45addbfc497d7cc6b693d718fea842d56
     },
     {
       "nombre": "Martin Corsalini",
@@ -194,18 +192,6 @@
       "id": "5dac"
     },
     {
-      "id": "f86b",
-      "nombre": "leann",
-      "email": "le@aaa.com",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "Plomero",
-      "disponibilidad": "17:16",
-      "descripcion": "Tipazo",
-      "zona": "Faro Norte",
-      "telefono": "223456789"
-    },
-    {
       "id": "72d0",
       "nombre": "Mica",
       "email": "micaelaprieto@outlook.com",
@@ -322,14 +308,12 @@
       "idTr": "732b"
     },
     {
-<<<<<<< HEAD
       "id": "711e",
       "fecha": "2024-11-21",
       "horario": "20:57",
       "direccion": "asd",
       "idUs": "18e9",
       "idTr": "732b"
-=======
       "fecha": "2024-11-22",
       "horario": "21:53",
       "direccion": "CCC",
@@ -375,6 +359,22 @@
       "direccion": "UNA",
       "idUs": "a110",
       "idTr": "e858"
+    },
+    {
+      "id": "5de5",
+      "fecha": "2024-11-05",
+      "horario": "23:02",
+      "direccion": "m",
+      "idUs": "f86b",
+      "idTr": "ef56"
+    },
+    {
+      "id": "cb2c",
+      "fecha": "2024-11-13",
+      "horario": "22:35",
+      "direccion": "jyf",
+      "idUs": "f86b",
+      "idTr": "236c"
     }
   ]
 }
