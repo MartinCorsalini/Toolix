@@ -8,6 +8,7 @@ import { ReservasService } from '../../service/reservas.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogoComponent } from '../Inicio/cuadro-dialogo/cuadro-dialogo.component';
 import { Router, RouterModule } from '@angular/router';
+import { AuthService } from '../../service/auth.service';
 
 
 
@@ -20,15 +21,21 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class NotificationsComponent implements OnInit{
   reservasEnviadas: Reserva[]=[];
-  
-  constructor(private reservasService: ReservasService,private dialog: MatDialog,private router: Router) {}
+  esTrabajador: boolean = false;
+
+  constructor(private user : AuthService, private reservasService: ReservasService, private dialog: MatDialog,private router: Router) {}
   
   ngOnInit(): void {
-    this.reservasService.cargarReservas();
-    // Obtener las reservas enviadas
     this.reservasService.getReserva().subscribe((reservas) => {
-      this.reservasEnviadas = reservas
-    });
+      const userId = this.user.getUserId();
+      this.reservasEnviadas = reservas.filter((res) => res.idUs === userId);
+  });
+
+    const rolUsuario = this.user.getUserRole();  // retorna el rol del usuario logueado
+    if(rolUsuario == 'Trabajador'){ 
+      this.esTrabajador = true;
+    }
+     
   }
 
   recibirEventReserva(reserva: Reserva){
@@ -37,7 +44,7 @@ export class NotificationsComponent implements OnInit{
   }
 
   irAModificarReserva(reserva: Reserva){
-    
+  
     this.router.navigate(['modificar-reserva', reserva.id,reserva.idTr]);
 
   }
@@ -47,7 +54,6 @@ export class NotificationsComponent implements OnInit{
       {
         next: () => {
           console.log('Eliminando');
-          this.cargarReservas();
           this.dialog.open(DialogoComponent, {
             panelClass: "custom-dialog-container",
             data: {
@@ -76,7 +82,7 @@ export class NotificationsComponent implements OnInit{
   }
 
 
-  }
+}
 
 
 

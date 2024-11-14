@@ -77,7 +77,7 @@
       "descripcion": "Otro tipaso",
       "email": "juanooooo@hotmail.com",
       "password": "lksdfnskdf",
-      "rol": null,
+      "rol": "Trabajador",
       "id": "ef56"
     },
     {
@@ -88,7 +88,7 @@
       "descripcion": "sdg",
       "email": "aaaaaaaa@hotmail.com",
       "password": "dfgdfgdfgdgf",
-      "rol": null,
+      "rol": "Trabajador",
       "id": "6ec4"
     },
     {
@@ -99,7 +99,7 @@
       "descripcion": "sdf",
       "email": "lulita@hotmail.com",
       "password": "kalnsdlkasd",
-      "rol": null,
+      "rol": "Trabajador",
       "id": "ae9e"
     },
     {
@@ -110,7 +110,7 @@
       "descripcion": "sdf",
       "email": "juli@hotmail.com",
       "password": "anfalksfnaklfs",
-      "rol": null,
+      "rol": "Trabajador",
       "id": "236c"
     },
     {
@@ -121,7 +121,7 @@
       "descripcion": "mmmmmmm",
       "email": "pepe@outlook.com",
       "password": "skndalskdiuhi",
-      "rol": null,
+      "rol": "Trabajador",
       "id": "3f87"
     },
     {
@@ -131,7 +131,7 @@
       "zona": "Centro, Guemes, Puerto",
       "email": "micaelaprieto@outlook.com",
       "password": "jnkkjnn kkjnk",
-      "rol": null,
+      "rol": "Trabajador",
       "id": "5592"
     },
     {
@@ -142,7 +142,7 @@
       "descripcion": "afsdf",
       "email": "lauuu@hotmail.com",
       "password": "klsmdklasda",
-      "rol": null,
+      "rol": "Trabajador",
       "id": "1547"
     },
     {
@@ -153,7 +153,7 @@
       "descripcion": "sefsefs",
       "email": "roquefif@hotmail.com",
       "password": "ksnflaksdnas",
-      "rol": null,
+      "rol": "Trabajador",
       "id": "996a"
     },
     {
@@ -164,7 +164,7 @@
       "descripcion": "Dejo todo super limpio",
       "email": "micael@hotmail.com",
       "password": "ajsdnkaskd",
-      "rol": null,
+      "rol": "Trabajador",
       "id": "e858"
     },
     {
@@ -174,17 +174,15 @@
       "password": "1234567"
     },
     {
-      "id": "5dde",
-      "nombre": "Juan",
-      "email": "juan@gmail.com",
-      "password": "1234567"
-    },
-    {
-      "id": "e837",
-      "nombre": "juan",
-      "email": "juan@gmail.com",
-      "password": "2345678",
-      "rol": "Trabajador"
+      "nombre": "ferchu",
+      "profesion": "peluquera",
+      "disponibilidad": "10 a 20",
+      "zona": "centro",
+      "descripcion": "asdasdas",
+      "email": "asdasd@asd",
+      "password": "123123123",
+      "rol": null,
+      "id": "a110"
     },
     {
       "nombre": "Lean",
@@ -193,40 +191,68 @@
       "zona": "a",
       "descripcion": "a",
       "email": "leo@x.com",
-      "password": "1234567",
-      "rol": null,
-      "id": "520f"
+      "password": "1234567"
+    }
+  ],
+  "reservas": [
+    {
+      "fecha": "2024-11-01",
+      "horario": "04:08",
+      "direccion": "cci",
+      "id": "aca2",
+      "idTr": null
     },
     {
-      "id": "6d49",
-      "profesion": "afffafaf",
-      "disponibilidad": "16:52",
-      "descripcion": "dafdafafa",
-      "zona": "Alfar",
-      "telefono": "12414141"
+      "id": "eda1",
+      "fecha": "2024-11-07",
+      "horario": "04:19",
+      "direccion": "qqqq",
+      "idUs": "ed60",
+      "idTr": "18e9"
     },
     {
-      "id": "47c9",
-      "fecha": "2024-11-21",
-      "horario": "16:46",
-      "direccion": "asd",
-      "idUs": "520f",
+      "fecha": "2024-11-09",
+      "horario": "05:20",
+      "direccion": "pppa",
+      "id": "a047",
+      "idTr": "18e9"
+    },
+    {
+      "fecha": "2024-11-08",
+      "horario": "04:28",
+      "direccion": "ña",
+      "id": "59d5",
       "idTr": "732b"
     },
     {
-      "id": "0cd5",
-      "fecha": "2024-11-23",
-      "horario": "20:06",
-      "direccion": "asda",
-      "idUs": "520f"
+      "fecha": "2024-11-06",
+      "horario": "06:27",
+      "direccion": "66",
+      "id": "b845",
+      "idTr": "732b"
     },
     {
-      "id": "8dec",
-      "fecha": "2024-10-31",
-      "horario": "17:04",
-      "direccion": "asdasd",
-      "idUs": "520f",
-      "idTr": "732b"
+      "fecha": "2024-11-13",
+      "horario": "20:47",
+      "direccion": "AA",
+      "id": "26c0",
+      "idTr": "732b",
+      "idUs": "f86b"
+    },
+    {
+      "fecha": "2024-11-22",
+      "horario": "21:53",
+      "direccion": "CCC",
+      "id": "b7c8",
+      "idTr": "18e9"
+    },
+    {
+      "fecha": "2024-11-11",
+      "horario": "06:00",
+      "direccion": "Hipolito",
+      "id": "45f2",
+      "idTr": "732b",
+      "idUs": "f86b"
     }
    ]
   }

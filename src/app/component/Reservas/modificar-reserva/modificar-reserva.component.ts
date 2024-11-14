@@ -85,7 +85,8 @@ export class ModificarReservaComponent implements OnInit {
     const reservaModificada ={
       ...this.modificarRForm.getRawValue(),
        id: this.reservaId,
-      idTr: this.trabajadorId
+      idTr: this.trabajadorId,
+      idUs: this.authService.getUserId()
     }
 
 
