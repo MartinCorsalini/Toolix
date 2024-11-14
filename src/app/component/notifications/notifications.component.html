@@ -1,55 +1,52 @@
 <app-navbar-private></app-navbar-private>
+<div class="center-container">
+   <h2 class="title">Notificaciones</h2> 
+  </div>
 
-<h2 class="titulos">Notificaciones</h2>
+  <div class="center-container">
+    <h2 class="titulos">Reservas recibidas</h2>
+   </div>
 
-<!-- ESTO ES LO QUE VERÍA EL TRABAJADOR -->
-
-<!-- <div class="container">
-    <div class="header">
-
+  <div class="center-container">     
+        
+    <div class="container">
+        <div class="header">
+            
+        </div>
+        <ul class="notification-list">
+            <li class="notification-item">
+                <p>Dirección:   </p>
+                <p>Fecha: <span></span></p>
+                <p>Horario: <span></span></p>
+                <div class="actions">
+                    <button class="accept-btn">Aceptar</button>
+                    <button class="reject-btn">Rechazar</button>
+                </div>
+            </li>
+            
+        </ul>
     </div>
-    <ul class="notification-list">
-        <li class="notification-item">
-            <p>Reserva 1</p>
-            <p>Fecha: <span>DD/MM/AAAA</span></p>
-            <div class="actions">
-                <button class="accept-btn">Aceptar</button>
-                <button class="reject-btn">Rechazar</button>
-            </div>
-        </li>
-        <li class="notification-item">
-            <p>Reserva 2</p>
-            <p>Fecha: <span>DD/MM/AAAA</span></p>
-            <div class="actions">
-                <button class="accept-btn">Aceptar</button>
-                <button class="reject-btn">Rechazar</button>
-            </div>
-        </li>
-        <li class="notification-item">
-            <p>Reserva 3</p>
-            <p>Fecha: <span>DD/MM/AAAA</span></p>
-            <div class="actions">
-                <button class="accept-btn">Aceptar</button>
-                <button class="reject-btn">Rechazar</button>
-            </div>
-        </li>
-    </ul>
-</div> -->
+   </div>
 
 
-<h2 class="titulos">Reservas enviadas</h2>
+<!----->
 
-<div class="container">
-    <div class="header"></div>
-    <ul class="notification-list">
-        <li class="notification-item" *ngFor = "let reserva of reservasEnviadas">
-            <p>Reserva para {{ reserva.direccion }}</p>
-            <p>Fecha: <span>{{ reserva.fecha }}</span></p>
-            <p>Horario: <span>{{ reserva.horario }}</span></p>
-            <div class="actions">
-                <button class="accept-btn" (click)="modificarReserva(reserva)">Modificar</button>
-                <button class="reject-btn" (click)="eliminarReserva(reserva.id)">Eliminar</button>
-            </div>
-        </li>
-    </ul>
-</div>
+<div class="center-container">
+    <h2 class="titulos">Reservas enviadas</h2>
+   </div>
+   <div class="center-container">
+    <div class="container">
+        <div class="header"></div>
+        <ul class="notification-list">
+            <li class="notification-item" *ngFor = "let reserva of reservasEnviadas">
+                <p>Dirección: {{ reserva.direccion }}</p>
+                <p>Fecha: <span>{{ reserva.fecha }}</span></p>
+                <p>Horario: <span>{{ reserva.horario }}</span></p>
+                <div class="actions">
+                    <button class="accept-btn">Modificar</button>
+                    <button (click)="eliminarReserva(reserva.id)" class="reject-btn">Eliminar</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+   </div>
