@@ -41,7 +41,22 @@
       "email": "micael@hotmail.com",
       "password": "ajsdnkaskd",
       "rol": "Trabajador",
-      "id": "e858"
+      "id": "e858",
+      "valoraciones": [
+        5
+      ]
+    },
+    {
+      "nombre": "Raul",
+      "profesion": "Electricista",
+      "disponibilidad": "03:13",
+      "zona": "Caisamarafas",
+      "descripcion": " Voy a domicilio. Sasduper respetuoso.",
+      "telefono": "223546546545sdasd",
+      "email": "raul@hotmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "id": "da81"
     },
     {
       "id": "6893",
@@ -53,10 +68,7 @@
       "disponibilidad": "12:17",
       "descripcion": "Super respetuoso. Muy comprometido",
       "zona": "Caisamar",
-      "telefono": "2235646546",
-      "valoraciones": [
-        3
-      ]
+      "telefono": "2235646546"
     },
     {
       "id": "2dc4",
@@ -177,31 +189,13 @@
   ],
   "reservas": [
     {
-      "id": "a2a1",
-      "fecha": "2024-11-20",
-      "horario": "03:42",
-      "direccion": "Hipolito Yrigoyen 6023",
-      "estado": "rechazada",
-      "idUs": "8866",
-      "idTr": "3f87"
-    },
-    {
-      "id": "3d6a",
-      "fecha": "2024-11-16",
-      "horario": "09:04",
-      "direccion": "Camet",
+      "fecha": "2024-11-19",
+      "horario": "07:50",
+      "direccion": "dos",
       "estado": "aceptada",
-      "idUs": "364c",
-      "idTr": "3f87"
-    },
-    {
-      "id": "b30b",
-      "fecha": "2024-11-28",
-      "horario": "09:15",
-      "direccion": "Rivadavia 3022",
-      "estado": "pendiente",
-      "idUs": "364c",
-      "idTr": "6893"
+      "id": "4f93",
+      "idTr": "2dc4",
+      "idUs": "2dc4"
     },
     {
       "id": "6148",
@@ -209,8 +203,9 @@
       "horario": "07:16",
       "direccion": "Alvarado 1203",
       "estado": "pendiente",
-      "idUs": "364c",
-      "idTr": "ae89"
+      "id": "e35f",
+      "idTr": "e858",
+      "idUs": "42m1"
     }
   ]
 }
