@@ -17,10 +17,10 @@
       "email": "pepe@outlook.com",
       "password": "skndalskdiuhi",
       "rol": "Trabajador",
-      "id": "3f87",
       "valoraciones": [
         6
-      ]
+      ],
+      "id": "3f87"
     },
     {
       "nombre": "Raulssss",
@@ -38,12 +38,15 @@
       "nombre": "Micaela Perezzzz",
       "profesion": "Psicologo/a",
       "disponibilidad": "14:38",
-      "zona": "Centro",
+      "zona": "Centrooa",
       "descripcion": "Enfoque conductista. Trabajo con niños, adolescente y adultos. Depresión . Ansiedad. Parejas",
       "telefono": "2235952534",
       "email": "micaelaprieto@outlook.com",
       "password": "1234567",
       "rol": "Trabajador",
+      "valoraciones": [
+        7
+      ],
       "id": "2dc4"
     },
     {
