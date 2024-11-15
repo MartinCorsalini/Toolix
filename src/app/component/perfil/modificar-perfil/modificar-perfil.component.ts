@@ -100,7 +100,7 @@ export class ModificarPerfilComponent implements OnInit {
       usuario2.email = this.usuario?.email!;
       usuario2.password = this.usuario?.password!;
 
-      this.service.putPiloto(usuario2, this.id).subscribe(
+      this.service.putUsuario(usuario2, this.id).subscribe(
         {
           next: ()=>
           {

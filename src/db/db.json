@@ -142,22 +142,24 @@
   ],
   "reservas": [
     {
-      "fecha": "2024-11-12",
-      "horario": "04:20",
-      "direccion": "asdasdaaaaaadfsdf",
-      "estado": "aceptada",
-      "id": "6d5f",
-      "idTr": "2dc4",
-      "idUs": "2dc4"
+      "id": "ad23",
+      "nombre": "sdfsd",
+      "email": "asdasd@dfdfs",
+      "password": "2313456",
+      "rol": "Cliente"
     },
     {
-      "fecha": "2024-11-13",
-      "horario": "01:54",
-      "direccion": "San Martín 2267       aaajbjhbjhbjaa",
-      "estado": "pendiente",
-      "id": "1258",
-      "idTr": "a6fb",
-      "idUs": "a6fb"
+      "id": "7bda",
+      "nombre": "asdasd",
+      "email": "asdas@sdfsdf",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Centro de estetica",
+      "disponibilidad": "01:25",
+      "descripcion": "dsdfsdf",
+      "zona": "Caisamar",
+      "telefono": "1234567"
     }
-  ]
+  ],
+  "reservas": []
 }

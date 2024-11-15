@@ -31,10 +31,11 @@
 
     <!-- Disponibilidad -->
     <input
-      type="time"
-      class="time-placeholder"
+      type="text"
+      placeholder="Ejemplo: 10:00 a 12:00"
       formControlName="disponibilidad"
     />
+
     <div *ngIf="signUpForm2.controls['disponibilidad'].hasError('required') && signUpForm2.controls['disponibilidad'].touched" class="error">
       * Campo obligatorio.
     </div>
