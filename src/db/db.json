@@ -8,130 +8,7 @@
       "id": "42m1"
     },
     {
-      "nombre": "Martin Corsalini",
-      "profesion": "Electricista",
-      "disponibilidad": "10 hs a 18 hs",
-      "zona": "La perla",
-      "descripcion": "tipaso",
-      "email": "martincorsa@outlook.com",
-      "password": "laskdamlsdanslkd",
-      "rol": null,
-      "id": "18e9",
-      "valoraciones": [
-        8
-      ]
-    },
-    {
-      "nombre": "Juanito",
-      "profesion": "Gasista",
-      "disponibilidad": "10 hs a 18 hs",
-      "zona": "Centro, Guemes, La perla",
-      "descripcion": "otro tipaso",
-      "email": "juanirelok@hotmail.com",
-      "password": "alskdnalskdna",
-      "rol": null,
-      "id": "a1f8",
-      "valoraciones": [
-        9
-      ]
-    },
-    {
-      "nombre": "Juanita Pepes",
-      "profesion": "Peluquera",
-      "disponibilidad": "10 hs a 20 hs",
-      "zona": "Guemes",
-      "descripcion": "Quedas re fachera",
-      "email": "pepesju@hotmail.com",
-      "password": "alksnaslkd",
-      "rol": null,
-      "id": "55d4",
-      "valoraciones": [
-        6
-      ]
-    },
-    {
-      "nombre": "Jose",
-      "profesion": "Electricista",
-      "disponibilidad": "10 hs a 15 hs",
-      "zona": "Constitucion",
-      "descripcion": "Arreglo todo super bien",
-      "email": "jose@hotmail.com",
-      "password": "alskdnalsd",
-      "rol": null,
-      "id": "8eb5",
-      "valoraciones": [
-        3
-      ]
-    },
-    {
-      "nombre": "Leonardo",
-      "profesion": "Gasista",
-      "disponibilidad": "10 hs a 15 hs",
-      "zona": "La perla",
-      "descripcion": "excelente servicio",
-      "email": "leonardo@outlook.com",
-      "password": "laskndalksd",
-      "rol": null,
-      "id": "bb75",
-      "valoraciones": [
-        7
-      ]
-    },
-    {
-      "nombre": "juanooo",
-      "profesion": "Limpieza",
-      "disponibilidad": "10 hs a 20 hs",
-      "zona": "Centro, Guemes, Puerto",
-      "descripcion": "Otro tipaso",
-      "email": "juanooooo@hotmail.com",
-      "password": "lksdfnskdf",
-      "rol": "Trabajador",
-      "id": "ef56",
-      "valoraciones": [
-        9
-      ]
-    },
-    {
-      "nombre": "fgfg",
-      "profesion": "sfg",
-      "disponibilidad": "sdg",
-      "zona": "sg",
-      "descripcion": "sdg",
-      "email": "aaaaaaaa@hotmail.com",
-      "password": "dfgdfgdfgdgf",
-      "rol": "Trabajador",
-      "id": "6ec4"
-    },
-    {
-      "nombre": "Luli",
-      "profesion": "sdf",
-      "disponibilidad": "sdf",
-      "zona": "dsf",
-      "descripcion": "sdf",
-      "email": "lulita@hotmail.com",
-      "password": "kalnsdlkasd",
-      "rol": "Trabajador",
-      "id": "ae9e",
-      "valoraciones": [
-        1
-      ]
-    },
-    {
-      "nombre": "Julietaaaa",
-      "profesion": "Limpieza",
-      "disponibilidad": "10 hs a 15 hs",
-      "zona": "La perla",
-      "descripcion": "sdf",
-      "email": "juli@hotmail.com",
-      "password": "anfalksfnaklfs",
-      "rol": "Trabajador",
-      "id": "236c",
-      "valoraciones": [
-        5
-      ]
-    },
-    {
-      "nombre": "Pepeeeeeee",
+      "nombre": "Pepe",
       "profesion": "Gasista",
       "disponibilidad": "10 hs a 20 hs",
       "zona": "La perla",
@@ -140,16 +17,6 @@
       "password": "skndalskdiuhi",
       "rol": "Trabajador",
       "id": "3f87"
-    },
-    {
-      "nombre": "njknk",
-      "profesion": "klml",
-      "disponibilidad": "10 hs a 20 hs",
-      "zona": "Centro, Guemes, Puerto",
-      "email": "micaelaprieto@outlook.com",
-      "password": "jnkkjnn kkjnk",
-      "rol": "Trabajador",
-      "id": "5592"
     },
     {
       "nombre": "Lau",
@@ -163,17 +30,6 @@
       "id": "1547"
     },
     {
-      "nombre": "Roqueeeeeeee",
-      "profesion": "Gasista",
-      "disponibilidad": "10 hs a 20 hs",
-      "zona": "La perla",
-      "descripcion": "sefsefs",
-      "email": "roquefif@hotmail.com",
-      "password": "ksnflaksdnas",
-      "rol": "Trabajador",
-      "id": "996a"
-    },
-    {
       "nombre": " Micaela",
       "profesion": "Limpieza",
       "disponibilidad": "10 hs a 20 hs",
@@ -185,293 +41,96 @@
       "id": "e858"
     },
     {
-      "id": "a2ef",
-      "nombre": "juan",
-      "email": "juan@example.com",
-      "password": "1234567"
-    },
-    {
-      "nombre": "ferchu",
-      "profesion": "peluquera",
-      "disponibilidad": "10 a 20",
-      "zona": "centro",
-      "descripcion": "asdasdas",
-      "email": "asdasd@asd",
-      "password": "123123123",
-      "rol": null,
-      "id": "a110"
-    },
-    {
-      "nombre": "Lean",
-      "profesion": "Plomero",
-      "disponibilidad": "A",
-      "zona": "a",
-      "descripcion": "a",
-      "email": "leo@x.com",
-      "password": "1234567",
-      "id": "5dac"
-    },
-    {
-      "id": "f86b",
-      "nombre": "leann",
-      "email": "le@aaa.com",
+      "id": "da81",
+      "nombre": "Raul",
+      "email": "raul@hotmail.com",
       "password": "1234567",
       "rol": "Trabajador",
-      "profesion": "Plomero",
-      "disponibilidad": "17:16",
-      "descripcion": "Tipazo",
-      "zona": "Faro Norte",
-      "telefono": "223456789"
-    },
-    {
-      "id": "72d0",
-      "nombre": "Mica",
-      "email": "micaelaprieto@outlook.com",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "Peluquera",
-      "disponibilidad": "22:27",
-      "descripcion": "Te dejo hermosa",
-      "zona": "Centro",
-      "telefono": "2235952534"
-    },
-    {
-      "id": "fb58",
-      "nombre": "Juliana",
-      "email": "juli@hotmail.com",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "Limpieza",
-      "disponibilidad": "12:42",
-      "descripcion": "Dejo todo re lindo",
-      "zona": "La Perla",
-      "telefono": "22359854"
-    },
-    {
-      "id": "748d",
-      "nombre": "Pepe",
-      "email": "pepe@outlook.com",
-      "password": "alksdkmasd",
-      "rol": "Trabajador",
-      "profesion": "asfdfsd",
-      "disponibilidad": "22:08",
-      "descripcion": "fsdf",
-      "zona": "Punta Mogotes",
-      "telefono": "2235468545"
-    },
-    {
-      "id": "35d0",
-      "nombre": "Pepe",
-      "email": "pepe@outlook.com",
-      "password": "alksdkmasd",
-      "rol": "Cliente"
-    },
-    {
-      "id": "9c87",
-      "nombre": "Oscar",
-      "email": "oscarsito@hotmail.com",
-      "password": "1234567",
-      "rol": "Cliente"
-    },
-    {
-      "id": "af10",
-      "nombre": "asdknja",
-      "email": "micaelaprieto@outlook.com",
-      "password": "dfsdfsf",
-      "rol": "Cliente"
-    },
-    {
-      "id": "0c1a",
-      "nombre": "sdfsdf",
-      "email": "micaelaprieto@outlook.com",
-      "password": "sdfsfsdfsdf",
-      "rol": "Cliente"
-    },
-    {
-      "id": "a8b1",
-      "nombre": "Emma",
-      "email": "ema@la.com",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "limpieza",
-      "disponibilidad": "22:28",
-      "descripcion": "buenasaaaaaa",
-      "zona": "Barrio San José",
-      "telefono": "223546456"
-    },
-    {
-      "id": "5357",
-      "nombre": "Emma",
-      "email": "ema@la.com",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "dfsdf",
-      "disponibilidad": "22:28",
-      "descripcion": "dsfs",
-      "zona": "San Carlos",
-      "telefono": "1231323"
-    },
-    {
-      "id": "bc0c",
-      "nombre": "kun",
-      "email": "kun@lalal.com",
-      "password": "lkndalksdnaklsd",
-      "rol": "Trabajador",
-      "profesion": "Gasista",
-      "disponibilidad": "22:38",
-      "descripcion": "dsdfs",
-      "zona": "San Carlos",
-      "telefono": "223456465"
-    },
-    {
-      "id": "4ac9",
-      "nombre": "cx",
-      "email": "xcvxcvxcv@hotmail.com",
-      "password": "sdfsfsd",
-      "rol": "Trabajador",
-      "profesion": "xxdv",
-      "disponibilidad": "22:38",
-      "descripcion": "cxvxcvxc",
+      "profesion": "Electricista",
+      "disponibilidad": "03:13",
+      "descripcion": " Voy a domicilio. Super respetuoso.",
       "zona": "Caisamar",
-      "telefono": "12312"
+      "telefono": "223546546545"
     },
     {
-      "id": "4934",
-      "nombre": "bfbcvb",
-      "email": "xvxcvxcv@dfbcv",
-      "password": "zczcxcvxcvxc",
+      "id": "6893",
+      "nombre": "Raul",
+      "email": "raul@hotmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Carpintero/a",
+      "disponibilidad": "12:17",
+      "descripcion": "Super respetuoso. Muy comprometido",
+      "zona": "Caisamar",
+      "telefono": "2235646546"
+    },
+    {
+      "id": "fe36",
+      "nombre": "dfsdfsdfsd",
+      "email": "sdfsdfsdf@dfgdfgdq",
+      "password": "3135451345",
+      "rol": "Trabajador",
+      "profesion": "Albañil",
+      "disponibilidad": "00:18",
+      "descripcion": "21321",
+      "zona": "Caisamar",
+      "telefono": "21321321"
+    },
+    {
+      "id": "4e45",
+      "nombre": "jnkjnkn",
+      "email": "asndakldnsl@lskdfmlskdf",
+      "password": "312132sdfsdf",
+      "rol": "Trabajador",
+      "profesion": "Carpintero/a",
+      "disponibilidad": "00:18",
+      "descripcion": "lnkjn jk",
+      "zona": "Caisamar",
+      "telefono": "2235465465"
+    },
+    {
+      "id": "71d9",
+      "nombre": "jnkjnkn",
+      "email": "asndakldnsl@lskdfmlskdf",
+      "password": "312132sdfsdf",
+      "rol": "Trabajador",
+      "profesion": "Abogado/a",
+      "disponibilidad": "12:17",
+      "descripcion": "kjnbkjn",
+      "zona": "Faro Norte",
+      "telefono": "321321"
+    },
+    {
+      "id": "74c1",
+      "nombre": "adasdas",
+      "email": "asdas@adad",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Carpintero/a",
+      "disponibilidad": "15:24",
+      "descripcion": "sadasd",
+      "zona": "Faro Norte",
+      "telefono": "32132"
+    },
+    {
+      "id": "ad23",
+      "nombre": "sdfsd",
+      "email": "asdasd@dfdfs",
+      "password": "2313456",
       "rol": "Cliente"
     },
     {
-      "id": "8e61",
-      "nombre": "xvxcvxcv",
-      "email": "xcvxcvxcv@fgxfg",
-      "password": "fxfgdgxcvxcv",
+      "id": "7bda",
+      "nombre": "asdasd",
+      "email": "asdas@sdfsdf",
+      "password": "1234567",
       "rol": "Trabajador",
-      "profesion": "xcvxcvxcv",
-      "disponibilidad": "22:39",
-      "descripcion": "cvxcvxcv",
-      "zona": "Faro Norte",
-      "telefono": "21231231"
-    },
-    {
-      "nombre": "jaaaaaz",
       "profesion": "Centro de estetica",
-      "disponibilidad": "10 hs a 15 hs",
-      "zona": "vbc",
-      "descripcion": "cvbcvb",
-      "email": "jas@jas.com",
-      "password": "dgxxzczxc",
-      "rol": null,
-      "id": "290b"
+      "disponibilidad": "01:25",
+      "descripcion": "dsdfsdf",
+      "zona": "Caisamar",
+      "telefono": "1234567"
     }
   ],
-  "reservas": [
-    {
-      "fecha": "2024-11-01",
-      "horario": "04:08",
-      "direccion": "cci",
-      "id": "aca2",
-      "idTr": null
-    },
-    {
-      "id": "eda1",
-      "fecha": "2024-11-07",
-      "horario": "04:19",
-      "direccion": "qqqq",
-      "idUs": "ed60",
-      "idTr": "18e9"
-    },
-    {
-      "fecha": "2024-11-09",
-      "horario": "05:20",
-      "direccion": "pppa",
-      "id": "a047",
-      "idTr": "18e9"
-    },
-    {
-      "fecha": "2024-11-08",
-      "horario": "04:28",
-      "direccion": "ña",
-      "id": "59d5",
-      "idTr": "732b"
-    },
-    {
-      "id": "a7d8",
-      "fecha": "2024-11-06",
-      "horario": "21:35",
-      "direccion": "sasd",
-      "idUs": "a2ef",
-      "idTr": "18e9"
-    },
-    {
-      "fecha": "2024-11-14",
-      "horario": "21:46",
-      "direccion": "ZZZ",
-      "id": "6ee9",
-      "idTr": "732b"
-    },
-    {
-      "id": "89e9",
-      "fecha": "2024-11-05",
-      "horario": "17:36",
-      "direccion": "UNA",
-      "idUs": "a110",
-      "idTr": "e858"
-    },
-    {
-      "id": "2db7",
-      "fecha": "2024-11-30",
-      "horario": "22:19",
-      "direccion": "UNO",
-      "estado": "pendiente",
-      "idUs": "72d0",
-      "idTr": "f86b"
-    },
-    {
-      "id": "bb3f",
-      "fecha": "2024-11-22",
-      "horario": "22:19",
-      "direccion": "DOSSS",
-      "estado": "aceptada",
-      "idUs": "72d0",
-      "idTr": "f86b"
-    },
-    {
-      "id": "85cc",
-      "fecha": "2024-11-25",
-      "horario": "22:20",
-      "direccion": "TRES LEAN",
-      "estado": "rechazada",
-      "idUs": "72d0",
-      "idTr": "f86b"
-    },
-    {
-      "id": "ff40",
-      "fecha": "2024-11-14",
-      "horario": "22:20",
-      "direccion": "CUATRO LEAN",
-      "estado": "aceptada",
-      "idUs": "72d0",
-      "idTr": "f86b"
-    },
-    {
-      "id": "c785",
-      "fecha": "2024-11-20",
-      "horario": "14:17",
-      "direccion": "CINCOO",
-      "estado": "rechazada",
-      "idUs": "72d0",
-      "idTr": "f86b"
-    },
-    {
-      "id": "bdbf",
-      "fecha": "2024-11-20",
-      "horario": "22:24",
-      "direccion": "LAAAAAA",
-      "estado": "pendiente",
-      "idUs": "f86b",
-      "idTr": "ef56"
-    }
-  ]
+  "reservas": []
 }

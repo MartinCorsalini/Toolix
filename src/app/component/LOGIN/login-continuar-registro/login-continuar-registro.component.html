@@ -1,11 +1,30 @@
 <div mat-dialog-content>
   <form [formGroup]="signUpForm2" (ngSubmit)="onSubmit()">
     <!-- Profesión -->
-    <input
-      type="text"
-      placeholder="Profesión"
-      formControlName="profesion"
-    />
+    <label for="profesion">Profesion:</label>
+    <select class="select1" type="text" id="profesion" formControlName="profesion">
+      <option value="">Seleccione una opción</option>
+      <option>Abogado/a</option>
+      <option>Albañil</option>
+      <option>Carpintero/a</option>
+      <option>Centro de estetica</option>
+      <option>Contador/a</option>
+      <option>Costurero/a</option>
+      <option>Electricista</option>
+      <option>Gasista</option>
+      <option>Limpieza</option>
+      <option>Niñero/a</option>
+      <option>Paseador/a de perros</option>
+      <option>Peluquero/a</option>
+      <option>Pintor/a</option>
+      <option>Plomero/a</option>
+      <option>Psicologo/a</option>
+      <option>Tapicero/a</option>
+      <option>Techista</option>
+      <option>Uñas</option>
+      <option>Otro (aclarar en descripcion)</option>
+    </select>
+
     <div *ngIf="signUpForm2.controls['profesion'].hasError('required') && signUpForm2.controls['profesion'].touched" class="error">
       * Campo obligatorio.
     </div>
@@ -26,6 +45,7 @@
       placeholder="Descripción del Servicio"
       formControlName="descripcion"
     />
+
     <div *ngIf="signUpForm2.controls['descripcion'].hasError('required') && signUpForm2.controls['descripcion'].touched" class="error">
       * Campo obligatorio.
     </div>
