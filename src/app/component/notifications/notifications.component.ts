@@ -73,14 +73,6 @@ export class NotificationsComponent implements OnInit{
   }
 
 
-  // Agrega una nueva reserva al listado de reservas enviadas
-  recibirEventReserva(reserva: Reserva){
-      this.reservasEnviadas.push(reserva);
-
-  }
-
-  // Redirige a la vista para modificar la reserva seleccionada,
-  // pasando el id de la reserva y del trabajador como parámetros
   irAModificarReserva(reserva: Reserva){
 
     this.router.navigate(['modificar-reserva', reserva.id,reserva.idTr]);

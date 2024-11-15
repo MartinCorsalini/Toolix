@@ -1,0 +1,118 @@
+.navbar {
+    display: flex; /* Utiliza flexbox para organizar los elementos en fila */
+    justify-content: space-between; /* Distribuye los elementos con espacio entre ellos */
+    align-items: center; /* Alinea los elementos verticalmente al centro */
+    padding: 10px 20px; /* Aplica un espacio de 10px en la parte superior e inferior y 20px en los lados */
+    background-color: #e9ecef; /* Define un color de fondo gris claro */
+    color: white; /* Establece el color del texto a blanco */
+  }
+  
+  .logo {
+    display: flex; /* Aplica flexbox para alinear los elementos hijos horizontalmente */
+    align-items: center; /* Alinea los elementos hijos verticalmente al centro */
+  }
+  
+  .logo a {
+    text-decoration: none; /* Elimina el subrayado en el enlace */
+    display: flex; /* Aplica flexbox para alinear los elementos hijos (imagen y texto) horizontalmente */
+    align-items: center; /* Alinea los elementos hijos verticalmente al centro */
+  }
+  
+  .logo span {
+    color: #FF416C; /* Define el color del texto en un tono rosa/rojo */
+    font-weight: bold; /* Hace el texto en negrita */
+    font-size: 28px; /* Define el tamaño de la fuente */
+    font-family: 'Montserrat', sans-serif; /* Define la fuente utilizada */
+  }
+  
+  .logo img {
+    height: 40px; /* Define la altura de la imagen */
+    width: 40px; /* Define el ancho de la imagen */
+    margin-right: 10px; /* Añade un espacio de 10px a la derecha de la imagen */
+    display: inline-block; /* Asegura que la imagen se muestre en línea con el texto */
+  }
+  
+  .nav-items {
+    display: flex; /* Aplica flexbox para alinear los enlaces horizontalmente */
+    gap: 20px; /* Define un espacio de 20px entre cada enlace */
+  }
+  
+  .nav-items a {
+    color: black; /* Define el color del texto como negro */
+    font-size: 16px; /* Define el tamaño de la fuente */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    font-weight: 500; /* Define un peso de fuente intermedio */
+    cursor: pointer; /* Cambia el cursor a un puntero en los enlaces */
+    transition: color 0.3s ease-in-out; /* Añade una transición suave al cambiar el color */
+    font-family: 'Montserrat', sans-serif; /* Define la fuente utilizada */
+  }
+  
+  .nav-items a:hover {
+    
+    color: #FF416C; /* Cambia el color del texto a rosa/rojo cuando el enlace es seleccionado */
+  }
+  
+  /* Estilo para los íconos de perfil y notificaciones */
+  .nav-icons {
+    display: flex; /* Aplica flexbox para alinear los íconos horizontalmente */
+    align-items: center; /* Alinea los íconos verticalmente al centro */
+    gap: 30px; /* Define un espacio de 20px entre cada ícono */
+  }
+  
+  .nav-icons .icon-link {
+    color: black; /* Define el color de los íconos como negro */
+    font-size: 22px; /* Define el tamaño de la fuente del ícono */
+    text-decoration: none; /* Elimina el subrayado */
+    cursor: pointer; /* Cambia el cursor a un puntero en los íconos */
+    transition: color 0.2s ease; /* Añade una transición suave al cambiar el color */
+  }
+  
+  .nav-icons .icon-link:hover {
+    color: #FF416C; /* Cambia el color del ícono a rosa/rojo cuando se selecciona */
+  }
+  
+  /* Menú desplegable para el perfil */
+  .dropdown {
+    position: relative; /* Define una posición relativa para que el menú desplegable se posicione con relación a este contenedor */
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block; /* Muestra el menú cuando el cursor está sobre el contenedor dropdown */
+  }
+  
+  .dropdown-menu {
+    display: none; /* Oculta el menú desplegable por defecto */
+    position: absolute; /* Posiciona el menú desplegable de forma absoluta dentro del contenedor relativo */
+    top: 100%; /* Coloca el menú justo debajo del ícono de usuario */
+    right: 0; /* Alinea el menú desplegable al borde derecho del contenedor dropdown */
+    background-color: white; /* Define el color de fondo del menú desplegable como blanco */
+    border: 1px solid #ddd; /* Añade un borde gris claro */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra suave debajo del menú */
+    border-radius: 4px; /* Redondea las esquinas del menú */
+    width: 150px; /* Define el ancho del menú desplegable */
+    z-index: 1000; /* Eleva el menú desplegable sobre otros elementos */
+    font-family: 'Montserrat', sans-serif; /* Define la fuente utilizada */
+    opacity: 0; /* Define la opacidad inicial en 0 para la transición */
+    transform: translateY(-10px); /* Mueve el menú hacia arriba 10px para la animación */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Añade una transición suave para la opacidad y la posición */
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    opacity: 1; /* Establece la opacidad a 1 cuando el cursor está sobre el menú */
+    transform: translateY(0); /* Restaura la posición del menú para que se deslice hacia abajo */
+  }
+  
+  .dropdown-menu a {
+    display: block; /* Muestra cada enlace en el menú desplegable como un bloque */
+    padding: 10px 15px; /* Añade espacio alrededor de cada enlace */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: #333; /* Define el color del texto como gris oscuro */
+    font-size: 14px; /* Define el tamaño de la fuente de los enlaces */
+    transition: background-color 0.3s ease; /* Añade una transición suave al cambiar el color de fondo */
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #f5f5f5; /* Cambia el color de fondo a gris claro al seleccionar el enlace */
+    color: #FF416C; /* Cambia el color del texto a rosa/rojo cuando se selecciona */
+  }
+  

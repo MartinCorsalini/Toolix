@@ -65,6 +65,8 @@ export class ModificarReservaComponent implements OnInit {
     }
 
   }
+
+  
   cargarDatosReserva(id: string): void { // utiliza el ID para obtener los datos de la reserva existente y rellenar el formulario.
     this.rs.getReservaById(id).subscribe({
        next: (reserva: Reserva) => {

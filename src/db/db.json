@@ -8,17 +8,18 @@
       "id": "42m1"
     },
     {
-      "nombre": "Pepe",
-      "profesion": "Gasista",
+      "nombre": "Pepe Modificado",
+      "profesion": "Peluquero/a",
       "disponibilidad": "10 hs a 20 hs",
       "zona": "La perla",
       "descripcion": "mmmmmmm",
+      "telefono": "223",
       "email": "pepe@outlook.com",
       "password": "skndalskdiuhi",
       "rol": "Trabajador",
       "id": "3f87",
       "valoraciones": [
-        6
+        7
       ]
     },
     {
@@ -27,13 +28,11 @@
       "disponibilidad": "10 hs a 15 hs",
       "zona": "Centro, Guemes, Puerto",
       "descripcion": "afsdf",
+      "telefono": "400",
       "email": "lauuu@hotmail.com",
       "password": "klsmdklasda",
       "rol": "Trabajador",
-      "id": "1547",
-      "valoraciones": [
-        10
-      ]
+      "id": "1547"
     },
     {
       "nombre": " Micaela",
@@ -84,18 +83,6 @@
       "descripcion": "Enfoque conductista. Trabajo con niños, adolescente y adultos. Depresión . Ansiedad. Parejas",
       "zona": "Centro",
       "telefono": "2235952534"
-    },
-    {
-      "id": "61d6",
-      "nombre": "Ramon",
-      "email": "ramon@gmail.com",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "Albañil",
-      "disponibilidad": "00:42",
-      "descripcion": "Cuidadoso, prolijo. ",
-      "zona": "Caisamar",
-      "telefono": "223592548"
     },
     {
       "nombre": "Juana",
@@ -167,49 +154,24 @@
   ],
   "reservas": [
     {
-      "fecha": "2024-12-04",
-      "horario": "06:38",
-      "direccion": "San Martín 2267       fgdg",
-      "estado": "pendiente",
-      "id": "5deb",
-      "idTr": "2dc4",
-      "idUs": "2dc4"
+      "id": "ad23",
+      "nombre": "sdfsd",
+      "email": "asdasd@dfdfs",
+      "password": "2313456",
+      "rol": "Cliente"
     },
     {
-      "id": "c9da",
-      "fecha": "2024-11-01",
-      "horario": "03:20",
-      "direccion": "laaaaaa",
-      "estado": "aceptada",
-      "idUs": "2dc4",
-      "idTr": "4cbb"
-    },
-    {
-      "id": "30d9",
-      "fecha": "2024-11-12",
-      "horario": "03:20",
-      "direccion": "dasdasd",
-      "estado": "pendiente",
-      "idUs": "2dc4",
-      "idTr": "6893"
-    },
-    {
-      "id": "ac3c",
-      "fecha": "2024-11-20",
-      "horario": "03:24",
-      "direccion": "cgcfgf",
-      "estado": "rechazada",
-      "idUs": "da81",
-      "idTr": "4cbb"
-    },
-    {
-      "id": "6066",
-      "fecha": "2024-11-21",
-      "horario": "15:25",
-      "direccion": "dfsdf",
-      "estado": "pendiente",
-      "idUs": "da81",
-      "idTr": "2dc4"
+      "id": "7bda",
+      "nombre": "asdasd",
+      "email": "asdas@sdfsdf",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Centro de estetica",
+      "disponibilidad": "01:25",
+      "descripcion": "dsdfsdf",
+      "zona": "Caisamar",
+      "telefono": "1234567"
     }
-  ]
+  ],
+  "reservas": []
 }
