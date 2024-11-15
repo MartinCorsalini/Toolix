@@ -11,20 +11,19 @@
   <div class="container">
     <ul class="notification-list">
       <li class="notification-item" *ngFor="let reserva of reservasRecibidas">
-        <p class="reservation-info">Dirección: {{ reserva.direccion }}</p>
-        <p class="reservation-info">Fecha: <span>{{ reserva.fecha }}</span></p>
-        <p class="reservation-info">Horario: <span>{{ reserva.horario }}</span></p>
-
+        <p>Dirección: {{ reserva.direccion }}</p>
+        <p>Fecha: <span>{{ reserva.fecha }}</span></p>
+        <p>Horario: <span>{{ reserva.horario }}</span></p>
         <div class="actions">
           <!-- Mostrar botones solo si la reserva está pendiente -->
           <ng-container *ngIf="reserva.estado === 'pendiente'; else estadoMensaje">
-            <button class="accept-btn">Aceptar</button>
-            <button class="reject-btn">Rechazar</button>
+            <button class="accept-btn" (click)="aceptarReserva(reserva)">Aceptar</button>
+            <button class="reject-btn" (click)="rechazarReserva(reserva)">Rechazar</button>
           </ng-container>
 
           <!-- Mensaje de estado cuando no está en pendiente -->
           <ng-template #estadoMensaje>
-            <p class="estado-mensaje {{ reserva.estado }}">{{ reserva.estado | titlecase }}</p>
+            <span class="estado-mensaje {{ reserva.estado }}">{{ reserva.estado | titlecase }}</span>
           </ng-template>
         </div>
       </li>
