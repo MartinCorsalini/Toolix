@@ -1,135 +1,174 @@
+/* Estilos generales */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   background-color: #f4f4f4;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   margin: 0;
+  padding: 0;
 }
 
+/* Contenedor principal */
 .container {
   width: 100%;
   max-width: 1200px;
   background-color: #fff;
-  border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+  margin: 20px; /* Espaciado alrededor del contenedor */
 }
+
 /* Título de cada sección */
 .section-title {
-  font-size: 1.5em;
+  font-size: 1.6em;
   color: #FF416C;
-  margin: 20px 0 10px;
-  font-weight: bold;
+  margin: 20px 0 15px;
+  font-weight: 600;
   text-align: left;
 }
 
+/* Estilos de la cabecera */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #ddd; /* Línea separadora */
 }
 
 .header h2 {
-  font-size: 1.5em;
+  font-size: 1.6em;
+  font-weight: 600;
   margin: 0;
+  color: #333; /* Color oscuro para mejor legibilidad */
 }
 
+/* Lista de notificaciones */
 .notification-list {
   list-style: none;
   padding: 0;
   margin: 20px 0;
 }
 
+/* Item de notificación */
 .notification-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px;
   border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
   background-color: #fafafa;
+  transition: background-color 0.3s ease; /* Efecto suave al pasar el ratón */
+}
+
+.notification-item:hover {
+  background-color: #f1f1f1; /* Cambio de color al pasar el ratón */
 }
 
 .notification-item p {
   margin: 0;
   font-size: 1em;
+  color: #333; /* Color de texto más oscuro */
 }
 
+/* Contenedor de las acciones */
 .actions {
   display: flex;
   gap: 10px;
 }
 
-/* Botones de Aceptar y Rechazar */
+/* Estilos de botones (Aceptar y Rechazar) */
 .accept-btn, .reject-btn {
-  padding: 8px 15px;
+  padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px; /* Bordes redondeados */
   cursor: pointer;
-  font-size: 0.9em;
+  font-size: 1em;
+  font-weight: 600; /* Peso medio */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  display: inline-block;
 }
 
-/* Botón Aceptar */
 .accept-btn {
   background-color: #4CAF50;
   color: white;
 }
 
-/* Botón Rechazar */
+.accept-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-2px); /* Efecto al pasar el ratón */
+}
+
 .reject-btn {
   background-color: #f44336;
   color: white;
 }
 
-/* Títulos */
+.reject-btn:hover {
+  background-color: #e53935;
+  transform: translateY(-2px); /* Efecto al pasar el ratón */
+}
+
+.accept-btn:focus, .reject-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 65, 108, 0.3); /* Resalta el botón al hacer foco */
+}
+
+/* Títulos de las secciones */
 .titulos {
-  margin: 100; /* Sin margen */
-  color: #FF416C; /* Color gris oscuro */
-  font-size: 28px; /* Tamaño de fuente */
-  font-weight: bold; /* Texto en negrita */
+  margin: 0;
+  color: #FF416C;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-
+/* Título principal */
 .title {
-  font-family: 'Montserrat', sans-serif; /* Fuente elegante */
-  font-size: 2rem; /* Tamaño grande */
-  font-weight: 700; /* Negrita */
-  text-align: center; /* Centrar el texto */
-  background-image: linear-gradient(to right, orange, #ff0000); /* Gradiente de claro a rojo */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  background-image: linear-gradient(to right, #FF416C, #FF6699); /* Gradiente */
   background-clip: text;
-  -webkit-background-clip: text; /* Soporte para WebKit */
-  color: transparent; /* Hace que solo el gradiente sea visible */
-  display: inline-block; /* Para que el gradiente se aplique correctamente al texto */
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline-block;
+  padding: 10px 0;
 }
 
+/* Contenedor centrado */
 .center-container {
   display: flex;
-  justify-content: center; /* Centra el contenido horizontalmente */
-  align-items: center;          /* Hace que el contenedor ocupe toda la altura de la ventana */
-  text-align: center;      /* Asegura que el texto también esté centrado */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column; /* Asegura que el texto y contenido estén centrados verticalmente */
 }
 
-/* Estilos del Mensaje de Estado */
+/* Estilo para los mensajes de estado */
 .estado-mensaje {
   padding: 8px 15px;
-  border-radius: 4px;
-  font-size: 0.9em;
+  border-radius: 6px;
+  font-size: 1em;
   font-weight: bold;
   color: white;
   text-transform: uppercase;
+  width: fit-content;
+  margin-top: 15px;
 }
 
 .estado-mensaje.aceptada {
-  background-color: #4CAF50; /* Verde, igual que el botón Aceptar */
+  background-color: #4CAF50;
 }
 
 .estado-mensaje.rechazada {
-  background-color: #f44336; /* Rojo, igual que el botón Rechazar */
+  background-color: #f44336;
 }
 
 

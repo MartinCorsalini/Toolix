@@ -18,7 +18,7 @@
     display: flex;
     align-items: center;
   }
-  
+
   .logo span {
     color:#FF416C;
     font-weight:bold;
@@ -33,22 +33,3 @@
 
 
   }
-
-  .nav-items {
-    display: flex;
-    gap: 20px;
-  }
-
-  .nav-items a {
-    color: black;
-    font-size: 16px; /* Tamaño de texto más grande */
-    text-decoration: none;
-    font-weight:500;
-    cursor: pointer;
-    transition: color 0.3s ease-in-out;
-    font-family: 'Montserrat', sans-serif;
-  }
-
-  .nav-items a:hover {
-    color: #FF416C;
-}

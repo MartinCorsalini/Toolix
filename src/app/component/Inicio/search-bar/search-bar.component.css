@@ -5,7 +5,7 @@
   align-items: center; /* Centra el search-wrapper horizontalmente */
   width: 100%;
   margin: 0; /* Añade margen superior para separarlo de otros elementos */
-  background-color: #e9ecef;
+  background-color: #FFFFFF;
 }
 
 .search-container {
@@ -13,9 +13,9 @@
   align-items: center;
   padding: 10px;
   width: 100%;
-  max-width: 550px; /* Ancho máximo del search-container */
+  max-width: 600px; /* Ancho máximo del search-container */
   box-sizing: border-box;
-  
+
 }
 
 .search-container input {

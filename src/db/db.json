@@ -380,6 +380,23 @@
       "direccion": "UNA",
       "idUs": "a110",
       "idTr": "e858"
+    },
+    {
+      "fecha": "2024-11-19",
+      "horario": "04:03",
+      "direccion": "centro",
+      "id": "8007",
+      "idTr": "ef56",
+      "idUs": "f86b"
+    },
+    {
+      "id": "85a2",
+      "fecha": "2024-11-27",
+      "horario": "04:11",
+      "direccion": "centro",
+      "estado": "pendiente",
+      "idUs": "f86b",
+      "idTr": "ef56"
     }
   ]
 }

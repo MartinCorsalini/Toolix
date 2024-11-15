@@ -96,7 +96,7 @@ input {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    margin: 0px 0px 0px 0px;
+    margin: 0 auto;
     background-image: url('../../../../assets/images/toolix.webp');
 }
 
