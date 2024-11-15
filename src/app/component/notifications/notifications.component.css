@@ -164,11 +164,11 @@ body {
 }
 
 .estado-mensaje.aceptada {
-  background-color: #4CAF50;
+  background-color: #4CAF50; /* Verde, igual que el botón Aceptar */
 }
 
 .estado-mensaje.rechazada {
-  background-color: #f44336;
+  background-color: #f44336; /* Rojo, igual que el botón Rechazar */
 }
 
 

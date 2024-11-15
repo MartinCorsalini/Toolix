@@ -43,11 +43,10 @@ export class LoginContinuarRegistroComponent {
     if (this.signUpForm2.valid) {
       this.dialogRef.close(this.signUpForm2.value); // Envía los datos y cierra el diálogo
 
-      // Tratando de que me lleve al home
+      // Tratando de que me lleve al home   CREO QUE ESO DE ABAJO HAY QUE BORRARLO
       this.authService.currentUserId$.subscribe(id => {
         this.userId = id;
       });
-      console.log('ID EN CONTINUAR REGISTRO: '+ this.userId);
       this.route.navigate([`home/${this.userId}`]);
     }
   }

@@ -81,14 +81,14 @@ export class LoginRegisterComponent implements OnInit {
 
     // Verificar el rol del usuario y proceder en consecuencia
     if (completeUserData.rol === 'Trabajador') {
-  
-      this.addUsuarioDB(completeUserData);
-      this.buscarEmail(completeUserData.email);
+
+      this.addUsuarioDB(completeUserData); //Agrego al trabajador a la base de datos
+     // this.buscarEmail(completeUserData.email); //busco su ID por mail, para guardarlo en el auth
 
     } else if (completeUserData.rol === 'Cliente') {
 
       this.addUsuarioDB(completeUserData);
-      this.buscarEmail(completeUserData.email);
+      //this.buscarEmail(completeUserData.email);
 
     } else {
 
@@ -115,6 +115,8 @@ export class LoginRegisterComponent implements OnInit {
                 message: 'Se ha registrado exitosamente.\n🎉¡Muchas gracias por su confianza! 🎉'
               }
             });
+
+            this.buscarEmail(usuario.email);
           },
           error: (e: Error) => {
             console.log("Error al registrar usuario:", e.message);
@@ -180,11 +182,11 @@ export class LoginRegisterComponent implements OnInit {
                   this.router.navigate([`/home`, this.usuario.id]);
               } else
               {
-                  alert('No se encontró un usuario con ese email');
+                  console.log("no se encontro usuario con ese mail");
               }
         },
-        error: () => {
-          alert('Error al buscar por email');
+        error: (e: Error) => {
+          console.log("ERROR AL ENCONTRAR EL MAIL: "+ e.message);
         }
       });
     }
