@@ -13,6 +13,7 @@
                 <p>Fecha: <span>{{ reserva.fecha }}</span></p>
                 <p>Horario: <span>{{ reserva.horario }}</span></p>
                 <p>Reserva ID: {{ reserva.id }}</p>
+
                 <div class="actions">
                     <!-- Botón para modificar la reserva -->
                     <button [routerLink]="['/modificar-reserva-admin', reserva.id]" class="accept-btn">Modificar</button>

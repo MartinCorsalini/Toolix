@@ -8,18 +8,18 @@
           <p class="profesion">{{ usuario?.profesion }}</p>
         </div>
       </div>
-  
+
       <div class="perfil-detalles">
         <p><strong>Email:</strong> {{ usuario?.email }}</p>
         <!-- <p><strong>Teléfono:</strong> {{ usuario.telefono }}</p> -->
-        <p><strong>Disponibilidad:</strong> {{ usuario?.disponibilidad }}</p>
+        <!-- <p><strong>Disponibilidad:</strong> {{ usuario?.disponibilidad }}</p>
         <p><strong>Zonas de trabajo:</strong> {{ usuario?.zona }}</p>
-        <p><strong>Descripción:</strong> {{ usuario?.descripcion }}</p>
-  
+        <p><strong>Descripción:</strong> {{ usuario?.descripcion }}</p> -->
+
         <div>
           <button [routerLink]="['/homeAdmin', usuario?.id]">Atrás</button>
         </div>
-  
+
       </div>
     </div>
   </div>
