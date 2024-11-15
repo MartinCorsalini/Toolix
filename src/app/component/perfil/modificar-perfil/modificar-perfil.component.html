@@ -27,47 +27,69 @@
         </div>
           <!--------- Profesion ---------->
 
-        <div>
-          <label for="profesion">Profesion:</label>
-          <select class="select1" type="text" id="profesion" formControlName="profesion">
-            <option value="">Seleccione una opción</option>
-            <option>Abogado/a</option>
-            <option>Albañil</option>
-            <option>Carpintero/a</option>
-            <option>Centro de estetica</option>
-            <option>Contador/a</option>
-            <option>Costurero/a</option>
-            <option>Electricista</option>
-            <option>Gasista</option>
-            <option>Limpieza</option>
-            <option>Niñero/a</option>
-            <option>Paseador/a de perros</option>
-            <option>Peluquero/a</option>
-            <option>Pintor/a</option>
-            <option>Plomero/a</option>
-            <option>Psicologo/a</option>
-            <option>Tapicero/a</option>
-            <option>Techista</option>
-            <option>Uñas</option>
-            <option>Otro (aclarar en descripcion)</option>
-          </select>
-
-          @if(formulario.controls['profesion'].getError('required') && formulario.controls['profesion'].touched)
+          @if(usuario?.rol != 'Cliente')
           {
-              <div class="colorRojo">Campo requerido...</div>
+            <div>
+              <label for="profesion">Profesion:</label>
+              <select class="select1" type="text" id="profesion" formControlName="profesion">
+                <option value="">Seleccione una opción</option>
+                <option>Abogado/a</option>
+                <option>Albañil</option>
+                <option>Carpintero/a</option>
+                <option>Centro de estetica</option>
+                <option>Contador/a</option>
+                <option>Costurero/a</option>
+                <option>Electricista</option>
+                <option>Gasista</option>
+                <option>Limpieza</option>
+                <option>Niñero/a</option>
+                <option>Paseador/a de perros</option>
+                <option>Peluquero/a</option>
+                <option>Pintor/a</option>
+                <option>Plomero/a</option>
+                <option>Psicologo/a</option>
+                <option>Tapicero/a</option>
+                <option>Techista</option>
+                <option>Uñas</option>
+                <option>Otro (aclarar en descripcion)</option>
+              </select>
+
+              @if(formulario.controls['profesion'].getError('required') && formulario.controls['profesion'].touched)
+              {
+                  <div class="colorRojo">Campo requerido...</div>
+              }
+            </div>
           }
-        </div>
+
+
 
         <!--------- Disponibilidad ---------->
-        <div>
-          <label for="disponibilidad">Disponibilidad: </label>
-          <input type="text" formControlName="disponibilidad" id="disponibilidad">
 
-          @if(formulario.controls['disponibilidad'].getError('required') && formulario.controls['disponibilidad'].touched)
+        @if(usuario?.rol != 'Cliente')
+          {
+            <div>
+              <label for="disponibilidad">Disponibilidad: </label>
+              <input type="text" formControlName="disponibilidad" id="disponibilidad">
+
+              @if(formulario.controls['disponibilidad'].getError('required') && formulario.controls['disponibilidad'].touched)
+              {
+                  <div class="colorRojo">Campo requerido...</div>
+              }
+            </div>
+            }
+
+
+        <!--------- Telefono ---------->
+        <div>
+          <label for="telefono">Telefono: </label>
+          <input type="text" formControlName="telefono" id="telefono">
+
+          @if(formulario.controls['telefono'].getError('required') && formulario.controls['telefono'].touched)
           {
               <div class="colorRojo">Campo requerido...</div>
           }
         </div>
+
 
         <!--------- Zona ---------->
         <div>

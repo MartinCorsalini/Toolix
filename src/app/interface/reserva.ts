@@ -8,5 +8,5 @@ export interface Reserva {
     direccion: string,
     fecha: Date,
     horario:Time,
-    aceptada: boolean // aceptada true, rechazada false
+    estado: 'aceptada' | 'rechazada' | 'pendiente'; // aceptada true, rechazada false
 }

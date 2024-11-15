@@ -6,13 +6,13 @@
     justify-content: center; /* Centra los elementos hijos verticalmente */
     width: 100vw; /* Hace que el ancho ocupe el 100% del viewport */
     flex-grow: 1; /* Permite que este contenedor crezca si es necesario */
-    background-color: #f9f9f9; /* Fondo color gris claro */
+    background-color: #FFFFFF; /* Fondo color gris claro */
     font-family: 'Montserrat', sans-serif; /* Aplica la fuente Montserrat */
     box-sizing: border-box; /* Incluye el padding y borde dentro del ancho/alto */
     margin: 0; /* Elimina el margen externo */
     padding: 20px; /* Agrega 20px de espacio alrededor del contenido */
   }
-  
+
   .eliminar-box {
     border: 3px solid #FF416C; /* Borde de 3px color rosado oscuro */
     padding: 20px; /* Espacio interno de 20px */
@@ -32,24 +32,23 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
-  
+
   /* Estilo del botón de confirmación */
   .si-button {
     background-color: #28a745; /* Verde */
     color: #fff;
   }
-  
+
   .si-button:hover {
     background-color: #218838;
   }
-  
+
   /* Estilo del botón de cancelación */
   .no-button {
     background-color: #dc3545; /* Rojo */
     color: #fff;
   }
-  
+
   .no-button:hover {
     background-color: #c82333;
   }
-  

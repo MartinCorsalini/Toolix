@@ -62,18 +62,43 @@ export class LoginRegisterComponent implements OnInit {
   id : string | null = null;
   service= inject(UsuariosService);
   usuario? : Usuario;
+  usuario2? : Usuario;
   userData: any = {}; // Variable para guardar los datos del primer formulario
 
-  onSignUpSubmit()
-  {
-    if (this.signUpForm.invalid) return;
+  onSignUpSubmit(usuario?: Usuario) {
+    if (this.signUpForm.invalid && !usuario) return;
 
-    const usuario2 = this.signUpForm.getRawValue();
+    let completeUserData: Usuario;
 
-    this.addUsuarioDB(usuario2); // Agrego el usuario a la base de datos
-    console.log(usuario2.email);
-    this.buscarEmail(usuario2.email)
+    if (usuario) {
+      // Si se proporciona 'usuario' (que le llega de openContinuarRegistroDialog), se guardan los datos de su formulario (que son los del formualrio del trabajador)
+      completeUserData = usuario;
+    } else {
+      // De lo contrario, obtener los datos del formulario del cliente
+      completeUserData = this.signUpForm.getRawValue();
+    }
 
+
+    // Verificar el rol del usuario y proceder en consecuencia
+    if (completeUserData.rol === 'Trabajador') {
+
+      this.addUsuarioDB(completeUserData); //Agrego al trabajador a la base de datos
+     // this.buscarEmail(completeUserData.email); //busco su ID por mail, para guardarlo en el auth
+
+    } else if (completeUserData.rol === 'Cliente') {
+
+      this.addUsuarioDB(completeUserData);
+      //this.buscarEmail(completeUserData.email);
+
+    } else {
+
+      this.dialog.open(DialogoComponent, {
+        panelClass: "custom-dialog-container",
+        data: {
+          message: 'Rol de usuario inválido.'
+        }
+      });
+    }
   }
 
     addUsuarioDB(usuario: Usuario)
@@ -90,6 +115,8 @@ export class LoginRegisterComponent implements OnInit {
                 message: 'Se ha registrado exitosamente.\n🎉¡Muchas gracias por su confianza! 🎉'
               }
             });
+
+            this.buscarEmail(usuario.email);
           },
           error: (e: Error) => {
             console.log("Error al registrar usuario:", e.message);
@@ -121,7 +148,7 @@ export class LoginRegisterComponent implements OnInit {
           const completeUserData = { ...this.userData, ...secondFormData };
 
           // Envía los datos combinados a la base de datos
-          this.addUsuarioDB(completeUserData);
+          this.onSignUpSubmit(completeUserData);
         }
       });
     } else {
@@ -152,14 +179,14 @@ export class LoginRegisterComponent implements OnInit {
                   console.log("ID", this.usuario.id);
 
                   this.iniciarSesion(this.usuario?.id!);
-                  this.router.navigate([`modificar/${this.usuario?.id}`]);
+                  this.router.navigate([`/home`, this.usuario.id]);
               } else
               {
-                  alert('No se encontró un usuario con ese email');
+                  console.log("no se encontro usuario con ese mail");
               }
         },
-        error: () => {
-          alert('Error al buscar por email');
+        error: (e: Error) => {
+          console.log("ERROR AL ENCONTRAR EL MAIL: "+ e.message);
         }
       });
     }

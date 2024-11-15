@@ -7,6 +7,7 @@
       <div class="perfil-info">
         <h2>{{ usuario?.nombre }}</h2>
         <p class="profesion">{{ usuario?.profesion }}</p>
+
         <div class="perfil-rating">
           <span>Valoración: </span>
           <span>{{ promedio | number:'1.1-1' }}</span>
@@ -16,14 +17,19 @@
             <span *ngIf="star === 0">&#9734;</span>       <!-- Estrella vacía -->
           </ng-container>
         </div>
+
       </div>
     </div>
 
     <div class="perfil-detalles">
       <p><strong>Email:</strong> {{ usuario?.email }}</p>
-      <!-- <p><strong>Teléfono:</strong> {{ usuario.telefono }}</p> -->
-      <p><strong>Disponibilidad:</strong> {{ usuario?.disponibilidad }}</p>
-      <p><strong>Zonas de trabajo:</strong> {{ usuario?.zona }}</p>
+      <p> <strong>Teléfono:</strong> {{ usuario?.telefono }}</p>
+
+      @if(usuario?.rol != 'Cliente')
+          {
+            <p><strong>Disponibilidad:</strong> {{ usuario?.disponibilidad }}</p>
+          }
+      <p><strong>Zona:</strong> {{ usuario?.zona }}</p>
       <p><strong>Descripción:</strong> {{ usuario?.descripcion }}</p>
 
       <div>
