@@ -53,12 +53,12 @@ export class NotificationsComponent implements OnInit{
          this.reservasRecibidas.forEach((reserva) => {
           this.mostrarCliente(reserva.idUs!);
           this.mostrarTrabajador(reserva.idTr!);
+        });
 
-          // Cargar nombres de clientes para cada reserva enviada
-          this.reservasEnviadas.forEach((reserva) => {
-            this.mostrarCliente(reserva.idUs!);
-            this.mostrarTrabajador(reserva.idTr!);
-          });
+        // Cargar nombres de clientes para cada reserva enviada
+        this.reservasEnviadas.forEach((reserva) => {
+          this.mostrarCliente(reserva.idUs!);
+          this.mostrarTrabajador(reserva.idTr!);
         });
       });
 
@@ -138,21 +138,19 @@ rechazarReserva(reserva: Reserva) {
   //-------------FUNCIONES PARA MOSTRAR LOS DATOS DE LOS USUARIOS ---------------------
 
 
-
   usuarioNombres: { [id: string]: string } = {}; // Almacena los nombres de usuario por id
 
 
   mostrarCliente(id: string) {
+    console.log('ENTRE A LA FUNCION MOSTRAR CLIENTE');
     this.service.getUsuarioById(id).subscribe({
       next: (usuario: Usuario) => {
         console.log('ID USUARIO RESERVA: '+usuario.nombre);
         this.usuarioNombres[id] = usuario.nombre;
-        this.cdr.detectChanges(); // Fuerza la actualización de la vista
       },
       error: () => {
         console.log('Error al cargar el nombre del cliente');
         this.usuarioNombres[id] = 'Error al cargar nombre';
-        this.cdr.detectChanges(); // Fuerza la actualización de la vista en caso de error
       }
     });
   }
@@ -160,6 +158,8 @@ rechazarReserva(reserva: Reserva) {
   trabajadorNombres: { [id: string]: string } = {}; // Almacena los nombres de los trabajadores por id
 
   mostrarTrabajador(id: string) {
+    console.log('ENTRE A LA FUNCION MOSTRAR TRABAJADOR');
+
     this.service.getUsuarioById(id).subscribe({
       next: (usuario: Usuario) => {
         console.log('ID TRABAJADOR RESERVA: ' + usuario.nombre);

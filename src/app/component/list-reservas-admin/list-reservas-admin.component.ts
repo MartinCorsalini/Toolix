@@ -1,3 +1,5 @@
+// RESERVAS ORIGINAL :
+
 import { Component } from '@angular/core';
 import { NavbarAdminComponent } from "../../shared/navbar-admin/navbar-admin.component";
 import { CommonModule } from '@angular/common';
@@ -33,7 +35,7 @@ export class ListReservasAdminComponent {
   }
 
 
- 
+
 
   eliminarReserva(id: string | null ){
     this.reservasService.deleteReserva(id).subscribe(
@@ -54,7 +56,7 @@ export class ListReservasAdminComponent {
         });
 
   }
-  
+
   cargarReservas() {
     this.reservasService.getReserva().subscribe({
       next: (reservas: Reserva[]) => {
@@ -66,11 +68,12 @@ export class ListReservasAdminComponent {
     }
 
     );
-  } 
+  }
 
   irAModificarReserva(reserva: Reserva) {
     this.router.navigate(['/modificar-reserva-admin'], { state: { reserva } });
   }
 }
+
 
 
