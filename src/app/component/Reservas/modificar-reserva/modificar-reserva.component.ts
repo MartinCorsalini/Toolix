@@ -51,22 +51,22 @@ export class ModificarReservaComponent implements OnInit {
     })
 
 
-   this.modificarRForm = this.fb.nonNullable.group(
-  {
-    fecha: ['', Validators.required],
-      horario: ['', Validators.required],
-      direccion: ['', Validators.required],
-      estado:['pendiente']
-  });
-  this.reservaId = this.route.snapshot.paramMap.get('id');
-  //obtiene el id desde la url
-    if (this.reservaId) {
-      this.cargarDatosReserva(this.reservaId);
-    }
+    this.modificarRForm = this.fb.nonNullable.group(
+    {
+      fecha: ['', Validators.required],
+        horario: ['', Validators.required],
+        direccion: ['', Validators.required],
+        estado:['pendiente']
+    });
+    this.reservaId = this.route.snapshot.paramMap.get('id');
+    //obtiene el id desde la url
+      if (this.reservaId) {
+        this.cargarDatosReserva(this.reservaId);
+      }
 
   }
 
-  
+
   cargarDatosReserva(id: string): void { // utiliza el ID para obtener los datos de la reserva existente y rellenar el formulario.
     this.rs.getReservaById(id).subscribe({
        next: (reserva: Reserva) => {
