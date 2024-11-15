@@ -1,35 +1,39 @@
 <app-navbar-private></app-navbar-private>
 <div class="center-container">
-   <h2 class="title">Notificaciones</h2>
-  </div>
+  <h2 class="title">Notificaciones</h2>
+</div>
 
-  <div *ngIf="esTrabajador==true" class="center-container">
-    <h2  class="titulos">Reservas recibidas</h2>
-   </div>
+<div *ngIf="esTrabajador" class="center-container">
+  <h2 class="titulos">Reservas recibidas</h2>
+</div>
 
-  <div *ngIf="esTrabajador==true" class="center-container">
+<div *ngIf="esTrabajador" class="center-container">
+  <div class="container">
+    <ul class="notification-list">
+      <li class="notification-item" *ngFor="let reserva of reservasRecibidas">
+        <p class="reservation-info">Dirección: {{ reserva.direccion }}</p>
+        <p class="reservation-info">Fecha: <span>{{ reserva.fecha }}</span></p>
+        <p class="reservation-info">Horario: <span>{{ reserva.horario }}</span></p>
 
-    <div ng class="container">
-        <div class="header">
+        <div class="actions">
+          <!-- Mostrar botones solo si la reserva está pendiente -->
+          <ng-container *ngIf="reserva.estado === 'pendiente'; else estadoMensaje">
+            <button class="accept-btn">Aceptar</button>
+            <button class="reject-btn">Rechazar</button>
+          </ng-container>
 
+          <!-- Mensaje de estado cuando no está en pendiente -->
+          <ng-template #estadoMensaje>
+            <p class="estado-mensaje {{ reserva.estado }}">{{ reserva.estado | titlecase }}</p>
+          </ng-template>
         </div>
-        <ul class="notification-list">
-            <li class="notification-item" *ngFor = "let reserva of reservasRecibidas">
-                <p>Dirección: {{ reserva.direccion }}</p>
-                <p>Fecha: <span>{{ reserva.fecha }}</span></p>
-                <p>Horario: <span>{{ reserva.horario }}</span></p>
-                <div class="actions">
-                    <button class="accept-btn">Aceptar</button>
-                    <button class="reject-btn">Rechazar</button>
-                </div>
-            </li>
-
-        </ul>
-    </div>
-   </div>
+      </li>
+    </ul>
+  </div>
+</div>
 
 
-<!--     --->
+<!--ENVIADAAAAAAAS     --->
 
 
 <div class="center-container">
