@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, Inject, inject, OnInit } from '@angular/core';
 import { SearchBarComponent } from '../../component/Inicio/search-bar/search-bar.component';
 import { CardComponent } from '../../component/Inicio/card/card.component';
 import { NavbarPublicComponent } from "../../shared/navbar-public/navbar-public.component";
@@ -9,25 +9,32 @@ import { Usuario } from '../../interface/usuario';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogoComponent } from '../../component/Inicio/cuadro-dialogo/cuadro-dialogo.component';
 import { CommonModule } from '@angular/common';
+import { NavbarAdminComponent } from "../../shared/navbar-admin/navbar-admin.component";
+import { AuthService } from '../../service/auth.service';
+import { ReservasService } from '../../service/reservas.service';
 
 @Component({
   selector: 'app-inicio-page',
   standalone: true,
-  imports: [SearchBarComponent, NavbarPrivateComponent, CardComponent, CommonModule],
+  imports: [SearchBarComponent, NavbarPrivateComponent, CardComponent, CommonModule, NavbarAdminComponent],
   templateUrl: './inicio-page.component.html',
   styleUrl: './inicio-page.component.css'
 })
 export class InicioPageComponent implements OnInit {
 
   perfiles: Usuario[] = [];           // Todos los perfiles de usuarios
-  perfilesFiltrados: Usuario[] = [];   // Perfiles filtrados según el término de búsqueda
+  perfilesFiltrados: Usuario[] = []; // Perfiles filtrados según el término de búsqueda
+  userRol : string | undefined;
+
   service = inject(UsuariosService);
   ar = inject(ActivatedRoute);
   router = inject(Router);
   dialog = inject(MatDialog);
+  auth = inject(AuthService);
 
   ngOnInit(): void {
     this.cargarPerfiles();
+    this.userRol = this.auth.getUserRole();
   }
 
   // Carga todos los perfiles al inicializar el componente

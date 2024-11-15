@@ -15,6 +15,13 @@ import { PoliticasPrivacidadComponent } from './component/generales/politicas-pr
 import { TerminosServicioComponent } from './component/generales/terminos-servicio/terminos-servicio.component';
 import { ModificarReservaPageComponent } from './pages/modificar-reserva-page/modificar-reserva-page.component';
 import { EliminarCuentaPageComponent } from './pages/eliminar-cuenta-page/eliminar-cuenta-page.component';
+import { ListReservasAdminPageComponent } from './pages/list-reservas-admin-page/list-reservas-admin-page.component';
+import { ListUsuariosAdminPageComponent } from './pages/list-usuarios-admin-page/list-usuarios-admin-page.component';
+import { HomeAdminPageComponent } from './pages/home-admin-page/home-admin-page.component';
+import { ModificarReservaAdminPageComponent } from './pages/modificar-reserva-admin-page/modificar-reserva-admin-page.component';
+import { PerfilTrabajadorAdminPageComponent } from './pages/perfil-trabajador-admin-page/perfil-trabajador-admin-page.component';
+import { EliminarCuentasAdminPageComponent } from './pages/eliminar-cuentas-admin-page/eliminar-cuentas-admin-page.component';
+import { PerfilPropioAdminPageComponent } from './pages/perfil-propio-admin-page/perfil-propio-admin-page.component';
 
 
 
@@ -94,8 +101,44 @@ export const appRoutes: Routes = [
        component: EliminarCuentaPageComponent,
       canActivate : [authGuard] //SI ESTOY LOGEADO
    },
-    {
+   {
+    /////////admin///////////
+    path: 'lista-usuarios-admin',
+     component: ListUsuariosAdminPageComponent,
+    canActivate : [authGuard] //SI ESTOY LOGEADO
+   },
+   {
 
+      path: 'lista-reservas-admin',
+      component: ListReservasAdminPageComponent,
+      canActivate : [authGuard] //SI ESTOY LOGEADO
+    },
+    {
+      path: 'homeAdmin/:id',
+      component: HomeAdminPageComponent,
+      canActivate : [authGuard]
+    },
+    {
+      path: 'modificar-reserva-admin/:id',
+      component: ModificarReservaAdminPageComponent,
+      canActivate : [authGuard]
+    },
+    {
+      path: 'perfil-trabajador-admin/:id',
+      component: PerfilTrabajadorAdminPageComponent,
+      canActivate : [authGuard]
+    },
+    {
+      path: 'eliminar-cuentas-admin/:id',
+      component: EliminarCuentasAdminPageComponent,
+      canActivate : [authGuard]
+    },
+    {
+      path: 'perfil-propio-admin/:id',
+      component: PerfilPropioAdminPageComponent,
+      canActivate : [authGuard]
+    },
+    {
       path: '**',
       redirectTo:'login'
     }
