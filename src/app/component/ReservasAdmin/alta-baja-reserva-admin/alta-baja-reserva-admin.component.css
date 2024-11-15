@@ -1,0 +1,118 @@
+/* Estilos generales para el contenedor central */
+.centrar-contenedor {
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    background-color: #f4f4f4; /* Fondo sutil para la página */
+  }
+  
+  /* Estilos del formulario (tarjeta) */
+  .reservaForm {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 450px;
+    box-sizing: border-box;
+    transition: transform 0.3s;
+  }
+  
+  /* Estilo para el título */
+  .reserva-form h3 {
+    font-size: 1.8em;
+    color: #ff3366;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Estilos generales para cada grupo de formulario */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+  }
+  
+  /* Estilos cuando el campo de formulario es seleccionado (foco) */
+  .form-control:focus {
+    border-color: #ff3366;
+    outline: none;
+  }
+  
+  /* Mensajes de error */
+  .error {
+    color: rgb(197, 18, 18);
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  /* Botones del formulario */
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .submit-button,
+  .cancel-button {
+    width: 48%;
+    padding: 12px;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
+  }
+  
+  /* Botón Aceptar */
+  .submit-button {
+    background-color: #ff3366;
+    color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .submit-button:hover {
+    background-color: #ff6699;
+    transform: translateY(-2px);
+  }
+  
+  .submit-button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  /* Botón Cancelar */
+  .cancel-button {
+    background-color: #999;
+    color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cancel-button:hover {
+    background-color: #bbb;
+    transform: translateY(-2px);
+  }
+  
+  /* Efecto de animación para el contenedor de la tarjeta */
+  .reservaForm:hover {
+    transform: scale(1.02);
+  }
+  
