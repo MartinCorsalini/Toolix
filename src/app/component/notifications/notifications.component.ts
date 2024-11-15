@@ -37,7 +37,8 @@ export class NotificationsComponent implements OnInit{
   ) {}
   service= inject(UsuariosService);
 
-  ngOnInit(): void {
+  ngOnInit(): void
+  {
     if (this.user.estaLogeado())
       { // Si el usuario está autenticado, obtiene sus reservas
 
@@ -63,8 +64,6 @@ export class NotificationsComponent implements OnInit{
 
       // Recupera el rol del usuario y ajusta `esTrabajador` según corresponda
       this.esTrabajador = this.user.getUserRole() === 'Trabajador';
-
-
 
     } else {
       // Si no está logueado, redirige a la página de login
@@ -136,7 +135,7 @@ rechazarReserva(reserva: Reserva) {
 
 
 
-  //--------FUNCIONES PARA MOSTRAR LOS DATOS DE LOS USUARIOS ---
+  //-------------FUNCIONES PARA MOSTRAR LOS DATOS DE LOS USUARIOS ---------------------
 
 
 

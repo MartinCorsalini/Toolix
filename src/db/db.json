@@ -42,32 +42,21 @@
       "rol": "Trabajador",
       "id": "e858",
       "valoraciones": [
-        5
+        5,
+        6
       ]
     },
     {
       "nombre": "Raul",
-      "profesion": "Electricista",
-      "disponibilidad": "03:13",
-      "zona": "Caisamarafas",
-      "descripcion": " Voy a domicilio. Sasduper respetuoso.",
-      "telefono": "223546546545sdasd",
-      "email": "raul@hotmail.com",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "id": "da81"
-    },
-    {
-      "id": "6893",
-      "nombre": "Raul",
-      "email": "raul@hotmail.com",
-      "password": "1234567",
-      "rol": "Trabajador",
       "profesion": "Carpintero/a",
       "disponibilidad": "12:17",
+      "zona": "Caisamar, Centro, Guemes",
       "descripcion": "Super respetuoso. Muy comprometido",
-      "zona": "Caisamar",
-      "telefono": "2235646546"
+      "telefono": "2235646546",
+      "email": "raul@hotmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "id": "6893"
     },
     {
       "id": "2dc4",
@@ -153,8 +142,8 @@
     {
       "fecha": "2024-11-19",
       "horario": "07:50",
-      "direccion": "dos",
-      "estado": "aceptada",
+      "direccion": "dosss",
+      "estado": "pendiente",
       "id": "4f93",
       "idTr": "2dc4",
       "idUs": "2dc4"
@@ -167,6 +156,42 @@
       "id": "e35f",
       "idTr": "e858",
       "idUs": "42m1"
+    },
+    {
+      "fecha": "2024-11-06",
+      "horario": "04:24",
+      "direccion": "sadasdaaaaaa",
+      "estado": "pendiente",
+      "id": "daad",
+      "idTr": "ae89",
+      "idUs": "42m1"
+    },
+    {
+      "id": "429f",
+      "fecha": "2024-11-07",
+      "horario": "04:29",
+      "direccion": "San Martín 2267       ",
+      "estado": "pendiente",
+      "idUs": "2dc4",
+      "idTr": "4cbb"
+    },
+    {
+      "id": "d009",
+      "fecha": "2024-11-13",
+      "horario": "04:28",
+      "direccion": "San Martín 2267       ",
+      "estado": "pendiente",
+      "idUs": "2dc4",
+      "idTr": "a6fb"
+    },
+    {
+      "id": "952e",
+      "fecha": "2024-11-20",
+      "horario": "04:29",
+      "direccion": "San Martín 2267       ",
+      "estado": "pendiente",
+      "idUs": "4cbb",
+      "idTr": "1547"
     }
   ]
 }
