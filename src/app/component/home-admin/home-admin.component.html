@@ -36,11 +36,6 @@
                 <span *ngIf="star === 0">&#9734;</span>
               </ng-container>
             </div>
-            <!--
-            <button>utton class="fav-button" (click)="toggleFavorite()">
-              <i class="fa fa-heart"></i>
-            </button>
-            -->
           </div>
         </div>
 
@@ -57,7 +52,6 @@
 
     @for (usuario of listaUsuarios; track $index)
     {
-
       <div *ngIf="usuario.rol == 'Cliente' " class="card">
         <div class="image">
           <img src="assets/avatar/avatar.png" alt="Imagen de perfil" class="profile-img" />

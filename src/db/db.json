@@ -13,7 +13,7 @@
       "disponibilidad": "10 hs a 20 hs",
       "zona": "La perla",
       "descripcion": "Excelencia en teñidos!",
-      "telefono": "223",
+      "telefono": "2236891311",
       "email": "pepe@outlook.com",
       "password": "skndalskdiuhi",
       "rol": "Trabajador",
@@ -24,8 +24,8 @@
       "profesion": "Limpieza",
       "disponibilidad": "10 hs a 15 hs",
       "zona": "Centro, Guemes, Puerto",
-      "descripcion": "afsdf",
-      "telefono": "400",
+      "descripcion": "Limpieza absoluta!",
+      "telefono": "2236891311",
       "email": "lauuu@hotmail.com",
       "password": "klsmdklasda",
       "rol": "Trabajador",
@@ -37,26 +37,38 @@
       "disponibilidad": "10 hs a 20 hs",
       "zona": "Centro, Guemes, Puerto",
       "descripcion": "Dejo todo super limpio",
+      "telefono": "223456789",
       "email": "micael@hotmail.com",
       "password": "ajsdnkaskd",
       "rol": "Trabajador",
       "id": "e858",
       "valoraciones": [
-        5,
-        6
+        5
       ]
     },
     {
       "nombre": "Raul",
-      "profesion": "Carpintero/a",
-      "disponibilidad": "12:17",
-      "zona": "Caisamar, Centro, Guemes",
-      "descripcion": "Super respetuoso. Muy comprometido",
-      "telefono": "2235646546",
+      "profesion": "Electricista",
+      "disponibilidad": "03:13",
+      "zona": "Caisamarafas",
+      "descripcion": " Voy a domicilio. Sasduper respetuoso.",
+      "telefono": "223546546545sdasd",
       "email": "raul@hotmail.com",
       "password": "1234567",
       "rol": "Trabajador",
-      "id": "6893"
+      "id": "da81"
+    },
+    {
+      "id": "6893",
+      "nombre": "Raul",
+      "email": "raul@hotmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Carpintero/a",
+      "disponibilidad": "12:17",
+      "descripcion": "Super respetuoso. Muy comprometido",
+      "zona": "Caisamar",
+      "telefono": "2235646546"
     },
     {
       "id": "2dc4",
@@ -136,62 +148,64 @@
       "password": "12345646",
       "rol": "Cliente",
       "id": "0477"
+    },
+    {
+      "id": "e3e3",
+      "nombre": "Leandro",
+      "email": "leo@gmail.com",
+      "password": "1234567",
+      "rol": "Cliente"
+    },
+    {
+      "id": "8866",
+      "nombre": "Abril",
+      "email": "abril@gmail.com",
+      "password": "1234567",
+      "rol": "Cliente"
+    },
+    {
+      "id": "826e",
+      "nombre": "Juan",
+      "email": "juan@gmail.com",
+      "password": "1234567",
+      "rol": "Cliente"
+    },
+    {
+      "nombre": "Kian",
+      "telefono": "2236891311",
+      "email": "kian@gmail.com",
+      "password": "2236891311",
+      "rol": "Cliente",
+      "id": "7704"
+    },
+    {
+      "nombre": "Colo",
+      "telefono": "2236891311",
+      "email": "colo@gmail.com",
+      "password": "1234567",
+      "rol": "Cliente",
+      "id": "364c"
     }
   ],
   "reservas": [
     {
       "fecha": "2024-11-19",
       "horario": "07:50",
-      "direccion": "dosss",
-      "estado": "pendiente",
+      "direccion": "dos",
+      "estado": "aceptada",
       "id": "4f93",
       "idTr": "2dc4",
       "idUs": "2dc4"
     },
     {
-      "fecha": "2024-11-13",
-      "horario": "08:05",
-      "direccion": "San Martín 2267       ddfgdfgfdgdg",
+      "id": "6148",
+      "fecha": "2024-11-23",
+      "horario": "07:16",
+      "direccion": "Alvarado 1203",
       "estado": "pendiente",
       "id": "e35f",
       "idTr": "e858",
       "idUs": "42m1"
-    },
-    {
-      "fecha": "2024-11-06",
-      "horario": "04:24",
-      "direccion": "sadasdaaaaaa",
-      "estado": "pendiente",
-      "id": "daad",
-      "idTr": "ae89",
-      "idUs": "42m1"
-    },
-    {
-      "id": "429f",
-      "fecha": "2024-11-07",
-      "horario": "04:29",
-      "direccion": "San Martín 2267       ",
-      "estado": "pendiente",
-      "idUs": "2dc4",
-      "idTr": "4cbb"
-    },
-    {
-      "id": "d009",
-      "fecha": "2024-11-13",
-      "horario": "04:28",
-      "direccion": "San Martín 2267       ",
-      "estado": "pendiente",
-      "idUs": "2dc4",
-      "idTr": "a6fb"
-    },
-    {
-      "id": "952e",
-      "fecha": "2024-11-20",
-      "horario": "04:29",
-      "direccion": "San Martín 2267       ",
-      "estado": "pendiente",
-      "idUs": "4cbb",
-      "idTr": "1547"
     }
   ]
 }
