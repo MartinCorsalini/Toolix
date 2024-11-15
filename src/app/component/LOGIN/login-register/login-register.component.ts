@@ -81,7 +81,7 @@ export class LoginRegisterComponent implements OnInit {
 
     // Verificar el rol del usuario y proceder en consecuencia
     if (completeUserData.rol === 'Trabajador') {
-  
+
       this.addUsuarioDB(completeUserData);
       this.buscarEmail(completeUserData.email);
 
@@ -180,11 +180,11 @@ export class LoginRegisterComponent implements OnInit {
                   this.router.navigate([`/home`, this.usuario.id]);
               } else
               {
-                  alert('No se encontró un usuario con ese email');
+                  console.log("no se encontro usuario con ese mail");
               }
         },
-        error: (e: Error) => {
-          console.log("Error: ", e.message);
+        error: () => {
+          alert('Error al buscar por email');
         }
       });
     }
