@@ -87,7 +87,7 @@ body {
     font-size: 2rem; /* Tamaño grande */
     font-weight: 700; /* Negrita */
     text-align: center; /* Centrar el texto */
-    background-image: linear-gradient(to right, orange, #ff0000); /* Gradiente de claro a rojo */
+    background-image: linear-gradient(to right, #FF416C, #FF416C); /* Gradiente de claro a rojo */
     background-clip: text;
     -webkit-background-clip: text; /* Soporte para WebKit */
     color: transparent; /* Hace que solo el gradiente sea visible */
