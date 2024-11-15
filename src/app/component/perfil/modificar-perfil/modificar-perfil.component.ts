@@ -41,6 +41,7 @@ export class ModificarPerfilComponent implements OnInit {
         disponibilidad: ['', [Validators.required]],
         zona: ['', [Validators.required]],
         descripcion: [''],
+        telefono:['',[Validators.required] ],
         email:[this.usuario?.email!],
         password:[this.usuario?.password!],
         rol:[this.usuario?.rol!]
