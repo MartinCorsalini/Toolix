@@ -138,28 +138,43 @@
       "valoraciones": [
         8
       ]
+    },
+    {
+      "id": "fff9",
+      "nombre": "gatorade",
+      "email": "gatorade@gmail.com",
+      "password": "asdasdasdasdsd",
+      "rol": "Trabajador",
+      "profesion": "Abogado/a",
+      "disponibilidad": "10 a 20",
+      "descripcion": "responsable",
+      "zona": "Caisamar",
+      "telefono": "12656464",
+      "valoraciones": [
+        5,
+        10
+      ]
+    },
+    {
+      "nombre": "samsung",
+      "zona": "centro",
+      "descripcion": "hola hola",
+      "telefono": "1224654",
+      "email": "sanmsung@gmail.com",
+      "password": "asdasdasdasdqwe12321312",
+      "rol": "Cliente",
+      "id": "4f18"
     }
   ],
   "reservas": [
     {
-      "id": "ad23",
-      "nombre": "sdfsd",
-      "email": "asdasd@dfdfs",
-      "password": "2313456",
-      "rol": "Cliente"
-    },
-    {
-      "id": "7bda",
-      "nombre": "asdasd",
-      "email": "asdas@sdfsdf",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "Centro de estetica",
-      "disponibilidad": "01:25",
-      "descripcion": "dsdfsdf",
-      "zona": "Caisamar",
-      "telefono": "1234567"
+      "fecha": "2024-11-22",
+      "horario": "06:00",
+      "direccion": "sur",
+      "estado": "aceptada",
+      "id": "409e",
+      "idTr": "fff9",
+      "idUs": "fff9"
     }
-  ],
-  "reservas": []
+  ]
 }
