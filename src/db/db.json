@@ -142,24 +142,10 @@
   ],
   "reservas": [
     {
-      "id": "ad23",
-      "nombre": "sdfsd",
-      "email": "asdasd@dfdfs",
-      "password": "2313456",
-      "rol": "Cliente"
-    },
-    {
-      "id": "7bda",
-      "nombre": "asdasd",
-      "email": "asdas@sdfsdf",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "Centro de estetica",
-      "disponibilidad": "01:25",
-      "descripcion": "dsdfsdf",
-      "zona": "Caisamar",
-      "telefono": "1234567"
+      "fecha": "2024-11-05",
+      "horario": "02:34",
+      "direccion": "ZZZ",
+      "id": "ad23"
     }
-  ],
-  "reservas": []
+  ]
 }
