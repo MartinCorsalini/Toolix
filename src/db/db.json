@@ -1,23 +1,7 @@
 {
   "usuarios": [
-    {
-      "nombre": "Emilio",
-      "profesion": "Gasistaa",
-      "disponibilidad": "10 hs a 18 hs",
-      "zona": "Centro, Guemes, Puerto",
-      "descripcion": "dejo todo impecable",
-      "email": "emiliomernes@hotmail.com",
-      "password": null,
-      "rol": null,
-      "id": "732b",
-      "valoraciones": [
-        7,
-        2,
-        9,
-        1,
-        10
-      ]
-    },
+
+
     {
       "nombre": "Martin Corsalini",
       "profesion": "Electricista",
@@ -223,15 +207,16 @@
       "id": "5dac"
     },
     {
-      "nombre": "lean",
-      "profesion": "Albañil",
-      "disponibilidad": "17:16",
-      "zona": "Faro Norte",
-      "descripcion": "Tipazo",
+      "id": "f86b",
+      "nombre": "leann",
       "email": "le@aaa.com",
       "password": "1234567",
-      "rol": null,
-      "id": "f86b"
+      "rol": "Trabajador",
+      "profesion": "Plomero",
+      "disponibilidad": "17:16",
+      "descripcion": "Tipazo",
+      "zona": "Faro Norte",
+      "telefono": "223456789"
     },
     {
       "id": "72d0",
@@ -352,13 +337,6 @@
       "idTr": "732b"
     },
     {
-      "fecha": "2024-11-22",
-      "horario": "21:53",
-      "direccion": "CCC",
-      "id": "b7c8",
-      "idTr": "18e9"
-    },
-    {
       "id": "793a",
       "fecha": "2024-11-14",
       "horario": "22:16",
@@ -397,133 +375,6 @@
       "direccion": "UNA",
       "idUs": "a110",
       "idTr": "e858"
-    },
-    {
-      "id": "ba32",
-      "fecha": "2024-11-21",
-      "horario": "20:56",
-      "direccion": "San Martín 2267       ",
-      "idUs": "732b",
-      "idTr": "18e9"
-    },
-    {
-      "id": "9667",
-      "fecha": "2024-11-21",
-      "horario": "18:05",
-      "direccion": "San Martín 2267       ",
-      "idUs": "e858",
-      "idTr": "f86b"
-    },
-    {
-      "id": "50b2",
-      "fecha": "2024-11-29",
-      "horario": "18:10",
-      "direccion": "San Martín 2267       ",
-      "idUs": "5dac",
-      "idTr": "e858"
-    },
-    {
-      "id": "4549",
-      "fecha": "2024-11-23",
-      "horario": "18:08",
-      "direccion": "PROBANDOO",
-      "idUs": "e858",
-      "idTr": "f86b"
-    },
-    {
-      "id": "4381",
-      "fecha": "2024-10-31",
-      "horario": "23:08",
-      "direccion": "leaan: id:f86b",
-      "idUs": "f86b",
-      "idTr": "996a"
-    },
-    {
-      "id": "fbf8",
-      "fecha": "2024-11-20",
-      "horario": "18:28",
-      "direccion": "Mica probando",
-      "idUs": "996a",
-      "idTr": "1547"
-    },
-    {
-      "id": "3966",
-      "fecha": "2024-11-07",
-      "horario": "18:34",
-      "direccion": "uno",
-      "idUs": "996a",
-      "idTr": "ef56"
-    },
-    {
-      "id": "1eb3",
-      "fecha": "2024-11-28",
-      "horario": "22:36",
-      "direccion": "San Martín 2267       ",
-      "idUs": "f86b",
-      "idTr": "72d0",
-      "estado": "rechazada"
-    },
-    {
-      "id": "40c5",
-      "fecha": "2024-11-29",
-      "horario": "23:38",
-      "direccion": "DOS",
-      "idUs": "72d0",
-      "idTr": "3f87"
-    },
-    {
-      "id": "8046",
-      "fecha": "2024-11-26",
-      "horario": "13:03",
-      "direccion": "PRUEBITA",
-      "estado": "rechazada",
-      "idUs": "72d0",
-      "idTr": "748d"
-    },
-    {
-      "id": "09e2",
-      "fecha": "2024-11-28",
-      "horario": "13:03",
-      "direccion": "OTRA MAS PARA PEPE",
-      "estado": "aceptada",
-      "idUs": "72d0",
-      "idTr": "748d"
-    },
-    {
-      "id": "3f17",
-      "fecha": "2024-11-18",
-      "horario": "21:06",
-      "direccion": "TRES PEPE",
-      "estado": "rechazada",
-      "idUs": "72d0",
-      "idTr": "748d"
-    },
-    {
-      "id": "c9b4",
-      "fecha": "2024-11-01",
-      "horario": "12:06",
-      "direccion": "CINCOO",
-      "estado": "aceptada",
-      "idUs": "72d0",
-      "idTr": "748d"
-    },
-    {
-      "id": "f6cf",
-      "fecha": "2024-11-20",
-      "horario": "21:21",
-      "direccion": "a Juano id:ef56",
-      "estado": "pendiente",
-      "idUs": "748d",
-      "idTr": "ef56"
-    },
-    {
-      "id": "c67d",
-      "fecha": "2024-10-29",
-      "horario": "12:22",
-      "direccion": "aaaaaaaaaaaaaaaaa",
-      "estado": "pendiente",
-      "idUs": "fb58",
-      "idTr": "748d"
     }
   ]
 }
