@@ -13,7 +13,7 @@ body {
 /* Contenedor principal */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   background-color: #fff;
   border-radius: 8px;
   padding: 20px;
@@ -159,9 +159,11 @@ body {
   font-weight: bold;
   color: white;
   text-transform: uppercase;
-  width: fit-content;
+  width: 120px; /* Ancho fijo */
+  text-align: center; /* Centrar el texto dentro */
   margin-top: 15px;
 }
+
 
 .estado-mensaje.aceptada {
   background-color: #4CAF50; /* Verde, igual que el botón Aceptar */

@@ -49,16 +49,16 @@
       ]
     },
     {
-      "id": "da81",
       "nombre": "Raul",
+      "profesion": "Electricista",
+      "disponibilidad": "03:13",
+      "zona": "Caisamarafas",
+      "descripcion": " Voy a domicilio. Sasduper respetuoso.",
+      "telefono": "223546546545sdasd",
       "email": "raul@hotmail.com",
       "password": "1234567",
       "rol": "Trabajador",
-      "profesion": "Electricista",
-      "disponibilidad": "03:13",
-      "descripcion": " Voy a domicilio. Super respetuoso.",
-      "zona": "Caisamar",
-      "telefono": "223546546545"
+      "id": "da81"
     },
     {
       "id": "6893",
@@ -125,35 +125,53 @@
       "valoraciones": [
         8
       ]
+    },
+    {
+      "nombre": "Jose Alvarez",
+      "profesion": "Carpintero/a",
+      "disponibilidad": "de 10 a 20 hs",
+      "zona": "Los Troncos",
+      "descripcion": "Años de experiencia en el rubro. ",
+      "telefono": "223589898",
+      "email": "josesito@outlook.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "id": "4cbb",
+      "valoraciones": [
+        7
+      ]
+    },
+    {
+      "nombre": "Juana",
+      "zona": "Faro Norte",
+      "descripcion": "atenta",
+      "telefono": "223595989",
+      "email": "juana@juana.com",
+      "password": "12345646",
+      "rol": "Cliente",
+      "id": "0477"
     }
   ],
   "reservas": [
     {
-      "fecha": "2024-11-08",
-      "horario": "04:44",
-      "direccion": "asdasas",
-      "estado": "aceptada",
-      "id": "5b8b",
-      "idTr": "2dc4",
-      "idUs": "2dc4"
+      "id": "ad23",
+      "nombre": "sdfsd",
+      "email": "asdasd@dfdfs",
+      "password": "2313456",
+      "rol": "Cliente"
     },
     {
-      "id": "8650",
-      "fecha": "2024-11-01",
-      "horario": "02:48",
-      "direccion": "213213",
-      "estado": "pendiente",
-      "idUs": "42m1",
-      "idTr": "e858"
-    },
-    {
-      "fecha": "2024-11-08",
-      "horario": "04:48",
-      "direccion": "aaaaaaaaaaakjoljk",
-      "estado": "pendiente",
-      "id": "116d",
-      "idTr": "1547",
-      "idUs": "42m1"
+      "id": "7bda",
+      "nombre": "asdasd",
+      "email": "asdas@sdfsdf",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Centro de estetica",
+      "disponibilidad": "01:25",
+      "descripcion": "dsdfsdf",
+      "zona": "Caisamar",
+      "telefono": "1234567"
     }
-  ]
+  ],
+  "reservas": []
 }
