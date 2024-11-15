@@ -27,6 +27,11 @@ export class AuthService {
        // Restaurar al USUARIO ACTUAL
        this.usuariosService.getUsuarioById(storedUserId).subscribe((usuario: Usuario) => {
          this.usuarioActual = usuario;
+
+          // Asegurarse de que userRole se actualice después de obtener el usuario
+       if (usuario.rol) {
+        localStorage.setItem('userRole', usuario.rol);
+      }
        });
      }
   }
