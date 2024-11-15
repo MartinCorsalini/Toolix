@@ -22,6 +22,8 @@
           <p>Dirección: {{ reserva.direccion }}</p>
           <p>Fecha: <span>{{ reserva.fecha }}</span></p>
           <p>Horario: <span>{{ reserva.horario }}</span></p>
+          <p>Cliente: <span>{{ usuarioNombres[reserva.idUs!] || 'Cargando...' }}</span></p>
+          <p>Trabajador: <span>{{ trabajadorNombres[reserva.idTr!] || 'Cargando...' }}</span></p>
           <div class="actions">
             <!-- Mostrar botones solo si la reserva está pendiente -->
             <ng-container *ngIf="reserva.estado === 'pendiente'; else estadoMensaje">
@@ -58,6 +60,8 @@
           <p>Dirección: {{ reserva.direccion }}</p>
           <p>Fecha: <span>{{ reserva.fecha }}</span></p>
           <p>Horario: <span>{{ reserva.horario }}</span></p>
+          <p>Cliente: <span>{{ usuarioNombres[reserva.idUs!] || 'Cargando...' }}</span></p>
+          <p>Trabajador: <span>{{ trabajadorNombres[reserva.idTr!] || 'Cargando...' }}</span></p>
           <div class="actions">
             <button (click)="irAModificarReserva(reserva)" class="accept-btn">Modificar</button>
             <button (click)="eliminarReserva(reserva.id)" class="reject-btn">Eliminar</button>

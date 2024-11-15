@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, Inject, OnInit } from '@angular/core';
 import { NavbarPrivateComponent } from "../../shared/navbar-private/navbar-private.component";
 import { Reserva } from '../../interface/reserva';
 import { CommonModule } from '@angular/common';
@@ -9,6 +9,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogoComponent } from '../Inicio/cuadro-dialogo/cuadro-dialogo.component';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
+import { UsuariosService } from '../../service/usuarios.service';
+import { Usuario } from '../../interface/usuario';
 
 
 
@@ -30,8 +32,10 @@ export class NotificationsComponent implements OnInit{
     private user : AuthService,
     private reservasService: ReservasService,
     private dialog: MatDialog, // manejo de diálogos
-    private router: Router
+    private router: Router,
+    private cdr: ChangeDetectorRef
   ) {}
+  service= inject(UsuariosService);
 
   ngOnInit(): void {
     if (this.user.estaLogeado())
@@ -43,10 +47,25 @@ export class NotificationsComponent implements OnInit{
          // Filtra reservas enviadas y recibidas en base al id del usuario
         this.reservasEnviadas = reservas.filter((res) => res.idUs === userId);
         this.reservasRecibidas = reservas.filter((res) => res.idTr === userId);
+
+         // Cargar nombres de clientes para cada reserva recibida si es necesario
+         this.reservasRecibidas.forEach((reserva) => {
+          this.mostrarCliente(reserva.idUs!);
+          this.mostrarTrabajador(reserva.idTr!);
+
+          // Cargar nombres de clientes para cada reserva enviada
+          this.reservasEnviadas.forEach((reserva) => {
+            this.mostrarCliente(reserva.idUs!);
+            this.mostrarTrabajador(reserva.idTr!);
+          });
+        });
       });
 
       // Recupera el rol del usuario y ajusta `esTrabajador` según corresponda
       this.esTrabajador = this.user.getUserRole() === 'Trabajador';
+
+
+
     } else {
       // Si no está logueado, redirige a la página de login
       this.router.navigate(['/login']);
@@ -80,17 +99,7 @@ export class NotificationsComponent implements OnInit{
 
   }
 
-  cargarReservas() {
-    this.reservasService.getReserva().subscribe({
-      next: (reservas: Reserva[]) => {
-        this.reservasEnviadas = reservas; // Asigna las reservas obtenidas del servidor
-      },
-     error: (e : Error) => {
-        console.log('Error al cargar las reservas', e.message);
-      }
-    }
-    );
-  }
+
 
  // Aceptar una reserva
  aceptarReserva(reserva: Reserva) {
@@ -124,6 +133,47 @@ rechazarReserva(reserva: Reserva) {
     }
   });
 }
+
+
+
+  //--------FUNCIONES PARA MOSTRAR LOS DATOS DE LOS USUARIOS ---
+
+
+
+  usuarioNombres: { [id: string]: string } = {}; // Almacena los nombres de usuario por id
+
+
+  mostrarCliente(id: string) {
+    this.service.getUsuarioById(id).subscribe({
+      next: (usuario: Usuario) => {
+        console.log('ID USUARIO RESERVA: '+usuario.nombre);
+        this.usuarioNombres[id] = usuario.nombre;
+        this.cdr.detectChanges(); // Fuerza la actualización de la vista
+      },
+      error: () => {
+        console.log('Error al cargar el nombre del cliente');
+        this.usuarioNombres[id] = 'Error al cargar nombre';
+        this.cdr.detectChanges(); // Fuerza la actualización de la vista en caso de error
+      }
+    });
+  }
+
+  trabajadorNombres: { [id: string]: string } = {}; // Almacena los nombres de los trabajadores por id
+
+  mostrarTrabajador(id: string) {
+    this.service.getUsuarioById(id).subscribe({
+      next: (usuario: Usuario) => {
+        console.log('ID TRABAJADOR RESERVA: ' + usuario.nombre);
+        this.trabajadorNombres[id] = usuario.nombre;
+        this.cdr.detectChanges(); // Fuerza la actualización de la vista
+      },
+      error: () => {
+        console.log('Error al cargar el nombre del trabajador');
+        this.trabajadorNombres[id] = 'Error al cargar nombre';
+        this.cdr.detectChanges(); // Actualiza la vista en caso de error
+      }
+    });
+  }
 
 }
 

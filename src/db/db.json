@@ -49,16 +49,16 @@
       ]
     },
     {
-      "id": "da81",
       "nombre": "Raul",
+      "profesion": "Electricista",
+      "disponibilidad": "03:13",
+      "zona": "Caisamarafas",
+      "descripcion": " Voy a domicilio. Sasduper respetuoso.",
+      "telefono": "223546546545sdasd",
       "email": "raul@hotmail.com",
       "password": "1234567",
       "rol": "Trabajador",
-      "profesion": "Electricista",
-      "disponibilidad": "03:13",
-      "descripcion": " Voy a domicilio. Super respetuoso.",
-      "zona": "Caisamar",
-      "telefono": "223546546545"
+      "id": "da81"
     },
     {
       "id": "6893",
@@ -83,18 +83,6 @@
       "descripcion": "Enfoque conductista. Trabajo con niños, adolescente y adultos. Depresión . Ansiedad. Parejas",
       "zona": "Centro",
       "telefono": "2235952534"
-    },
-    {
-      "id": "61d6",
-      "nombre": "Ramon",
-      "email": "ramon@gmail.com",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "Albañil",
-      "disponibilidad": "00:42",
-      "descripcion": "Cuidadoso, prolijo. ",
-      "zona": "Caisamar",
-      "telefono": "223592548"
     },
     {
       "nombre": "Juana",
@@ -137,22 +125,52 @@
       "valoraciones": [
         8
       ]
+    },
+    {
+      "nombre": "Jose Alvarez",
+      "profesion": "Carpintero/a",
+      "disponibilidad": "de 10 a 20 hs",
+      "zona": "Los Troncos",
+      "descripcion": "Años de experiencia en el rubro. ",
+      "telefono": "223589898",
+      "email": "josesito@outlook.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "id": "4cbb",
+      "valoraciones": [
+        7
+      ]
+    },
+    {
+      "nombre": "Juana",
+      "zona": "Faro Norte",
+      "descripcion": "atenta",
+      "telefono": "223595989",
+      "email": "juana@juana.com",
+      "password": "12345646",
+      "rol": "Cliente",
+      "id": "0477"
     }
   ],
   "reservas": [
     {
-      "fecha": "2024-11-05",
-      "horario": "02:34",
-      "direccion": "XX",
-      "id": "ad23"
+      "id": "ad23",
+      "nombre": "sdfsd",
+      "email": "asdasd@dfdfs",
+      "password": "2313456",
+      "rol": "Cliente"
     },
     {
-      "fecha": "2024-11-09",
-      "horario": "03:49",
-      "direccion": "Alla",
-      "id": "99cb",
-      "idTr": "1547",
-      "idUs": "42m1"
+      "id": "7bda",
+      "nombre": "asdasd",
+      "email": "asdas@sdfsdf",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Centro de estetica",
+      "disponibilidad": "01:25",
+      "descripcion": "dsdfsdf",
+      "zona": "Caisamar",
+      "telefono": "1234567"
     }
-  ]
+  ],
 }
