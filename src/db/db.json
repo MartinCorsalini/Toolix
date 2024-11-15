@@ -125,6 +125,55 @@
       "email": "micaelaprieto@outlook.com",
       "password": "sdfsfsdfsdf",
       "rol": "Cliente"
+    },
+    {
+      "nombre": "AAAAAAAAAAAA",
+      "profesion": "Albañil",
+      "disponibilidad": "10:00 a 20_00",
+      "zona": "Los Troncos",
+      "descripcion": "prolijo y limpio",
+      "email": "speed@gmail.com",
+      "password": "aaaaaaaaaaaaaaaaaaaa",
+      "rol": null,
+      "id": "eb65"
+    },
+    {
+      "nombre": "LALAL",
+      "profesion": "Albañil",
+      "disponibilidad": "de 10  a 20a",
+      "zona": "Bosque Peralta Ramos",
+      "descripcion": "sdfsdf",
+      "email": "kkoo@spdofkap",
+      "password": "1234567",
+      "rol": null,
+      "id": "c742"
+    },
+    {
+      "nombre": "micaaaaaaaaaaaaaa",
+      "profesion": "Centro de estetica",
+      "disponibilidad": "dfaaaaaa",
+      "zona": "Otro",
+      "descripcion": "sd",
+      "email": "sdfsdfs@dafds",
+      "password": "12345637",
+      "rol": "Trabajador",
+      "id": "d91b"
+    },
+    {
+      "id": "e8e2",
+      "nombre": "FFFFFFFFFFFFFFFFFFFF",
+      "email": "fff@gmail.com",
+      "password": "ffffffffffffffffffffffffffffff",
+      "rol": "Trabajador",
+      "profesion": "Abogado/a",
+      "disponibilidad": "10 a 20",
+      "descripcion": "crack",
+      "zona": "Faro Norte",
+      "telefono": "12354687",
+      "valoraciones": [
+        3,
+        10
+      ]
     }
   ],
   "reservas": [
@@ -219,6 +268,40 @@
       "direccion": "UNA",
       "idUs": "a110",
       "idTr": "e858"
+    },
+    {
+      "fecha": "2024-11-26",
+      "horario": "05:08",
+      "direccion": "sur",
+      "id": "7974",
+      "idTr": "3f87",
+      "idUs": "3f87"
+    },
+    {
+      "fecha": "2024-11-19",
+      "horario": "06:44",
+      "direccion": "puerto",
+      "id": "43ad",
+      "idTr": "e8e2",
+      "idUs": "e8e2"
+    },
+    {
+      "id": "ab72",
+      "fecha": "2024-11-28",
+      "horario": "01:45",
+      "direccion": "sur",
+      "estado": "rechazada",
+      "idUs": "e8e2",
+      "idTr": "e8e2"
+    },
+    {
+      "id": "1482",
+      "fecha": "2024-11-30",
+      "horario": "05:45",
+      "direccion": "asd",
+      "estado": "aceptada",
+      "idUs": "e8e2",
+      "idTr": "e8e2"
     }
   ]
 }
