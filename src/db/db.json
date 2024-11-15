@@ -8,17 +8,18 @@
       "id": "42m1"
     },
     {
-      "nombre": "Pepe",
-      "profesion": "Gasista",
+      "nombre": "Pepe Modificado",
+      "profesion": "Peluquero/a",
       "disponibilidad": "10 hs a 20 hs",
       "zona": "La perla",
       "descripcion": "mmmmmmm",
+      "telefono": "223",
       "email": "pepe@outlook.com",
       "password": "skndalskdiuhi",
       "rol": "Trabajador",
       "id": "3f87",
       "valoraciones": [
-        6
+        7
       ]
     },
     {
@@ -27,13 +28,11 @@
       "disponibilidad": "10 hs a 15 hs",
       "zona": "Centro, Guemes, Puerto",
       "descripcion": "afsdf",
+      "telefono": "111",
       "email": "lauuu@hotmail.com",
       "password": "klsmdklasda",
       "rol": "Trabajador",
-      "id": "1547",
-      "valoraciones": [
-        10
-      ]
+      "id": "1547"
     },
     {
       "nombre": " Micaela",

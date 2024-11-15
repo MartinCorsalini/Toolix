@@ -22,6 +22,7 @@ import { ModificarReservaAdminPageComponent } from './pages/modificar-reserva-ad
 import { PerfilTrabajadorAdminPageComponent } from './pages/perfil-trabajador-admin-page/perfil-trabajador-admin-page.component';
 import { EliminarCuentasAdminPageComponent } from './pages/eliminar-cuentas-admin-page/eliminar-cuentas-admin-page.component';
 import { PerfilPropioAdminPageComponent } from './pages/perfil-propio-admin-page/perfil-propio-admin-page.component';
+import { ModificarPerfilesAdminPageComponent } from './pages/modificar-perfiles-admin/modificar-perfiles-admin.component';
 
 
 
@@ -136,6 +137,11 @@ export const appRoutes: Routes = [
     {
       path: 'perfil-propio-admin/:id',
       component: PerfilPropioAdminPageComponent,
+      canActivate : [authGuard]
+    },
+    {
+      path: 'modificar-perfiles-admin/:id',
+      component: ModificarPerfilesAdminPageComponent,
       canActivate : [authGuard]
     },
     {

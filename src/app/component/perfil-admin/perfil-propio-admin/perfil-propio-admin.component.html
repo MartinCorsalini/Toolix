@@ -17,7 +17,6 @@
         <p><strong>Descripción:</strong> {{ usuario?.descripcion }}</p>
   
         <div>
-          <button (click)="irAModificar(usuario?.id!)" >Modificar datos</button>
           <button [routerLink]="['/homeAdmin', usuario?.id]">Atrás</button>
         </div>
   
