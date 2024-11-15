@@ -1,35 +1,11 @@
 {
   "usuarios": [
     {
-<<<<<<< HEAD
-      "nombre": "Emilio",
-      "profesion": "Gasista",
-      "disponibilidad": "10 hs a 18 hs",
-      "zona": "Centro, Guemes, Puerto",
-      "descripcion": "dejo todo impecable",
-      "email": "emiliomernes@hotmail.com",
-      "password": null,
-      "rol": null,
-      "id": "732b",
-      "valoraciones": [
-        8,
-        5,
-        10,
-        5,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1
-      ]
-=======
       "nombre": "Administrador 1",
       "email": "admin1@gmail.com",
       "password": "1234567",
       "rol": "Admin",
       "id": "42m1"
->>>>>>> e3e04ba45addbfc497d7cc6b693d718fea842d56
     },
     {
       "nombre": "Martin Corsalini",
@@ -190,7 +166,8 @@
       "zona": "a",
       "descripcion": "a",
       "email": "leo@x.com",
-      "password": "1234567"
+      "password": "1234567",
+      "id": "0cbf"
     },
     {
       "id": "f86b",
@@ -203,6 +180,100 @@
       "descripcion": "Tipazo",
       "zona": "Faro Norte",
       "telefono": "223456789"
+    },
+    {
+      "id": "fbde",
+      "nombre": "juan",
+      "email": "juan@gmail.com",
+      "password": "1234567",
+      "rol": "Cliente"
+    },
+    {
+      "id": "f15c",
+      "nombre": "axel",
+      "email": "axel@gmail.com",
+      "password": "1234567",
+      "rol": "Cliente"
+    },
+    {
+      "id": "72be",
+      "nombre": "sasse",
+      "email": "sasse@gmail.com",
+      "password": "1234567",
+      "rol": "Cliente"
+    },
+    {
+      "id": "3eca",
+      "nombre": "ssss",
+      "email": "s@g.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "fafafa",
+      "disponibilidad": "20:20",
+      "descripcion": "sfafafaf",
+      "zona": "Bosque Peralta Ramos",
+      "telefono": "141413412"
+    },
+    {
+      "id": "5b71",
+      "nombre": "ssss",
+      "email": "s@g.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "fdhdhd",
+      "disponibilidad": "20:26",
+      "descripcion": "fdhdfdgdg",
+      "zona": "Bosque Peralta Ramos",
+      "telefono": "12141241"
+    },
+    {
+      "nombre": "tr",
+      "profesion": "Abogado/a",
+      "disponibilidad": "20:31",
+      "zona": "Faro Norte",
+      "descripcion": "saddada",
+      "email": "tr@g.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "id": "e542"
+    },
+    {
+      "id": "4afc",
+      "nombre": "tr2",
+      "email": "tr2@g",
+      "password": "1234567",
+      "rol": "Cliente"
+    },
+    {
+      "id": "aee5",
+      "nombre": "tr",
+      "email": "tr@g",
+      "password": "1234567",
+      "rol": "Cliente"
+    },
+    {
+      "id": "2833",
+      "nombre": "tr4",
+      "email": "tr4@g",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "afafafa",
+      "disponibilidad": "21:05",
+      "descripcion": "addada",
+      "zona": "Faro Norte",
+      "telefono": "12313"
+    },
+    {
+      "id": "cb4f",
+      "nombre": "tr",
+      "email": "tr@g",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "fafasfsa",
+      "disponibilidad": "21:27",
+      "descripcion": "asfafs",
+      "zona": "Barrio San José",
+      "telefono": "1231313"
     }
   ],
   "reservas": [
@@ -240,7 +311,8 @@
       "horario": "21:24",
       "direccion": "sadas",
       "idUs": "a110",
-      "idTr": "f86b"
+      "idTr": "f86b",
+      "id": "5227"
     },
     {
       "id": "a7d8",
@@ -258,14 +330,6 @@
       "idTr": "732b"
     },
     {
-<<<<<<< HEAD
-      "id": "711e",
-      "fecha": "2024-11-21",
-      "horario": "20:57",
-      "direccion": "asd",
-      "idUs": "18e9",
-      "idTr": "732b"
-=======
       "fecha": "2024-11-22",
       "horario": "21:53",
       "direccion": "CCC",
@@ -319,7 +383,14 @@
       "direccion": "m",
       "idUs": "f86b",
       "idTr": "ef56"
->>>>>>> e3e04ba45addbfc497d7cc6b693d718fea842d56
+    },
+    {
+      "id": "db7f",
+      "fecha": "2024-11-14",
+      "horario": "20:28",
+      "direccion": "dasdada",
+      "idUs": "3eca",
+      "idTr": "ef56"
     }
   ]
 }
