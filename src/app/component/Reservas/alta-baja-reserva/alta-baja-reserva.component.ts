@@ -29,10 +29,10 @@ export class AltaBajaReservaComponent implements OnInit {
 
   trabajadorId: string | null = null;
 
-  // @Output () reservaCreada= new EventEmitter<Reserva>(); 
+  // @Output () reservaCreada= new EventEmitter<Reserva>();
   // evento que envia reserva como usuario o trabajador, y se envia a lista de reservas enviadas
 
- 
+
   constructor(
 
     private fb: FormBuilder,
@@ -50,7 +50,8 @@ export class AltaBajaReservaComponent implements OnInit {
     this.reservaForm = this.fb.nonNullable.group({
       fecha: ['', Validators.required],
       horario: ['', Validators.required],
-      direccion: ['', Validators.required]
+      direccion: ['', Validators.required],
+      estado:['pendiente']
     });
   }
 

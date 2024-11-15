@@ -1,4 +1,142 @@
 body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Título de cada sección */
+.section-title {
+  font-size: 1.5em;
+  color: #FF416C;
+  margin: 20px 0 10px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.header h2 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.notification-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.notification-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #fafafa;
+}
+
+.notification-item p {
+  margin: 0;
+  font-size: 1em;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Botones de Aceptar y Rechazar */
+.accept-btn, .reject-btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+/* Botón Aceptar */
+.accept-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Botón Rechazar */
+.reject-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Títulos */
+.titulos {
+  margin: 100; /* Sin margen */
+  color: #FF416C; /* Color gris oscuro */
+  font-size: 28px; /* Tamaño de fuente */
+  font-weight: bold; /* Texto en negrita */
+}
+
+
+.title {
+  font-family: 'Montserrat', sans-serif; /* Fuente elegante */
+  font-size: 2rem; /* Tamaño grande */
+  font-weight: 700; /* Negrita */
+  text-align: center; /* Centrar el texto */
+  background-image: linear-gradient(to right, orange, #ff0000); /* Gradiente de claro a rojo */
+  background-clip: text;
+  -webkit-background-clip: text; /* Soporte para WebKit */
+  color: transparent; /* Hace que solo el gradiente sea visible */
+  display: inline-block; /* Para que el gradiente se aplique correctamente al texto */
+}
+
+.center-container {
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center;          /* Hace que el contenedor ocupe toda la altura de la ventana */
+  text-align: center;      /* Asegura que el texto también esté centrado */
+}
+
+/* Estilos del Mensaje de Estado */
+.estado-mensaje {
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+}
+
+.estado-mensaje.aceptada {
+  background-color: #4CAF50; /* Verde, igual que el botón Aceptar */
+}
+
+.estado-mensaje.rechazada {
+  background-color: #f44336; /* Rojo, igual que el botón Rechazar */
+}
+
+
+
+
+/*
+body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     display: flex;
@@ -74,29 +212,9 @@ body {
     background-color: #f44336;
     color: white;
 }
+*/
 
-.titulos {
-    margin: 100; /* Sin margen */
-    color: #FF416C; /* Color gris oscuro */
-    font-size: 28px; /* Tamaño de fuente */
-    font-weight: bold; /* Texto en negrita */
-  }
 
-  .title {
-    font-family: 'Montserrat', sans-serif; /* Fuente elegante */
-    font-size: 2rem; /* Tamaño grande */
-    font-weight: 700; /* Negrita */
-    text-align: center; /* Centrar el texto */
-    background-image: linear-gradient(to right, orange, #ff0000); /* Gradiente de claro a rojo */
-    background-clip: text;
-    -webkit-background-clip: text; /* Soporte para WebKit */
-    color: transparent; /* Hace que solo el gradiente sea visible */
-    display: inline-block; /* Para que el gradiente se aplique correctamente al texto */
-  }
 
-  .center-container {
-    display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center;          /* Hace que el contenedor ocupe toda la altura de la ventana */
-    text-align: center;      /* Asegura que el texto también esté centrado */
-  }
+
+

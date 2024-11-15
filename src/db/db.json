@@ -22,6 +22,20 @@
       ]
     },
     {
+      "nombre": "Juanito",
+      "profesion": "Gasista",
+      "disponibilidad": "10 hs a 18 hs",
+      "zona": "Centro, Guemes, La perla",
+      "descripcion": "otro tipaso",
+      "email": "juanirelok@hotmail.com",
+      "password": "alskdnalskdna",
+      "rol": null,
+      "id": "a1f8",
+      "valoraciones": [
+        9
+      ]
+    },
+    {
       "nombre": "Juanita Pepes",
       "profesion": "Peluquera",
       "disponibilidad": "10 hs a 20 hs",
@@ -33,6 +47,34 @@
       "id": "55d4",
       "valoraciones": [
         6
+      ]
+    },
+    {
+      "nombre": "Jose",
+      "profesion": "Electricista",
+      "disponibilidad": "10 hs a 15 hs",
+      "zona": "Constitucion",
+      "descripcion": "Arreglo todo super bien",
+      "email": "jose@hotmail.com",
+      "password": "alskdnalsd",
+      "rol": null,
+      "id": "8eb5",
+      "valoraciones": [
+        3
+      ]
+    },
+    {
+      "nombre": "Leonardo",
+      "profesion": "Gasista",
+      "disponibilidad": "10 hs a 15 hs",
+      "zona": "La perla",
+      "descripcion": "excelente servicio",
+      "email": "leonardo@outlook.com",
+      "password": "laskndalksd",
+      "rol": null,
+      "id": "bb75",
+      "valoraciones": [
+        7
       ]
     },
     {
@@ -167,7 +209,7 @@
       "descripcion": "a",
       "email": "leo@x.com",
       "password": "1234567",
-      "id": "0cbf"
+      "id": "5dac"
     },
     {
       "id": "f86b",
@@ -182,98 +224,68 @@
       "telefono": "223456789"
     },
     {
-      "id": "fbde",
-      "nombre": "juan",
-      "email": "juan@gmail.com",
+      "id": "72d0",
+      "nombre": "Mica",
+      "email": "micaelaprieto@outlook.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Peluquera",
+      "disponibilidad": "22:27",
+      "descripcion": "Te dejo hermosa",
+      "zona": "Centro",
+      "telefono": "2235952534"
+    },
+    {
+      "id": "fb58",
+      "nombre": "Juliana",
+      "email": "juli@hotmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Limpieza",
+      "disponibilidad": "12:42",
+      "descripcion": "Dejo todo re lindo",
+      "zona": "La Perla",
+      "telefono": "22359854"
+    },
+    {
+      "id": "748d",
+      "nombre": "Pepe",
+      "email": "pepe@outlook.com",
+      "password": "alksdkmasd",
+      "rol": "Trabajador",
+      "profesion": "asfdfsd",
+      "disponibilidad": "22:08",
+      "descripcion": "fsdf",
+      "zona": "Punta Mogotes",
+      "telefono": "2235468545"
+    },
+    {
+      "id": "35d0",
+      "nombre": "Pepe",
+      "email": "pepe@outlook.com",
+      "password": "alksdkmasd",
+      "rol": "Cliente"
+    },
+    {
+      "id": "9c87",
+      "nombre": "Oscar",
+      "email": "oscarsito@hotmail.com",
       "password": "1234567",
       "rol": "Cliente"
     },
     {
-      "id": "f15c",
-      "nombre": "axel",
-      "email": "axel@gmail.com",
-      "password": "1234567",
+      "id": "af10",
+      "nombre": "asdknja",
+      "email": "micaelaprieto@outlook.com",
+      "password": "dfsdfsf",
       "rol": "Cliente"
     },
     {
-      "id": "72be",
-      "nombre": "sasse",
-      "email": "sasse@gmail.com",
-      "password": "1234567",
+      "id": "0c1a",
+      "nombre": "sdfsdf",
+      "email": "micaelaprieto@outlook.com",
+      "password": "sdfsfsdfsdf",
       "rol": "Cliente"
-    },
-    {
-      "id": "3eca",
-      "nombre": "ssss",
-      "email": "s@g.com",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "fafafa",
-      "disponibilidad": "20:20",
-      "descripcion": "sfafafaf",
-      "zona": "Bosque Peralta Ramos",
-      "telefono": "141413412"
-    },
-    {
-      "id": "5b71",
-      "nombre": "ssss",
-      "email": "s@g.com",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "fdhdhd",
-      "disponibilidad": "20:26",
-      "descripcion": "fdhdfdgdg",
-      "zona": "Bosque Peralta Ramos",
-      "telefono": "12141241"
-    },
-    {
-      "nombre": "tr",
-      "profesion": "Abogado/a",
-      "disponibilidad": "20:31",
-      "zona": "Faro Norte",
-      "descripcion": "saddada",
-      "email": "tr@g.com",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "id": "e542"
-    },
-    {
-      "id": "4afc",
-      "nombre": "tr2",
-      "email": "tr2@g",
-      "password": "1234567",
-      "rol": "Cliente"
-    },
-    {
-      "id": "aee5",
-      "nombre": "tr",
-      "email": "tr@g",
-      "password": "1234567",
-      "rol": "Cliente"
-    },
-    {
-      "id": "2833",
-      "nombre": "tr4",
-      "email": "tr4@g",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "afafafa",
-      "disponibilidad": "21:05",
-      "descripcion": "addada",
-      "zona": "Faro Norte",
-      "telefono": "12313"
-    },
-    {
-      "id": "cb4f",
-      "nombre": "tr",
-      "email": "tr@g",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "fafasfsa",
-      "disponibilidad": "21:27",
-      "descripcion": "asfafs",
-      "zona": "Barrio San José",
-      "telefono": "1231313"
     }
   ],
   "reservas": [
@@ -312,7 +324,7 @@
       "direccion": "sadas",
       "idUs": "a110",
       "idTr": "f86b",
-      "id": "5227"
+      "id": "13c5"
     },
     {
       "id": "a7d8",
@@ -328,13 +340,6 @@
       "direccion": "ZZZ",
       "id": "6ee9",
       "idTr": "732b"
-    },
-    {
-      "fecha": "2024-11-22",
-      "horario": "21:53",
-      "direccion": "CCC",
-      "id": "b7c8",
-      "idTr": "18e9"
     },
     {
       "id": "793a",
@@ -375,22 +380,6 @@
       "direccion": "UNA",
       "idUs": "a110",
       "idTr": "e858"
-    },
-    {
-      "id": "5de5",
-      "fecha": "2024-11-05",
-      "horario": "23:02",
-      "direccion": "m",
-      "idUs": "f86b",
-      "idTr": "ef56"
-    },
-    {
-      "id": "db7f",
-      "fecha": "2024-11-14",
-      "horario": "20:28",
-      "direccion": "dasdada",
-      "idUs": "3eca",
-      "idTr": "ef56"
     }
   ]
 }
