@@ -46,7 +46,8 @@ export class ModificarReservaAdminComponent implements OnInit {
     this.modificarRForm = this.fb.group({
       fecha: ['', Validators.required],
       horario: ['', Validators.required],
-      direccion: ['', Validators.required]
+      direccion: ['', Validators.required],
+      estado:['pendiente']
     });
   }
 
