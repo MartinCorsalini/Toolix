@@ -45,7 +45,8 @@ export class ModificarPerfilesAdminComponent implements OnInit {
         telefono:['',[Validators.required] ],
         email:[this.usuario?.email!],
         password:[this.usuario?.password!],
-        rol:[this.usuario?.rol!]
+        rol:[this.usuario?.rol!],
+        valoraciones:[this.usuario?.valoraciones!]
       }
     )
 
@@ -79,6 +80,7 @@ export class ModificarPerfilesAdminComponent implements OnInit {
                 this.formulario.controls['descripcion'].setValue(usuario.descripcion!);
                 this.formulario.controls['rol'].setValue(usuario.rol!);
                 this.formulario.controls['telefono'].setValue(usuario.telefono!);
+                this.formulario.controls['valoraciones'].setValue(usuario.valoraciones!)
           },
           error: () =>
           {

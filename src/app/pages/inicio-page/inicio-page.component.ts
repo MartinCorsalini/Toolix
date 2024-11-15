@@ -32,9 +32,20 @@ export class InicioPageComponent implements OnInit {
   dialog = inject(MatDialog);
   auth = inject(AuthService);
 
+
+  userId: string | undefined = undefined;
+  usuario?: Usuario; //Por si se necesita
+  rolUsuario? : string = undefined;
+
+
   ngOnInit(): void {
     this.cargarPerfiles();
     this.userRol = this.auth.getUserRole();
+
+    this.auth.currentUserId$.subscribe(id => {
+      this.userId = id;
+    }); // GUARDO EL ID DEL USUARIO EN EL USERID
+
   }
 
   // Carga todos los perfiles al inicializar el componente
@@ -75,5 +86,21 @@ export class InicioPageComponent implements OnInit {
     });
   }
 
-   
+
+  getById()
+  {
+    this.service.getUsuarioById(this.userId!).subscribe(
+      {
+        next: (usuario : Usuario)=>
+        {
+          this.usuario = usuario;
+          this.userRol = usuario.rol;
+        },
+        error: () =>
+        {
+          alert('Error al acceder a los datos');
+        }
+      }
+  )
+  }
 }
