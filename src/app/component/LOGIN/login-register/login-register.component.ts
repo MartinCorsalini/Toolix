@@ -183,8 +183,8 @@ export class LoginRegisterComponent implements OnInit {
                   console.log("no se encontro usuario con ese mail");
               }
         },
-        error: (e: Error) => {
-          console.log("ERROR AL BUSCAR POR EMAIL: " + e.message);
+        error: () => {
+          alert('Error al buscar por email');
         }
       });
     }
