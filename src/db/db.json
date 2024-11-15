@@ -57,7 +57,8 @@
       "rol": "Trabajador",
       "id": "ef56",
       "valoraciones": [
-        9
+        9,
+        null
       ]
     },
     {
@@ -151,34 +152,10 @@
       "email": "micael@hotmail.com",
       "password": "ajsdnkaskd",
       "rol": "Trabajador",
-      "id": "e858"
-    },
-    {
-      "id": "a2ef",
-      "nombre": "juan",
-      "email": "juan@example.com",
-      "password": "1234567"
-    },
-    {
-      "nombre": "ferchu",
-      "profesion": "peluquera",
-      "disponibilidad": "10 a 20",
-      "zona": "centro",
-      "descripcion": "asdasdas",
-      "email": "asdasd@asd",
-      "password": "123123123",
-      "rol": null,
-      "id": "a110"
-    },
-    {
-      "nombre": "Lean",
-      "profesion": "Plomero",
-      "disponibilidad": "A",
-      "zona": "a",
-      "descripcion": "a",
-      "email": "leo@x.com",
-      "password": "1234567",
-      "id": "5dac"
+      "id": "e858",
+      "valoraciones": [
+        3
+      ]
     },
     {
       "id": "72d0",

@@ -28,7 +28,7 @@
 
           <hr>
           <div class="actions">
-            <button class="detalles-button" (click)="irADetalles(usuario.id!)">Detalles</button>
+            <button class="detalles-button"  [routerLink]="['/perfil-trabajador-admin',usuario.id]">Detalles</button>
             <div class="perfil-rating">
               <span>{{ calcularPromedioValoracion(usuario.valoraciones) | number:'1.1-1' }}</span>
               <ng-container *ngFor="let star of stars">
@@ -77,20 +77,8 @@
 
           <hr>
           <div class="actions">
-            <button class="detalles-button" (click)="irADetalles(usuario.id!)">Detalles</button>
-            <div class="perfil-rating">
-              <span>{{ calcularPromedioValoracion(usuario.valoraciones) | number:'1.1-1' }}</span>
-              <ng-container *ngFor="let star of stars">
-                <span *ngIf="star === 1">&#9733;</span>
-                <span *ngIf="star === 0.5">&#x272E;</span>
-                <span *ngIf="star === 0">&#9734;</span>
-              </ng-container>
-            </div>
-            <!--
-            <button>utton class="fav-button" (click)="toggleFavorite()">
-              <i class="fa fa-heart"></i>
-            </button>
-            -->
+            <button class="detalles-button" [routerLink]="['/perfil-trabajador-admin',usuario.id]">Detalles</button>
+
           </div>
         </div>
 

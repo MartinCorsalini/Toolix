@@ -77,7 +77,6 @@ export class AuthService {
   }
 
   getUserRole(): string | undefined {
-    return this.usuarioActual.rol;
-   // return this.usuarioActual && this.usuarioActual.rol ? this.usuarioActual.rol : undefined;
+    return this.usuarioActual && this.usuarioActual.rol ? this.usuarioActual.rol : undefined;
   }
 }

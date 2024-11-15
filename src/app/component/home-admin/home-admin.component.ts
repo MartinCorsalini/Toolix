@@ -3,13 +3,13 @@ import { NavbarAdminComponent } from "../../shared/navbar-admin/navbar-admin.com
 import { SearchBarComponent } from "../Inicio/search-bar/search-bar.component";
 import { CommonModule } from '@angular/common';
 import { Usuario } from '../../interface/usuario';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { UsuariosService } from '../../service/usuarios.service';
 
 @Component({
   selector: 'app-home-admin',
   standalone: true,
-  imports: [NavbarAdminComponent, SearchBarComponent,CommonModule],
+  imports: [NavbarAdminComponent, SearchBarComponent,CommonModule,RouterLink],
   templateUrl: './home-admin.component.html',
   styleUrl: './home-admin.component.css'
 })
@@ -76,9 +76,5 @@ export class HomeAdminComponent {
   }
 
 
-  irADetalles(id:string)
-  {
-    this.router.navigate([`perfil-trabajador/${id}`]);
-  }
-  
+ 
 }

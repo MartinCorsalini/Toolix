@@ -19,6 +19,8 @@ import { ListReservasAdminPageComponent } from './pages/list-reservas-admin-page
 import { ListUsuariosAdminPageComponent } from './pages/list-usuarios-admin-page/list-usuarios-admin-page.component';
 import { HomeAdminPageComponent } from './pages/home-admin-page/home-admin-page.component';
 import { ModificarReservaAdminPageComponent } from './pages/modificar-reserva-admin-page/modificar-reserva-admin-page.component';
+import { PerfilTrabajadorAdminPageComponent } from './pages/perfil-trabajador-admin-page/perfil-trabajador-admin-page.component';
+import { EliminarCuentasAdminPageComponent } from './pages/eliminar-cuentas-admin-page/eliminar-cuentas-admin-page.component';
 
 
 
@@ -99,7 +101,7 @@ export const appRoutes: Routes = [
       canActivate : [authGuard] //SI ESTOY LOGEADO
    },
    {
-
+    /////////admin///////////
     path: 'lista-usuarios-admin',
      component: ListUsuariosAdminPageComponent,
     canActivate : [authGuard] //SI ESTOY LOGEADO
@@ -118,6 +120,16 @@ export const appRoutes: Routes = [
     {
       path: 'modificar-reserva-admin/:id',
       component: ModificarReservaAdminPageComponent,
+      canActivate : [authGuard]
+    },
+    {
+      path: 'perfil-trabajador-admin/:id',
+      component: PerfilTrabajadorAdminPageComponent,
+      canActivate : [authGuard]
+    },
+    {
+      path: 'eliminar-cuentas-admin/:id',
+      component: EliminarCuentasAdminPageComponent,
       canActivate : [authGuard]
     },
     {
