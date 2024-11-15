@@ -24,7 +24,7 @@
         <i class="fas fa-user"></i>
       </a>
       <div class="dropdown-menu">
-        <a (click)="irADetalles()">Ver perfil</a>
+        <a [routerLink]="['/perfil-propio-admin', userId]">Ver perfil</a>
         <a (click)="onLogout()">Cerrar sesión</a>
       </div>
     </div>

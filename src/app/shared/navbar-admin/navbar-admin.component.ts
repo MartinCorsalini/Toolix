@@ -39,10 +39,6 @@ export class NavbarAdminComponent implements OnInit {
     this.isProfileOpen = false;
   }
 
-  irADetalles()
-  {
-    this.route.navigate([`perfil-propio/${this.userId}`]);
-  }
 
   irAHome()
   {
