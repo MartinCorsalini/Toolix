@@ -69,6 +69,18 @@
           }
         </div>
 
+        <!--------- Telefono ---------->
+        <div>
+          <label for="telefono">Telefono: </label>
+          <input type="text" formControlName="telefono" id="telefono">
+
+          @if(formulario.controls['telefono'].getError('required') && formulario.controls['telefono'].touched)
+          {
+              <div class="colorRojo">Campo requerido...</div>
+          }
+        </div>
+
+
         <!--------- Zona ---------->
         <div>
           <label for="zona">Zona: </label>
