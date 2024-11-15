@@ -26,7 +26,7 @@
         <p *ngIf="usuario?.rol == 'Trabajador'"><strong>Disponibilidad:</strong> {{ usuario?.disponibilidad }}</p>
         <p *ngIf="usuario?.rol == 'Trabajador'"><strong>Zonas de trabajo:</strong> {{ usuario?.zona }}</p>
         <p *ngIf="usuario?.rol == 'Trabajador'"><strong>Descripción:</strong> {{ usuario?.descripcion }}</p>
-        <p *ngIf="usuario?.rol == 'Trabajador'"><strong>Telefono:</strong> {{ usuario?.telefono }}</p>
+        <p><strong>Telefono:</strong> {{ usuario?.telefono }}</p>
         <button *ngIf="usuario?.rol == 'Trabajador'" class="valoracion-btn" (click)="mostrarInput()">Agregar Valoración</button>
   
         <!-- Input y botón para enviar valoración, visibles cuando `mostrarValoracionInput` es true -->
@@ -44,7 +44,7 @@
         </div>
   
         <div class="botones">
-          <button *ngIf="usuario?.rol == 'Trabajador'" (click)="irAreservar(usuario?.id!)">Reservar</button>
+          <button *ngIf="usuario?.rol == 'Trabajador'" [routerLink]="['/alta-baja-admin', usuario?.id]">Reservar</button>
           <button [routerLink]="['/modificar-perfiles-admin', usuario?.id]">Modificar</button>
           <button [routerLink]="['/homeAdmin', usuario?.id]">Atrás</button>
           <button [routerLink]="['/eliminar-cuentas-admin', usuario?.id]">Eliminar cuenta</button>

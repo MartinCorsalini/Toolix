@@ -16,13 +16,13 @@ import { TerminosServicioComponent } from './component/generales/terminos-servic
 import { ModificarReservaPageComponent } from './pages/modificar-reserva-page/modificar-reserva-page.component';
 import { EliminarCuentaPageComponent } from './pages/eliminar-cuenta-page/eliminar-cuenta-page.component';
 import { ListReservasAdminPageComponent } from './pages/list-reservas-admin-page/list-reservas-admin-page.component';
-import { ListUsuariosAdminPageComponent } from './pages/list-usuarios-admin-page/list-usuarios-admin-page.component';
 import { HomeAdminPageComponent } from './pages/home-admin-page/home-admin-page.component';
 import { ModificarReservaAdminPageComponent } from './pages/modificar-reserva-admin-page/modificar-reserva-admin-page.component';
 import { PerfilTrabajadorAdminPageComponent } from './pages/perfil-trabajador-admin-page/perfil-trabajador-admin-page.component';
 import { EliminarCuentasAdminPageComponent } from './pages/eliminar-cuentas-admin-page/eliminar-cuentas-admin-page.component';
 import { PerfilPropioAdminPageComponent } from './pages/perfil-propio-admin-page/perfil-propio-admin-page.component';
 import { ModificarPerfilesAdminPageComponent } from './pages/modificar-perfiles-admin/modificar-perfiles-admin.component';
+import { AltaBajaReservasAdminPageComponent } from './pages/alta-baja-reservas-admin-page/alta-baja-reservas-admin-page.component';
 
 
 
@@ -102,12 +102,10 @@ export const appRoutes: Routes = [
        component: EliminarCuentaPageComponent,
       canActivate : [authGuard] //SI ESTOY LOGEADO
    },
-   {
-    /////////admin///////////
-    path: 'lista-usuarios-admin',
-     component: ListUsuariosAdminPageComponent,
-    canActivate : [authGuard] //SI ESTOY LOGEADO
-   },
+
+   
+
+   /// ADMIN
    {
 
       path: 'lista-reservas-admin',
@@ -142,6 +140,11 @@ export const appRoutes: Routes = [
     {
       path: 'modificar-perfiles-admin/:id',
       component: ModificarPerfilesAdminPageComponent,
+      canActivate : [authGuard]
+    },
+    {
+      path: 'alta-baja-admin/:id',
+      component: AltaBajaReservasAdminPageComponent,
       canActivate : [authGuard]
     },
     {
