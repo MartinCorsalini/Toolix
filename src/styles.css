@@ -1,8 +1,69 @@
-body {
-    margin:0;
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+/* Asegurarte de que el body y el html ocupen toda la altura */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* El contenedor principal (app-root o un div principal) debe tener al menos 100vh */
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Hacemos que el contenido principal (por ejemplo el <router-outlet>) ocupe todo el espacio disponible */
+main {
+  flex-grow: 1;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Aseguramos que el footer esté al final */
+footer {
+
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+  app-root {
+    padding: 10px;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  footer {
+    padding: 15px 0;
+    font-size: 14px;
+  }
+}
+
+/* Estilos adicionales para pantallas muy pequeñas, como móviles */
+@media (max-width: 480px) {
+  html, body {
+    font-size: 14px; /* Tamaño de fuente más pequeño en móviles */
+  }
+
+  main {
+    padding: 5px;
+  }
+
+  footer {
+    font-size: 12px;
+    padding: 10px 0;
+  }
+}
+
+
 
 /* Aplica estilos personalizados al contenedor del cuadro de diálogo */
 .custom-dialog-container .mat-mdc-dialog-surface {

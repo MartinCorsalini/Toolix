@@ -1,18 +1,19 @@
-/* Estilos generales, sin modificar el grid en html y body */
+
+/* Contenedor principal para centrado y despego de la parte superior */
 .faq-container {
   display: flex; /* Usamos flexbox para asegurarnos que el contenido se adapte */
   flex-direction: column;
   width: 100%;
   max-width: 1200px; /* Limitar el ancho máximo del contenedor */
-  margin:0 auto  ; /* Centrado en la página */
+  margin: 50px auto 20px; /* Despega el contenedor de la parte superior (50px) y mantiene el centrado horizontal */
   padding: 20px;
   background-color: #FFF3E0;
   border-radius: 8px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  flex-grow: 1; /* Permite que el contenedor de FAQ ocupe el espacio disponible */
 }
 
+/* Estilo para el título de la sección FAQ */
 .faq-container h1 {
   font-size: 2em;
   text-align: center;
@@ -20,11 +21,10 @@
   margin-bottom: 20px;
 }
 
-/* Agregamos esta clase para evitar que el contenido sobresalga */
+/* Estilos para las preguntas */
 .faq-item {
   border-bottom: 1px solid #FF6F61;
   padding: 15px 0;
-
 }
 
 .faq-question {
@@ -45,6 +45,7 @@
   margin: 0;
 }
 
+/* Estilo para las respuestas */
 .faq-answer {
   margin-top: 10px;
   padding: 10px;
