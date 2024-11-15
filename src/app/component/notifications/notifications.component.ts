@@ -20,17 +20,27 @@ import { AuthService } from '../../service/auth.service';
   styleUrl: './notifications.component.css'
 })
 export class NotificationsComponent implements OnInit{
+   // Arreglos para almacenar reservas enviadas y recibidas por el usuario
   reservasEnviadas: Reserva[]=[];
   reservasRecibidas: Reserva[]=[];
-  esTrabajador: boolean = false;
+  esTrabajador: boolean = false;// Estado que indica si el usuario tiene rol de "Trabajador"
 
-  constructor(private user : AuthService, private reservasService: ReservasService, private dialog: MatDialog,private router: Router) {}
+  // Estado que indica si el usuario tiene rol de "Trabajador"
+  constructor(
+    private user : AuthService,
+    private reservasService: ReservasService,
+    private dialog: MatDialog, // manejo de diálogos
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    if (this.user.estaLogeado()) {
-      // Obtiene reservas después de que se cargue el usuario
+    if (this.user.estaLogeado())
+      { // Si el usuario está autenticado, obtiene sus reservas
+
       this.reservasService.getReserva().subscribe((reservas) => {
         const userId = this.user.getUserId();
+
+         // Filtra reservas enviadas y recibidas en base al id del usuario
         this.reservasEnviadas = reservas.filter((res) => res.idUs === userId);
         this.reservasRecibidas = reservas.filter((res) => res.idTr === userId);
       });
@@ -43,11 +53,15 @@ export class NotificationsComponent implements OnInit{
     }
   }
 
+
+  // Agrega una nueva reserva al listado de reservas enviadas
   recibirEventReserva(reserva: Reserva){
       this.reservasEnviadas.push(reserva);
 
   }
 
+  // Redirige a la vista para modificar la reserva seleccionada,
+  // pasando el id de la reserva y del trabajador como parámetros
   irAModificarReserva(reserva: Reserva){
 
     this.router.navigate(['modificar-reserva', reserva.id,reserva.idTr]);
@@ -83,10 +97,45 @@ export class NotificationsComponent implements OnInit{
         console.log('Error al cargar las reservas', e.message);
       }
     }
-
     );
   }
 
+ // Aceptar una reserva
+ aceptarReserva(reserva: Reserva) {
+  reserva.estado = 'aceptada'; // Cambia el estado a "aceptada"
+  this.reservasService.putReserva(reserva, reserva.id).subscribe({
+    next: () => {
+      this.dialog.open(DialogoComponent, {
+        panelClass: "custom-dialog-container",
+        data: { message: "Reserva aceptada correctamente" }
+      });
+    },
+    error: (e: Error) => {
+      console.log('Error al aceptar la reserva');
+    }
+  });
+}
+
+// Rechazar una reserva
+rechazarReserva(reserva: Reserva) {
+  reserva.estado = 'rechazada'; // Cambia el estado a "rechazada"
+  this.reservasService.putReserva(reserva, reserva.id).subscribe({
+    next: () => {
+      this.dialog.open(DialogoComponent, {
+        panelClass: "custom-dialog-container",
+        data: { message: "Reserva rechazada correctamente" }
+      });
+      //this.reservasRecibidas = this.reservasRecibidas.filter(res => res.id !== reserva.id);
+    },
+    error: (e: Error) => {
+      console.log('Error al rechazar la reserva');
+    }
+  });
+}
 
 }
+
+
+
+
 
