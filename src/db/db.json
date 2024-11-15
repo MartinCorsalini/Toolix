@@ -50,16 +50,16 @@
       ]
     },
     {
-      "id": "da81",
       "nombre": "Raul",
+      "profesion": "Electricista",
+      "disponibilidad": "03:13",
+      "zona": "Caisamarafas",
+      "descripcion": " Voy a domicilio. Sasduper respetuoso.",
+      "telefono": "223546546545sdasd",
       "email": "raul@hotmail.com",
       "password": "1234567",
       "rol": "Trabajador",
-      "profesion": "Electricista",
-      "disponibilidad": "03:13",
-      "descripcion": " Voy a domicilio. Super respetuoso.",
-      "zona": "Caisamar",
-      "telefono": "223546546545"
+      "id": "da81"
     },
     {
       "id": "6893",
@@ -138,28 +138,78 @@
       "valoraciones": [
         8
       ]
+    },
+    {
+      "nombre": "Jose Alvarez",
+      "profesion": "Carpintero/a",
+      "disponibilidad": "de 10 a 20 hs",
+      "zona": "Los Troncos",
+      "descripcion": "Años de experiencia en el rubro. ",
+      "telefono": "223589898",
+      "email": "josesito@outlook.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "id": "4cbb",
+      "valoraciones": [
+        7
+      ]
+    },
+    {
+      "nombre": "Juana",
+      "zona": "Faro Norte",
+      "descripcion": "atenta",
+      "telefono": "223595989",
+      "email": "juana@juana.com",
+      "password": "12345646",
+      "rol": "Cliente",
+      "id": "0477"
     }
   ],
   "reservas": [
     {
-      "id": "ad23",
-      "nombre": "sdfsd",
-      "email": "asdasd@dfdfs",
-      "password": "2313456",
-      "rol": "Cliente"
+      "fecha": "2024-12-04",
+      "horario": "06:38",
+      "direccion": "San Martín 2267       fgdg",
+      "estado": "pendiente",
+      "id": "5deb",
+      "idTr": "2dc4",
+      "idUs": "2dc4"
     },
     {
-      "id": "7bda",
-      "nombre": "asdasd",
-      "email": "asdas@sdfsdf",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "Centro de estetica",
-      "disponibilidad": "01:25",
-      "descripcion": "dsdfsdf",
-      "zona": "Caisamar",
-      "telefono": "1234567"
+      "id": "c9da",
+      "fecha": "2024-11-01",
+      "horario": "03:20",
+      "direccion": "laaaaaa",
+      "estado": "aceptada",
+      "idUs": "2dc4",
+      "idTr": "4cbb"
+    },
+    {
+      "id": "30d9",
+      "fecha": "2024-11-12",
+      "horario": "03:20",
+      "direccion": "dasdasd",
+      "estado": "pendiente",
+      "idUs": "2dc4",
+      "idTr": "6893"
+    },
+    {
+      "id": "ac3c",
+      "fecha": "2024-11-20",
+      "horario": "03:24",
+      "direccion": "cgcfgf",
+      "estado": "rechazada",
+      "idUs": "da81",
+      "idTr": "4cbb"
+    },
+    {
+      "id": "6066",
+      "fecha": "2024-11-21",
+      "horario": "15:25",
+      "direccion": "dfsdf",
+      "estado": "pendiente",
+      "idUs": "da81",
+      "idTr": "2dc4"
     }
-  ],
-  "reservas": []
+  ]
 }
