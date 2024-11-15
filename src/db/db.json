@@ -44,7 +44,10 @@
       "email": "micael@hotmail.com",
       "password": "ajsdnkaskd",
       "rol": "Trabajador",
-      "id": "e858"
+      "id": "e858",
+      "valoraciones": [
+        5
+      ]
     },
     {
       "id": "da81",
@@ -105,28 +108,56 @@
       "password": "1234567",
       "rol": null,
       "id": "2174"
+    },
+    {
+      "id": "ae89",
+      "nombre": "Mauro Caceres",
+      "email": "maurito@hotmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Gasista",
+      "disponibilidad": "01:16",
+      "descripcion": "Flexibilidad horaria. Años de experiencia",
+      "zona": "Camet",
+      "telefono": "223-454745",
+      "valoraciones": [
+        8
+      ]
+    },
+    {
+      "nombre": "Juana Perez",
+      "profesion": "Abogado/a",
+      "disponibilidad": "13:51",
+      "zona": "Los Troncos",
+      "descripcion": "Derecho familiar",
+      "telefono": "2235952534",
+      "email": "juana@hotmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "id": "a6fb",
+      "valoraciones": [
+        8
+      ]
     }
   ],
   "reservas": [
     {
-      "id": "ad23",
-      "nombre": "sdfsd",
-      "email": "asdasd@dfdfs",
-      "password": "2313456",
-      "rol": "Cliente"
+      "fecha": "2024-11-12",
+      "horario": "04:20",
+      "direccion": "asdasdaaaaaadfsdf",
+      "estado": "aceptada",
+      "id": "6d5f",
+      "idTr": "2dc4",
+      "idUs": "2dc4"
     },
     {
-      "id": "7bda",
-      "nombre": "asdasd",
-      "email": "asdas@sdfsdf",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "Centro de estetica",
-      "disponibilidad": "01:25",
-      "descripcion": "dsdfsdf",
-      "zona": "Caisamar",
-      "telefono": "1234567"
+      "fecha": "2024-11-13",
+      "horario": "01:54",
+      "direccion": "San Martín 2267       aaajbjhbjhbjaa",
+      "estado": "pendiente",
+      "id": "1258",
+      "idTr": "a6fb",
+      "idUs": "a6fb"
     }
-  ],
-  "reservas": []
+  ]
 }

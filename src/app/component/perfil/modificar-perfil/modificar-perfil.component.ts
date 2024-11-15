@@ -37,9 +37,9 @@ export class ModificarPerfilComponent implements OnInit {
     formulario = this.fb.nonNullable.group(
       {
         nombre: ['', [Validators.required]],
-        profesion: ['', [Validators.required]],
-        disponibilidad: ['', [Validators.required]],
-        zona: ['', [Validators.required]],
+        profesion: [''],
+        disponibilidad: [''],
+        zona: [''],
         descripcion: [''],
         telefono:['',[Validators.required] ],
         email:[this.usuario?.email!],
@@ -76,6 +76,7 @@ export class ModificarPerfilComponent implements OnInit {
                 this.formulario.controls['disponibilidad'].setValue(usuario.disponibilidad!);
                 this.formulario.controls['zona'].setValue(usuario.zona!);
                 this.formulario.controls['descripcion'].setValue(usuario.descripcion!);
+                this.formulario.controls['rol'].setValue(usuario.rol!);
 
           },
           error: () =>
