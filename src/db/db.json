@@ -120,17 +120,105 @@
       "rol": "Cliente"
     },
     {
-      "id": "7bda",
-      "nombre": "asdasd",
-      "email": "asdas@sdfsdf",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "Centro de estetica",
-      "disponibilidad": "01:25",
-      "descripcion": "dsdfsdf",
-      "zona": "Caisamar",
-      "telefono": "1234567"
+      "id": "0c1a",
+      "nombre": "sdfsdf",
+      "email": "micaelaprieto@outlook.com",
+      "password": "sdfsfsdfsdf",
+      "rol": "Cliente"
     }
   ],
-  "reservas": []
+  "reservas": [
+    {
+      "fecha": "2024-11-01",
+      "horario": "04:08",
+      "direccion": "cci",
+      "id": "aca2",
+      "idTr": null
+    },
+    {
+      "id": "eda1",
+      "fecha": "2024-11-07",
+      "horario": "04:19",
+      "direccion": "qqqq",
+      "idUs": "ed60",
+      "idTr": "18e9"
+    },
+    {
+      "fecha": "2024-11-09",
+      "horario": "05:20",
+      "direccion": "pppa",
+      "id": "a047",
+      "idTr": "18e9"
+    },
+    {
+      "fecha": "2024-11-08",
+      "horario": "04:28",
+      "direccion": "ña",
+      "id": "59d5",
+      "idTr": "732b"
+    },
+    {
+      "fecha": "2024-11-06",
+      "horario": "21:24",
+      "direccion": "sadas",
+      "idUs": "a110",
+      "idTr": "f86b",
+      "id": "13c5"
+    },
+    {
+      "id": "a7d8",
+      "fecha": "2024-11-06",
+      "horario": "21:35",
+      "direccion": "sasd",
+      "idUs": "a2ef",
+      "idTr": "18e9"
+    },
+    {
+      "fecha": "2024-11-14",
+      "horario": "21:46",
+      "direccion": "ZZZ",
+      "id": "6ee9",
+      "idTr": "732b"
+    },
+    {
+      "id": "793a",
+      "fecha": "2024-11-14",
+      "horario": "22:16",
+      "direccion": "LA PRIMERA",
+      "idUs": "ed60",
+      "idTr": "f86b"
+    },
+    {
+      "id": "a85f",
+      "fecha": "2024-11-09",
+      "horario": "21:16",
+      "direccion": "LA SEGUNDA",
+      "idUs": "ed60",
+      "idTr": "f86b"
+    },
+    {
+      "id": "06cf",
+      "fecha": "2024-11-07",
+      "horario": "17:07",
+      "direccion": "TERCERA",
+      "idUs": "ed60",
+      "idTr": "f86b"
+    },
+    {
+      "id": "aaa2",
+      "fecha": "2024-11-20",
+      "horario": "22:29",
+      "direccion": "QUINTA",
+      "idUs": "a2ef",
+      "idTr": "f86b"
+    },
+    {
+      "id": "89e9",
+      "fecha": "2024-11-05",
+      "horario": "17:36",
+      "direccion": "UNA",
+      "idUs": "a110",
+      "idTr": "e858"
+    }
+  ]
 }
