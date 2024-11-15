@@ -32,36 +32,6 @@ export class PerfilPropioAdminComponent implements OnInit{
   router = inject(Router);
 
 
-
-   // Calcula el promedio de valoraciones
-   calcularPromedioValoracion() {
-    if (this.usuario?.valoraciones?.length) {
-      const suma = this.usuario.valoraciones.reduce((acc, val) => acc + val, 0);
-      this.promedio= suma / this.usuario.valoraciones.length;
-      console.log('Promedio:'+ this.promedio);
-    }
-    else
-    {
-      console.log('Error al carlcular el promedio');
-    }
-
-  }
-
-    // Convierte el promedio en estrellas llenas, medias y vacías
-    actualizarEstrellas() {
-      const promedio = this.promedio / 2; // Promedio en una escala de 5
-      const estrellasLlenas = Math.floor(promedio);
-      const mediaEstrella = promedio % 1 >= 0.5 ? 1 : 0;
-      const estrellasVacias = 5 - estrellasLlenas - mediaEstrella;
-
-      this.stars = [
-        ...Array(estrellasLlenas).fill(1),  // Estrellas llenas
-        ...Array(mediaEstrella).fill(0.5),  // Media estrella (si aplica)
-        ...Array(estrellasVacias).fill(0),  // Estrellas vacías
-      ];
-    }
-
-
   accederAlosDatos()
     {
       this.ar.paramMap.subscribe(
@@ -85,8 +55,6 @@ export class PerfilPropioAdminComponent implements OnInit{
           next: (usuario : Usuario)=>
           {
             this.usuario = usuario;
-            this.calcularPromedioValoracion();
-            this.actualizarEstrellas(); // Cálculo de estrellas al iniciar
           },
           error: () =>
           {
@@ -96,10 +64,6 @@ export class PerfilPropioAdminComponent implements OnInit{
     )
     }
 
-    irAModificar(id:string)
-    {
-      this.router.navigate([`modificar/${id}`]);
-    }
 
    
 }
