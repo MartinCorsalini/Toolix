@@ -58,7 +58,7 @@ cargarValoracionDB()
 
       console.log('VALORACION CARGADA AL ARRAY: '+ this.valoracion + '   --ARRAY:' + this.usuario?.valoraciones);
 
-      this.service.putPiloto(this.usuario!, this.usuario?.id!).subscribe(
+      this.service.putUsuario(this.usuario!, this.usuario?.id!).subscribe(
         {
           next: ()=>
           {

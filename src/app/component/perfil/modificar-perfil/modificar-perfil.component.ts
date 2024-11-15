@@ -76,6 +76,7 @@ export class ModificarPerfilComponent implements OnInit {
                 this.formulario.controls['disponibilidad'].setValue(usuario.disponibilidad!);
                 this.formulario.controls['zona'].setValue(usuario.zona!);
                 this.formulario.controls['descripcion'].setValue(usuario.descripcion!);
+                this.formulario.controls['rol'].setValue(usuario.rol!);
 
           },
           error: () =>
@@ -99,7 +100,7 @@ export class ModificarPerfilComponent implements OnInit {
       usuario2.email = this.usuario?.email!;
       usuario2.password = this.usuario?.password!;
 
-      this.service.putPiloto(usuario2, this.id).subscribe(
+      this.service.putUsuario(usuario2, this.id).subscribe(
         {
           next: ()=>
           {

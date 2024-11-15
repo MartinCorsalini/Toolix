@@ -1,58 +1,69 @@
 <app-navbar-private></app-navbar-private>
+
 <div class="center-container">
   <h2 class="title">Notificaciones</h2>
 </div>
 
+<!-- Reservas Recibidas (solo si el usuario es trabajador) -->
 <div *ngIf="esTrabajador" class="center-container">
   <h2 class="titulos">Reservas recibidas</h2>
 </div>
 
 <div *ngIf="esTrabajador" class="center-container">
   <div class="container">
-    <ul class="notification-list">
-      <li class="notification-item" *ngFor="let reserva of reservasRecibidas">
-        <p>Dirección: {{ reserva.direccion }}</p>
-        <p>Fecha: <span>{{ reserva.fecha }}</span></p>
-        <p>Horario: <span>{{ reserva.horario }}</span></p>
-        <div class="actions">
-          <!-- Mostrar botones solo si la reserva está pendiente -->
-          <ng-container *ngIf="reserva.estado === 'pendiente'; else estadoMensaje">
-            <button class="accept-btn" (click)="aceptarReserva(reserva)">Aceptar</button>
-            <button class="reject-btn" (click)="rechazarReserva(reserva)">Rechazar</button>
-          </ng-container>
+    <!-- Si no hay reservas recibidas, muestra el mensaje correspondiente -->
+    <div *ngIf="reservasRecibidas.length === 0; else reservasRecibidasList">
+      <p>Aún no tienes reservas recibidas.</p>
+    </div>
+    <!-- Si hay reservas, las muestra en una lista -->
+    <ng-template #reservasRecibidasList>
+      <ul class="notification-list">
+        <li class="notification-item" *ngFor="let reserva of reservasRecibidas">
+          <p>Dirección: {{ reserva.direccion }}</p>
+          <p>Fecha: <span>{{ reserva.fecha }}</span></p>
+          <p>Horario: <span>{{ reserva.horario }}</span></p>
+          <div class="actions">
+            <!-- Mostrar botones solo si la reserva está pendiente -->
+            <ng-container *ngIf="reserva.estado === 'pendiente'; else estadoMensaje">
+              <button class="accept-btn" (click)="aceptarReserva(reserva)">Aceptar</button>
+              <button class="reject-btn" (click)="rechazarReserva(reserva)">Rechazar</button>
+            </ng-container>
 
-          <!-- Mensaje de estado cuando no está en pendiente -->
-          <ng-template #estadoMensaje>
-            <span class="estado-mensaje {{ reserva.estado }}">{{ reserva.estado | titlecase }}</span>
-          </ng-template>
-        </div>
-      </li>
-    </ul>
+            <!-- Mensaje de estado cuando no está en pendiente -->
+            <ng-template #estadoMensaje>
+              <span class="estado-mensaje {{ reserva.estado }}">{{ reserva.estado | titlecase }}</span>
+            </ng-template>
+          </div>
+        </li>
+      </ul>
+    </ng-template>
   </div>
 </div>
 
-
-<!--ENVIADAAAAAAAS     --->
-
+<!-- Reservas Enviadas -->
+<div class="center-container">
+  <h2 class="titulos">Reservas enviadas</h2>
+</div>
 
 <div class="center-container">
-    <h2 class="titulos">Reservas enviadas</h2>
-   </div>
-   <div class="center-container">
-    <div class="container">
-        <div class="header"></div>
-        <ul class="notification-list">
-            <li class="notification-item" *ngFor = "let reserva of reservasEnviadas">
-                <p>Dirección: {{ reserva.direccion }}</p>
-                <p>Fecha: <span>{{ reserva.fecha }}</span></p>
-                <p>Horario: <span>{{ reserva.horario }}</span></p>
-                <div class="actions">
-
-                    <button (click)="irAModificarReserva(reserva)" class="accept-btn">Modificar</button>
-
-                    <button (click)="eliminarReserva(reserva.id)" class="reject-btn">Eliminar</button>
-                </div>
-            </li>
-        </ul>
+  <div class="container">
+    <!-- Si no hay reservas enviadas, muestra el mensaje correspondiente -->
+    <div *ngIf="reservasEnviadas.length === 0; else reservasEnviadasList">
+      <p>Aún no tienes reservas enviadas.</p>
     </div>
-   </div>
+    <!-- Si hay reservas, las muestra en una lista -->
+    <ng-template #reservasEnviadasList>
+      <ul class="notification-list">
+        <li class="notification-item" *ngFor="let reserva of reservasEnviadas">
+          <p>Dirección: {{ reserva.direccion }}</p>
+          <p>Fecha: <span>{{ reserva.fecha }}</span></p>
+          <p>Horario: <span>{{ reserva.horario }}</span></p>
+          <div class="actions">
+            <button (click)="irAModificarReserva(reserva)" class="accept-btn">Modificar</button>
+            <button (click)="eliminarReserva(reserva.id)" class="reject-btn">Eliminar</button>
+          </div>
+        </li>
+      </ul>
+    </ng-template>
+  </div>
+</div>
