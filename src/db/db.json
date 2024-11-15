@@ -16,7 +16,10 @@
       "email": "pepe@outlook.com",
       "password": "skndalskdiuhi",
       "rol": "Trabajador",
-      "id": "3f87"
+      "id": "3f87",
+      "valoraciones": [
+        6
+      ]
     },
     {
       "nombre": "Lau",
@@ -27,7 +30,10 @@
       "email": "lauuu@hotmail.com",
       "password": "klsmdklasda",
       "rol": "Trabajador",
-      "id": "1547"
+      "id": "1547",
+      "valoraciones": [
+        10
+      ]
     },
     {
       "nombre": " Micaela",
@@ -65,53 +71,43 @@
       "telefono": "2235646546"
     },
     {
-      "id": "fe36",
-      "nombre": "dfsdfsdfsd",
-      "email": "sdfsdfsdf@dfgdfgdq",
-      "password": "3135451345",
-      "rol": "Trabajador",
-      "profesion": "Albañil",
-      "disponibilidad": "00:18",
-      "descripcion": "21321",
-      "zona": "Caisamar",
-      "telefono": "21321321"
-    },
-    {
-      "id": "4e45",
-      "nombre": "jnkjnkn",
-      "email": "asndakldnsl@lskdfmlskdf",
-      "password": "312132sdfsdf",
-      "rol": "Trabajador",
-      "profesion": "Carpintero/a",
-      "disponibilidad": "00:18",
-      "descripcion": "lnkjn jk",
-      "zona": "Caisamar",
-      "telefono": "2235465465"
-    },
-    {
-      "id": "71d9",
-      "nombre": "jnkjnkn",
-      "email": "asndakldnsl@lskdfmlskdf",
-      "password": "312132sdfsdf",
-      "rol": "Trabajador",
-      "profesion": "Abogado/a",
-      "disponibilidad": "12:17",
-      "descripcion": "kjnbkjn",
-      "zona": "Faro Norte",
-      "telefono": "321321"
-    },
-    {
-      "id": "74c1",
-      "nombre": "adasdas",
-      "email": "asdas@adad",
+      "id": "2dc4",
+      "nombre": "Micaela Prieto",
+      "email": "micaelaprieto@outlook.com",
       "password": "1234567",
       "rol": "Trabajador",
-      "profesion": "Carpintero/a",
-      "disponibilidad": "15:24",
-      "descripcion": "sadasd",
-      "zona": "Faro Norte",
-      "telefono": "32132"
+      "profesion": "Psicologo/a",
+      "disponibilidad": "14:38",
+      "descripcion": "Enfoque conductista. Trabajo con niños, adolescente y adultos. Depresión . Ansiedad. Parejas",
+      "zona": "Centro",
+      "telefono": "2235952534"
     },
+    {
+      "id": "61d6",
+      "nombre": "Ramon",
+      "email": "ramon@gmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Albañil",
+      "disponibilidad": "00:42",
+      "descripcion": "Cuidadoso, prolijo. ",
+      "zona": "Caisamar",
+      "telefono": "223592548"
+    },
+    {
+      "nombre": "Juana",
+      "profesion": "Carpintero/a",
+      "disponibilidad": "10 hs a 15 hs",
+      "zona": "2132123",
+      "descripcion": "12312313",
+      "telefono": "2235952534",
+      "email": "juani@hotmail.com",
+      "password": "1234567",
+      "rol": null,
+      "id": "2174"
+    }
+  ],
+  "reservas": [
     {
       "id": "ad23",
       "nombre": "sdfsd",
@@ -125,55 +121,6 @@
       "email": "micaelaprieto@outlook.com",
       "password": "sdfsfsdfsdf",
       "rol": "Cliente"
-    },
-    {
-      "nombre": "AAAAAAAAAAAA",
-      "profesion": "Albañil",
-      "disponibilidad": "10:00 a 20_00",
-      "zona": "Los Troncos",
-      "descripcion": "prolijo y limpio",
-      "email": "speed@gmail.com",
-      "password": "aaaaaaaaaaaaaaaaaaaa",
-      "rol": null,
-      "id": "eb65"
-    },
-    {
-      "nombre": "LALAL",
-      "profesion": "Albañil",
-      "disponibilidad": "de 10  a 20a",
-      "zona": "Bosque Peralta Ramos",
-      "descripcion": "sdfsdf",
-      "email": "kkoo@spdofkap",
-      "password": "1234567",
-      "rol": null,
-      "id": "c742"
-    },
-    {
-      "nombre": "micaaaaaaaaaaaaaa",
-      "profesion": "Centro de estetica",
-      "disponibilidad": "dfaaaaaa",
-      "zona": "Otro",
-      "descripcion": "sd",
-      "email": "sdfsdfs@dafds",
-      "password": "12345637",
-      "rol": "Trabajador",
-      "id": "d91b"
-    },
-    {
-      "id": "e8e2",
-      "nombre": "FFFFFFFFFFFFFFFFFFFF",
-      "email": "fff@gmail.com",
-      "password": "ffffffffffffffffffffffffffffff",
-      "rol": "Trabajador",
-      "profesion": "Abogado/a",
-      "disponibilidad": "10 a 20",
-      "descripcion": "crack",
-      "zona": "Faro Norte",
-      "telefono": "12354687",
-      "valoraciones": [
-        3,
-        10
-      ]
     }
   ],
   "reservas": [
@@ -268,40 +215,6 @@
       "direccion": "UNA",
       "idUs": "a110",
       "idTr": "e858"
-    },
-    {
-      "fecha": "2024-11-26",
-      "horario": "05:08",
-      "direccion": "sur",
-      "id": "7974",
-      "idTr": "3f87",
-      "idUs": "3f87"
-    },
-    {
-      "fecha": "2024-11-19",
-      "horario": "06:44",
-      "direccion": "puerto",
-      "id": "43ad",
-      "idTr": "e8e2",
-      "idUs": "e8e2"
-    },
-    {
-      "id": "ab72",
-      "fecha": "2024-11-28",
-      "horario": "01:45",
-      "direccion": "sur",
-      "estado": "rechazada",
-      "idUs": "e8e2",
-      "idTr": "e8e2"
-    },
-    {
-      "id": "1482",
-      "fecha": "2024-11-30",
-      "horario": "05:45",
-      "direccion": "asd",
-      "estado": "aceptada",
-      "idUs": "e8e2",
-      "idTr": "e8e2"
     }
   ]
 }

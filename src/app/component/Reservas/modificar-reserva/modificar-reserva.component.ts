@@ -55,7 +55,8 @@ export class ModificarReservaComponent implements OnInit {
   {
     fecha: ['', Validators.required],
       horario: ['', Validators.required],
-      direccion: ['', Validators.required]
+      direccion: ['', Validators.required],
+      estado:['pendiente']
   });
   this.reservaId = this.route.snapshot.paramMap.get('id');
   //obtiene el id desde la url
@@ -116,7 +117,7 @@ export class ModificarReservaComponent implements OnInit {
         }
       }
     );
-    
+
 
   }
 
