@@ -85,18 +85,6 @@
       "telefono": "2235952534"
     },
     {
-      "id": "61d6",
-      "nombre": "Ramon",
-      "email": "ramon@gmail.com",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "Albañil",
-      "disponibilidad": "00:42",
-      "descripcion": "Cuidadoso, prolijo. ",
-      "zona": "Caisamar",
-      "telefono": "223592548"
-    },
-    {
       "nombre": "Juana",
       "profesion": "Carpintero/a",
       "disponibilidad": "10 hs a 15 hs",
@@ -141,24 +129,31 @@
   ],
   "reservas": [
     {
-      "id": "ad23",
-      "nombre": "sdfsd",
-      "email": "asdasd@dfdfs",
-      "password": "2313456",
-      "rol": "Cliente"
+      "fecha": "2024-11-08",
+      "horario": "04:44",
+      "direccion": "asdasas",
+      "estado": "aceptada",
+      "id": "5b8b",
+      "idTr": "2dc4",
+      "idUs": "2dc4"
     },
     {
-      "id": "7bda",
-      "nombre": "asdasd",
-      "email": "asdas@sdfsdf",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "Centro de estetica",
-      "disponibilidad": "01:25",
-      "descripcion": "dsdfsdf",
-      "zona": "Caisamar",
-      "telefono": "1234567"
+      "id": "8650",
+      "fecha": "2024-11-01",
+      "horario": "02:48",
+      "direccion": "213213",
+      "estado": "pendiente",
+      "idUs": "42m1",
+      "idTr": "e858"
+    },
+    {
+      "fecha": "2024-11-08",
+      "horario": "04:48",
+      "direccion": "aaaaaaaaaaakjoljk",
+      "estado": "pendiente",
+      "id": "116d",
+      "idTr": "1547",
+      "idUs": "42m1"
     }
-  ],
-  "reservas": []
+  ]
 }
