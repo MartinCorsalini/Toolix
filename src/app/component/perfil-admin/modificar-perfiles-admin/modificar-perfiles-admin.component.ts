@@ -78,7 +78,7 @@ export class ModificarPerfilesAdminComponent implements OnInit {
                 this.formulario.controls['zona'].setValue(usuario.zona!);
                 this.formulario.controls['descripcion'].setValue(usuario.descripcion!);
                 this.formulario.controls['rol'].setValue(usuario.rol!);
-
+                this.formulario.controls['telefono'].setValue(usuario.telefono!);
           },
           error: () =>
           {
@@ -106,7 +106,7 @@ export class ModificarPerfilesAdminComponent implements OnInit {
           next: ()=>
           {
             alert('Actualizado correctamente');
-            this.router.navigate([`perfil-propio-admin/${this.id}`]);
+            this.router.navigate([`perfil-trabajador-admin/${this.id}`]);
           },
           error: (e: Error)=>{
             alert('Se ha producido un error al actualizar: '+ e.message);
