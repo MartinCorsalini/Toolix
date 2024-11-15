@@ -15,7 +15,21 @@ export class AuthService {
   private usuarioActual!: Usuario;
   estoyLogeado: boolean = false
 
-  constructor(private usuariosService: UsuariosService) {}
+  constructor(private usuariosService: UsuariosService) { // Hecho en el constructor así cada vez que se genera una nueva insatcnia del servicio (como recargar la página) re-autentique al usuario loggeado.
+
+     // Restaurar el ESTADO de autenticación desde localStorage
+     this.estoyLogeado = !!localStorage.getItem('token');
+     const storedUserId = localStorage.getItem('userId');
+ 
+     if (this.estoyLogeado && storedUserId) {
+       this.idUsuario.next(storedUserId);
+ 
+       // Restaurar al USUARIO ACTUAL
+       this.usuariosService.getUsuarioById(storedUserId).subscribe((usuario: Usuario) => {
+         this.usuarioActual = usuario;
+       });
+     }
+  }
   //Cuando llamas a logIn(), la variable estoyLogeado se establece en true
   // y se guarda un token en localStorage.
   //Esto asegura que el usuario siga autenticado incluso si recarga la página.
@@ -77,7 +91,6 @@ export class AuthService {
   }
 
   getUserRole(): string | undefined {
-    return this.usuarioActual.rol;
-   // return this.usuarioActual && this.usuarioActual.rol ? this.usuarioActual.rol : undefined;
+    return this.usuarioActual?.rol || localStorage.getItem('userRole') || undefined;
   }
 }
