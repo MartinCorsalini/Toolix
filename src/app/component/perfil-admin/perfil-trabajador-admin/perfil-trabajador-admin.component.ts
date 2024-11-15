@@ -136,32 +136,4 @@ cargarValoracionDB()
     )
     }
 
-// Navega a la página de reserva
-    irAreservar(id:string)
-    {
-      this.router.navigate([`realizar-reserva/${id}`]);
-    }
-
-
-
-   // Envía la valoración al servicio y la añade a la lista de valoraciones
-   /*
-  enviarValoracion() {
-    this.validarValoracion();
-    if (this.valoracion !== null && this.usuario) {
-      this.service.agregarValoracion(this.usuario.id!, this.valoracion).subscribe(
-        (response) => {
-          // Añade la nueva valoración al array y calcula el promedio
-          this.usuario?.valoraciones!.push(this.valoracion!);
-          this.valoracion = null; // Limpia el campo de valoración
-          this.mostrarValoracionInput = false; // Oculta el input después de enviar
-        },
-        (error) => {
-          console.error('Error al enviar la valoración:', error);
-        }
-      );
-    }
-  }
-*/
-
 }

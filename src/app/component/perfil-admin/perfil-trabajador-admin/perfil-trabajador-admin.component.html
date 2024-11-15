@@ -44,7 +44,7 @@
         </div>
   
         <div class="botones">
-          <button *ngIf="usuario?.rol == 'Trabajador'" (click)="irAreservar(usuario?.id!)">Reservar</button>
+          <button *ngIf="usuario?.rol == 'Trabajador'" [routerLink]="['/alta-baja-admin', usuario?.id]">Reservar</button>
           <button [routerLink]="['/modificar-perfiles-admin', usuario?.id]">Modificar</button>
           <button [routerLink]="['/homeAdmin', usuario?.id]">Atrás</button>
           <button [routerLink]="['/eliminar-cuentas-admin', usuario?.id]">Eliminar cuenta</button>
