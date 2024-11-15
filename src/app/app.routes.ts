@@ -23,6 +23,8 @@ import { EliminarCuentasAdminPageComponent } from './pages/eliminar-cuentas-admi
 import { PerfilPropioAdminPageComponent } from './pages/perfil-propio-admin-page/perfil-propio-admin-page.component';
 import { ModificarPerfilesAdminPageComponent } from './pages/modificar-perfiles-admin/modificar-perfiles-admin.component';
 import { AltaBajaReservasAdminPageComponent } from './pages/alta-baja-reservas-admin-page/alta-baja-reservas-admin-page.component';
+import { FaqAdminPageComponent } from './pages/faq-admin-page/faq-admin-page.component';
+import { NosotrosAdminComponent } from './component/nosotros-admin/nosotros-admin.component';
 
 
 
@@ -145,6 +147,16 @@ export const appRoutes: Routes = [
     {
       path: 'alta-baja-admin/:id',
       component: AltaBajaReservasAdminPageComponent,
+      canActivate : [authGuard]
+    },
+    {
+      path: 'faq-admin',
+      component: FaqAdminPageComponent,
+      canActivate : [authGuard]
+    },
+    {
+      path: 'nosotros-admin',
+      component: NosotrosAdminComponent,
       canActivate : [authGuard]
     },
     {
