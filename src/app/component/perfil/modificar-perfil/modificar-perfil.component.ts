@@ -37,9 +37,9 @@ export class ModificarPerfilComponent implements OnInit {
     formulario = this.fb.nonNullable.group(
       {
         nombre: ['', [Validators.required]],
-        profesion: ['', [Validators.required]],
-        disponibilidad: ['', [Validators.required]],
-        zona: ['', [Validators.required]],
+        profesion: [''],
+        disponibilidad: [''],
+        zona: [''],
         descripcion: [''],
         telefono:['',[Validators.required] ],
         email:[this.usuario?.email!],

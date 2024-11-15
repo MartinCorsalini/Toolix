@@ -24,8 +24,12 @@
     <div class="perfil-detalles">
       <p><strong>Email:</strong> {{ usuario?.email }}</p>
       <p> <strong>Teléfono:</strong> {{ usuario?.telefono }}</p>
-      <p><strong>Disponibilidad:</strong> {{ usuario?.disponibilidad }}</p>
-      <p><strong>Zonas de trabajo:</strong> {{ usuario?.zona }}</p>
+
+      @if(usuario?.rol != 'Cliente')
+          {
+            <p><strong>Disponibilidad:</strong> {{ usuario?.disponibilidad }}</p>
+          }
+      <p><strong>Zona:</strong> {{ usuario?.zona }}</p>
       <p><strong>Descripción:</strong> {{ usuario?.descripcion }}</p>
 
       <div>
