@@ -13,7 +13,7 @@
       "disponibilidad": "10 hs a 20 hs",
       "zona": "La perla",
       "descripcion": "Excelencia en teñidos!",
-      "telefono": "223",
+      "telefono": "2236891311",
       "email": "pepe@outlook.com",
       "password": "skndalskdiuhi",
       "rol": "Trabajador",
@@ -24,8 +24,8 @@
       "profesion": "Limpieza",
       "disponibilidad": "10 hs a 15 hs",
       "zona": "Centro, Guemes, Puerto",
-      "descripcion": "afsdf",
-      "telefono": "400",
+      "descripcion": "Limpieza absoluta!",
+      "telefono": "2236891311",
       "email": "lauuu@hotmail.com",
       "password": "klsmdklasda",
       "rol": "Trabajador",
@@ -37,25 +37,11 @@
       "disponibilidad": "10 hs a 20 hs",
       "zona": "Centro, Guemes, Puerto",
       "descripcion": "Dejo todo super limpio",
+      "telefono": "223456789",
       "email": "micael@hotmail.com",
       "password": "ajsdnkaskd",
       "rol": "Trabajador",
-      "id": "e858",
-      "valoraciones": [
-        5
-      ]
-    },
-    {
-      "nombre": "Raul",
-      "profesion": "Electricista",
-      "disponibilidad": "03:13",
-      "zona": "Caisamarafas",
-      "descripcion": " Voy a domicilio. Sasduper respetuoso.",
-      "telefono": "223546546545sdasd",
-      "email": "raul@hotmail.com",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "id": "da81"
+      "id": "e858"
     },
     {
       "id": "6893",
@@ -147,26 +133,49 @@
       "password": "12345646",
       "rol": "Cliente",
       "id": "0477"
-    }
-  ],
-  "reservas": [
-    {
-      "fecha": "2024-11-19",
-      "horario": "07:50",
-      "direccion": "dos",
-      "estado": "aceptada",
-      "id": "4f93",
-      "idTr": "2dc4",
-      "idUs": "2dc4"
     },
     {
-      "fecha": "2024-11-13",
-      "horario": "08:05",
-      "direccion": "San Martín 2267       ddfgdfgfdgdg",
-      "estado": "pendiente",
-      "id": "e35f",
-      "idTr": "e858",
-      "idUs": "42m1"
+      "id": "1025",
+      "nombre": "Leo",
+      "email": "leo@x.com",
+      "password": "1234567",
+      "rol": "Cliente"
+    },
+    {
+      "id": "e3e3",
+      "nombre": "Leandro",
+      "email": "leo@gmail.com",
+      "password": "1234567",
+      "rol": "Cliente"
+    },
+    {
+      "id": "8866",
+      "nombre": "Abril",
+      "email": "abril@gmail.com",
+      "password": "1234567",
+      "rol": "Cliente"
+    },
+    {
+      "id": "826e",
+      "nombre": "Juan",
+      "email": "juan@gmail.com",
+      "password": "1234567",
+      "rol": "Cliente"
+    },
+    {
+      "id": "7704",
+      "nombre": "Kian",
+      "email": "kian@gmail.com",
+      "password": "2236891311",
+      "rol": "Cliente"
+    },
+    {
+      "id": "b2d0",
+      "nombre": "Chaldu",
+      "email": "chaldu@gmail.com",
+      "password": "2236891311",
+      "rol": "Cliente"
     }
-  ]
+  ],
+  "reservas": []
 }
