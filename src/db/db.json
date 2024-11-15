@@ -53,7 +53,10 @@
       "disponibilidad": "12:17",
       "descripcion": "Super respetuoso. Muy comprometido",
       "zona": "Caisamar",
-      "telefono": "2235646546"
+      "telefono": "2235646546",
+      "valoraciones": [
+        3
+      ]
     },
     {
       "id": "2dc4",
@@ -135,13 +138,6 @@
       "id": "0477"
     },
     {
-      "id": "1025",
-      "nombre": "Leo",
-      "email": "leo@x.com",
-      "password": "1234567",
-      "rol": "Cliente"
-    },
-    {
       "id": "e3e3",
       "nombre": "Leandro",
       "email": "leo@gmail.com",
@@ -163,19 +159,58 @@
       "rol": "Cliente"
     },
     {
-      "id": "7704",
       "nombre": "Kian",
+      "telefono": "2236891311",
       "email": "kian@gmail.com",
       "password": "2236891311",
-      "rol": "Cliente"
+      "rol": "Cliente",
+      "id": "7704"
     },
     {
-      "id": "b2d0",
-      "nombre": "Chaldu",
-      "email": "chaldu@gmail.com",
-      "password": "2236891311",
-      "rol": "Cliente"
+      "nombre": "Colo",
+      "telefono": "2236891311",
+      "email": "colo@gmail.com",
+      "password": "1234567",
+      "rol": "Cliente",
+      "id": "364c"
     }
   ],
-  "reservas": []
+  "reservas": [
+    {
+      "id": "a2a1",
+      "fecha": "2024-11-20",
+      "horario": "03:42",
+      "direccion": "Hipolito Yrigoyen 6023",
+      "estado": "rechazada",
+      "idUs": "8866",
+      "idTr": "3f87"
+    },
+    {
+      "id": "3d6a",
+      "fecha": "2024-11-16",
+      "horario": "09:04",
+      "direccion": "Camet",
+      "estado": "aceptada",
+      "idUs": "364c",
+      "idTr": "3f87"
+    },
+    {
+      "id": "b30b",
+      "fecha": "2024-11-28",
+      "horario": "09:15",
+      "direccion": "Rivadavia 3022",
+      "estado": "pendiente",
+      "idUs": "364c",
+      "idTr": "6893"
+    },
+    {
+      "id": "6148",
+      "fecha": "2024-11-23",
+      "horario": "07:16",
+      "direccion": "Alvarado 1203",
+      "estado": "pendiente",
+      "idUs": "364c",
+      "idTr": "ae89"
+    }
+  ]
 }
