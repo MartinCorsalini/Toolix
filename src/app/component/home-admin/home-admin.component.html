@@ -1,0 +1,100 @@
+<app-navbar-admin></app-navbar-admin>
+<app-search-bar></app-search-bar>
+
+<div class="grid-container">
+    <h2>Listado de trabajadores:</h2>
+</div>
+
+<div class="grid-container">
+ 
+    @for (usuario of listaUsuarios; track $index)
+    {
+
+      <div *ngIf="usuario.rol == 'Trabajador'" class="card">
+        <div class="image">
+          <img src="assets/avatar/avatar.png" alt="Imagen de perfil" class="profile-img" />
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        </div>
+
+          <div class="info">
+            <h4>{{usuario.nombre}}</h4>
+           <div>{{usuario.profesion}}</div>
+            <ul>
+              <li>Disponibilidad: {{usuario.disponibilidad}}</li>
+              <li>Zona: {{usuario.zona}}</li>
+            </ul>
+          </div>
+
+          <hr>
+          <div class="actions">
+            <button class="detalles-button" (click)="irADetalles(usuario.id!)">Detalles</button>
+            <div class="perfil-rating">
+              <span>{{ calcularPromedioValoracion(usuario.valoraciones) | number:'1.1-1' }}</span>
+              <ng-container *ngFor="let star of stars">
+                <span *ngIf="star === 1">&#9733;</span>
+                <span *ngIf="star === 0.5">&#x272E;</span>
+                <span *ngIf="star === 0">&#9734;</span>
+              </ng-container>
+            </div>
+            <!--
+            <button>utton class="fav-button" (click)="toggleFavorite()">
+              <i class="fa fa-heart"></i>
+            </button>
+            -->
+          </div>
+        </div>
+
+
+    }
+
+</div>
+
+  <div class="grid-container">
+        <h2>Listado de clientes:</h2>
+    </div>
+
+<div class="grid-container">
+  
+    @for (usuario of listaUsuarios; track $index)
+    {
+
+      <div *ngIf="usuario.rol == null " class="card">
+        <div class="image">
+          <img src="assets/avatar/avatar.png" alt="Imagen de perfil" class="profile-img" />
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        </div>
+
+          <div class="info">
+            <h4>{{usuario.nombre}}</h4>
+           <div>{{usuario.profesion}}</div>
+            <ul>
+              <li>Disponibilidad: {{usuario.disponibilidad}}</li>
+              <li>Zona: {{usuario.zona}}</li>
+            </ul>
+          </div>
+
+          <hr>
+          <div class="actions">
+            <button class="detalles-button" (click)="irADetalles(usuario.id!)">Detalles</button>
+            <div class="perfil-rating">
+              <span>{{ calcularPromedioValoracion(usuario.valoraciones) | number:'1.1-1' }}</span>
+              <ng-container *ngFor="let star of stars">
+                <span *ngIf="star === 1">&#9733;</span>
+                <span *ngIf="star === 0.5">&#x272E;</span>
+                <span *ngIf="star === 0">&#9734;</span>
+              </ng-container>
+            </div>
+            <!--
+            <button>utton class="fav-button" (click)="toggleFavorite()">
+              <i class="fa fa-heart"></i>
+            </button>
+            -->
+          </div>
+        </div>
+
+
+    }
+
+</div>

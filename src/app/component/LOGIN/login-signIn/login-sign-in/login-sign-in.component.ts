@@ -60,9 +60,14 @@ export class LoginSignInComponent implements OnInit {
             }
           });
           const usuarioID = usuarioValido.id;
-
-          // Navegar a la ruta 'home/:id' pasando el ID del usuario
-          this.router.navigate(['/home', usuarioID]);
+          
+          if(usuarioValido.rol == 'Admin'){
+            this.router.navigate(['/homeAdmin', usuarioID]);
+          }else{
+            this.router.navigate(['/home', usuarioID]); // Navegar a la ruta 'home/:id' pasando el ID del usuario
+          }
+          
+          
 
           // Llama al método logIn() del AuthService para guardar el token
           this.authService.logIn(usuarioID!);

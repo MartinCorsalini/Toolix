@@ -8,7 +8,7 @@
       "descripcion": "dejo todo impecable",
       "email": "emiliomernes@hotmail.com",
       "password": "1234567",
-      "rol": null,
+      "rol": "Trabajador",
       "id": "732b"
     },
     {
@@ -321,36 +321,12 @@
       "idTr": "f86b"
     },
     {
-      "id": "aaa2",
       "fecha": "2024-11-20",
       "horario": "22:29",
       "direccion": "QUINTA",
-      "idUs": "a2ef",
-      "idTr": "f86b"
-    },
-    {
-      "id": "89e9",
-      "fecha": "2024-11-05",
-      "horario": "17:36",
-      "direccion": "UNA",
-      "idUs": "a110",
-      "idTr": "e858"
-    },
-    {
-      "id": "5de5",
-      "fecha": "2024-11-05",
-      "horario": "23:02",
-      "direccion": "m",
-      "idUs": "f86b",
-      "idTr": "ef56"
-    },
-    {
-      "id": "cb2c",
-      "fecha": "2024-11-13",
-      "horario": "22:35",
-      "direccion": "jyf",
-      "idUs": "f86b",
-      "idTr": "236c"
+      "id": "aaa2",
+      "idTr": "f86b",
+      "idUs": "a2ef"
     }
   ]
 }

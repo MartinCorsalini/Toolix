@@ -43,10 +43,6 @@ export class NotificationsComponent implements OnInit{
     }
   }
 
-  recibirEventReserva(reserva: Reserva){
-      this.reservasEnviadas.push(reserva);
-
-  }
 
   irAModificarReserva(reserva: Reserva){
 
