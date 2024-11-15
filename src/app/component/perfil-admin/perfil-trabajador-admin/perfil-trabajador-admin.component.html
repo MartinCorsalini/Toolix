@@ -26,7 +26,7 @@
         <p *ngIf="usuario?.rol == 'Trabajador'"><strong>Disponibilidad:</strong> {{ usuario?.disponibilidad }}</p>
         <p *ngIf="usuario?.rol == 'Trabajador'"><strong>Zonas de trabajo:</strong> {{ usuario?.zona }}</p>
         <p *ngIf="usuario?.rol == 'Trabajador'"><strong>Descripción:</strong> {{ usuario?.descripcion }}</p>
-        <p *ngIf="usuario?.rol == 'Trabajador'"><strong>Telefono:</strong> {{ usuario?.telefono }}</p>
+        <p><strong>Telefono:</strong> {{ usuario?.telefono }}</p>
         <button *ngIf="usuario?.rol == 'Trabajador'" class="valoracion-btn" (click)="mostrarInput()">Agregar Valoración</button>
   
         <!-- Input y botón para enviar valoración, visibles cuando `mostrarValoracionInput` es true -->

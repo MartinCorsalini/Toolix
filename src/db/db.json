@@ -8,19 +8,16 @@
       "id": "42m1"
     },
     {
-      "nombre": "Pepe Modificado",
+      "nombre": "Pepito",
       "profesion": "Peluquero/a",
       "disponibilidad": "10 hs a 20 hs",
       "zona": "La perla",
-      "descripcion": "mmmmmmm",
+      "descripcion": "Excelencia en teñidos!",
       "telefono": "223",
       "email": "pepe@outlook.com",
       "password": "skndalskdiuhi",
       "rol": "Trabajador",
-      "id": "3f87",
-      "valoraciones": [
-        7
-      ]
+      "id": "3f87"
     },
     {
       "nombre": "Lau",
@@ -97,7 +94,7 @@
       "telefono": "223592548"
     },
     {
-      "nombre": "Juana",
+      "nombre": "Juan",
       "profesion": "Carpintero/a",
       "disponibilidad": "10 hs a 15 hs",
       "zona": "2132123",
