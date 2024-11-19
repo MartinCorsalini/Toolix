@@ -6,8 +6,8 @@
     <div class="perfil-header">
       <img [src]="fotoUrl" alt="Foto de perfil" class="perfil-foto">
       <div class="perfil-info">
-        <h2>{{ usuario?.nombre }}</h2>
-        <p class="profesion">{{ usuario?.profesion }}</p>
+        <h2>{{ trabajador?.nombre }}</h2>
+        <p class="profesion">{{ trabajador?.profesion }}</p>
       </div>
     </div>
 
@@ -27,7 +27,7 @@
         </div>
           <!--------- Profesion ---------->
 
-          @if(usuario?.rol != 'Cliente')
+          @if(trabajador?.rol != 'Cliente')
           {
             <div>
               <label for="profesion">Profesion:</label>
@@ -65,7 +65,7 @@
 
         <!--------- Disponibilidad ---------->
 
-        @if(usuario?.rol != 'Cliente')
+        @if(trabajador?.rol != 'Cliente')
           {
             <div>
               <label for="disponibilidad">Disponibilidad: </label>
@@ -92,15 +92,19 @@
 
 
         <!--------- Zona ---------->
-        <div>
-          <label for="zona">Zona: </label>
-          <input type="text" formControlName="zona" id="zona">
+        @if(trabajador?.rol != 'Cliente')
+        {
+          <div>
+            <label for="zona">Zona: </label>
+            <input type="text" formControlName="zona" id="zona">
 
-          @if(formulario.controls['zona'].getError('required') && formulario.controls['zona'].touched)
-          {
-              <div class="colorRojo">Campo requerido...</div>
-          }
-        </div>
+            @if(formulario.controls['zona'].getError('required') && formulario.controls['zona'].touched)
+            {
+                <div class="colorRojo">Campo requerido...</div>
+            }
+          </div>
+        }
+
 
         <!------- Descripcion -------->
         <div>
@@ -109,7 +113,14 @@
         </div>
 
         <button type="submit">Modificar datos</button>
-        <button [routerLink]="['/perfil-propio', usuario?.id]">Atrás</button>
+
+      @if(userRol === 'Admin'){
+        <button [routerLink]="['/perfil-trabajador', trabajador?.id]">Atrás</button>
+      }
+      @else {
+        <button [routerLink]="['/perfil-propio', trabajador?.id]">Atrás</button>
+      }
+
 
       </form>
     </div>

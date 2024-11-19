@@ -7,17 +7,21 @@
       <img [src]="fotoUrl" alt="Foto de perfil" class="perfil-foto">
       <div class="perfil-info">
         <h2>{{ usuario?.nombre }}</h2>
-        <p class="profesion">{{ usuario?.profesion }}</p>
 
-       <div class="perfil-rating">
-        <span>Valoración: </span>
-        <span>{{ calcularPromedioValoracion() | number:'1.1-1' }}</span>
-        <ng-container *ngFor="let star of stars">
-          <span *ngIf="star === 1">&#9733;</span>       <!-- Estrella llena -->
-          <span *ngIf="star === 0.5">&#x272E;</span>    <!-- Media estrella (estrella de diferente estilo) -->
-          <span *ngIf="star === 0">&#9734;</span>       <!-- Estrella vacía -->
-        </ng-container>
-      </div>
+        @if(usuario?.rol === 'Trabajador')
+          {
+              <p class="profesion">{{ usuario?.profesion }}</p>
+
+              <div class="perfil-rating">
+              <span>Valoración: </span>
+              <span>{{ calcularPromedioValoracion() | number:'1.1-1' }}</span>
+              <ng-container *ngFor="let star of stars">
+                <span *ngIf="star === 1">&#9733;</span>       <!-- Estrella llena -->
+                <span *ngIf="star === 0.5">&#x272E;</span>    <!-- Media estrella (estrella de diferente estilo) -->
+                <span *ngIf="star === 0">&#9734;</span>       <!-- Estrella vacía -->
+              </ng-container>
+            </div>
+          }
 
       </div>
     </div>
@@ -25,13 +29,17 @@
     <div class="perfil-detalles">
       <p><strong>Email:</strong> {{ usuario?.email }}</p>
       <p> <strong>Teléfono:</strong> {{ usuario?.telefono }}</p>
-      <p><strong>Disponibilidad:</strong> {{ usuario?.disponibilidad }}</p>
-      <p><strong>Zonas de trabajo:</strong> {{ usuario?.zona }}</p>
+
+      @if(usuario?.rol === 'Trabajador'){
+        <p><strong>Disponibilidad:</strong> {{ usuario?.disponibilidad }}</p>
+        <p><strong>Zonas de trabajo:</strong> {{ usuario?.zona }}</p>
+      }
+
       <p><strong>Descripción:</strong> {{ usuario?.descripcion }}</p>
 
-      <button class="valoracion-btn" (click)="mostrarInput()">Agregar Valoración</button>
-
-      <!-- Input y botón para enviar valoración, visibles cuando `mostrarValoracionInput` es true -->
+      @if(usuario?.rol === 'Trabajador'){
+        <button class="valoracion-btn" (click)="mostrarInput()">Agregar Valoración</button>
+        <!-- Input y botón para enviar valoración, visibles cuando `mostrarValoracionInput` es true -->
       <div *ngIf="mostrarValoracionInput">
         <input
           type="number"
@@ -44,10 +52,21 @@
         />
         <button  (click)="cargarValoracionDB()" class="valoracion-btn">Cargar valoración</button>
       </div>
+      }
+
+
 
       <div class="botones">
-        <button (click)="irAreservar(usuario?.id!)" >Reservar</button>
-        <button [routerLink]="['/home', usuario?.id]">Atrás</button>
+        @if(usuario?.rol === 'Trabajador'){
+          <button (click)="irAreservar(usuario?.id!)" >Reservar</button>
+        }
+
+        @if (userRol === 'Admin') {
+          <button [routerLink]="['/modificar', usuario?.id]">Modificar</button>
+          <button [routerLink]="['/eliminar-cuenta', usuario?.id]">Eliminar cuenta</button>
+        }
+
+        <button [routerLink]="['/home', IdUsuarioLogeado]">Atrás</button>
       </div>
 
     </div>

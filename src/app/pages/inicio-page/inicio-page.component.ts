@@ -9,14 +9,12 @@ import { Usuario } from '../../interface/usuario';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogoComponent } from '../../component/Inicio/cuadro-dialogo/cuadro-dialogo.component';
 import { CommonModule } from '@angular/common';
-import { NavbarAdminComponent } from "../../shared/navbar-admin/navbar-admin.component";
 import { AuthService } from '../../service/auth.service';
-import { ReservasService } from '../../service/reservas.service';
 
 @Component({
   selector: 'app-inicio-page',
   standalone: true,
-  imports: [SearchBarComponent, NavbarPrivateComponent, CardComponent, CommonModule, NavbarAdminComponent],
+  imports: [SearchBarComponent, NavbarPrivateComponent, CardComponent, CommonModule],
   templateUrl: './inicio-page.component.html',
   styleUrl: './inicio-page.component.css'
 })

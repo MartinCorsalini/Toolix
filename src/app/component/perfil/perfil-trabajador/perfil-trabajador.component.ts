@@ -6,6 +6,7 @@ import { NavbarPrivateComponent } from '../../../shared/navbar-private/navbar-pr
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CloseScrollStrategy } from '@angular/cdk/overlay';
+import { AuthService } from '../../../service/auth.service';
 
 @Component({
   selector: 'app-perfil-trabajador',
@@ -21,15 +22,24 @@ export class PerfilTrabajadorComponent implements OnInit {
   ar= inject(ActivatedRoute);
   router = inject(Router);
 
+  constructor(private authService: AuthService) {}
+
   usuario?: Usuario;
   id : string | null = null;
 
   mostrarValoracionInput = false; // Cambiado a booleano // Controla visibilidad del input de valoración
   valoracion: number | null = null;       // Valor de la valoración
   stars: number[] = [];
+  IdUsuarioLogeado : string | undefined;
+  userRol : string | undefined;
 
 
   ngOnInit(): void {
+    this.authService.currentUserId$.subscribe(id => {
+      this.IdUsuarioLogeado = id;
+    });
+
+    this.getIdUsuarioLogeado();
     this.accederAlosDatos();
     this.actualizarEstrellas(); // Cálculo de estrellas al iniciar
   }
@@ -107,8 +117,10 @@ cargarValoracionDB()
         {
           next: (param)=>
           {
+
               this.id = param.get('id');
-              this.getById()
+              this.getById();
+
           },
           error: ()=>{
             alert('Error al acceder a los datos');
@@ -117,6 +129,8 @@ cargarValoracionDB()
       )
     }
 
+
+
   // Obtiene usuario por ID
     getById()
     {
@@ -124,8 +138,27 @@ cargarValoracionDB()
         {
           next: (usuario : Usuario)=>
           {
+
             this.usuario = usuario;
             this.actualizarEstrellas(); // Actualiza las estrellas
+          },
+          error: () =>
+          {
+            alert('Error al acceder a los datos');
+          }
+        }
+    )
+    }
+
+
+
+
+    getIdUsuarioLogeado(){
+      this.service.getUsuarioById(this.IdUsuarioLogeado!).subscribe(
+        {
+          next: (usuario : Usuario)=>
+          {
+            this.userRol = usuario.rol;
           },
           error: () =>
           {
@@ -140,6 +173,7 @@ cargarValoracionDB()
     {
       this.router.navigate([`realizar-reserva/${id}`]);
     }
+
 
 
 

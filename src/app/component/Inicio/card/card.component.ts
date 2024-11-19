@@ -4,18 +4,25 @@ import { AltaBajaReservaComponent } from '../../Reservas/alta-baja-reserva/alta-
 import { Usuario } from '../../../interface/usuario';
 import { UsuariosService } from '../../../service/usuarios.service';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../../service/auth.service';
 
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [AltaBajaReservaComponent, RouterModule, CommonModule],
+  imports: [ RouterModule, CommonModule],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })
 export class CardComponent implements OnInit{
   ngOnInit(): void {
-    this.accederAusuarios()
+    this.accederAusuarios();
+
+    this.authService.currentUserId$.subscribe(id => {
+      this.userId = id;
+    });
+
+    this.getById();
   }
 
   @Input()
@@ -82,7 +89,30 @@ export class CardComponent implements OnInit{
     this.router.navigate([`perfil-trabajador/${id}`]);
   }
 
+  //ADMIN
 
+  userRol : string | undefined;
+  usuario?: Usuario; //Por si se necesita
+  userId: string | undefined = undefined;
+  constructor(private authService: AuthService) {}
+
+
+  getById()
+  {
+    this.service.getUsuarioById(this.userId!).subscribe(
+      {
+        next: (usuario : Usuario)=>
+        {
+          this.usuario = usuario;
+          this.userRol = usuario.rol;
+        },
+        error: () =>
+        {
+          alert('Error al acceder a los datos');
+        }
+      }
+  )
+  }
 
 
  //------------------lo que estaba antes --------------------

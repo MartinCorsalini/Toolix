@@ -8,33 +8,6 @@
       "id": "42m1"
     },
     {
-      "nombre": "Pepito",
-      "profesion": "Peluquero/a",
-      "disponibilidad": "10 hs a 20 hs",
-      "zona": "La perla",
-      "descripcion": "Excelencia en teñidos!",
-      "telefono": "2236891311",
-      "email": "pepe@outlook.com",
-      "password": "skndalskdiuhi",
-      "rol": "Trabajador",
-      "valoraciones": [
-        6
-      ],
-      "id": "3f87"
-    },
-    {
-      "nombre": "Raulssss",
-      "profesion": "Carpintero/a",
-      "disponibilidad": "12:17",
-      "zona": "Caisamar",
-      "descripcion": "Super respetuoso. Muy comprometido",
-      "telefono": "2235646546",
-      "email": "raul@hotmail.com",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "id": "6893"
-    },
-    {
       "nombre": "Micaela Perezzzz",
       "profesion": "Psicologo/a",
       "disponibilidad": "14:38",
@@ -90,11 +63,12 @@
       "id": "0477"
     },
     {
-      "id": "e3e3",
       "nombre": "Leandro",
+      "telefono": "2235952534",
       "email": "leo@gmail.com",
       "password": "1234567",
-      "rol": "Cliente"
+      "rol": "Cliente",
+      "id": "e3e3"
     },
     {
       "id": "8866",
@@ -109,66 +83,17 @@
       "email": "juan@gmail.com",
       "password": "1234567",
       "rol": "Cliente"
-    },
-    {
-      "nombre": "Colo",
-      "telefono": "2236891311",
-      "email": "colo@gmail.com",
-      "password": "1234567",
-      "rol": "Cliente",
-      "id": "364c"
-    },
-    {
-      "id": "af40",
-      "nombre": "More",
-      "email": "more@hotmail.com",
-      "password": "1234578",
-      "rol": "Cliente"
-    },
-    {
-      "id": "440e",
-      "nombre": "Joaquin Lopez",
-      "email": "joaco@gmail.com",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "Electricista",
-      "disponibilidad": "de 9 a 20 hs",
-      "descripcion": "Muchas ganas de trabajar",
-      "zona": "Camet",
-      "telefono": "2235952534",
-      "valoraciones": [
-        7
-      ]
-    },
-    {
-      "id": "94a9",
-      "nombre": "Juanito",
-      "email": "juani@lksda.com",
-      "password": "1234567",
-      "rol": "Cliente"
-    },
-    {
-      "id": "a4b1",
-      "nombre": "Laura",
-      "email": "lau@hotmail.com",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "Electricista",
-      "disponibilidad": "de 10 a 20 hs",
-      "descripcion": "tipaso",
-      "zona": "Faro Norte",
-      "telefono": "223595959"
     }
   ],
   "reservas": [
     {
-      "id": "0c82",
       "fecha": "2024-11-22",
       "horario": "07:50",
-      "direccion": "mmm",
-      "estado": "aceptada",
-      "idUs": "4cbb",
-      "idTr": "4cbb"
+      "direccion": "mmmmmmkmoiojoijoi",
+      "estado": "pendiente",
+      "id": "0c82",
+      "idTr": "4cbb",
+      "idUs": "42m1"
     },
     {
       "id": "de47",
@@ -268,6 +193,24 @@
       "estado": "pendiente",
       "idUs": "2dc4",
       "idTr": "6893"
+    },
+    {
+      "id": "685e",
+      "fecha": "2024-11-16",
+      "horario": "03:47",
+      "direccion": "sur",
+      "estado": "aceptada",
+      "idUs": "2dc4",
+      "idTr": "2dc4"
+    },
+    {
+      "id": "f3c2",
+      "fecha": "2024-11-15",
+      "horario": "07:33",
+      "direccion": "asdddddd",
+      "estado": "pendiente",
+      "idUs": "42m1",
+      "idTr": "ae89"
     }
   ]
 }

@@ -11,12 +11,22 @@
       <a routerLink="/nosotros">Nosotros</a>
     </div>
 
-    <!-- Notificaciones -->
+
   <!-- Íconos de perfil y notificaciones -->
-  <div class="nav-icons">
+   <!-- Notificaciones -->
+   <div class="nav-icons">
+
+    @if(usuario?.rol !== 'Admin')
+    {
+  <a routerLink="/notificaciones" class="icon-link">
+    <i class="fas fa-bell"></i>
+  </a>
+   }
+   @else {
     <a routerLink="/notificaciones" class="icon-link">
-      <i class="fas fa-bell"></i>
+      <i class="fas fa-calendar-alt"></i>
     </a>
+   }
 
     <!-- Menú de perfil con eventos de hover -->
     <div class="dropdown">

@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
+import { UsuariosService } from '../../service/usuarios.service';
+import { Usuario } from '../../interface/usuario';
 
 @Component({
   selector: 'app-navbar-private',
@@ -13,15 +15,19 @@ import { AuthService } from '../../service/auth.service';
 export class NavbarPrivateComponent implements OnInit {
   ngOnInit(): void
   {
-    this.authService.currentUserId$.subscribe(id => {
+    this.auth.currentUserId$.subscribe(id => {
       this.userId = id;
-    });
+    }); // AGARRA EL ID DEL USUARIO LOGEADO
+
+    this.userRol = this.auth.getUserRole(); // AGREGADOO
+    console.log('ROOOL:' + this.userRol);
+    this.getById();
 
   }
 
   userId: string | undefined = undefined;
 
-  constructor(private authService: AuthService) {}
+
   route = inject(Router)
 
   logoUrl: string = 'assets/images/logo.jpeg';
@@ -29,6 +35,27 @@ export class NavbarPrivateComponent implements OnInit {
 
   isProfileOpen = false;
 
+// AGREGADOO ---
+userRol : string | undefined;
+service = inject(UsuariosService);
+usuario?: Usuario; //Por si se necesita
+
+getById()
+  {
+    this.service.getUsuarioById(this.userId!).subscribe(
+      {
+        next: (usuario : Usuario)=>
+        {
+          this.usuario = usuario;
+          this.userRol = usuario.rol;
+        },
+        error: () =>
+        {
+          alert('Error al acceder a los datos');
+        }
+      }
+  )
+  }
 
 
   openDropdown() {
