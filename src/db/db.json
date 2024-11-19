@@ -83,6 +83,18 @@
       "email": "juan@gmail.com",
       "password": "1234567",
       "rol": "Cliente"
+    },
+    {
+      "id": "c415",
+      "nombre": "martin Ezequiel",
+      "email": "martin@outlook.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Electricista",
+      "disponibilidad": "10 a 20",
+      "descripcion": "prolijo",
+      "zona": "San Carlos",
+      "telefono": "22356644848"
     }
   ],
   "reservas": [
@@ -123,9 +135,9 @@
       "idTr": "2dc4"
     },
     {
-      "fecha": "2024-11-21",
-      "horario": "11:03",
-      "direccion": "Salta 2345aaaaaa",
+      "fecha": "2024-11-20",
+      "horario": "00:03",
+      "direccion": "AAAAAAAAAAAAAAAAAAAAAAAA",
       "estado": "pendiente",
       "id": "8c46",
       "idTr": "1547",
@@ -211,6 +223,33 @@
       "estado": "pendiente",
       "idUs": "42m1",
       "idTr": "ae89"
+    },
+    {
+      "id": "dda5",
+      "fecha": "2024-11-28",
+      "horario": "21:43",
+      "direccion": "colon 2587",
+      "estado": "aceptada",
+      "idUs": "2dc4",
+      "idTr": "2dc4"
+    },
+    {
+      "id": "a529",
+      "fecha": "2024-11-27",
+      "horario": "22:56",
+      "direccion": "colon 2719",
+      "estado": "rechazada",
+      "idUs": "2dc4",
+      "idTr": "2dc4"
+    },
+    {
+      "fecha": "2024-12-13",
+      "horario": "22:35",
+      "direccion": "ASD",
+      "estado": "rechazada",
+      "id": "c8e9",
+      "idTr": "c415",
+      "idUs": "c415"
     }
   ]
 }
