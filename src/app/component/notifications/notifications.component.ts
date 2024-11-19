@@ -33,12 +33,21 @@ export class NotificationsComponent implements OnInit{
     private reservasService: ReservasService,
     private dialog: MatDialog, // manejo de diálogos
     private router: Router,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private authService: AuthService
   ) {}
   service= inject(UsuariosService);
 
   ngOnInit(): void
   {
+
+    this.authService.currentUserId$.subscribe(id => {
+      this.userId = id;
+    });
+
+    this.getById();
+    this.cargarReservas();
+
     if (this.user.estaLogeado())
       { // Si el usuario está autenticado, obtiene sus reservas
 
@@ -76,6 +85,10 @@ export class NotificationsComponent implements OnInit{
 
     this.router.navigate(['modificar-reserva', reserva.id,reserva.idTr]);
 
+  }
+
+  irAModificarReservaAdmin(reserva: Reserva) {
+    this.router.navigate(['/modificar-reserva-admin'], { state: { reserva } });
   }
 
   eliminarReserva(id: string | null ){
@@ -172,6 +185,49 @@ rechazarReserva(reserva: Reserva) {
         this.cdr.detectChanges(); // Actualiza la vista en caso de error
       }
     });
+  }
+
+
+
+
+  //SACADO DE NOTIFICACION ADMIN:
+
+  reservas: Reserva[]=[];
+
+  cargarReservas() {
+    this.reservasService.getReserva().subscribe({
+      next: (reservas: Reserva[]) => {
+        this.reservas = reservas; // Asigna las reservas obtenidas del servidor
+      },
+     error: (e : Error) => {
+        console.log('Error al cargar las reservas', e.message);
+      }
+    }
+
+    );
+  }
+
+  usuario?: Usuario;
+  userRol : string | undefined;
+  userId: string | undefined = undefined;
+
+
+  getById()
+  {
+    this.service.getUsuarioById(this.userId!).subscribe(
+      {
+        next: (usuario : Usuario)=>
+        {
+          this.usuario = usuario;
+          this.userRol = usuario.rol;
+          console.log('ROOOOL 2: '+ this.userRol);
+        },
+        error: () =>
+        {
+          alert('Error al acceder a los datos');
+        }
+      }
+  )
   }
 
 }

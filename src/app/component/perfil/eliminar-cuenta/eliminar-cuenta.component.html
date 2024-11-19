@@ -1,14 +1,21 @@
-<div class= "eliminar-container"> 
+<div class= "eliminar-container">
     <div class="eliminar-box">
 
-    <h2>¿Estás seguro de que deseas eliminar tu cuenta?</h2>
+    <h2>¿Estás seguro de que deseas eliminar la cuenta?</h2>
     <p>Esta acción no se puede deshacer y todos tus datos se perderán.</p>
-    
+
         <div >
             <button class="si-button" (click)="confirmarEliminar()">Sí, estoy seguro</button>
-            <button class="no-button" [routerLink]="['/perfil-propio', idUs]">Cancelar</button>
+            @if(userRol === 'Admin')
+            {
+              <button class="no-button" [routerLink]="['/perfil-trabajador', idAborrar]">Cancelar</button>
+            }
+            @else {
+              <button class="no-button" [routerLink]="['/perfil-propio', idUsuarioLogeado]">Cancelar</button>
+            }
+
         </div>
 
     </div>
-    
+
 </div>

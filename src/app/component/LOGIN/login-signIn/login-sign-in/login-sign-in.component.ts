@@ -46,7 +46,7 @@ export class LoginSignInComponent implements OnInit {
     if (this.signInForm.invalid) return;
 
     const { email, password } = this.signInForm.getRawValue();
-    
+
     // Llamamos al nuevo método del servicio que busca directamente al usuario
     this.us.getUsuarioByEmailAndPassword(email, password).subscribe({
       next: (usuarios: Usuario[]) => {
@@ -60,14 +60,12 @@ export class LoginSignInComponent implements OnInit {
             }
           });
           const usuarioID = usuarioValido.id;
-          
-          if(usuarioValido.rol == 'Admin'){
-            this.router.navigate(['/homeAdmin', usuarioID]);
-          }else{
+
+
             this.router.navigate(['/home', usuarioID]); // Navegar a la ruta 'home/:id' pasando el ID del usuario
-          }
-          
-          
+
+
+
 
           // Llama al método logIn() del AuthService para guardar el token
           this.authService.logIn(usuarioID!);

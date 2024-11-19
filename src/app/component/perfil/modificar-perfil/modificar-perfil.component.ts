@@ -5,6 +5,7 @@ import { UsuariosService } from '../../../service/usuarios.service';
 import { Usuario } from '../../../interface/usuario';
 
 import { NavbarPrivateComponent } from '../../../shared/navbar-private/navbar-private.component';
+import { AuthService } from '../../../service/auth.service';
 
 
 @Component({
@@ -20,6 +21,11 @@ export class ModificarPerfilComponent implements OnInit {
 
   ngOnInit(): void {
     this.rellenarDatosEnFormulario();
+
+    this.authService.currentUserId$.subscribe(id => {
+      this.IdUsuarioLogeado = id;
+    });
+    this.getIdUsuarioLogeado();
   }
 
   id : string | null = null;
@@ -30,7 +36,12 @@ export class ModificarPerfilComponent implements OnInit {
   fb= inject(FormBuilder);
   service= inject(UsuariosService);
   router= inject(Router);
-  usuario?: Usuario;
+  trabajador?: Usuario;
+  constructor(private authService: AuthService) {}
+
+
+  IdUsuarioLogeado : string | undefined;
+    userRol : string | undefined;
 
 
 
@@ -42,10 +53,10 @@ export class ModificarPerfilComponent implements OnInit {
         zona: [''],
         descripcion: [''],
         telefono:['',[Validators.required] ],
-        email:[this.usuario?.email!],
-        password:[this.usuario?.password!],
-        rol:[this.usuario?.rol!],
-        valoraciones:[this.usuario?.valoraciones!]
+        email:[this.trabajador?.email!],
+        password:[this.trabajador?.password!],
+        rol:[this.trabajador?.rol!],
+        valoraciones:[this.trabajador?.valoraciones!]
       }
     )
 
@@ -69,17 +80,18 @@ export class ModificarPerfilComponent implements OnInit {
     getByid(id: string| null){
       this.service.getUsuarioById(id).subscribe(
         {
-          next: (usuario : Usuario)=>
+          next: (trabajador : Usuario)=>
           {
-            this.usuario = usuario;
-                this.formulario.controls['nombre'].setValue(usuario.nombre);
-                this.formulario.controls['profesion'].setValue(usuario.profesion!);
-                this.formulario.controls['disponibilidad'].setValue(usuario.disponibilidad!);
-                this.formulario.controls['zona'].setValue(usuario.zona!);
-                this.formulario.controls['descripcion'].setValue(usuario.descripcion!);
-                this.formulario.controls['rol'].setValue(usuario.rol!);
-                this.formulario.controls['telefono'].setValue(usuario.telefono!);
-                this.formulario.controls['valoraciones'].setValue(usuario.valoraciones!);
+
+            this.trabajador = trabajador;
+                this.formulario.controls['nombre'].setValue(trabajador.nombre);
+                this.formulario.controls['profesion'].setValue(trabajador.profesion!);
+                this.formulario.controls['disponibilidad'].setValue(trabajador.disponibilidad!);
+                this.formulario.controls['zona'].setValue(trabajador.zona!);
+                this.formulario.controls['descripcion'].setValue(trabajador.descripcion!);
+                this.formulario.controls['rol'].setValue(trabajador.rol!);
+                this.formulario.controls['telefono'].setValue(trabajador.telefono!);
+                this.formulario.controls['valoraciones'].setValue(trabajador.valoraciones!);
 
           },
           error: () =>
@@ -100,21 +112,47 @@ export class ModificarPerfilComponent implements OnInit {
 
       const usuario2 = this.formulario.getRawValue();
 
-      usuario2.email = this.usuario?.email!;
-      usuario2.password = this.usuario?.password!;
+      usuario2.email = this.trabajador?.email!;
+      usuario2.password = this.trabajador?.password!;
 
       this.service.putUsuario(usuario2, this.id).subscribe(
         {
           next: ()=>
           {
             alert('Actualizado correctamente');
-            this.router.navigate([`perfil-propio/${this.id}`]);
+            if(this.userRol === 'Admin')
+            {
+              this.router.navigate([`perfil-trabajador/${this.id}`]);
+            }
+            else
+            {
+              this.router.navigate([`perfil-propio/${this.id}`]);
+            }
+
           },
           error: (e: Error)=>{
             alert('Se ha producido un error al actualizar: '+ e.message);
           }
         }
       )
+    }
+
+
+    getIdUsuarioLogeado(){
+      this.service.getUsuarioById(this.IdUsuarioLogeado!).subscribe(
+        {
+          next: (usuario : Usuario)=>
+          {
+            this.userRol = usuario.rol;
+
+            console.log('ROL USUARIO ACTUAL:' + this.userRol);
+          },
+          error: () =>
+          {
+            alert('Error al acceder a los datos');
+          }
+        }
+    )
     }
 
 }
