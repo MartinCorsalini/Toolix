@@ -1,8 +1,9 @@
 
 @if (usuario?.rol === 'Admin') {
   <div class="grid-container">
-    <h2>Listado de trabajadores:</h2>
+    <h2>Listado de trabajadores</h2>
 </div>
+
 }
 
   <div class="grid-container">
@@ -30,12 +31,15 @@
             <div class="actions">
               <button class="detalles-button" (click)="irADetalles(usuario.id!)">Detalles</button>
               <div class="perfil-rating">
-                <span>{{ calcularPromedioValoracion(usuario.valoraciones) | number:'1.1-1' }}</span>
-                <ng-container *ngFor="let star of stars">
-                  <span *ngIf="star === 1">&#9733;</span>
-                  <span *ngIf="star === 0.5">&#x272E;</span>
-                  <span *ngIf="star === 0">&#9734;</span>
-                </ng-container>
+                <p class="rating-title">Puntuación</p>
+                <span class="rating-value">{{ calcularPromedioValoracion(usuario.valoraciones) | number:'1.1-1' }}</span>
+                <div class="rating-stars">
+                  <ng-container *ngFor="let star of stars">
+                    <span *ngIf="star === 1">&#9733;</span>
+                    <span *ngIf="star === 0.5">&#x272E;</span>
+                    <span *ngIf="star === 0">&#9734;</span>
+                  </ng-container>
+                </div>
               </div>
             </div>
           </div>
@@ -48,7 +52,7 @@
 
   @if (usuario?.rol === 'Admin') {
     <div class="grid-container">
-      <h2>Listado de clientes:</h2>
+      <h2>Listado de clientes</h2>
   </div>
 
     <div class="grid-container">

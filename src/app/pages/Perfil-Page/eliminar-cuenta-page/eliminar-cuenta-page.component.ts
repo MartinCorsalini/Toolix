@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EliminarCuentaComponent } from "../../component/perfil/eliminar-cuenta/eliminar-cuenta.component";
+import { EliminarCuentaComponent } from "../../../component/perfil/eliminar-cuenta/eliminar-cuenta.component";
 
 @Component({
   selector: 'app-eliminar-cuenta-page',

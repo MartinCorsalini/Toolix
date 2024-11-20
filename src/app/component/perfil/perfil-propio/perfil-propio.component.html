@@ -14,13 +14,15 @@
             <p class="profesion">{{ usuario?.profesion }}</p>
 
             <div class="perfil-rating">
-              <span>Valoración: </span>
-              <span>{{ promedio | number:'1.1-1' }}</span>
-              <ng-container *ngFor="let star of stars">
-                <span *ngIf="star === 1">&#9733;</span>       <!-- Estrella llena -->
-                <span *ngIf="star === 0.5">&#x272E;</span>    <!-- Media estrella (estrella de diferente estilo) -->
-                <span *ngIf="star === 0">&#9734;</span>       <!-- Estrella vacía -->
-              </ng-container>
+              <p class="rating-title">Puntuación</p>
+              <span class="rating-value">{{ promedio | number:'1.1-1' }}</span>
+              <div class="rating-stars">
+                <ng-container *ngFor="let star of stars">
+                  <span *ngIf="star === 1">&#9733;</span>       <!-- Estrella llena -->
+                  <span *ngIf="star === 0.5">&#x272E;</span>    <!-- Media estrella (estrella de diferente estilo) -->
+                  <span *ngIf="star === 0">&#9734;</span>       <!-- Estrella vacía -->
+                </ng-container>
+              </div>
             </div>
 
             <div class="perfil-detalles">

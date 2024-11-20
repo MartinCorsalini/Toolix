@@ -1,28 +1,33 @@
 /* Contenedor principal que ocupa toda la pantalla */
+
 .perfil-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100vw;
-  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
-  background-color: #FFFFFF; /* Fondo gris claro */
+  min-height: 100vh;
+  background-color: #FFFFFF;
   font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
   margin: 0;
-  padding: 40px 20px; /* Más espacio alrededor */
+  padding: 40px 20px;
 }
 
 /* Estilo para la tarjeta de perfil */
 .perfil-box {
-  background-color: #ffffff; /* Fondo blanco */
-  border: 1px solid #ddd; /* Borde sutil gris */
-  border-radius: 12px; /* Bordes redondeados */
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15); /* Sombra profunda para elevar la tarjeta */
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
   padding: 25px;
   max-width: 600px;
   width: 100%;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column; /* Ordena los elementos en columna */
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
   text-align: center;
 }
 
@@ -31,17 +36,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  gap: 10px; /* Espaciado entre elementos */
+  margin-bottom: 0px;
 }
 
 .perfil-foto {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
   border: 4px solid #FF416C; /* Borde rosado oscuro */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar la foto */
   object-fit: cover;
+}
+
+.perfil-info {
+  display: flex;
+  flex-direction: column; /* Ordena los elementos en columna */
+  align-items: center; /* Centra horizontalmente */
+  gap: 15px; /* Espaciado entre los elementos */
 }
 
 .perfil-info h2 {
@@ -55,17 +68,9 @@
   margin: 5px 0;
   color: #555; /* Color gris medio */
   font-size: 18px;
+  font-weight: bold;
 }
 
-/* Valoración del perfil */
-.perfil-rating {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #FFD700; /* Color dorado */
-  font-size: 18px;
-  margin-top: 5px;
-}
 
 /* Detalles del perfil */
 .perfil-detalles {
@@ -138,4 +143,42 @@
 .valoracion-input:focus {
   border-color: #007bff;
   outline: none;
+}
+
+/* Valoración del perfil */
+.perfil-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  padding: 8px;
+  border: 2px solid #E0E0E0;
+  border-radius: 8px;
+  background-color: #F9F9F9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: max-content;
+}
+
+.rating-title {
+  font-size: 12px;
+  font-weight: bold;
+  color: #a8a1a1;
+  margin: 0;
+}
+
+.rating-value {
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFC107;
+  margin: 0;
+}
+
+.rating-stars {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  font-size: 20px;
+  color: #FFC107;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
