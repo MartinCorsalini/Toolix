@@ -129,3 +129,14 @@
   background-color: #f5f5f5; /* Fondo gris claro al pasar el ratón */
   color: #FF416C; /* Cambia el color de texto a rosa */
 }
+
+.admin-badge {
+  background-color: #FF416C; /* Fondo destacado */
+  color: white; /* Texto en blanco */
+  font-size: 14px; /* Tamaño del texto */
+  font-weight: bold; /* Texto en negrita */
+  padding: 5px 10px; /* Espaciado interno */
+  border-radius: 4px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+  text-align: center; /* Centra el texto */
+}

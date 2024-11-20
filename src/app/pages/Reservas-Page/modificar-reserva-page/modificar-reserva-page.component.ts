@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ModificarReservaComponent } from '../../component/Reservas/modificar-reserva/modificar-reserva.component';
+import { ModificarReservaComponent } from '../../../component/Reservas/modificar-reserva/modificar-reserva.component';
+
 
 @Component({
   selector: 'app-modificar-reserva-page',
