@@ -38,9 +38,7 @@ export class NotificationsComponent implements OnInit{
   ) {}
   service= inject(UsuariosService);
 
-  ngOnInit(): void
-  {
-
+  ngOnInit(): void {
     this.authService.currentUserId$.subscribe(id => {
       this.userId = id;
     });
@@ -48,23 +46,30 @@ export class NotificationsComponent implements OnInit{
     this.getById();
     this.cargarReservas();
 
-    if (this.user.estaLogeado())
-      { // Si el usuario está autenticado, obtiene sus reservas
-
+    if (this.user.estaLogeado()) {
+      // Si el usuario está autenticado, obtiene sus reservas
       this.reservasService.getReserva().subscribe((reservas) => {
         const userId = this.user.getUserId();
 
-         // Filtra reservas enviadas y recibidas en base al id del usuario
-        this.reservasEnviadas = reservas.filter((res) => res.idUs === userId);
-        this.reservasRecibidas = reservas.filter((res) => res.idTr === userId);
+        const estadoOrden = { pendiente: 1, aceptada: 2, rechazada: 3 };
 
-         // Cargar nombres de clientes para cada reserva recibida si es necesario
-         this.reservasRecibidas.forEach((reserva) => {
+        // Filtra y ordena reservas recibidas
+        this.reservasRecibidas = reservas
+          .filter(res => res.idTr === userId)
+          .sort((a, b) => estadoOrden[a.estado] - estadoOrden[b.estado]);
+
+        // Filtra y ordena reservas enviadas
+        this.reservasEnviadas = reservas
+          .filter(res => res.idUs === userId)
+          .sort((a, b) => estadoOrden[a.estado] - estadoOrden[b.estado]);
+
+        // Cargar nombres de clientes y trabajadores para cada reserva recibida
+        this.reservasRecibidas.forEach((reserva) => {
           this.mostrarCliente(reserva.idUs!);
           this.mostrarTrabajador(reserva.idTr!);
         });
 
-        // Cargar nombres de clientes para cada reserva enviada
+        // Cargar nombres de clientes y trabajadores para cada reserva enviada
         this.reservasEnviadas.forEach((reserva) => {
           this.mostrarCliente(reserva.idUs!);
           this.mostrarTrabajador(reserva.idTr!);
@@ -73,12 +78,12 @@ export class NotificationsComponent implements OnInit{
 
       // Recupera el rol del usuario y ajusta `esTrabajador` según corresponda
       this.esTrabajador = this.user.getUserRole() === 'Trabajador';
-
     } else {
       // Si no está logueado, redirige a la página de login
       this.router.navigate(['/login']);
     }
   }
+
 
 
   irAModificarReserva(reserva: Reserva){
@@ -197,7 +202,11 @@ rechazarReserva(reserva: Reserva) {
   cargarReservas() {
     this.reservasService.getReserva().subscribe({
       next: (reservas: Reserva[]) => {
-        this.reservas = reservas; // Asigna las reservas obtenidas del servidor
+       // this.reservas = reservas; // Asigna las reservas obtenidas del servidor
+       this.reservas = reservas.sort((a, b) => {
+        const estadoOrden = { pendiente: 1, aceptada: 2, rechazada: 3 };
+        return estadoOrden[a.estado] - estadoOrden[b.estado];
+      });
       },
      error: (e : Error) => {
         console.log('Error al cargar las reservas', e.message);

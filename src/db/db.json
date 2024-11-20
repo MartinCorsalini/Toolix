@@ -95,6 +95,18 @@
       "descripcion": "prolijo",
       "zona": "San Carlos",
       "telefono": "22356644848"
+    },
+    {
+      "id": "1710",
+      "nombre": "luli",
+      "email": "luli@gmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Centro de estetica",
+      "disponibilidad": "10 a 20",
+      "descripcion": "responsable",
+      "zona": "San Carlos",
+      "telefono": "22356788764"
     }
   ],
   "reservas": [
@@ -135,9 +147,9 @@
       "idTr": "2dc4"
     },
     {
-      "fecha": "2024-11-20",
-      "horario": "00:03",
-      "direccion": "AAAAAAAAAAAAAAAAAAAAAAAA",
+      "fecha": "2024-11-30",
+      "horario": "00:06",
+      "direccion": "fffffffffffffffffff",
       "estado": "pendiente",
       "id": "8c46",
       "idTr": "1547",
@@ -225,13 +237,13 @@
       "idTr": "ae89"
     },
     {
+      "fecha": "2024-11-30",
+      "horario": "21:46",
+      "direccion": "njnhjbh",
+      "estado": "pendiente",
       "id": "dda5",
-      "fecha": "2024-11-28",
-      "horario": "21:43",
-      "direccion": "colon 2587",
-      "estado": "aceptada",
-      "idUs": "2dc4",
-      "idTr": "2dc4"
+      "idTr": "2dc4",
+      "idUs": "2dc4"
     },
     {
       "id": "a529",
@@ -250,6 +262,42 @@
       "id": "c8e9",
       "idTr": "c415",
       "idUs": "c415"
+    },
+    {
+      "id": "4883",
+      "fecha": "2024-11-21",
+      "horario": "05:43",
+      "direccion": "centro",
+      "estado": "pendiente",
+      "idUs": "2dc4",
+      "idTr": "2dc4"
+    },
+    {
+      "id": "710e",
+      "fecha": "2024-11-22",
+      "horario": "03:44",
+      "direccion": "soleado",
+      "estado": "pendiente",
+      "idUs": "2dc4",
+      "idTr": "ae89"
+    },
+    {
+      "id": "64c8",
+      "fecha": "2024-11-22",
+      "horario": "05:03",
+      "direccion": "soleado",
+      "estado": "aceptada",
+      "idUs": "1710",
+      "idTr": "1710"
+    },
+    {
+      "id": "2227",
+      "fecha": "2024-11-22",
+      "horario": "13:04",
+      "direccion": "centro",
+      "estado": "rechazada",
+      "idUs": "2dc4",
+      "idTr": "1710"
     }
   ]
 }

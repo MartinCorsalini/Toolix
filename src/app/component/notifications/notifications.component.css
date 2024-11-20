@@ -171,86 +171,79 @@ body {
   background-color: #f44336; /* Rojo, igual que el botón Rechazar */
 }
 
-/*
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
+/* Contenedor de detalles de la reserva */
+.reservation-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 15px;
+  width: 100%;
 }
 
-.container {
-    width: 100%;
-    max-width: 1200px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Estilo para cada campo de la reserva */
+.reservation-field {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 10px;
+/* Etiqueta del campo */
+.field-label {
+  font-size: 0.85em;
+  color: #666;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 4px;
 }
 
-.header h2 {
-    font-size: 1.5em;
-    margin: 0;
+/* Valor del campo */
+.field-value {
+  font-size: 1.1em;
+  color: #333;
+  font-weight: 500;
 }
 
-.notification-list {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-}
-
+/* Actualización del item de notificación */
 .notification-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.notification-item p {
-    margin: 0;
-    font-size: 1em;
+.notification-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.actions {
-    display: flex;
-    gap: 10px;
+/* Estado de la reserva */
+.estado-reserva {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
-.accept-btn, .reject-btn {
-    padding: 8px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9em;
+.estado-reserva.pendiente {
+  background-color: #fff3cd;
+  color: #856404;
 }
 
-.accept-btn {
-    background-color: #4CAF50;
-    color: white;
+.estado-reserva.aceptada {
+  background-color: #d4edda;
+  color: #155724;
 }
 
-.reject-btn {
-    background-color: #f44336;
-    color: white;
+.estado-reserva.rechazada {
+  background-color: #f8d7da;
+  color: #721c24;
 }
-*/
-
-
-
-
-
