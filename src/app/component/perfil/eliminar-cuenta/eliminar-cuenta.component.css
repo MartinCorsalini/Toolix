@@ -1,54 +1,62 @@
-
 .eliminar-container {
-    display: flex; /* Usa Flexbox para organizar los elementos hijos */
-    flex-direction: column; /* Coloca los elementos hijos en una columna */
-    align-items: center; /* Centra los elementos hijos horizontalmente */
-    justify-content: center; /* Centra los elementos hijos verticalmente */
-    width: 100vw; /* Hace que el ancho ocupe el 100% del viewport */
-    flex-grow: 1; /* Permite que este contenedor crezca si es necesario */
-    background-color: #FFFFFF; /* Fondo color gris claro */
-    font-family: 'Montserrat', sans-serif; /* Aplica la fuente Montserrat */
-    box-sizing: border-box; /* Incluye el padding y borde dentro del ancho/alto */
-    margin: 0; /* Elimina el margen externo */
-    padding: 20px; /* Agrega 20px de espacio alrededor del contenido */
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100vh; /* Asegúrate de que ocupe toda la pantalla */
+  background-color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+}
 
-  .eliminar-box {
-    border: 3px solid #FF416C; /* Borde de 3px color rosado oscuro */
-    padding: 20px; /* Espacio interno de 20px */
-    border-radius: 8px; /* Esquinas redondeadas de 8px */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del cuadro */
-    background-color: #f8f9fb; /* Fondo blanco */
-    max-width: 600px; /* Ancho máximo de 600px */
-    width: 100%; /* Ancho completo disponible del contenedor */
-    box-sizing: border-box; /* Incluye el padding y borde en el ancho total */
-  }
-  .si-button, .no-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+.eliminar-box {
+  border: 3px solid #ff416c;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fb;
+  max-width: 600px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center; /* Centrar texto */
+}
 
-  /* Estilo del botón de confirmación */
-  .si-button {
-    background-color: #28a745; /* Verde */
-    color: #fff;
-  }
+.button-container {
+  display: flex;
+  justify-content: center; /* Centra los botones */
+  gap: 20px; /* Espacio entre botones */
+  margin-top: 20px; /* Margen superior para separar del texto */
+}
 
-  .si-button:hover {
-    background-color: #218838;
-  }
+.si-button,
+.no-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-  /* Estilo del botón de cancelación */
-  .no-button {
-    background-color: #dc3545; /* Rojo */
-    color: #fff;
-  }
+.si-button {
+  background-color: #28a745;
+  color: #fff;
+  margin-right: 20px;
+}
 
-  .no-button:hover {
-    background-color: #c82333;
-  }
+.si-button:hover {
+  background-color: #218838;
+}
+
+.no-button {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.no-button:hover {
+  background-color: #c82333;
+}
