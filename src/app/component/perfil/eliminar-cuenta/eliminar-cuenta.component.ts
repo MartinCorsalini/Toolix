@@ -5,11 +5,12 @@ import { UsuariosService } from '../../../service/usuarios.service';
 import { DialogoComponent } from '../../Inicio/cuadro-dialogo/cuadro-dialogo.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Usuario } from '../../../interface/usuario';
+import { NavbarPrivateComponent } from "../../../shared/navbar-private/navbar-private.component";
 
 @Component({
   selector: 'app-eliminar-cuenta',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, NavbarPrivateComponent],
   templateUrl: './eliminar-cuenta.component.html',
   styleUrl: './eliminar-cuenta.component.css'
 })

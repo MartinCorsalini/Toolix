@@ -1,27 +1,43 @@
-# Prueba
+# Toolix - Plataforma para encontrar un experto
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
+# Toolix es una plataforma diseñada para conectar clientes con profesionales en servicios como gasistas, plomeros y electricistas. Permite a los usuarios buscar, filtrar y contactar fácilmente al profesional ideal según su ubicación y necesidades.
 
-## Development server
+## Características
+- Búsqueda de profesionales por categoría.
+- Sistema de roles para usuarios (Admin ,Cliente, trabajador).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Uso
+1. Regístrate o inicia sesión con un rol asignado.
+    - Admin: 
+        - Email: admin1@gmail.com Password: 1234567
+    
+    - Cliente:
+        - Email: martin@gmail.com Password: 1234567
+        - Email: micaela@gmail.com Password: 1234567
+        - Email: juan@gmail.com Password: 1234567
+        - Email: leandro@gmail.com Password: 1234567
+        - Email: abril@gmail.com Password: 1234567
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    - Trabajador:
+        - Abogado:  Email: marcelo@gmail.com Password: 1234567
+        - Albañil: Email: guido@gmail.com Password: 1234567
+        - Carpintero: Email: tito@gmail.com Password: 1234567
+        - Centro de estetica: Email: lulu@gmail.com Password: 1234567
+        - Contador: Email: fernando@gmail.com Password: 1234567
+        - Costurero: Email: costumar@gmail.com Password: 1234567
+        - Electricista: Email: beto@gmail.com Password: 1234567
+        - Gasista: Email: pedro@gmail.com Password: 1234567
+        - Limpieza: Email: limpiamar@gmail.com Password: 1234567
+        - Paseador de perros: Email: david@gmail.com Password: 1234567
+        - Peluquero: Email: fito@gmail.com Password: 1234567
+        - Pintor: Email: norberto@gmail.com Password: 1234567
+        - Plomero: Email: gustavo@gmail.com Password: 1234567
+        - Psicologo: Email: victoria@gmail.com Password: 1234567
+        - Tapicero: Email: ruben@gmail.com Password: 1234567
+        - Techista: Email: ezequiel@gmail.com Password: 1234567
+        - Uñas: Email: alejandra@gmail.com Password: 1234567
+ 
+2. Busca profesionales utilizando el buscador central.
+3. Contacta a un profesional o administra datos como Admin.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

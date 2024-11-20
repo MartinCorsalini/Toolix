@@ -8,298 +8,257 @@
       "id": "42m1"
     },
     {
-      "nombre": "Micaela Perezzzz",
-      "profesion": "Psicologo/a",
-      "disponibilidad": "14:38",
-      "zona": "Centrooa",
-      "descripcion": "Enfoque conductista. Trabajo con niños, adolescente y adultos. Depresión . Ansiedad. Parejas",
-      "telefono": "2235952534",
-      "email": "micaelaprieto@outlook.com",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "valoraciones": [
-        7,
-        10,
-        10
-      ],
-      "id": "2dc4"
-    },
-    {
-      "id": "ae89",
-      "nombre": "Mauro Caceres",
-      "email": "maurito@hotmail.com",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "Gasista",
-      "disponibilidad": "01:16",
-      "descripcion": "Flexibilidad horaria. Años de experiencia",
-      "zona": "Camet",
-      "telefono": "223-454745",
-      "valoraciones": [
-        8
-      ]
-    },
-    {
-      "nombre": "Jose Alvarez",
-      "profesion": "Carpintero/a",
-      "disponibilidad": "de 10 a 20 hs",
-      "zona": "Los Troncos",
-      "descripcion": "Años de experiencia en el rubro. ",
-      "telefono": "223589898",
-      "email": "josesito@outlook.com",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "id": "4cbb",
-      "valoraciones": [
-        7
-      ]
-    },
-    {
-      "nombre": "Juana",
-      "zona": "Faro Norte",
-      "descripcion": "atenta",
-      "telefono": "223595989",
-      "email": "juana@juana.com",
-      "password": "12345646",
-      "rol": "Cliente",
-      "id": "0477"
-    },
-    {
-      "nombre": "Leandro",
-      "telefono": "2235952534",
-      "email": "leo@gmail.com",
-      "password": "1234567",
-      "rol": "Cliente",
-      "id": "e3e3"
-    },
-    {
-      "id": "8866",
-      "nombre": "Abril",
-      "email": "abril@gmail.com",
+      "id": "dd94",
+      "nombre": "Martin",
+      "email": "martin@gmail.com",
       "password": "1234567",
       "rol": "Cliente"
     },
     {
-      "id": "826e",
+      "id": "8583",
+      "nombre": "Micaela",
+      "email": "micaela@gmail.com",
+      "password": "1234567",
+      "rol": "Cliente"
+    },
+    {
+      "id": "9b8e",
       "nombre": "Juan",
       "email": "juan@gmail.com",
       "password": "1234567",
       "rol": "Cliente"
     },
     {
-      "id": "c415",
-      "nombre": "martin Ezequiel",
-      "email": "martin@outlook.com",
+      "id": "4303",
+      "nombre": "Leandro",
+      "email": "leandro@gmail.com",
+      "password": "1234567",
+      "rol": "Cliente"
+    },
+    {
+      "id": "f966",
+      "nombre": "Abril",
+      "email": "abril@gmail.com",
+      "password": "1234567",
+      "rol": "Cliente"
+    },
+    {
+      "id": "d1cc",
+      "nombre": "Tito Fernandez",
+      "email": "tito@gmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Carpintero/a",
+      "disponibilidad": "9 a 18 hs",
+      "descripcion": "puntual, prolijo, cotizacion en el dia",
+      "zona": "Centro",
+      "telefono": "22357575757",
+      "valoraciones": [
+        7
+      ]
+    },
+    {
+      "id": "d96a",
+      "nombre": "Beto Gimenez",
+      "email": "beto@gmail.com",
       "password": "1234567",
       "rol": "Trabajador",
       "profesion": "Electricista",
-      "disponibilidad": "10 a 20",
-      "descripcion": "prolijo",
-      "zona": "San Carlos",
-      "telefono": "22356644848"
+      "disponibilidad": "7 a 17 hs",
+      "descripcion": "conexiones nuevas, cambios de voltaje, presupuesto sin cargo",
+      "zona": "Playa Grande",
+      "telefono": "223568843"
     },
     {
-      "id": "1710",
-      "nombre": "luli",
-      "email": "luli@gmail.com",
+      "id": "30d4",
+      "nombre": "Fito Rodriguez",
+      "email": "fito@gmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Peluquero/a",
+      "disponibilidad": "9 a 18 hs ",
+      "descripcion": "Local en el centro, unisex",
+      "zona": "Centro",
+      "telefono": "223456784"
+    },
+    {
+      "id": "4a58",
+      "nombre": "Marcelo",
+      "email": "marcelo@gmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Abogado/a",
+      "disponibilidad": "9 a 18 hs",
+      "descripcion": "Familia, Civil, especialista en Laboral",
+      "zona": "Caisamar",
+      "telefono": "22357336"
+    },
+    {
+      "id": "dd00",
+      "nombre": "Guido",
+      "email": "guido@gmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Albañil",
+      "disponibilidad": "9 a 18 hs",
+      "descripcion": "Responsable, todo tipo de construcciones",
+      "zona": "Punta Mogotes",
+      "telefono": "223756463"
+    },
+    {
+      "id": "237b",
+      "nombre": "Lulu",
+      "email": "lulu@gmail.com",
       "password": "1234567",
       "rol": "Trabajador",
       "profesion": "Centro de estetica",
-      "disponibilidad": "10 a 20",
-      "descripcion": "responsable",
-      "zona": "San Carlos",
-      "telefono": "22356788764"
+      "disponibilidad": "9 a 18 hs",
+      "descripcion": "tratamientos, depilacion",
+      "zona": "Faro Norte",
+      "telefono": "223475757"
+    },
+    {
+      "id": "9584",
+      "nombre": "Fernando",
+      "email": "fernando@gmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Contador/a",
+      "disponibilidad": "9 a 18 hs",
+      "descripcion": "manejamos tu negocio con la afip",
+      "zona": "Caisamar",
+      "telefono": "2235773626"
+    },
+    {
+      "id": "03ba",
+      "nombre": "Costumar",
+      "email": "costumar@gmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Costurero/a",
+      "disponibilidad": "9 a 18 hs",
+      "descripcion": "cambios de cierres, arreglo prendas deterioradas",
+      "zona": "Bosque Peralta Ramos",
+      "telefono": "223576771"
+    },
+    {
+      "id": "a8bc",
+      "nombre": "Pedro",
+      "email": "pedro@gmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Gasista",
+      "disponibilidad": "9 a 18 hs",
+      "descripcion": "cambio de calefactor, arreglo de calefon termos",
+      "zona": "Constitución",
+      "telefono": "2236674761"
+    },
+    {
+      "id": "01f9",
+      "nombre": "Limpiamar",
+      "email": "limpiamar@gmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Limpieza",
+      "disponibilidad": "9 a 18 hs",
+      "descripcion": "limpio casas, departamentos",
+      "zona": "Los Troncos",
+      "telefono": "2235471717"
+    },
+    {
+      "id": "f21c",
+      "nombre": "David",
+      "email": "david@gmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Paseador/a de perros",
+      "disponibilidad": "9 a 18 hs",
+      "descripcion": "todo tipo de perros, paseos personalizados o en grupo",
+      "zona": "Camet",
+      "telefono": "22357471"
+    },
+    {
+      "id": "567a",
+      "nombre": "Norberto",
+      "email": "noberto@gmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Pintor/a",
+      "disponibilidad": "9 a 18 hs",
+      "descripcion": "paredes, cielo raso, puertas",
+      "zona": "La Perla",
+      "telefono": "223674171"
+    },
+    {
+      "id": "f1d1",
+      "nombre": "Gustavo",
+      "email": "gustavo@gmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Plomero/a",
+      "disponibilidad": "9 a 18 hs",
+      "descripcion": "arreglo de canillas, baños, bañeras",
+      "zona": "Barrio San José",
+      "telefono": "2235717123"
+    },
+    {
+      "id": "89a1",
+      "nombre": "Victoria",
+      "email": "victoria@gmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Psicologo/a",
+      "disponibilidad": "9 a 18 hs",
+      "descripcion": "atencion a parejas niños, terapia cognitivo-conductual",
+      "zona": "Barrio Chauvin",
+      "telefono": "22358123123"
+    },
+    {
+      "id": "cfad",
+      "nombre": "Ruben",
+      "email": "ruben@gmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Tapicero/a",
+      "disponibilidad": "9 a 18 hs",
+      "descripcion": "sillones, sillas, presupuesto sin cargo",
+      "zona": "Alfar",
+      "telefono": "223575711"
+    },
+    {
+      "id": "bbba",
+      "nombre": "Ezequiel",
+      "email": "ezequiel@gmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Techista",
+      "disponibilidad": "9 a 18 hs",
+      "descripcion": "reparo techo de tejasy chapa, presupuesto sin cargo",
+      "zona": "Camet",
+      "telefono": "22371473712"
+    },
+    {
+      "id": "913a",
+      "nombre": "Alejandra",
+      "email": "alejandra@gmail.com",
+      "password": "1234567",
+      "rol": "Trabajador",
+      "profesion": "Uñas",
+      "disponibilidad": "9 a 18 hs",
+      "descripcion": "uñas, pestañas, permanentes ",
+      "zona": "Centro",
+      "telefono": "22317127312"
     }
   ],
   "reservas": [
     {
-      "fecha": "2024-11-22",
-      "horario": "07:50",
-      "direccion": "mmmmmmkmoiojoijoi",
-      "estado": "pendiente",
-      "id": "0c82",
-      "idTr": "4cbb",
-      "idUs": "42m1"
-    },
-    {
-      "id": "de47",
-      "fecha": "2024-11-14",
-      "horario": "11:54",
-      "direccion": "mmm",
+      "id": "aff5",
+      "fecha": "2024-11-26",
+      "horario": "14:00",
+      "direccion": "colon 2587",
       "estado": "aceptada",
-      "idUs": "4cbb",
-      "idTr": "4cbb"
-    },
-    {
-      "id": "785a",
-      "fecha": "2024-11-19",
-      "horario": "07:01",
-      "direccion": "San Martín 2267       ",
-      "estado": "rechazada",
-      "idUs": "4cbb",
-      "idTr": "2dc4"
-    },
-    {
-      "id": "8173",
-      "fecha": "2024-11-13",
-      "horario": "12:01",
-      "direccion": "Catamarca 2345",
-      "estado": "aceptada",
-      "idUs": "4cbb",
-      "idTr": "2dc4"
-    },
-    {
-      "fecha": "2024-11-30",
-      "horario": "00:06",
-      "direccion": "fffffffffffffffffff",
-      "estado": "pendiente",
-      "id": "8c46",
-      "idTr": "1547",
-      "idUs": "2dc4"
-    },
-    {
-      "id": "d2f6",
-      "fecha": "2024-11-20",
-      "horario": "11:11",
-      "direccion": "Luro 3245",
-      "estado": "pendiente",
-      "idUs": "2dc4",
-      "idTr": "3f87"
-    },
-    {
-      "id": "18bf",
-      "fecha": "2024-11-21",
-      "horario": "08:45",
-      "direccion": "Avellaneda 2345",
-      "estado": "aceptada",
-      "idUs": "6893",
-      "idTr": "2dc4"
-    },
-    {
-      "id": "d71e",
-      "fecha": "2024-11-22",
-      "horario": "08:52",
-      "direccion": "San Martín 2267       ",
-      "estado": "pendiente",
-      "idUs": "99d5",
-      "idTr": "3f87"
-    },
-    {
-      "id": "9a41",
-      "fecha": "2024-11-29",
-      "horario": "08:55",
-      "direccion": "San Martín 2267       ",
-      "estado": "pendiente",
-      "idUs": "440e",
-      "idTr": "99d5"
-    },
-    {
-      "id": "c0c0",
-      "fecha": "2024-11-29",
-      "horario": "01:59",
-      "direccion": "San Martín 2267 ",
-      "estado": "pendiente",
-      "idUs": "440e",
-      "idTr": "6893"
-    },
-    {
-      "id": "0c81",
-      "fecha": "2024-11-27",
-      "horario": "02:00",
-      "direccion": "Luro 1234",
-      "estado": "pendiente",
-      "idUs": "6893",
-      "idTr": "ae89"
-    },
-    {
-      "id": "1028",
-      "fecha": "2024-11-22",
-      "horario": "00:31",
-      "direccion": "San Martín 2267       ",
-      "estado": "pendiente",
-      "idUs": "2dc4",
-      "idTr": "6893"
-    },
-    {
-      "id": "685e",
-      "fecha": "2024-11-16",
-      "horario": "03:47",
-      "direccion": "sur",
-      "estado": "aceptada",
-      "idUs": "2dc4",
-      "idTr": "2dc4"
-    },
-    {
-      "id": "f3c2",
-      "fecha": "2024-11-15",
-      "horario": "07:33",
-      "direccion": "asdddddd",
-      "estado": "pendiente",
-      "idUs": "42m1",
-      "idTr": "ae89"
-    },
-    {
-      "fecha": "2024-11-30",
-      "horario": "21:46",
-      "direccion": "njnhjbh",
-      "estado": "pendiente",
-      "id": "dda5",
-      "idTr": "2dc4",
-      "idUs": "2dc4"
-    },
-    {
-      "id": "a529",
-      "fecha": "2024-11-27",
-      "horario": "22:56",
-      "direccion": "colon 2719",
-      "estado": "rechazada",
-      "idUs": "2dc4",
-      "idTr": "2dc4"
-    },
-    {
-      "fecha": "2024-12-13",
-      "horario": "22:35",
-      "direccion": "ASD",
-      "estado": "rechazada",
-      "id": "c8e9",
-      "idTr": "c415",
-      "idUs": "c415"
-    },
-    {
-      "id": "4883",
-      "fecha": "2024-11-21",
-      "horario": "05:43",
-      "direccion": "centro",
-      "estado": "pendiente",
-      "idUs": "2dc4",
-      "idTr": "2dc4"
-    },
-    {
-      "id": "710e",
-      "fecha": "2024-11-22",
-      "horario": "03:44",
-      "direccion": "soleado",
-      "estado": "pendiente",
-      "idUs": "2dc4",
-      "idTr": "ae89"
-    },
-    {
-      "id": "64c8",
-      "fecha": "2024-11-22",
-      "horario": "05:03",
-      "direccion": "soleado",
-      "estado": "aceptada",
-      "idUs": "1710",
-      "idTr": "1710"
-    },
-    {
-      "id": "2227",
-      "fecha": "2024-11-22",
-      "horario": "13:04",
-      "direccion": "centro",
-      "estado": "rechazada",
-      "idUs": "2dc4",
-      "idTr": "1710"
+      "idUs": "dd94",
+      "idTr": "d1cc"
     }
   ]
 }
