@@ -64,6 +64,19 @@
                           <span class="estado-mensaje {{ reserva.estado }}">{{ reserva.estado | titlecase }}</span>
                         </ng-template>
                       </div>
+
+                      <!------------------- AGREGRADO--------------->
+                      <div class="actions">
+                        <!-- Mostrar botones solo si la reserva está aceptada -->
+                        <ng-container *ngIf="reserva.estado === 'aceptada'; else estadoMensaje">
+                          <button class="accept-btn" (click)="finalizarReserva(reserva)">Finalizar</button>
+                        </ng-container>
+
+                        <!-- Mensaje de estado cuando no está en aceptada -->
+                        <ng-template #estadoMensaje>
+                          <span class="estado-mensaje {{ reserva.estado }}">{{ reserva.estado | titlecase }}</span>
+                        </ng-template>
+                      </div>
                 </li>
 
               </ul>
@@ -114,9 +127,19 @@
                     <span class="field-value">{{ trabajadorNombres[reserva.idTr!] || 'Cargando...' }}</span>
                   </div>
                 </div>
+
+                <!--------------------AGREGADOOO--------------------->
                 <div class="actions">
-                  <button (click)="irAModificarReserva(reserva)" class="accept-btn">Modificar</button>
-                  <button (click)="eliminarReserva(reserva.id)" class="reject-btn">Eliminar</button>
+                  <!-- Mostrar botón "Calificar" si el estado es 'finalizada' -->
+                  <ng-container *ngIf="reserva.estado === 'finalizada'; else botonesModificarEliminar">
+                    <button class="accept-btn" (click)="abrirDialogoCalificacion(reserva)">Calificar</button>
+                  </ng-container>
+
+                  <!-- Mostrar botones "Modificar" y "Eliminar" solo si no está 'finalizada' -->
+                  <ng-template #botonesModificarEliminar>
+                    <button (click)="irAModificarReserva(reserva)" class="accept-btn">Modificar</button>
+                    <button (click)="eliminarReserva(reserva.id)" class="reject-btn">Eliminar</button>
+                  </ng-template>
                 </div>
               </li>
             </ul>
@@ -134,7 +157,9 @@
       <div class="container">
         <div class="header"></div>
         <ul class="notification-list">
+
           <li class="notification-item" *ngFor="let reserva of reservas">
+
             <div class="reservation-details">
               <div class="reservation-field">
                 <span class="field-label">Dirección</span>
@@ -152,6 +177,19 @@
                 <span class="field-label">Reserva ID</span>
                 <span class="field-value">{{ reserva.id }}</span>
               </div>
+
+              <!--
+              <div class="reservation-field">
+                <span class="field-label">Cliente</span>
+                <span class="field-value">{{ usuarioNombres[reserva.idUs!] || 'Cargando...' }}</span>
+              </div>
+              <div class="reservation-field">
+                <span class="field-label">Trabajador</span>
+                <span class="field-value">{{ trabajadorNombres[reserva.idTr!] || 'Cargando...' }}</span>
+              </div>
+               -->
+
+
             </div>
             <div class="actions">
               <button (click)="irAModificarReserva(reserva)" class="accept-btn">Modificar</button>
