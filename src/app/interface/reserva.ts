@@ -9,5 +9,5 @@ export interface Reserva {
     fecha: Date,
     horario:Time,
     estado: 'aceptada' | 'rechazada' | 'pendiente' | 'finalizada',
-    calificada: boolean;
+    calificada: boolean; // Si es true, no va a mostrar el boton
 }
