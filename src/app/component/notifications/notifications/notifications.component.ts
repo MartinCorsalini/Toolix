@@ -198,7 +198,8 @@ export class NotificationsComponent implements OnInit{
 
       if (idTrabajador) {
         console.log(`Calificando al trabajador con ID: ${idTrabajador}`);
-        // Llama al servicio para actualizar las valoraciones del trabajador
+
+        // Llama al servicio para obtener el usuario completo (trabajador)
         this.service.getUsuarioById(idTrabajador).subscribe({
           next: (trabajador: Usuario) => {
             if (!trabajador.valoraciones) {
@@ -207,13 +208,19 @@ export class NotificationsComponent implements OnInit{
 
             trabajador.valoraciones.push(calificacion); // Agrega la nueva calificación
 
-            // Actualiza el usuario con las nuevas valoraciones
-          this.service.putUsuario2({ valoraciones: trabajador.valoraciones }, idTrabajador).subscribe({
-            next: () => {
-              console.log('Calificación guardada con éxito');
-              this.dialog.open(DialogoComponent, {
-                data: { message: 'Gracias por calificar la reserva.' }
-              });
+            // Crea un objeto con el usuario completo, pero actualizando solo las valoraciones
+            const usuarioActualizado: Usuario = {
+              ...trabajador,  // Copia todos los campos del trabajador
+              valoraciones: trabajador.valoraciones // Mantén las valoraciones actualizadas
+            };
+
+            // Llama al servicio para actualizar el usuario con las nuevas valoraciones
+            this.service.putUsuario(usuarioActualizado, idTrabajador).subscribe({
+              next: () => {
+                console.log('Calificación guardada con éxito');
+                this.dialog.open(DialogoComponent, {
+                  data: { message: 'Gracias por calificar la reserva.' }
+                });
 
                 // Marca la reserva como calificada (opcional, para evitar duplicados)
                 this.reservaSeleccionada!.calificada = true;
@@ -224,6 +231,30 @@ export class NotificationsComponent implements OnInit{
                     ? { ...reserva, calificada: true }
                     : reserva
                 );
+
+
+                // *** Modificación: Marcar la reserva como calificada en el cliente ***
+              this.reservaSeleccionada!.calificada = true; // Cambia el estado de la reserva a calificada
+
+              // *** Modificación: Actualiza las reservas en el cliente ***
+              // Actualiza el estado de la reserva en la lista de reservas del cliente
+              this.reservasEnviadas = this.reservasEnviadas.map(reserva =>
+                reserva.id === this.reservaSeleccionada?.id
+                  ? { ...reserva, calificada: true }
+                  : reserva
+              );
+
+              // *** Modificación (opcional): Actualiza el estado de la reserva en el servidor (si es necesario) ***
+              //Si necesitas actualizar el estado de la reserva en el backend, puedes hacerlo de la siguiente manera:
+               this.reservasService.putReserva({ ...this.reservaSeleccionada!, calificada: true }, this.reservaSeleccionada?.id!)
+                .subscribe({
+                  next: () => {
+                    console.log('Reserva actualizada con estado calificada=true');
+                  },
+                  error: (err) => {
+                    console.error('Error al actualizar la reserva en el servidor:', err);
+                  }
+                });
 
                 this.cerrarPopup(); // Cierra el pop-up
               },

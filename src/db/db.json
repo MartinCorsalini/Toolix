@@ -56,7 +56,12 @@
       "zona": "Centro",
       "telefono": "22357575757",
       "valoraciones": [
-        7
+        7,
+        9,
+        3,
+        6,
+        1,
+        4
       ]
     },
     {
@@ -90,19 +95,11 @@
       ]
     },
     {
-      "id": "4a58",
-      "nombre": "Marcelo",
-      "email": "marcelo@gmail.com",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "Abogado/a",
-      "disponibilidad": "9 a 18 hs",
-      "descripcion": "Familia, Civil, especialista en Laboral",
-      "zona": "Caisamar",
-      "telefono": "22357336",
       "valoraciones": [
-        9
-      ]
+        9,
+        3
+      ],
+      "id": "4a58"
     },
     {
       "id": "dd00",
@@ -115,21 +112,6 @@
       "descripcion": "Responsable, todo tipo de construcciones",
       "zona": "Punta Mogotes",
       "telefono": "223756463"
-    },
-    {
-      "id": "237b",
-      "nombre": "Lulu",
-      "email": "lulu@gmail.com",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "Centro de estetica",
-      "disponibilidad": "9 a 18 hs",
-      "descripcion": "tratamientos, depilacion",
-      "zona": "Faro Norte",
-      "telefono": "223475757",
-      "valoraciones": [
-        7
-      ]
     },
     {
       "id": "9584",
@@ -276,7 +258,7 @@
       "fecha": "2024-11-26",
       "horario": "14:00",
       "direccion": "colon 2587",
-      "estado": "aceptada",
+      "estado": "finalizada",
       "idUs": "dd94",
       "idTr": "d1cc"
     },
@@ -339,7 +321,7 @@
       "fecha": "2024-11-26",
       "horario": "10:00",
       "direccion": "catamarca 2020",
-      "estado": "pendiente",
+      "estado": "finalizada",
       "idUs": "dd94",
       "idTr": "4a58"
     },
@@ -369,6 +351,25 @@
       "estado": "finalizada",
       "idUs": "dd94",
       "idTr": "4a58"
+    },
+    {
+      "id": "3c8a",
+      "fecha": "2024-11-23",
+      "horario": "19:52",
+      "direccion": "AAAAAAAAAAAAAAAAAAAAAAA",
+      "estado": "finalizada",
+      "idUs": "8583",
+      "idTr": "4a58"
+    },
+    {
+      "id": "5a99",
+      "fecha": "2024-11-29",
+      "horario": "13:57",
+      "direccion": "BBBBBBBBBBBBBBB",
+      "estado": "finalizada",
+      "idUs": "8583",
+      "idTr": "d1cc",
+      "calificada": true
     }
   ]
 }
