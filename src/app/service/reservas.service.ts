@@ -53,7 +53,7 @@ export class ReservasService {
   getReserva(): Observable<Reserva[]>{
     return this.http.get<Reserva[]>(this.urlBase);
   }
-  
+
 
   getReservaById(id:string): Observable<Reserva>{
     return this.http.get<Reserva>(`${this.urlBase}/${id}`);
@@ -63,7 +63,7 @@ export class ReservasService {
   postReserva(reserva:Reserva): Observable<Reserva>{
     return this.http.post<Reserva>(this.urlBase, reserva);
  }
-      
+
  putReserva(reserva:Reserva, id:string | null): Observable<Reserva>{
   return this.http.put<Reserva>(`${this.urlBase}/${id}`,reserva);
 }
@@ -78,5 +78,4 @@ calificarReserva(id: string, calificacion: number): Observable<void> {
   return this.http.put<void>(url, { calificacion });
 }
 
-  
 }

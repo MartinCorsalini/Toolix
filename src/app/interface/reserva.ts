@@ -8,5 +8,6 @@ export interface Reserva {
     direccion: string,
     fecha: Date,
     horario:Time,
-    estado: 'aceptada' | 'rechazada' | 'pendiente' | 'finalizada'; // aceptada true, rechazada false
+    estado: 'aceptada' | 'rechazada' | 'pendiente' | 'finalizada',
+    calificada: boolean;
 }

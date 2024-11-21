@@ -45,6 +45,10 @@ export class UsuariosService {
     return this.http.put<Usuario>(`${this.urlBase}/${id}`,usuario);
   }
 
+  //Para solo actualizar cambios parciales
+  putUsuario2(cambios: Partial<Usuario>, id: string | null): Observable<Usuario> {
+    return this.http.put<Usuario>(`${this.urlBase}/${id}`, cambios);
+  }
 
   deleteUsuario(id?:string): Observable<void>{
     return this.http.delete<void>(`${this.urlBase}/${id}`);

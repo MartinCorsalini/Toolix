@@ -1,6 +1,28 @@
 <app-navbar-private></app-navbar-private>
 
+<!-- Pop-up de Calificación -->
+<div class="popup-overlay" *ngIf="mostrarPopup">
+  <div class="popup-dialog">
+    <h2 class="dialog-title">Calificar Reserva</h2>
+    <form [formGroup]="calificacionForm" (ngSubmit)="enviarCalificacion()">
 
+      <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Calificación (1 a 10)</mat-label>
+        <input matInput type="number" formControlName="calificacion" />
+        <mat-error *ngIf="calificacionForm.get('calificacion')?.invalid">
+          Ingresa una calificación válida (1 a 10).
+        </mat-error>
+      </mat-form-field>
+
+      <div class="dialog-actions">
+        <button mat-button type="button" (click)="cerrarPopup()" class="cancel-button">Cancelar</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="calificacionForm.invalid" class="submit-button">
+          Enviar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
 
 <div class="nav-icons">
   <!--------------------------------- SI NO ES ADMIN -------------------------------------->

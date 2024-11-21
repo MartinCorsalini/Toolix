@@ -11,23 +11,44 @@ import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../../service/auth.service';
 import { UsuariosService } from '../../../service/usuarios.service';
 import { Usuario } from '../../../interface/usuario';
-import { CalificarReservaComponent } from '../calificar-reserva/calificar-reserva/calificar-reserva.component';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatError, MatFormField, MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 
-
+import { MatInputModule } from '@angular/material/input'; // Importar MatInputModule
+import { MatButtonModule } from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-notifications',
   standalone: true,
-  imports: [NavbarPrivateComponent, CommonModule, AltaBajaReservaComponent,RouterModule,CalificarReservaComponent],
+  imports: [NavbarPrivateComponent,
+    CommonModule,
+    ReactiveFormsModule,
+     AltaBajaReservaComponent,
+     RouterModule,
+     MatFormField,
+     MatLabel,
+      MatError,
+      MatFormFieldModule,
+      MatInputModule,
+      MatButtonModule,
+    ],
+
   templateUrl: './notifications.component.html',
-  styleUrl: './notifications.component.css'
+  styleUrl: './notifications.component.css',
 })
 export class NotificationsComponent implements OnInit{
    // Arreglos para almacenar reservas enviadas y recibidas por el usuario
   reservasEnviadas: Reserva[]=[];
   reservasRecibidas: Reserva[]=[];
   esTrabajador: boolean = false;// Estado que indica si el usuario tiene rol de "Trabajador"
-  service= inject(UsuariosService);
+
+   // NUEVO: Variables para manejar el pop-up de calificación
+   mostrarPopup: boolean = false; // Controla si se muestra el pop-up
+   calificacionForm!: FormGroup; // Formulario de calificación
+   reservaSeleccionada: Reserva | null = null; // Reserva actualmente seleccionada para calificar
+
   // Estado que indica si el usuario tiene rol de "Trabajador"
   constructor(
     private user : AuthService,
@@ -35,9 +56,13 @@ export class NotificationsComponent implements OnInit{
     private dialog: MatDialog, // manejo de diálogos
     private router: Router,
     private cdr: ChangeDetectorRef,
-    private authService: AuthService
-  ) {}
-  
+    private service: UsuariosService,
+    private authService: AuthService,
+    private fb: FormBuilder
+  ) {this.calificacionForm = this.fb.group({
+    calificacion: [null, [Validators.required, Validators.min(1), Validators.max(10)]]
+  });}
+
 
   ngOnInit(): void {
     this.authService.currentUserId$.subscribe(id => {
@@ -148,90 +173,109 @@ export class NotificationsComponent implements OnInit{
   }
 
 
-  //-------------------------------------AGREGADO------------------------------------
-  abrirDialogoCalificacion(reserva: Reserva) {
-    const dialogRef = this.dialog.open(CalificarReservaComponent, {
-      width: '300px',
-      data: { reservaId: reserva.id }
-    });
-  
-    dialogRef.afterClosed().subscribe((calificacion: number) => {
-      if (calificacion) {
-        console.log(`Calificación recibida para la reserva ${reserva.id}: ${calificacion}`);
-        // Lógica para enviar la calificación al backend
-        this.reservasService.calificarReserva(reserva.id!, calificacion).subscribe({
-          next: () => {
-            this.dialog.open(DialogoComponent, {
-              data: { message: 'Gracias por calificar la reserva.' },
+  //-------------------------------------AGREGADO- CALIFICAR RESERVA ------------------------------------
+  // NUEVO: Método para abrir el pop-up de calificación
+  abrirDialogoCalificacion(reserva: Reserva): void {
+    this.reservaSeleccionada = reserva; // Establece la reserva actual
+    this.calificacionForm.reset(); // Resetea el formulario
+    this.mostrarPopup = true; // Muestra el pop-up
+  }
+
+  // NUEVO: Método para cerrar el pop-up de calificación
+  cerrarPopup(): void {
+    this.mostrarPopup = false;
+    this.reservaSeleccionada = null;
+  }
+
+  // NUEVO: Método para enviar la calificación
+  enviarCalificacion(): void {
+    if (this.calificacionForm.valid && this.reservaSeleccionada) {
+      console.log('Formulario válido y reserva seleccionada:', this.calificacionForm.value);
+      const calificacion = this.calificacionForm.value.calificacion;
+
+      // Obtén el ID del trabajador (idTr) de la reserva seleccionada
+      const idTrabajador = this.reservaSeleccionada.idTr;
+
+      if (idTrabajador) {
+        console.log(`Calificando al trabajador con ID: ${idTrabajador}`);
+        // Llama al servicio para actualizar las valoraciones del trabajador
+        this.service.getUsuarioById(idTrabajador).subscribe({
+          next: (trabajador: Usuario) => {
+            if (!trabajador.valoraciones) {
+              trabajador.valoraciones = []; // Inicializa el array si está vacío
+            }
+
+            trabajador.valoraciones.push(calificacion); // Agrega la nueva calificación
+
+            // Actualiza el usuario con las nuevas valoraciones
+          this.service.putUsuario2({ valoraciones: trabajador.valoraciones }, idTrabajador).subscribe({
+            next: () => {
+              console.log('Calificación guardada con éxito');
+              this.dialog.open(DialogoComponent, {
+                data: { message: 'Gracias por calificar la reserva.' }
+              });
+
+                // Marca la reserva como calificada (opcional, para evitar duplicados)
+                this.reservaSeleccionada!.calificada = true;
+
+                // Actualiza las reservas en el cliente
+                this.reservasEnviadas = this.reservasEnviadas.map(reserva =>
+                  reserva.id === this.reservaSeleccionada?.id
+                    ? { ...reserva, calificada: true }
+                    : reserva
+                );
+
+                this.cerrarPopup(); // Cierra el pop-up
+              },
+              error: () => {
+                this.dialog.open(DialogoComponent, {
+                  data: { message: 'Error al guardar la calificación. Inténtalo nuevamente.' }
+                });
+              }
             });
           },
           error: () => {
             this.dialog.open(DialogoComponent, {
-              data: { message: 'Error al enviar la calificación. Inténtalo nuevamente.' },
+              data: { message: 'No se pudo encontrar al trabajador asociado a la reserva.' }
             });
-          },
+          }
         });
+      }
+    }
+  }
+
+  // Aceptar una reserva
+  aceptarReserva(reserva: Reserva) {
+    reserva.estado = 'aceptada'; // Cambia el estado a "aceptada"
+    this.reservasService.putReserva(reserva, reserva.id).subscribe({
+      next: () => {
+        this.dialog.open(DialogoComponent, {
+          panelClass: "custom-dialog-container",
+          data: { message: "Reserva aceptada correctamente" }
+        });
+      },
+      error: (e: Error) => {
+        console.log('Error al aceptar la reserva');
       }
     });
   }
 
-  //-------------------------------------AGREGADO------------------------------------
-  cargarValoracionDB()
-    {
-
-      if (!this.usuario?.valoraciones) {
-        this.usuario!.valoraciones = this.usuario?.valoraciones ?? []; // Inicializa el array si está undefined
+  // Rechazar una reserva
+  rechazarReserva(reserva: Reserva)
+  {
+    reserva.estado = 'rechazada'; // Cambia el estado a "rechazada"
+    this.reservasService.putReserva(reserva, reserva.id).subscribe({
+      next: () => {
+        this.dialog.open(DialogoComponent, {
+          panelClass: "custom-dialog-container",
+          data: { message: "Reserva rechazada correctamente" }
+        });
+        //this.reservasRecibidas = this.reservasRecibidas.filter(res => res.id !== reserva.id);
+      },
+      error: (e: Error) => {
+        console.log('Error al rechazar la reserva');
       }
-
-      this.usuario!.valoraciones.push(this.valoracion!);
-
-      console.log('VALORACION CARGADA AL ARRAY: '+ this.valoracion + '   --ARRAY:' + this.usuario?.valoraciones);
-
-      this.service.putUsuario(this.usuario!, this.usuario?.id!).subscribe(
-        {
-          next: ()=>
-          {
-            alert('Actualizado correctamente');
-           
-          },
-          error: (e: Error)=>{
-            alert('Se ha producido un error al actualizar: '+ e.message);
-          }
-        }
-      )
-    }
-
- // Aceptar una reserva
- aceptarReserva(reserva: Reserva) {
-  reserva.estado = 'aceptada'; // Cambia el estado a "aceptada"
-  this.reservasService.putReserva(reserva, reserva.id).subscribe({
-    next: () => {
-      this.dialog.open(DialogoComponent, {
-        panelClass: "custom-dialog-container",
-        data: { message: "Reserva aceptada correctamente" }
-      });
-    },
-    error: (e: Error) => {
-      console.log('Error al aceptar la reserva');
-    }
-  });
-}
-
-// Rechazar una reserva
-rechazarReserva(reserva: Reserva) {
-  reserva.estado = 'rechazada'; // Cambia el estado a "rechazada"
-  this.reservasService.putReserva(reserva, reserva.id).subscribe({
-    next: () => {
-      this.dialog.open(DialogoComponent, {
-        panelClass: "custom-dialog-container",
-        data: { message: "Reserva rechazada correctamente" }
-      });
-      //this.reservasRecibidas = this.reservasRecibidas.filter(res => res.id !== reserva.id);
-    },
-    error: (e: Error) => {
-      console.log('Error al rechazar la reserva');
-    }
-  });
+    });
 }
 
 
