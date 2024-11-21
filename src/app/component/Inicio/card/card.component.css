@@ -19,7 +19,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
-  background-color: #FFFFFF;
+  background: rgba(255, 65, 108, 0.1);
   /*background-image: url('../../../../assets/images/seccion-perfiles.webp');*/
 }
 

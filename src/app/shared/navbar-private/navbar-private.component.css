@@ -122,6 +122,7 @@
   color: #333; /* Color gris para los enlaces */
   font-size: 14px; /* Tamaño de fuente de los enlaces */
   transition: background-color 0.3s ease; /* Transición para el cambio de fondo */
+  cursor: pointer;
 }
 
 /* Cambio de color en hover de los enlaces del menú */
