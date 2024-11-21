@@ -9,6 +9,7 @@ html, body {
   font-family: 'Montserrat', sans-serif;
   justify-content: center; /* Centrado horizontal */
   align-items: center; /* Centrado vertical */
+
 }
 
 /* El contenedor principal (app-root o un div principal) debe tener al menos 100vh */

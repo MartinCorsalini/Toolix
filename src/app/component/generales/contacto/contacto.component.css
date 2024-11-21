@@ -15,6 +15,7 @@ html, body {
   align-items: flex-start;  /* Cambié align-items a flex-start para mantener el contenedor al inicio de la pantalla */
   width: 100%;  /* Ocupa todo el ancho disponible */
   height: 100%;  /* Ocupa toda la altura de la pantalla */
+
 }
 
 /* Contenedor que aloja el contenido de contacto */

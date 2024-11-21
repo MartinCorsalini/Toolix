@@ -7,58 +7,53 @@
       <div class="perfil-info">
         <h2>{{ usuario?.nombre }}</h2>
 
-        @if (usuario?.rol != 'Admin') {
-
-          @if(usuario?.rol != 'Cliente')
-          {
-            <p class="profesion">{{ usuario?.profesion }}</p>
-
-            <div class="perfil-rating">
-              <p class="rating-title">Puntuación</p>
-              <span class="rating-value">{{ promedio | number:'1.1-1' }}</span>
-              <div class="rating-stars">
-                <ng-container *ngFor="let star of stars">
-                  <span *ngIf="star === 1">&#9733;</span>       <!-- Estrella llena -->
-                  <span *ngIf="star === 0.5">&#x272E;</span>    <!-- Media estrella (estrella de diferente estilo) -->
-                  <span *ngIf="star === 0">&#9734;</span>       <!-- Estrella vacía -->
-                </ng-container>
-              </div>
-            </div>
-
-            <div class="perfil-detalles">
-              <p><strong>Email:</strong> {{ usuario?.email }}</p>
-              <p> <strong>Teléfono:</strong> {{ usuario?.telefono }}</p>
-
-              @if(usuario?.rol != 'Cliente')
-                  {
-                    <p><strong>Disponibilidad:</strong> {{ usuario?.disponibilidad }}</p>
-                  }
-
-              <p><strong>Zona:</strong> {{ usuario?.zona }}</p>
-              <p><strong>Descripción:</strong> {{ usuario?.descripcion }}</p>
-
-              <div>
-                <button (click)="irAModificar(usuario?.id!)" >Modificar datos</button>
-                <button [routerLink]="['/eliminar-cuenta', usuario?.id] ">Eliminar mi cuenta</button>
-                <button [routerLink]="['/home', usuario?.id]">Atrás</button>
-              </div>
-
-            </div>
-          }
-        }
-        @else {
-          <div class="perfil-detalles" >
+        <!-- Detalles para Cliente -->
+        <div class="perfil-detalles" *ngIf="usuario?.rol === 'Cliente'">
           <p><strong>Email:</strong> {{ usuario?.email }}</p>
-
+          <p><strong>Teléfono:</strong> {{ usuario?.telefono }}</p>
+          <p><strong>Descripcion:</strong> {{ usuario?.descripcion }}</p>
+          <div>
+            <button (click)="irAModificar(usuario?.id!)">Modificar datos</button>
+            <button [routerLink]="['/eliminar-cuenta', usuario?.id]">Eliminar mi cuenta</button>
             <button [routerLink]="['/home', usuario?.id]">Atrás</button>
           </div>
+        </div>
 
-        }
+        <!-- Detalles para Admin -->
+        <div class="perfil-detalles" *ngIf="usuario?.rol === 'Admin'">
+          <p><strong>Email:</strong> {{ usuario?.email }}</p>
+          <div>
+            <button [routerLink]="['/home', usuario?.id]">Atrás</button>
+          </div>
+        </div>
 
+        <!-- Detalles para otros roles -->
+        <div class="perfil-detalles" *ngIf="usuario?.rol !== 'Cliente' && usuario?.rol !== 'Admin'">
+          <p class="profesion">{{ usuario?.profesion }}</p>
+          <div class="perfil-rating">
+            <p class="rating-title">Puntuación</p>
+            <span class="rating-value">{{ promedio | number: '1.1-1' }}</span>
+            <div class="rating-stars">
+              <ng-container *ngFor="let star of stars">
+                <span *ngIf="star === 1">&#9733;</span>
+                <span *ngIf="star === 0.5">&#x272E;</span>
+                <span *ngIf="star === 0">&#9734;</span>
+              </ng-container>
+            </div>
+          </div>
+          <p><strong>Email:</strong> {{ usuario?.email }}</p>
+          <p><strong>Teléfono:</strong> {{ usuario?.telefono }}</p>
+          <p><strong>Disponibilidad:</strong> {{ usuario?.disponibilidad }}</p>
+          <p><strong>Zona:</strong> {{ usuario?.zona }}</p>
+          <p><strong>Descripción:</strong> {{ usuario?.descripcion }}</p>
+          <div>
+            <button (click)="irAModificar(usuario?.id!)">Modificar datos</button>
+            <button [routerLink]="['/eliminar-cuenta', usuario?.id]">Eliminar mi cuenta</button>
+            <button [routerLink]="['/home', usuario?.id]">Atrás</button>
+          </div>
+        </div>
 
       </div>
     </div>
-
-
   </div>
 </div>

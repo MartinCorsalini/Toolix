@@ -8,11 +8,13 @@
       "id": "42m1"
     },
     {
-      "id": "dd94",
       "nombre": "Martin",
+      "descripcion": "Sociable",
+      "telefono": "2235857234",
       "email": "martin@gmail.com",
       "password": "1234567",
-      "rol": "Cliente"
+      "rol": "Cliente",
+      "id": "dd94"
     },
     {
       "id": "8583",
@@ -67,7 +69,10 @@
       "disponibilidad": "7 a 17 hs",
       "descripcion": "conexiones nuevas, cambios de voltaje, presupuesto sin cargo",
       "zona": "Playa Grande",
-      "telefono": "223568843"
+      "telefono": "223568843",
+      "valoraciones": [
+        8
+      ]
     },
     {
       "id": "30d4",
@@ -79,7 +84,10 @@
       "disponibilidad": "9 a 18 hs ",
       "descripcion": "Local en el centro, unisex",
       "zona": "Centro",
-      "telefono": "223456784"
+      "telefono": "223456784",
+      "valoraciones": [
+        10
+      ]
     },
     {
       "id": "4a58",
@@ -91,7 +99,10 @@
       "disponibilidad": "9 a 18 hs",
       "descripcion": "Familia, Civil, especialista en Laboral",
       "zona": "Caisamar",
-      "telefono": "22357336"
+      "telefono": "22357336",
+      "valoraciones": [
+        9
+      ]
     },
     {
       "id": "dd00",
@@ -115,7 +126,10 @@
       "disponibilidad": "9 a 18 hs",
       "descripcion": "tratamientos, depilacion",
       "zona": "Faro Norte",
-      "telefono": "223475757"
+      "telefono": "223475757",
+      "valoraciones": [
+        7
+      ]
     },
     {
       "id": "9584",
@@ -127,7 +141,10 @@
       "disponibilidad": "9 a 18 hs",
       "descripcion": "manejamos tu negocio con la afip",
       "zona": "Caisamar",
-      "telefono": "2235773626"
+      "telefono": "2235773626",
+      "valoraciones": [
+        3
+      ]
     },
     {
       "id": "03ba",
@@ -139,7 +156,10 @@
       "disponibilidad": "9 a 18 hs",
       "descripcion": "cambios de cierres, arreglo prendas deterioradas",
       "zona": "Bosque Peralta Ramos",
-      "telefono": "223576771"
+      "telefono": "223576771",
+      "valoraciones": [
+        6
+      ]
     },
     {
       "id": "a8bc",
@@ -259,6 +279,60 @@
       "estado": "aceptada",
       "idUs": "dd94",
       "idTr": "d1cc"
+    },
+    {
+      "id": "14c2",
+      "fecha": "2024-11-30",
+      "horario": "14:30",
+      "direccion": "San martin 1996",
+      "estado": "pendiente",
+      "idUs": "dd94",
+      "idTr": "d96a"
+    },
+    {
+      "id": "5844",
+      "fecha": "2024-11-24",
+      "horario": "11:00",
+      "direccion": "Guemes 1334",
+      "estado": "pendiente",
+      "idUs": "dd94",
+      "idTr": "30d4"
+    },
+    {
+      "id": "2f80",
+      "fecha": "2024-12-16",
+      "horario": "16:00",
+      "direccion": "Av libertad 2020",
+      "estado": "rechazada",
+      "idUs": "8583",
+      "idTr": "4a58"
+    },
+    {
+      "id": "c82b",
+      "fecha": "2024-12-26",
+      "horario": "10:00",
+      "direccion": "Balcarce 2022",
+      "estado": "aceptada",
+      "idUs": "8583",
+      "idTr": "237b"
+    },
+    {
+      "id": "e200",
+      "fecha": "2024-12-03",
+      "horario": "10:00",
+      "direccion": "Luro 3030",
+      "estado": "pendiente",
+      "idUs": "9b8e",
+      "idTr": "9584"
+    },
+    {
+      "id": "264b",
+      "fecha": "2024-11-26",
+      "horario": "14:30",
+      "direccion": "San luis 1550",
+      "estado": "pendiente",
+      "idUs": "9b8e",
+      "idTr": "03ba"
     }
   ]
 }
