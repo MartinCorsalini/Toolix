@@ -312,7 +312,7 @@
       "fecha": "2024-12-26",
       "horario": "10:00",
       "direccion": "Balcarce 2022",
-      "estado": "aceptada",
+      "estado": "finalizada",
       "idUs": "8583",
       "idTr": "237b"
     },
@@ -333,6 +333,42 @@
       "estado": "pendiente",
       "idUs": "9b8e",
       "idTr": "03ba"
+    },
+    {
+      "id": "3158",
+      "fecha": "2024-11-26",
+      "horario": "10:00",
+      "direccion": "catamarca 2020",
+      "estado": "pendiente",
+      "idUs": "dd94",
+      "idTr": "4a58"
+    },
+    {
+      "id": "8ffa",
+      "fecha": "2024-12-10",
+      "horario": "10:00",
+      "direccion": "cordoba 2020",
+      "estado": "aceptada",
+      "idUs": "dd94",
+      "idTr": "237b"
+    },
+    {
+      "id": "11eb",
+      "fecha": "2024-11-24",
+      "horario": "10:30",
+      "direccion": "Independencia 1090",
+      "estado": "aceptada",
+      "idUs": "dd94",
+      "idTr": "237b"
+    },
+    {
+      "id": "ad09",
+      "fecha": "2024-12-10",
+      "horario": "10:00",
+      "direccion": "olavarria 2020",
+      "estado": "finalizada",
+      "idUs": "dd94",
+      "idTr": "4a58"
     }
   ]
 }

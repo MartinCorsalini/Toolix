@@ -72,5 +72,11 @@ deleteReserva(id:string | null): Observable<void>{
   return this.http.delete<void>(`${this.urlBase}/${id}`);
 
 }
+
+calificarReserva(id: string, calificacion: number): Observable<void> {
+  const url = `${this.urlBase}/${id}/calificar`;
+  return this.http.put<void>(url, { calificacion });
+}
+
   
 }

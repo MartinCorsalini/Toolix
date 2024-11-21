@@ -5,7 +5,7 @@
   align-items: center; /* Centra el search-wrapper horizontalmente */
   width: 100%;
   margin: 0; /* Añade margen superior para separarlo de otros elementos */
-  background: rgba(255, 65, 108, 0.1);
+  background-color: #f5f5dc;
 }
 
 .search-container {

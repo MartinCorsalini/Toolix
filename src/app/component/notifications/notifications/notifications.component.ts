@@ -1,23 +1,24 @@
 import { ChangeDetectorRef, Component, inject, Inject, OnInit } from '@angular/core';
-import { NavbarPrivateComponent } from "../../shared/navbar-private/navbar-private.component";
-import { Reserva } from '../../interface/reserva';
+import { NavbarPrivateComponent } from "../../../shared/navbar-private/navbar-private.component";
+import { Reserva } from '../../../interface/reserva';
 import { CommonModule } from '@angular/common';
-import { AltaBajaReservaComponent } from "../Reservas/alta-baja-reserva/alta-baja-reserva.component";
-import { ReservasService } from '../../service/reservas.service';
+import { AltaBajaReservaComponent } from "../../Reservas/alta-baja-reserva/alta-baja-reserva.component";
+import { ReservasService } from '../../../service/reservas.service';
 
 import { MatDialog } from '@angular/material/dialog';
-import { DialogoComponent } from '../Inicio/cuadro-dialogo/cuadro-dialogo.component';
+import { DialogoComponent } from '../../Inicio/cuadro-dialogo/cuadro-dialogo.component';
 import { Router, RouterModule } from '@angular/router';
-import { AuthService } from '../../service/auth.service';
-import { UsuariosService } from '../../service/usuarios.service';
-import { Usuario } from '../../interface/usuario';
+import { AuthService } from '../../../service/auth.service';
+import { UsuariosService } from '../../../service/usuarios.service';
+import { Usuario } from '../../../interface/usuario';
+import { CalificarReservaComponent } from '../calificar-reserva/calificar-reserva/calificar-reserva.component';
 
 
 
 @Component({
   selector: 'app-notifications',
   standalone: true,
-  imports: [NavbarPrivateComponent, CommonModule, AltaBajaReservaComponent,RouterModule],
+  imports: [NavbarPrivateComponent, CommonModule, AltaBajaReservaComponent,RouterModule,CalificarReservaComponent],
   templateUrl: './notifications.component.html',
   styleUrl: './notifications.component.css'
 })
@@ -26,7 +27,7 @@ export class NotificationsComponent implements OnInit{
   reservasEnviadas: Reserva[]=[];
   reservasRecibidas: Reserva[]=[];
   esTrabajador: boolean = false;// Estado que indica si el usuario tiene rol de "Trabajador"
-
+  service= inject(UsuariosService);
   // Estado que indica si el usuario tiene rol de "Trabajador"
   constructor(
     private user : AuthService,
@@ -36,7 +37,7 @@ export class NotificationsComponent implements OnInit{
     private cdr: ChangeDetectorRef,
     private authService: AuthService
   ) {}
-  service= inject(UsuariosService);
+  
 
   ngOnInit(): void {
     this.authService.currentUserId$.subscribe(id => {
@@ -51,7 +52,7 @@ export class NotificationsComponent implements OnInit{
       this.reservasService.getReserva().subscribe((reservas) => {
         const userId = this.user.getUserId();
 
-        const estadoOrden = { pendiente: 1, aceptada: 2, rechazada: 3 };
+        const estadoOrden = { pendiente: 1, aceptada: 2, rechazada: 3, finalizada: 4};
 
         // Filtra y ordena reservas recibidas
         this.reservasRecibidas = reservas
@@ -116,7 +117,89 @@ export class NotificationsComponent implements OnInit{
 
   }
 
+  //-------------------------------------AGREGADO------------------------------------
+  // Finalizar una reserva
+  finalizarReserva(reserva: Reserva) {
+    reserva.estado = 'finalizada'; // Cambia el estado a "finalizado"
+    this.reservasService.putReserva(reserva, reserva.id).subscribe({
+      next: () => {
+        this.dialog.open(DialogoComponent, {
+          panelClass: "custom-dialog-container",
+          data: { message: "Reserva finalizada correctamente" }
+        });
 
+        // Actualiza las reservas locales
+        if (this.esTrabajador) {
+          // Si es trabajador, actualiza reservas recibidas
+          this.reservasRecibidas = this.reservasRecibidas.map(r =>
+            r.id === reserva.id ? { ...r, estado: 'finalizada' } : r
+          );
+        } else {
+          // Si es cliente, actualiza reservas enviadas
+          this.reservasEnviadas = this.reservasEnviadas.map(r =>
+            r.id === reserva.id ? { ...r, estado: 'finalizada' } : r
+          );
+        }
+      },
+      error: (e: Error) => {
+        console.log('Error al finalizar la reserva');
+      }
+    });
+  }
+
+
+  //-------------------------------------AGREGADO------------------------------------
+  abrirDialogoCalificacion(reserva: Reserva) {
+    const dialogRef = this.dialog.open(CalificarReservaComponent, {
+      width: '300px',
+      data: { reservaId: reserva.id }
+    });
+  
+    dialogRef.afterClosed().subscribe((calificacion: number) => {
+      if (calificacion) {
+        console.log(`Calificación recibida para la reserva ${reserva.id}: ${calificacion}`);
+        // Lógica para enviar la calificación al backend
+        this.reservasService.calificarReserva(reserva.id!, calificacion).subscribe({
+          next: () => {
+            this.dialog.open(DialogoComponent, {
+              data: { message: 'Gracias por calificar la reserva.' },
+            });
+          },
+          error: () => {
+            this.dialog.open(DialogoComponent, {
+              data: { message: 'Error al enviar la calificación. Inténtalo nuevamente.' },
+            });
+          },
+        });
+      }
+    });
+  }
+
+  //-------------------------------------AGREGADO------------------------------------
+  cargarValoracionDB()
+    {
+
+      if (!this.usuario?.valoraciones) {
+        this.usuario!.valoraciones = this.usuario?.valoraciones ?? []; // Inicializa el array si está undefined
+      }
+
+      this.usuario!.valoraciones.push(this.valoracion!);
+
+      console.log('VALORACION CARGADA AL ARRAY: '+ this.valoracion + '   --ARRAY:' + this.usuario?.valoraciones);
+
+      this.service.putUsuario(this.usuario!, this.usuario?.id!).subscribe(
+        {
+          next: ()=>
+          {
+            alert('Actualizado correctamente');
+           
+          },
+          error: (e: Error)=>{
+            alert('Se ha producido un error al actualizar: '+ e.message);
+          }
+        }
+      )
+    }
 
  // Aceptar una reserva
  aceptarReserva(reserva: Reserva) {
@@ -204,7 +287,7 @@ rechazarReserva(reserva: Reserva) {
       next: (reservas: Reserva[]) => {
        // this.reservas = reservas; // Asigna las reservas obtenidas del servidor
        this.reservas = reservas.sort((a, b) => {
-        const estadoOrden = { pendiente: 1, aceptada: 2, rechazada: 3 };
+        const estadoOrden = { pendiente: 1, aceptada: 2, rechazada: 3, finalizada: 4 };
         return estadoOrden[a.estado] - estadoOrden[b.estado];
       });
       },
