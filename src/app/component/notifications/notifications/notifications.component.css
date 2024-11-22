@@ -93,6 +93,7 @@ body {
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
   display: inline-block;
+
 }
 
 .accept-btn {
@@ -157,7 +158,7 @@ body {
   border-radius: 6px;
   font-size: 1em;
   font-weight: bold;
-  color: white;
+  color: rgb(85, 82, 82);
   text-transform: uppercase;
   width: fit-content;
   margin-top: 15px;
@@ -324,4 +325,115 @@ body {
 
 .submit-button:hover:not(:disabled) {
   background-color: #45a049;
+}
+
+.calificada-badge {
+  background-color: #66BB6A;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: 600;
+  display: flex;           /* o también puedes usar display: inline-flex */
+  justify-content: center; /* centra horizontalmente */
+  align-items: center;     /* centra verticalmente */
+  text-align: center;      /* asegura que el texto esté centrado */
+}
+
+
+
+.rechazada-badge {
+  background-color: #DC3545;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  /* Propiedades para centrar */
+  display: flex;           /* o también puedes usar display: inline-flex */
+  justify-content: center; /* centra horizontalmente */
+  align-items: center;     /* centra verticalmente */
+  text-align: center;      /* asegura que el texto esté centrado */
+}
+/* Agrega estos estilos en tu notifications.component.css */
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.popup-dialog {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+}
+
+.dialog-title {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Estilos para los botones */
+.cancel-button {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  background: #e53935;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-button {
+  padding: 8px 16px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Asegura que el input tenga un estilo consistente */
+.mat-form-field {
+  width: 100%;
+}
+
+/* Animación de entrada suave */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.popup-overlay {
+  animation: fadeIn 0.2s ease-in-out;
 }
