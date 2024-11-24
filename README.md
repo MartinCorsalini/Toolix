@@ -5,6 +5,7 @@
 ## Características
 - Búsqueda de profesionales por categoría.
 - Sistema de roles para usuarios (Admin ,Cliente, trabajador).
+- Sistema de gestión de reservas entre clientes y trabajadores
 
 ## Uso
 1. Regístrate o inicia sesión con un rol asignado.
