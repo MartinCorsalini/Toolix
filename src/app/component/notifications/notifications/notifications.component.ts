@@ -247,8 +247,10 @@ enviarCalificacion(): void {
                     );
 
                     this.dialog.open(DialogoComponent, {
+                      panelClass: "custom-dialog-container",
                       data: { message: 'Gracias por calificar la reserva.' }
                     });
+
 
                     this.cerrarPopup(); // Cierra el pop-up
                   },
