@@ -79,7 +79,8 @@
       "zona": "Playa Grande",
       "telefono": "223568843",
       "valoraciones": [
-        8
+        8,
+        5
       ]
     },
     {
@@ -109,7 +110,8 @@
       "zona": "Punta Mogotes",
       "telefono": "223756463",
       "valoraciones": [
-        4
+        4,
+        2
       ]
     },
     {
@@ -152,7 +154,11 @@
       "disponibilidad": "9 a 18 hs",
       "descripcion": "cambio de calefactor, arreglo de calefon termos",
       "zona": "Constitución",
-      "telefono": "2236674761"
+      "telefono": "2236674761",
+      "valoraciones": [
+        6,
+        2
+      ]
     },
     {
       "id": "01f9",
@@ -164,7 +170,10 @@
       "disponibilidad": "9 a 18 hs",
       "descripcion": "limpio casas, departamentos",
       "zona": "Los Troncos",
-      "telefono": "2235471717"
+      "telefono": "2235471717",
+      "valoraciones": [
+        8
+      ]
     },
     {
       "id": "f21c",
@@ -192,7 +201,10 @@
       "disponibilidad": "9 a 18 hs",
       "descripcion": "paredes, cielo raso, puertas",
       "zona": "La Perla",
-      "telefono": "223674171"
+      "telefono": "223674171",
+      "valoraciones": [
+        7
+      ]
     },
     {
       "id": "f1d1",
@@ -219,7 +231,10 @@
       "disponibilidad": "9 a 18 hs",
       "descripcion": "atencion a parejas niños, terapia cognitivo-conductual",
       "zona": "Barrio Chauvin",
-      "telefono": "22358123123"
+      "telefono": "22358123123",
+      "valoraciones": [
+        5
+      ]
     },
     {
       "id": "cfad",
@@ -231,7 +246,10 @@
       "disponibilidad": "9 a 18 hs",
       "descripcion": "sillones, sillas, presupuesto sin cargo",
       "zona": "Alfar",
-      "telefono": "223575711"
+      "telefono": "223575711",
+      "valoraciones": [
+        6
+      ]
     },
     {
       "id": "bbba",
@@ -243,7 +261,10 @@
       "disponibilidad": "9 a 18 hs",
       "descripcion": "reparo techo de tejasy chapa, presupuesto sin cargo",
       "zona": "Camet",
-      "telefono": "22371473712"
+      "telefono": "22371473712",
+      "valoraciones": [
+        8
+      ]
     },
     {
       "id": "913a",
@@ -255,7 +276,10 @@
       "disponibilidad": "9 a 18 hs",
       "descripcion": "uñas, pestañas, permanentes ",
       "zona": "Centro",
-      "telefono": "22317127312"
+      "telefono": "22317127312",
+      "valoraciones": [
+        8
+      ]
     }
   ],
   "reservas": [
@@ -316,6 +340,92 @@
       "estado": "rechazada",
       "idUs": "8583",
       "idTr": "89a1"
+    },
+    {
+      "id": "e248",
+      "fecha": "2025-02-11",
+      "horario": "11:00",
+      "direccion": "brown 2020",
+      "estado": "finalizada",
+      "idUs": "8583",
+      "idTr": "bbba",
+      "calificada": true
+    },
+    {
+      "id": "868c",
+      "fecha": "2025-04-04",
+      "horario": "08:00",
+      "direccion": "gascon 1020",
+      "estado": "finalizada",
+      "idUs": "42m1",
+      "idTr": "cfad",
+      "calificada": true
+    },
+    {
+      "id": "dcc0",
+      "fecha": "2025-11-11",
+      "horario": "11:00",
+      "direccion": "libertad 990",
+      "estado": "finalizada",
+      "idUs": "8583",
+      "idTr": "913a",
+      "calificada": true
+    },
+    {
+      "fecha": "2024-11-29",
+      "horario": "02:56",
+      "direccion": "Luro 2567",
+      "estado": "pendiente",
+      "id": "f42c",
+      "idTr": "d1cc",
+      "idUs": "dd00"
+    },
+    {
+      "id": "51d5",
+      "fecha": "2024-11-29",
+      "horario": "02:57",
+      "direccion": "Alvarado 3245",
+      "estado": "finalizada",
+      "idUs": "dd00",
+      "idTr": "d96a",
+      "calificada": true
+    },
+    {
+      "id": "c166",
+      "fecha": "2024-11-27",
+      "horario": "03:09",
+      "direccion": "Belgrano 2354",
+      "estado": "rechazada",
+      "idUs": "dd00",
+      "idTr": "d96a"
+    },
+    {
+      "id": "2d53",
+      "fecha": "2024-11-27",
+      "horario": "09:05",
+      "direccion": "San luis 2354",
+      "estado": "aceptada",
+      "idUs": "d96a",
+      "idTr": "dd00"
+    },
+    {
+      "id": "fb13",
+      "fecha": "2024-11-25",
+      "horario": "03:11",
+      "direccion": "Luro 2355",
+      "estado": "rechazada",
+      "idUs": "d96a",
+      "idTr": "dd00"
+    },
+    {
+      "id": "9988",
+      "fecha": "2024-11-28",
+      "horario": "03:12",
+      "direccion": "Moreno 2345",
+      "estado": "finalizada",
+      "idUs": "d96a",
+      "idTr": "dd00",
+      "calificada": true
     }
   ]
 }
