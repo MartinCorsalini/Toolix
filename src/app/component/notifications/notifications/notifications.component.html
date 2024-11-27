@@ -34,6 +34,12 @@
                             <span class="field-label">Dirección</span>
                             <span class="field-value">{{ reserva.direccion }}</span>
                           </div>
+                          <div class="reservation-details">
+                            <div class="reservation-field">
+                              <span class="field-label">Problema:</span>
+                              <span class="field-value">{{ reserva.descProblema }}</span>
+                            </div>
+                          </div>
                           <div class="reservation-field">
                             <span class="field-label">Fecha</span>
                             <span class="field-value">{{ reserva.fecha }}</span>
@@ -44,12 +50,16 @@
                           </div>
                           <div class="reservation-field">
                             <span class="field-label">Cliente</span>
-                            <span class="field-value">{{ usuarioNombres[reserva.idUs!] || 'Cargando...' }}</span>
+                            <span class="field-value">{{ usuarioNombres[reserva.idUs!] || 'Cargando...' }}
+                              <button class="view-profile-btn" *ngIf="reserva.idUs" (click)="irAlPerfil(reserva.idUs)">
+                                Ver Perfil
+                              </button>
+                            </span>
                           </div>
-                          <div class="reservation-field">
+                          <!-- <div class="reservation-field">
                             <span class="field-label">Trabajador</span>
                             <span class="field-value">{{ trabajadorNombres[reserva.idTr!] || 'Cargando...' }}</span>
-                          </div>
+                          </div> -->
                         </div>
                         <div class="actions">
                           <!-- Mostrar botones solo si la reserva está pendiente -->
@@ -105,6 +115,12 @@
                       <span class="field-label">Dirección</span>
                       <span class="field-value">{{ reserva.direccion }}</span>
                     </div>
+                    <div class="reservation-details">
+                      <div class="reservation-field">
+                        <span class="field-label">Problema:</span>
+                        <span class="field-value">{{ reserva.descProblema }}</span>
+                      </div>
+                    </div>
                     <div class="reservation-field">
                       <span class="field-label">Fecha</span>
                       <span class="field-value">{{ reserva.fecha }}</span>
@@ -117,13 +133,17 @@
                       <span class="field-label">Estado</span>
                       <span class="field-value">{{ reserva.estado }}</span>
                     </div>
-                    <div class="reservation-field">
+                    <!-- <div class="reservation-field">
                       <span class="field-label">Cliente</span>
                       <span class="field-value">{{ usuarioNombres[reserva.idUs!] || 'Cargando...' }}</span>
-                    </div>
+                    </div> -->
                     <div class="reservation-field">
                       <span class="field-label">Trabajador</span>
-                      <span class="field-value">{{ trabajadorNombres[reserva.idTr!] || 'Cargando...' }}</span>
+                      <span class="field-value">{{ trabajadorNombres[reserva.idTr!] || 'Cargando...' }}
+                        <button class="view-profile-btn" *ngIf="reserva.idTr" (click)="irAlPerfil(reserva.idTr)">
+                          Ver Perfil
+                        </button>
+                      </span>
                     </div>
                   </div>
 
@@ -178,6 +198,12 @@
                   <span class="field-label">Dirección</span>
                   <span class="field-value">{{ reserva.direccion }}</span>
                 </div>
+                <div class="reservation-details">
+                  <div class="reservation-field">
+                    <span class="field-label">Problema:</span>
+                    <span class="field-value">{{ reserva.descProblema }}</span>
+                  </div>
+                </div>
                 <div class="reservation-field">
                   <span class="field-label">Fecha</span>
                   <span class="field-value">{{ reserva.fecha }}</span>
@@ -191,17 +217,24 @@
                   <span class="field-value">{{ reserva.id }}</span>
                 </div>
 
-                <!--
                 <div class="reservation-field">
                   <span class="field-label">Cliente</span>
-                  <span class="field-value">{{ usuarioNombres[reserva.idUs!] || 'Cargando...' }}</span>
+                  <span class="field-value">{{ usuarioNombres[reserva.idUs!] || 'Cargando...' }}
+                    <button class="view-profile-btn" *ngIf="reserva.idUs" (click)="irAlPerfil(reserva.idUs)">
+                      Ver Perfil
+                    </button>
+                  </span>
                 </div>
                 <div class="reservation-field">
                   <span class="field-label">Trabajador</span>
-                  <span class="field-value">{{ trabajadorNombres[reserva.idTr!] || 'Cargando...' }}</span>
+                  <span class="field-value">{{ trabajadorNombres[reserva.idTr!] || 'Cargando...' }}
+                    <button class="view-profile-btn" *ngIf="reserva.idTr" (click)="irAlPerfil(reserva.idTr)">
+                      Ver Perfil
+                    </button>
+                  </span>
                 </div>
-                -->
-<!--------------------AGREGADOOO--------------------->
+                
+                  <!--------------------AGREGADOOO--------------------->
                   <!-- ACÁ TENDRIA QUE ESTAR EL IF. GUARDA QUE QUE ABAJO TIENE OTRO IF Y UN ELSE DENTRO.  -->
                   <div class="actions">
                     <!-- Mostrar el botón "Calificar" si la reserva está finalizada y no calificada -->
@@ -226,23 +259,13 @@
                         <button (click)="eliminarReserva(reserva.id!)" class="reject-btn">Eliminar</button>
                       </ng-container>
                     </ng-template>
-                  </div>
-
-
-
-
-                <!---------------------------------------------------------------------------------->
-              </div>
-              <!-- <div class="actions">
-                <button (click)="irAModificarReserva(reserva)" class="accept-btn">Modificar</button>
-                <button (click)="eliminarReserva(reserva.id!)" class="reject-btn">Eliminar</button>
-              </div> -->
-            </li>
+                  </div>  
+              </div>           
           </ul>
         </div>
       </div>
     }
-    </div>
+ </div>
 
 
     <!-- Pop-up de Calificación -->
@@ -283,5 +306,4 @@
     </form>
   </div>
 </div>
-
-    }
+}
