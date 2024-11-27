@@ -402,6 +402,11 @@ enviarCalificacion(): void {
   )
   }
 
+  irAlPerfil(id: string): void {
+    // Redirige al perfil según el tipo y el ID
+    this.router.navigate([`/perfil-trabajador/${id}`]);
+  }
+
 }
 
 

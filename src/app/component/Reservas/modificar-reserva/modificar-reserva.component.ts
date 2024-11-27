@@ -21,6 +21,7 @@ export class ModificarReservaComponent implements OnInit {
   reservaId: string | null = null;
   trabajadorId: string | null = null;
   fechaMinima: string = '';
+  caracteresRestantes: number = 50; // Límite máximo de caracteres
 
   @Output()
   eventReservaModificada = new EventEmitter<void>();
@@ -58,6 +59,7 @@ export class ModificarReservaComponent implements OnInit {
         this.horarioValidator
       ]],
       direccion: ['', Validators.required],
+      descProblema: ['', [Validators.required, Validators.maxLength(50)]],
       estado: ['pendiente']
     });
 
@@ -66,6 +68,9 @@ export class ModificarReservaComponent implements OnInit {
     if (this.reservaId) {
       this.cargarDatosReserva(this.reservaId);
     }
+
+    // Inicializar el contador basado en el valor inicial
+    this.actualizarContador();
   }
 
   // Método para obtener la fecha actual en formato YYYY-MM-DD
@@ -115,6 +120,14 @@ export class ModificarReservaComponent implements OnInit {
     return fecha1.getFullYear() === fecha2.getFullYear() &&
            fecha1.getMonth() === fecha2.getMonth() &&
            fecha1.getDate() === fecha2.getDate();
+  }
+
+  actualizarContador(): void {
+    const descProblemaControl = this.modificarRForm.get('descProblema');
+    if (descProblemaControl) {
+      const textoActual = descProblemaControl.value || '';
+      this.caracteresRestantes = 50 - textoActual.length;
+    }
   }
 
   cargarDatosReserva(id: string): void {

@@ -26,6 +26,7 @@ export class AltaBajaReservaComponent implements OnInit {
   usuarioActualId: string | undefined = undefined;
   trabajadorId: string | null = null;
   fechaMinima: string;
+  caracteresRestantes: number = 50; // Límite máximo de caracteres
 
   constructor(
     private fb: FormBuilder,
@@ -54,7 +55,7 @@ export class AltaBajaReservaComponent implements OnInit {
         this.validarHorarioActual.bind(this)
       ]],
       direccion: ['', Validators.required],
-      descProblema: ['', Validators.required],
+      descProblema: ['', [Validators.required, Validators.maxLength(50)]],
       estado: ['pendiente'] 
     });
 
@@ -62,6 +63,9 @@ export class AltaBajaReservaComponent implements OnInit {
     this.reservaForm.get('fecha')?.valueChanges.subscribe(() => {
       this.reservaForm.get('horario')?.updateValueAndValidity();
     });
+
+     // Inicializar el contador basado en el valor inicial
+     this.actualizarContador();
   }
 
   // Validación personalizada para fechas
@@ -116,6 +120,14 @@ export class AltaBajaReservaComponent implements OnInit {
     }
 
     return null;
+  }
+
+  actualizarContador(): void {
+    const descProblemaControl = this.reservaForm.get('descProblema');
+    if (descProblemaControl) {
+      const textoActual = descProblemaControl.value || '';
+      this.caracteresRestantes = 50 - textoActual.length;
+    }
   }
 
   addReserva() {

@@ -6,8 +6,9 @@ export interface Reserva {
     idTr: string | null,
     idUs:string | undefined,
     direccion: string,
+    descProblema: string,
     fecha: Date,
-    horario:Time,
+    horario: Time,
     estado: 'aceptada' | 'rechazada' | 'pendiente' | 'finalizada',
     calificada: boolean; // Si es true, no va a mostrar el boton
 }

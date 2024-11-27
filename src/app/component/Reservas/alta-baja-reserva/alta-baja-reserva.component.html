@@ -49,9 +49,15 @@
 
     <div class="form-group">
       <label for="descProblema" class="form-label">Descripción del Problema</label>
-      <input type="text" id="descProblema" formControlName="descProblema" class="form-control">
-      <div class="error" *ngIf="reservaForm.get('descProblema')?.hasError('required') && reservaForm.controls['descProblema'].touched">La descripción del problema es obligatoria.</div>
+      <input type="text" id="descProblema" formControlName="descProblema" class="form-control" (input)="actualizarContador() "maxlength="50">
+      <div class="contador-caracteres">
+        Quedan {{ caracteresRestantes }} caracteres.
+      </div>
+      <div class="error" *ngIf="reservaForm.get('descProblema')?.hasError('required') && reservaForm.controls['descProblema'].touched">
+        La descripción del problema es obligatoria.
+      </div>
     </div>
+    
   
     <div class="form-buttons">
 

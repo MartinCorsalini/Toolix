@@ -115,3 +115,9 @@
 .reservaForm:hover {
   transform: scale(1.02);
 }
+
+.contador-caracteres {
+  font-size: 12px;
+  color: gray;
+  margin-top: 5px;
+}
