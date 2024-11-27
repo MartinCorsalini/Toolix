@@ -54,7 +54,8 @@ export class AltaBajaReservaComponent implements OnInit {
         this.validarHorarioActual.bind(this)
       ]],
       direccion: ['', Validators.required],
-      estado: ['pendiente']
+      descProblema: ['', Validators.required],
+      estado: ['pendiente'] 
     });
 
     // Actualizar validación de horario cuando cambia la fecha
