@@ -52,7 +52,7 @@
     </div>
   
     <div class="form-buttons">
-      <button type="submit"  class="submit-button">Aceptar</button>
+      <button type="submit"  class="submit-button" [disabled]="!modificarRForm.valid">Aceptar</button>
        <button  [routerLink]="['/notificaciones']" type="button" class="cancel-button">Cancelar</button>
       
     </div>

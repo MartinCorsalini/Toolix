@@ -426,6 +426,16 @@
       "idUs": "d96a",
       "idTr": "dd00",
       "calificada": true
+    },
+    {
+      "fecha": "2024-11-30",
+      "horario": "16:00",
+      "direccion": "Balcarce 2022",
+      "descProblema": "holaaaaaaaaaaaaaaaaaaa",
+      "estado": "pendiente",
+      "id": "f984",
+      "idTr": "d96a",
+      "idUs": "dd94"
     }
   ]
 }
