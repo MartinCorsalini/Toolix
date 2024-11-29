@@ -175,10 +175,12 @@ body {
 /* Contenedor de detalles de la reserva */
 .reservation-details {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta columnas automáticamente */
   gap: 15px;
   margin-bottom: 15px;
   width: 100%;
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: start; /* Asegura que todos comiencen al mismo nivel */
 }
 
 /* Estilo para cada campo de la reserva */
@@ -188,11 +190,12 @@ body {
   padding: 8px;
   background-color: #f8f9fa;
   border-radius: 6px;
-  /* overflow: hidden; */
   text-overflow: ellipsis; /* Agrega puntos suspensivos si el texto es muy largo */
   white-space: normal; /* Permite que el texto haga salto de línea si es necesario */
   word-wrap: break-word; /* Ajusta palabras largas */
-  min-width: 150px; /* Opcional: asegura un ancho mínimo para todos */
+  width: 100%; /* Asegura que todos los elementos ocupen el mismo ancho */
+  min-height: 100px; /* Ajusta una altura mínima consistente */
+  box-sizing: border-box; /* Incluye padding y bordes en el tamaño */
 }
 
 /* Etiqueta del campo */
@@ -202,6 +205,8 @@ body {
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: 4px;
+  word-wrap: break-word; /* Asegura que el texto largo se ajuste */
+  text-align: center; /* Centra la etiqueta */
 }
 
 /* Valor del campo */
@@ -209,7 +214,8 @@ body {
   font-size: 1.1em;
   color: #333;
   font-weight: 500;
-}
+  text-align: center; /* Centra el contenido de los valores */
+} 
 
 /* Actualización del item de notificación */
 .notification-item {
@@ -444,7 +450,7 @@ body {
 }
 
 .view-profile-btn {
-  background-color: #007bff; /* Azul */
+  background-color: #FF416C; /* Azul */
   color: white;
   border: none;
   border-radius: 5px;

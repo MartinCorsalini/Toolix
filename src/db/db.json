@@ -427,20 +427,17 @@
       "idUs": "d96a",
       "idTr": "dd00",
       "calificada": true
-<<<<<<< Updated upstream
-=======
     },
     {
-      "id": "f283",
-      "fecha": "2024-12-01",
-      "horario": "00:31",
-      "direccion": "colon 2587",
-      "descProblema": "asdisnasdoas",
-      "estado": "finalizada",
-      "idUs": "dd94",
-      "idTr": "d1cc",
-      "calificada": true
->>>>>>> Stashed changes
+      "fecha": "2024-11-30",
+      "horario": "16:00",
+      "direccion": "Balcarce 2022",
+      "descProblema": "holaaaaaaaaaaaaaaaaaaa",
+      "estado": "pendiente",
+      "id": "f984",
+      "idTr": "d96a",
+      "idUs": "dd94"
+
     }
   ]
 }
