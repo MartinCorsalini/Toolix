@@ -18,14 +18,20 @@
 
     @if(usuario?.rol !== 'Admin')
     {
-  <a routerLink="/notificaciones" class="icon-link">
-    <i class="fas fa-bell"></i>
-  </a>
+      <a routerLink="/notificaciones" class="icon-link notification-container">
+        <i class="fas fa-bell"></i>
+        @if(notificacionesSinLeer > 0) {
+          <span class="notification-badge">{{ notificacionesSinLeer }}</span>
+        }
+      </a>
    }
    @else {
     <div class="admin-badge">ADMIN</div>
-    <a routerLink="/notificaciones" class="icon-link">
+    <a routerLink="/notificaciones" class="icon-link notification-container">
       <i class="fas fa-calendar-alt"></i>
+      @if(notificacionesSinLeer > 0) {
+        <span class="notification-badge">{{ notificacionesSinLeer }}</span>
+      }
     </a>
    }
 

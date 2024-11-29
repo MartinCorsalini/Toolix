@@ -141,3 +141,26 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
   text-align: center; /* Centra el texto */
 }
+
+.notification-container {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px; /* Espaciado adicional entre íconos */
+  cursor: pointer; /* Indica interactividad */
+}
+
+.notification-badge {
+  position: absolute;
+  top: -5px; /* Más cerca verticalmente del ícono */
+  right: -5px; /* Más cerca horizontalmente del ícono */
+  color: #ff4d4f; /* Color del número en rojo */
+  font-size: 14px; /* Tamaño de texto ligeramente mayor */
+  font-weight: bold; /* Destaca mejor el número */
+  line-height: 1;
+  transition: transform 0.2s ease-in-out; /* Efecto suave en hover */
+}
+
+.notification-container:hover .notification-badge {
+  transform: scale(1.1); /* Efecto hover para resaltar */
+}
+
