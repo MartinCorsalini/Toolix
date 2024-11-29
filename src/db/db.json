@@ -64,6 +64,7 @@
         6,
         1,
         4,
+        7,
         7
       ]
     },
@@ -426,6 +427,20 @@
       "idUs": "d96a",
       "idTr": "dd00",
       "calificada": true
+<<<<<<< Updated upstream
+=======
+    },
+    {
+      "id": "f283",
+      "fecha": "2024-12-01",
+      "horario": "00:31",
+      "direccion": "colon 2587",
+      "descProblema": "asdisnasdoas",
+      "estado": "finalizada",
+      "idUs": "dd94",
+      "idTr": "d1cc",
+      "calificada": true
+>>>>>>> Stashed changes
     }
   ]
 }
