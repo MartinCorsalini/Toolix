@@ -11,5 +11,4 @@ export interface Reserva {
     horario: Time,
     estado: 'aceptada' | 'rechazada' | 'pendiente' | 'finalizada',
     calificada: boolean; // Si es true, no va a mostrar el boton
-    leida?: boolean; // Opcional para no romper el código existente
 }

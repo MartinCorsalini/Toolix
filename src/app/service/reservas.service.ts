@@ -78,8 +78,4 @@ calificarReserva(id: string, calificacion: number): Observable<void> {
   return this.http.put<void>(url, { calificacion });
 }
 
-marcarReservaComoLeida(reservaId: string): Observable<any> {
-  return this.http.patch<Reserva>(`${this.urlBase}/reservas/${reservaId}`, { leida: true });
-}
-
 }
