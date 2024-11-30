@@ -49,9 +49,6 @@ export class NotificationsComponent implements OnInit{
    calificacionForm!: FormGroup; // Formulario de calificación
    reservaSeleccionada: Reserva | null = null; // Reserva actualmente seleccionada para calificar
 
-    // Añade esta propiedad al inicio de tu clase
-    notificacionesSinLeer: number = 0;
-
   // Estado que indica si el usuario tiene rol de "Trabajador"
   constructor(
     private user : AuthService,
@@ -111,44 +108,8 @@ export class NotificationsComponent implements OnInit{
       // Si no está logueado, redirige a la página de login
       this.router.navigate(['/login']);
     }
-
-     // Modifica tu método existente de carga de reservas
-     this.reservasService.getReserva().subscribe((reservas) => {
-      const userId = this.user.getUserId();
-
-      // Filtra reservas no leídas o pendientes
-      this.notificacionesSinLeer = reservas.filter(res => 
-        (res.idTr === userId && (res.estado === 'pendiente' || !res.leida)) || 
-        (res.idUs === userId && res.estado === 'pendiente')
-      ).length;
-
-      
-    });
-
   }
 
-  marcarComoLeida(reserva: Reserva) {
-    // Actualiza la reserva para marcarla como leída
-    reserva.leida = true;
-    this.reservasService.putReserva(reserva, reserva.id).subscribe({
-      next: () => {
-         // Actualizar lista de reservas
-        this.cargarReservas();
-      }
-    });
-  }
-
-  limpiarNotificaciones() {
-    // Marca todas las reservas como leídas
-    this.reservasEnviadas.forEach(reserva => {
-      if (!reserva.leida) {
-        reserva.leida = true;
-        this.reservasService.putReserva(reserva, reserva.id).subscribe();
-      }
-    });
-    
-    this.notificacionesSinLeer = 0;
-  }
 
 
   irAModificarReserva(reserva: Reserva){
@@ -401,29 +362,21 @@ enviarCalificacion(): void {
 
   reservas: Reserva[]=[];
 
-  
-  // Modificar tu método de carga de reservas existente
   cargarReservas() {
     this.reservasService.getReserva().subscribe({
       next: (reservas: Reserva[]) => {
-        const userId = this.user.getUserId();
-
-        // Filtrar y ordenar reservas como lo hacías antes
-        this.reservasRecibidas = reservas
-          .filter(res => res.idTr === userId)
-          .sort((a, b) => {
-            const estadoOrden = { pendiente: 1, aceptada: 2, rechazada: 3, finalizada: 4};
-            return estadoOrden[a.estado] - estadoOrden[b.estado];
-          });
-
-        this.reservasEnviadas = reservas
-          .filter(res => res.idUs === userId)
-          .sort((a, b) => {
-            const estadoOrden = { pendiente: 1, aceptada: 2, rechazada: 3, finalizada: 4};
-            return estadoOrden[a.estado] - estadoOrden[b.estado];
-          });
+       // this.reservas = reservas; // Asigna las reservas obtenidas del servidor
+       this.reservas = reservas.sort((a, b) => {
+        const estadoOrden = { pendiente: 1, aceptada: 2, rechazada: 3, finalizada: 4 };
+        return estadoOrden[a.estado] - estadoOrden[b.estado];
+      });
+      },
+     error: (e : Error) => {
+        console.log('Error al cargar las reservas', e.message);
       }
-    });
+    }
+
+    );
   }
 
   usuario?: Usuario;
