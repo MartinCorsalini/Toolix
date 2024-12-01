@@ -55,24 +55,19 @@ body {
 /* Item de notificación */
 .notification-item {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  border: 1px solid #ddd;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
   margin-bottom: 15px;
-  background-color: #fafafa;
-  transition: background-color 0.3s ease; /* Efecto suave al pasar el ratón */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .notification-item:hover {
-  background-color: #f1f1f1; /* Cambio de color al pasar el ratón */
-}
-
-.notification-item p {
-  margin: 0;
-  font-size: 1em;
-  color: #333; /* Color de texto más oscuro */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Contenedor de las acciones */
@@ -83,7 +78,6 @@ body {
   align-items: center;
   margin: 0;
   padding: 0;
-
 }
 
 /* Estilos de botones (Aceptar y Rechazar) */
@@ -161,7 +155,7 @@ body {
   border-radius: 6px;
   font-size: 1em;
   font-weight: bold;
-  color: white;
+  color: rgb(85, 82, 82);
   text-transform: uppercase;
   width: fit-content;
   margin-top: 15px;
@@ -178,45 +172,13 @@ body {
 /* Contenedor de detalles de la reserva */
 .reservation-details {
   display: grid;
-<<<<<<< Updated upstream
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta columnas automáticamente */
   gap: 15px;
   margin-bottom: 15px;
   width: 100%;
-=======
-  grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
-  gap: 15px; /* Espacio entre los elementos */
-  width: 100%;
-  justify-content: center; /* Centra el grid dentro del contenedor */
-  align-items: start; /* Alinea los elementos al inicio vertical */
-  padding: 15px; /* Espaciado interno opcional */
-  box-sizing: border-box; /* Asegura que padding se incluya en el ancho total */
-  grid-auto-rows: auto; /* Las filas adicionales se ajustan automáticamente */
->>>>>>> Stashed changes
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: start; /* Asegura que todos comiencen al mismo nivel */
 }
-
-/* Los primeros 4 elementos van en la primera fila */
-.reservation-details > :nth-child(-n+4) {
-  grid-row: 1; /* Los primeros 4 elementos en la primera fila */
-}
-
-/* Cuando hay exactamente 5 elementos, el 5to va a la segunda fila en la posición 1 */
-.reservation-details > :nth-child(5) {
-  grid-row: 2;
-  grid-column: 1; /* Pone el 5to elemento en la segunda columna */
-}
-
-.reservation-details > :nth-child(6) {
-  grid-row: 2;
-  grid-column: 2; /* El 6to en la tercera columna */
-}
-
-.reservation-details > :nth-child(7) {
-  grid-row: 2;
-  grid-column: 3; /* El 6to en la tercera columna */
-}
-
-
 
 /* Estilo para cada campo de la reserva */
 .reservation-field {
@@ -227,8 +189,6 @@ body {
   padding: 8px;
   background-color: #f8f9fa;
   border-radius: 6px;
-<<<<<<< Updated upstream
-=======
   text-overflow: ellipsis; /* Agrega puntos suspensivos si el texto es muy largo */
   white-space: normal; /* Permite que el texto haga salto de línea si es necesario */
   word-wrap: break-word; /* Ajusta palabras largas */
@@ -236,7 +196,6 @@ body {
   min-height: 100px; /* Ajusta una altura mínima consistente */
   box-sizing: border-box; /* Incluye padding y bordes en el tamaño */
   text-align: center; /* Asegura que el contenido del contenedor se centre */
->>>>>>> Stashed changes
 }
 
 /* Etiqueta del campo */
@@ -246,6 +205,8 @@ body {
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: 4px;
+  word-wrap: break-word; /* Asegura que el texto largo se ajuste */
+  text-align: center; /* Centra la etiqueta */
 }
 
 /* Valor del campo */
@@ -253,28 +214,7 @@ body {
   font-size: 1.1em;
   color: #333;
   font-weight: 500;
-<<<<<<< Updated upstream
-=======
   text-align: center; /* Centra el contenido de los valores */
->>>>>>> Stashed changes
-}
-
-/* Actualización del item de notificación */
-.notification-item {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  padding: 20px;
-  background-color: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.notification-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Estado de la reserva */
@@ -302,6 +242,7 @@ body {
   color: #721c24;
 }
 
+/* Botones de calificación */
 .calificar-btn {
   background-color: #4caf50;
   color: white;
@@ -314,11 +255,7 @@ body {
 
 .calificar-btn:hover {
   background-color: #45a049;
-<<<<<<< Updated upstream
 }
-=======
-}
-
 
 .dialog-title {
   font-size: 1.5rem;
@@ -356,165 +293,62 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 0.9rem;
-  transition: background-color 0.3s ease;
 }
 
 .cancel-button:hover {
-  background-color: #d32f2f;
+  background-color: #e53935;
 }
 
 .submit-button {
   background-color: #4caf50;
   color: white;
-  padding: 0.5rem 1.5rem;
+  border: none;
+  padding: 0.5rem 1rem;
   border-radius: 4px;
-  font-size: 0.9rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.submit-button:disabled {
-  background-color: #c8e6c9;
-  cursor: not-allowed;
-}
-
-.submit-button:hover:not(:disabled) {
+.submit-button:hover {
   background-color: #45a049;
 }
 
-.calificada-badge {
-  background-color: #66BB6A;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-size: 1em;
-  font-weight: 600;
-  display: flex;           /* o también puedes usar display: inline-flex */
-  justify-content: center; /* centra horizontalmente */
-  align-items: center;     /* centra verticalmente */
-  text-align: center;      /* asegura que el texto esté centrado */
-}
-
-
-
-.rechazada-badge {
-  background-color: #DC3545;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 600;
-  /* Propiedades para centrar */
-  display: flex;           /* o también puedes usar display: inline-flex */
-  justify-content: center; /* centra horizontalmente */
-  align-items: center;     /* centra verticalmente */
-  text-align: center;      /* asegura que el texto esté centrado */
-}
-/* Agrega estos estilos en tu notifications.component.css */
-
-.popup-overlay {
+/* Pantalla completa para modal */
+.modal-container {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  z-index: 1000;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
 }
 
-.popup-dialog {
-  background: white;
-  padding: 20px;
+.modal {
+  background-color: #fff;
+  padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
   position: relative;
 }
 
-.dialog-title {
-  margin-bottom: 20px;
+/* Estilo para el icono de cierre */
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #aaa;
+}
+
+.close-modal:hover {
   color: #333;
-  font-size: 1.2em;
-  font-weight: bold;
-  text-align: center;
 }
 
-.form-field {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.dialog-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-/* Estilos para los botones */
-.cancel-button {
-  padding: 8px 16px;
-  border: 1px solid #ccc;
-  background: #e53935;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.submit-button {
-  padding: 8px 16px;
-  background-color: #1976d2;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.submit-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-/* Asegura que el input tenga un estilo consistente */
-.mat-form-field {
-  width: 100%;
-}
-
-/* Animación de entrada suave */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.popup-overlay {
-  animation: fadeIn 0.2s ease-in-out;
-}
-
-.view-profile-btn {
-  background-color: #FF416C; /* Azul */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  margin-top: 5px; /* Para que quede justo debajo del nombre */
-  
-  font-size: 14px;
-  cursor: pointer;
-  display: block; /* Asegura que esté en una nueva línea */
-  text-align: center;
-}
-
-.view-profile-btn:hover {
-  background-color: #ff5b80; /* Azul más oscuro al pasar el mouse */
-}
-
-.view-profile-btn:focus {
-  outline: none;
-  box-shadow: 0 0 5px #ff5b80; /* Sombra al enfocarse */
-}
-
->>>>>>> Stashed changes

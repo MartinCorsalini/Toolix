@@ -17,11 +17,13 @@
       "id": "dd94"
     },
     {
-      "id": "8583",
       "nombre": "Micaela",
+      "descripcion": "responsable",
+      "telefono": "2235858483",
       "email": "micaela@gmail.com",
       "password": "1234567",
-      "rol": "Cliente"
+      "rol": "Cliente",
+      "id": "8583"
     },
     {
       "id": "9b8e",
@@ -56,6 +58,12 @@
       "zona": "Centro",
       "telefono": "22357575757",
       "valoraciones": [
+        7,
+        9,
+        3,
+        6,
+        1,
+        4,
         7
       ]
     },
@@ -71,7 +79,8 @@
       "zona": "Playa Grande",
       "telefono": "223568843",
       "valoraciones": [
-        8
+        8,
+        5
       ]
     },
     {
@@ -90,21 +99,6 @@
       ]
     },
     {
-      "id": "4a58",
-      "nombre": "Marcelo",
-      "email": "marcelo@gmail.com",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "Abogado/a",
-      "disponibilidad": "9 a 18 hs",
-      "descripcion": "Familia, Civil, especialista en Laboral",
-      "zona": "Caisamar",
-      "telefono": "22357336",
-      "valoraciones": [
-        9
-      ]
-    },
-    {
       "id": "dd00",
       "nombre": "Guido",
       "email": "guido@gmail.com",
@@ -114,21 +108,10 @@
       "disponibilidad": "9 a 18 hs",
       "descripcion": "Responsable, todo tipo de construcciones",
       "zona": "Punta Mogotes",
-      "telefono": "223756463"
-    },
-    {
-      "id": "237b",
-      "nombre": "Lulu",
-      "email": "lulu@gmail.com",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "Centro de estetica",
-      "disponibilidad": "9 a 18 hs",
-      "descripcion": "tratamientos, depilacion",
-      "zona": "Faro Norte",
-      "telefono": "223475757",
+      "telefono": "223756463",
       "valoraciones": [
-        7
+        4,
+        2
       ]
     },
     {
@@ -171,7 +154,11 @@
       "disponibilidad": "9 a 18 hs",
       "descripcion": "cambio de calefactor, arreglo de calefon termos",
       "zona": "Constitución",
-      "telefono": "2236674761"
+      "telefono": "2236674761",
+      "valoraciones": [
+        6,
+        2
+      ]
     },
     {
       "id": "01f9",
@@ -183,7 +170,10 @@
       "disponibilidad": "9 a 18 hs",
       "descripcion": "limpio casas, departamentos",
       "zona": "Los Troncos",
-      "telefono": "2235471717"
+      "telefono": "2235471717",
+      "valoraciones": [
+        8
+      ]
     },
     {
       "id": "f21c",
@@ -195,7 +185,11 @@
       "disponibilidad": "9 a 18 hs",
       "descripcion": "todo tipo de perros, paseos personalizados o en grupo",
       "zona": "Camet",
-      "telefono": "22357471"
+      "telefono": "22357471",
+      "valoraciones": [
+        5,
+        9
+      ]
     },
     {
       "id": "567a",
@@ -207,7 +201,10 @@
       "disponibilidad": "9 a 18 hs",
       "descripcion": "paredes, cielo raso, puertas",
       "zona": "La Perla",
-      "telefono": "223674171"
+      "telefono": "223674171",
+      "valoraciones": [
+        7
+      ]
     },
     {
       "id": "f1d1",
@@ -219,7 +216,10 @@
       "disponibilidad": "9 a 18 hs",
       "descripcion": "arreglo de canillas, baños, bañeras",
       "zona": "Barrio San José",
-      "telefono": "2235717123"
+      "telefono": "2235717123",
+      "valoraciones": [
+        4
+      ]
     },
     {
       "id": "89a1",
@@ -231,7 +231,10 @@
       "disponibilidad": "9 a 18 hs",
       "descripcion": "atencion a parejas niños, terapia cognitivo-conductual",
       "zona": "Barrio Chauvin",
-      "telefono": "22358123123"
+      "telefono": "22358123123",
+      "valoraciones": [
+        5
+      ]
     },
     {
       "id": "cfad",
@@ -243,7 +246,10 @@
       "disponibilidad": "9 a 18 hs",
       "descripcion": "sillones, sillas, presupuesto sin cargo",
       "zona": "Alfar",
-      "telefono": "223575711"
+      "telefono": "223575711",
+      "valoraciones": [
+        6
+      ]
     },
     {
       "id": "bbba",
@@ -255,7 +261,10 @@
       "disponibilidad": "9 a 18 hs",
       "descripcion": "reparo techo de tejasy chapa, presupuesto sin cargo",
       "zona": "Camet",
-      "telefono": "22371473712"
+      "telefono": "22371473712",
+      "valoraciones": [
+        8
+      ]
     },
     {
       "id": "913a",
@@ -267,110 +276,156 @@
       "disponibilidad": "9 a 18 hs",
       "descripcion": "uñas, pestañas, permanentes ",
       "zona": "Centro",
-      "telefono": "22317127312"
+      "telefono": "22317127312",
+      "valoraciones": [
+        8
+      ]
     }
   ],
   "reservas": [
     {
-      "id": "aff5",
-      "fecha": "2024-11-26",
-      "horario": "14:00",
-      "direccion": "colon 2587",
-      "estado": "aceptada",
+      "id": "5095",
+      "fecha": "2024-12-20",
+      "horario": "10:30",
+      "direccion": "catamarca 2020",
+      "estado": "finalizada",
       "idUs": "dd94",
-      "idTr": "d1cc"
+      "idTr": "f21c",
+      "calificada": true
     },
     {
-      "id": "14c2",
+      "id": "f1ae",
+      "fecha": "2024-12-30",
+      "horario": "11:00",
+      "direccion": "rivadavia 1320",
+      "estado": "finalizada",
+      "idUs": "dd94",
+      "idTr": "f21c",
+      "calificada": true
+    },
+    {
+      "fecha": "2024-12-20",
+      "horario": "10:55",
+      "direccion": "catamarca 1064",
+      "estado": "finalizada",
+      "id": "f4b4",
+      "idTr": "dd00",
+      "idUs": "42m1",
+      "calificada": true
+    },
+    {
+      "id": "144d",
       "fecha": "2024-11-30",
-<<<<<<< Updated upstream
       "horario": "14:30",
       "direccion": "San martin 1996",
       "estado": "pendiente",
-      "idUs": "dd94",
+
+    },
+    {
+      "id": "d56d",
+      "fecha": "2025-01-04",
+      "horario": "11:00",
+      "direccion": "la rioja 2020",
+      "estado": "finalizada",
+      "idUs": "42m1",
+      "idTr": "f1d1",
+      "calificada": true
+    },
+    {
+      "id": "149b",
+      "fecha": "2025-01-10",
+      "horario": "11:00",
+      "direccion": "25 de mayo 2020",
+      "estado": "rechazada",
+      "idUs": "8583",
+      "idTr": "89a1"
+    },
+    {
+      "id": "e248",
+      "fecha": "2025-02-11",
+      "horario": "11:00",
+      "direccion": "brown 2020",
+      "estado": "finalizada",
+      "idUs": "8583",
+      "idTr": "bbba",
+      "calificada": true
+    },
+    {
+      "id": "868c",
+      "fecha": "2025-04-04",
+      "horario": "08:00",
+      "direccion": "gascon 1020",
+      "estado": "finalizada",
+      "idUs": "42m1",
+      "idTr": "cfad",
+      "calificada": true
+    },
+    {
+      "id": "dcc0",
+      "fecha": "2025-11-11",
+      "horario": "11:00",
+      "direccion": "libertad 990",
+      "estado": "finalizada",
+      "idUs": "8583",
+      "idTr": "913a",
+      "calificada": true
+    },
+    {
+      "fecha": "2024-11-29",
+      "horario": "02:56",
+      "direccion": "Luro 2567",
+      "estado": "pendiente",
+      "id": "f42c",
+      "idTr": "d1cc",
+      "idUs": "dd00"
+    },
+    {
+      "id": "51d5",
+      "fecha": "2024-11-29",
+      "horario": "02:57",
+      "direccion": "Alvarado 3245",
+      "estado": "finalizada",
+      "idUs": "dd00",
+      "idTr": "d96a",
+      "calificada": true
+    },
+    {
+      "id": "c166",
+      "fecha": "2024-11-27",
+      "horario": "03:09",
+      "direccion": "Belgrano 2354",
+      "estado": "rechazada",
+      "idUs": "dd00",
       "idTr": "d96a"
     },
     {
-      "id": "5844",
-      "fecha": "2024-11-24",
-      "horario": "11:00",
-      "direccion": "Guemes 1334",
-      "estado": "pendiente",
-      "idUs": "dd94",
-      "idTr": "30d4"
+      "id": "2d53",
+      "fecha": "2024-11-27",
+      "horario": "09:05",
+      "direccion": "San luis 2354",
+      "estado": "aceptada",
+      "idUs": "d96a",
+      "idTr": "dd00"
     },
     {
-      "id": "2f80",
-      "fecha": "2024-12-16",
-      "horario": "16:00",
-      "direccion": "Av libertad 2020",
+      "id": "fb13",
+      "fecha": "2024-11-25",
+      "horario": "03:11",
+      "direccion": "Luro 2355",
       "estado": "rechazada",
-      "idUs": "8583",
-      "idTr": "4a58"
+      "idUs": "d96a",
+      "idTr": "dd00"
     },
     {
-      "id": "c82b",
-      "fecha": "2024-12-26",
-      "horario": "10:00",
-      "direccion": "Balcarce 2022",
+      "id": "9988",
+      "fecha": "2024-11-28",
+      "horario": "03:12",
+      "direccion": "Moreno 2345",
       "estado": "finalizada",
-      "idUs": "8583",
-      "idTr": "237b"
-    },
-    {
-      "id": "e200",
-      "fecha": "2024-12-03",
-      "horario": "10:00",
-      "direccion": "Luro 3030",
-      "estado": "pendiente",
-      "idUs": "9b8e",
-      "idTr": "9584"
-    },
-    {
-      "id": "264b",
-      "fecha": "2024-11-26",
-      "horario": "14:30",
-      "direccion": "San luis 1550",
-      "estado": "pendiente",
-      "idUs": "9b8e",
-      "idTr": "03ba"
-    },
-    {
-      "id": "3158",
-      "fecha": "2024-11-26",
-      "horario": "10:00",
-      "direccion": "catamarca 2020",
-      "estado": "pendiente",
+
       "idUs": "dd94",
       "idTr": "4a58"
-    },
-    {
-      "id": "8ffa",
-      "fecha": "2024-12-10",
-      "horario": "10:00",
-      "direccion": "cordoba 2020",
-      "estado": "aceptada",
-      "idUs": "dd94",
-      "idTr": "237b"
-    },
-    {
-      "id": "11eb",
-      "fecha": "2024-11-24",
-      "horario": "10:30",
-      "direccion": "Independencia 1090",
-      "estado": "aceptada",
-      "idUs": "dd94",
-      "idTr": "237b"
-    },
-    {
-      "id": "ad09",
-      "fecha": "2024-12-10",
-      "horario": "10:00",
-      "direccion": "olavarria 2020",
-      "estado": "finalizada",
-      "idUs": "dd94",
-      "idTr": "4a58"
-=======
+
       "horario": "16:00",
       "direccion": "formosa",
       "estado": "rechazada",
@@ -463,7 +518,8 @@
       "idUs": "d96a",
       "idTr": "dd00",
       "calificada": true
->>>>>>> Stashed changes
+
+
     }
   ]
 }
