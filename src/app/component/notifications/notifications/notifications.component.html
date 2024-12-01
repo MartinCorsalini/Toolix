@@ -1,4 +1,98 @@
+<<<<<<< Updated upstream
 <app-navbar-private></app-navbar-private>
+=======
+  <app-navbar-private></app-navbar-private>
+
+
+  <div class="nav-icons">
+    <!--------------------------------- SI NO ES ADMIN -------------------------------------->
+      @if(userRol !== 'Admin')
+      {
+        <div class="center-container">
+          <h2 class="title">Notificaciones</h2>
+        </div>
+
+        <!------------ Reservas RECIBIDAS (solo si el usuario es trabajador) ------------>
+
+        <div *ngIf="esTrabajador" class="center-container">
+          <h2 class="titulos">Reservas recibidas</h2>
+        </div>
+
+        <div *ngIf="esTrabajador" class="center-container">
+
+            <div class="container">
+              <!-- Si no hay reservas recibidas, muestra el mensaje correspondiente -->
+              <div *ngIf="reservasRecibidas.length === 0; else reservasRecibidasList">
+                <p>Aún no tienes reservas recibidas.</p>
+              </div>
+              <!-- Si hay reservas, las muestra en una lista -->
+
+              <ng-template #reservasRecibidasList>
+                <ul class="notification-list">
+
+                  <li class="notification-item" *ngFor="let reserva of reservasRecibidas">
+
+                        <div class="reservation-details">
+                          <div class="reservation-field">
+                            <span class="field-label">Dirección</span>
+                            <span class="field-value">{{ reserva.direccion }}</span>
+                          </div>
+                          
+                            <div class="reservation-field">
+                              <span class="field-label">Problema</span>
+                              <span class="field-value">{{ reserva.descProblema }}</span>
+                            </div>
+                          
+                          <div class="reservation-field">
+                            <span class="field-label">Fecha</span>
+                            <span class="field-value">{{ reserva.fecha }}</span>
+                          </div>
+                          <div class="reservation-field">
+                            <span class="field-label">Horario</span>
+                            <span class="field-value">{{ reserva.horario }}</span>
+                          </div>
+                          <div class="reservation-field">
+                            <span class="field-label">Cliente</span>
+                            <span class="field-value">{{ usuarioNombres[reserva.idUs!] || 'Cargando...' }}
+                              <button class="view-profile-btn" *ngIf="reserva.idUs" (click)="irAlPerfil(reserva.idUs)">
+                                Ver Perfil
+                              </button>
+                            </span>
+                          </div>
+
+                        </div>
+                        <div class="actions">
+                          <!-- Mostrar botones solo si la reserva está pendiente -->
+                          <ng-container *ngIf="reserva.estado === 'pendiente'; else estadoMensaje">
+                            <button class="accept-btn" (click)="aceptarReserva(reserva)">Aceptar</button>
+                            <button class="reject-btn" (click)="rechazarReserva(reserva)">Rechazar</button>
+                          </ng-container>
+
+                          <!-- Mensaje de estado cuando no está en pendiente -->
+                          <ng-template #estadoMensaje>
+                            <span class="estado-mensaje {{ reserva.estado }}">{{ reserva.estado | titlecase }}</span>
+                          </ng-template>
+                        </div>
+
+                        <!-- Mostrar botones solo si la reserva está aceptada -->
+                        <div class="actions">
+                          
+                          <ng-container *ngIf="reserva.estado === 'aceptada'; else estadoMensaje">
+                            <button class="accept-btn" (click)="finalizarReserva(reserva)">Finalizar</button>
+                          </ng-container>
+
+                          <!-- Mensaje de estado cuando no está en aceptada -->
+                          <ng-template #estadoMensaje>
+                            <span class="estado-mensaje {{ reserva.estado }}">{{ reserva.estado | titlecase }}</span>
+                          </ng-template>
+                        </div>
+                  </li>
+
+                </ul>
+              </ng-template>
+            </div>
+        </div>
+>>>>>>> Stashed changes
 
 
 
@@ -27,6 +121,7 @@
 
             <ng-template #reservasRecibidasList>
               <ul class="notification-list">
+<<<<<<< Updated upstream
 
                 <li class="notification-item" *ngFor="let reserva of reservasRecibidas">
 
@@ -58,6 +153,45 @@
                           <button class="accept-btn" (click)="aceptarReserva(reserva)">Aceptar</button>
                           <button class="reject-btn" (click)="rechazarReserva(reserva)">Rechazar</button>
                         </ng-container>
+=======
+                <li class="notification-item" *ngFor="let reserva of reservasEnviadas">
+                  <div class="reservation-details">
+                    <div class="reservation-field">
+                      <span class="field-label">Dirección</span>
+                      <span class="field-value">{{ reserva.direccion }}</span>
+                    </div>
+                    
+                      <div class="reservation-field">
+                        <span class="field-label">Problema</span>
+                        <span class="field-value">{{ reserva.descProblema }}</span>
+                      </div>
+                  
+                    <div class="reservation-field">
+                      <span class="field-label">Fecha</span>
+                      <span class="field-value">{{ reserva.fecha }}</span>
+                    </div>
+                    <div class="reservation-field">
+                      <span class="field-label">Horario</span>
+                      <span class="field-value">{{ reserva.horario }}</span>
+                    </div>
+                    <div class="reservation-field">
+                      <span class="field-label">Estado</span>
+                      <span class="field-value">{{ reserva.estado }}</span>
+                    </div>
+                    <!-- <div class="reservation-field">
+                      <span class="field-label">Cliente</span>
+                      <span class="field-value">{{ usuarioNombres[reserva.idUs!] || 'Cargando...' }}</span>
+                    </div> -->
+                    <div class="reservation-field">
+                      <span class="field-label">Trabajador</span>
+                      <span class="field-value">{{ trabajadorNombres[reserva.idTr!] || 'Cargando...' }}
+                        <button class="view-profile-btn" *ngIf="reserva.idTr" (click)="irAlPerfil(reserva.idTr)">
+                          Ver Perfil
+                        </button>
+                      </span>
+                    </div>
+                  </div>
+>>>>>>> Stashed changes
 
                         <!-- Mensaje de estado cuando no está en pendiente -->
                         <ng-template #estadoMensaje>
@@ -93,6 +227,7 @@
 
       <div class="center-container">
         <div class="container">
+<<<<<<< Updated upstream
           <!-- Si no hay reservas enviadas, muestra el mensaje correspondiente -->
           <div *ngIf="reservasEnviadas.length === 0; else reservasEnviadasList">
             <p>Aún no tienes reservas enviadas.</p>
@@ -127,6 +262,36 @@
                     <span class="field-value">{{ trabajadorNombres[reserva.idTr!] || 'Cargando...' }}</span>
                   </div>
                 </div>
+=======
+          <div class="header"></div>
+          <ul class="notification-list">
+
+            <li class="notification-item" *ngFor="let reserva of reservas">
+
+              <div class="reservation-details">
+                <div class="reservation-field">
+                  <span class="field-label">Dirección</span>
+                  <span class="field-value">{{ reserva.direccion }}</span>
+                </div>
+                
+                <div class="reservation-field">
+                   <span class="field-label">Problema</span>
+                   <span class="field-value">{{ reserva.descProblema }}</span>
+                </div>
+                
+                <div class="reservation-field">
+                  <span class="field-label">Fecha</span>
+                  <span class="field-value">{{ reserva.fecha }}</span>
+                </div>
+                <div class="reservation-field">
+                  <span class="field-label">Horario</span>
+                  <span class="field-value">{{ reserva.horario }}</span>
+                </div>
+                <div class="reservation-field">
+                  <span class="field-label">Reserva ID</span>
+                  <span class="field-value">{{ reserva.id }}</span>
+                </div>
+>>>>>>> Stashed changes
 
                 <!--------------------AGREGADOOO--------------------->
                 <div class="actions">
@@ -141,9 +306,49 @@
                     <button (click)="eliminarReserva(reserva.id)" class="reject-btn">Eliminar</button>
                   </ng-template>
                 </div>
+<<<<<<< Updated upstream
               </li>
             </ul>
           </ng-template>
+=======
+                <div class="reservation-field">
+                  <span class="field-label">Trabajador</span>
+                  <span class="field-value">{{ trabajadorNombres[reserva.idTr!] || 'Cargando...' }}
+                    <button class="view-profile-btn" *ngIf="reserva.idTr" (click)="irAlPerfil(reserva.idTr)">
+                      Ver Perfil
+                    </button>
+                  </span>
+                </div>
+                
+                 
+                  <!-- ACÁ TENDRIA QUE ESTAR EL IF. GUARDA QUE QUE ABAJO TIENE OTRO IF Y UN ELSE DENTRO.  -->
+                  <div class="actions">
+                    <!-- Mostrar el botón "Calificar" si la reserva está finalizada y no calificada -->
+                    <ng-container *ngIf="reserva.estado === 'finalizada' && !reserva.calificada; else botonesModificarEliminar">
+                      <button class="accept-btn" (click)="abrirDialogoCalificacion(reserva)">Calificar</button>
+                    </ng-container>
+
+                    <!-- Mostrar el badge "Reserva calificada" si la reserva está finalizada y calificada -->
+                    <ng-container *ngIf="reserva.estado === 'finalizada' && reserva.calificada">
+                      <span class="calificada-badge">Reserva calificada</span>
+                    </ng-container>
+
+                    <!-- Mostrar el badge "Reserva rechazada" si la reserva está rechazada -->
+                    <ng-container *ngIf="reserva.estado === 'rechazada'">
+                      <span class="rechazada-badge">Reserva rechazada</span>
+                    </ng-container>
+
+                    <!-- Mostrar los botones "Modificar" y "Eliminar" solo si la reserva no está finalizada -->
+                    <ng-template #botonesModificarEliminar>
+                      <ng-container *ngIf="reserva.estado !== 'finalizada' && reserva.estado !== 'rechazada'">
+                        <button (click)="irAModificarReserva(reserva)" class="accept-btn">Modificar</button>
+                        <button (click)="eliminarReserva(reserva.id!)" class="reject-btn">Eliminar</button>
+                      </ng-container>
+                    </ng-template>
+                  </div>  
+              </div>           
+          </ul>
+>>>>>>> Stashed changes
         </div>
       </div>
    }
