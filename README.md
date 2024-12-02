@@ -1,10 +1,11 @@
 # Toolix - Plataforma para encontrar un experto
 
-# Toolix es una plataforma diseñada para conectar clientes con profesionales en servicios como gasistas, plomeros y electricistas. Permite a los usuarios buscar, filtrar y contactar fácilmente al profesional ideal según su ubicación y necesidades.
+ Toolix es una plataforma diseñada para conectar clientes con profesionales en servicios como gasistas, plomeros y electricistas. Permite a los usuarios buscar, filtrar y contactar fácilmente al profesional ideal según su ubicación y necesidades.
 
 ## Características
 - Búsqueda de profesionales por categoría.
 - Sistema de roles para usuarios (Admin ,Cliente, trabajador).
+- Sistema de gestión de reservas entre clientes y trabajadores
 
 ## Uso
 1. Regístrate o inicia sesión con un rol asignado.
