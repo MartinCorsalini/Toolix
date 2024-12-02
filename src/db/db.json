@@ -372,15 +372,6 @@
       "calificada": true
     },
     {
-      "fecha": "2024-11-29",
-      "horario": "02:56",
-      "direccion": "Luro 2567",
-      "estado": "pendiente",
-      "id": "f42c",
-      "idTr": "d1cc",
-      "idUs": "dd00"
-    },
-    {
       "id": "51d5",
       "fecha": "2024-11-29",
       "horario": "02:57",
@@ -436,6 +427,16 @@
       "id": "f984",
       "idTr": "d96a",
       "idUs": "dd94"
+    },
+    {
+      "id": "0bc0",
+      "fecha": "2024-12-10",
+      "horario": "10:00",
+      "direccion": "colon 2719",
+      "descProblema": "asodasomofasafsdmgngonasoonasfnosoadsdonsaodnasnod",
+      "estado": "rechazada",
+      "idUs": "42m1",
+      "idTr": "d1cc"
     }
   ]
 }

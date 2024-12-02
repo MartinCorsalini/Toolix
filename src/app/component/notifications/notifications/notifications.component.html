@@ -34,12 +34,12 @@
                             <span class="field-label">Dirección</span>
                             <span class="field-value">{{ reserva.direccion }}</span>
                           </div>
-                          <div class="reservation-details">
+                          
                             <div class="reservation-field">
                               <span class="field-label">Problema:</span>
                               <span class="field-value">{{ reserva.descProblema }}</span>
                             </div>
-                          </div>
+                       
                           <div class="reservation-field">
                             <span class="field-label">Fecha</span>
                             <span class="field-value">{{ reserva.fecha }}</span>
@@ -56,10 +56,7 @@
                               </button>
                             </span>
                           </div>
-                          <!-- <div class="reservation-field">
-                            <span class="field-label">Trabajador</span>
-                            <span class="field-value">{{ trabajadorNombres[reserva.idTr!] || 'Cargando...' }}</span>
-                          </div> -->
+                          
                         </div>
                         <div class="actions">
                           <!-- Mostrar botones solo si la reserva está pendiente -->
@@ -115,12 +112,12 @@
                       <span class="field-label">Dirección</span>
                       <span class="field-value">{{ reserva.direccion }}</span>
                     </div>
-                    <div class="reservation-details">
+                    
                       <div class="reservation-field">
                         <span class="field-label">Problema:</span>
                         <span class="field-value">{{ reserva.descProblema }}</span>
                       </div>
-                    </div>
+                    
                     <div class="reservation-field">
                       <span class="field-label">Fecha</span>
                       <span class="field-value">{{ reserva.fecha }}</span>
@@ -198,12 +195,12 @@
                   <span class="field-label">Dirección</span>
                   <span class="field-value">{{ reserva.direccion }}</span>
                 </div>
-                <div class="reservation-details">
+                
                   <div class="reservation-field">
                     <span class="field-label">Problema:</span>
                     <span class="field-value">{{ reserva.descProblema }}</span>
                   </div>
-                </div>
+                
                 <div class="reservation-field">
                   <span class="field-label">Fecha</span>
                   <span class="field-value">{{ reserva.fecha }}</span>
@@ -253,14 +250,16 @@
                     </ng-container>
 
                     <!-- Mostrar los botones "Modificar" y "Eliminar" solo si la reserva no está finalizada -->
-                    <ng-template #botonesModificarEliminar>
+                    <ng-template class="botonesModificarEliminar" #botonesModificarEliminar>
                       <ng-container *ngIf="reserva.estado !== 'finalizada' && reserva.estado !== 'rechazada'">
                         <button (click)="irAModificarReserva(reserva)" class="accept-btn">Modificar</button>
                         <button (click)="eliminarReserva(reserva.id!)" class="reject-btn">Eliminar</button>
                       </ng-container>
                     </ng-template>
-                  </div>  
-              </div>           
+                  </div>
+                    
+              </div>      
+            </li>     
           </ul>
         </div>
       </div>
