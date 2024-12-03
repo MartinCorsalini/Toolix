@@ -57,15 +57,7 @@
       "descripcion": "puntual, prolijo, cotizacion en el dia",
       "zona": "Centro",
       "telefono": "22357575757",
-      "valoraciones": [
-        7,
-        9,
-        3,
-        6,
-        1,
-        4,
-        7
-      ]
+      "valoraciones": []
     },
     {
       "id": "d96a",
@@ -284,158 +276,13 @@
   ],
   "reservas": [
     {
-      "id": "5095",
-      "fecha": "2024-12-20",
-      "horario": "10:30",
-      "direccion": "catamarca 2020",
-      "estado": "finalizada",
-      "idUs": "dd94",
-      "idTr": "f21c",
-      "calificada": true
-    },
-    {
-      "id": "f1ae",
-      "fecha": "2024-12-30",
-      "horario": "11:00",
-      "direccion": "rivadavia 1320",
-      "estado": "finalizada",
-      "idUs": "dd94",
-      "idTr": "f21c",
-      "calificada": true
-    },
-    {
-      "fecha": "2024-12-20",
-      "horario": "10:55",
-      "direccion": "catamarca 1064",
-      "estado": "finalizada",
-      "id": "f4b4",
-      "idTr": "dd00",
-      "idUs": "42m1",
-      "calificada": true
-    },
-    {
-      "id": "144d",
-      "fecha": "2024-11-30",
-      "horario": "16:00",
-      "direccion": "formosa",
-      "estado": "rechazada",
-      "idUs": "dd94",
-      "idTr": "dd00"
-    },
-    {
-      "id": "d56d",
-      "fecha": "2025-01-04",
-      "horario": "11:00",
-      "direccion": "la rioja 2020",
-      "estado": "finalizada",
-      "idUs": "42m1",
-      "idTr": "f1d1",
-      "calificada": true
-    },
-    {
-      "id": "149b",
-      "fecha": "2025-01-10",
-      "horario": "11:00",
-      "direccion": "25 de mayo 2020",
-      "estado": "rechazada",
-      "idUs": "8583",
-      "idTr": "89a1"
-    },
-    {
-      "id": "e248",
-      "fecha": "2025-02-11",
-      "horario": "11:00",
-      "direccion": "brown 2020",
-      "estado": "finalizada",
-      "idUs": "8583",
-      "idTr": "bbba",
-      "calificada": true
-    },
-    {
-      "id": "868c",
-      "fecha": "2025-04-04",
-      "horario": "08:00",
-      "direccion": "gascon 1020",
-      "estado": "finalizada",
-      "idUs": "42m1",
-      "idTr": "cfad",
-      "calificada": true
-    },
-    {
-      "id": "dcc0",
-      "fecha": "2025-11-11",
-      "horario": "11:00",
-      "direccion": "libertad 990",
-      "estado": "finalizada",
-      "idUs": "8583",
-      "idTr": "913a",
-      "calificada": true
-    },
-    {
-      "id": "51d5",
-      "fecha": "2024-11-29",
-      "horario": "02:57",
-      "direccion": "Alvarado 3245",
-      "estado": "finalizada",
-      "idUs": "dd00",
-      "idTr": "d96a",
-      "calificada": true
-    },
-    {
-      "id": "c166",
-      "fecha": "2024-11-27",
-      "horario": "03:09",
-      "direccion": "Belgrano 2354",
-      "estado": "rechazada",
-      "idUs": "dd00",
-      "idTr": "d96a"
-    },
-    {
-      "id": "2d53",
-      "fecha": "2024-11-27",
-      "horario": "09:05",
-      "direccion": "San luis 2354",
-      "estado": "aceptada",
-      "idUs": "d96a",
-      "idTr": "dd00"
-    },
-    {
-      "id": "fb13",
-      "fecha": "2024-11-25",
-      "horario": "03:11",
-      "direccion": "Luro 2355",
-      "estado": "rechazada",
-      "idUs": "d96a",
-      "idTr": "dd00"
-    },
-    {
-      "id": "9988",
-      "fecha": "2024-11-28",
-      "horario": "03:12",
-      "direccion": "Moreno 2345",
-      "estado": "finalizada",
-      "idUs": "d96a",
-      "idTr": "dd00",
-      "calificada": true
-    },
-    {
-      "fecha": "2024-11-30",
-      "horario": "16:00",
-      "direccion": "Balcarce 2022",
-      "descProblema": "holaaaaaaaaaaaaaaaaaaa",
-      "estado": "pendiente",
-      "id": "f984",
-      "idTr": "d96a",
-      "idUs": "dd94"
-    },
-    {
-      "id": "0bc0",
+      "id": "609b",
       "fecha": "2024-12-10",
       "horario": "10:00",
-      "direccion": "colon 2719",
-      "descProblema": "asodasomofasafsdmgngonasoonasfnosoadsdonsaodnasnod",
-      "estado": "rechazada",
-      "idUs": "42m1",
+      "direccion": "catamarca 2020",
+      "descProblema": "necesito tomar medidas para una alacena nueva",
+      "estado": "aceptada",
+      "idUs": "dd94",
       "idTr": "d1cc"
     }
   ]
