@@ -460,13 +460,13 @@ body {
   border: none;
   border-radius: 5px;
   padding: 5px 10px;
-  margin-top: 5px; /* Para que quede justo debajo del nombre */
-  margin-left: 60px;
+  margin: 5px auto; /* Centrado horizontal y espacio superior */
   font-size: 14px;
   cursor: pointer;
   display: block; /* Asegura que esté en una nueva línea */
   text-align: center;
 }
+
 
 .view-profile-btn:hover {
   background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
