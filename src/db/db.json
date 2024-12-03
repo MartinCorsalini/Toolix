@@ -149,7 +149,8 @@
       "telefono": "2236674761",
       "valoraciones": [
         6,
-        2
+        2,
+        10
       ]
     },
     {
@@ -281,9 +282,70 @@
       "horario": "10:00",
       "direccion": "catamarca 2020",
       "descProblema": "necesito tomar medidas para una alacena nueva",
-      "estado": "aceptada",
+      "estado": "finalizada",
       "idUs": "dd94",
       "idTr": "d1cc"
+    },
+    {
+      "id": "d998",
+      "fecha": "2024-12-20",
+      "horario": "12:00",
+      "direccion": "colon 2719",
+      "descProblema": "necesito colocar nuevos enchufes",
+      "estado": "finalizada",
+      "idUs": "42m1",
+      "idTr": "d96a"
+    },
+    {
+      "id": "9fbd",
+      "fecha": "2024-12-11",
+      "horario": "11:00",
+      "direccion": "catamarca 1062",
+      "descProblema": "quiero hacerme alisado ",
+      "estado": "finalizada",
+      "idUs": "8583",
+      "idTr": "30d4"
+    },
+    {
+      "id": "da48",
+      "fecha": "2024-12-25",
+      "horario": "11:00",
+      "direccion": "mar del plata",
+      "descProblema": "necesito levantar una pared",
+      "estado": "aceptada",
+      "idUs": "dd94",
+      "idTr": "dd00"
+    },
+    {
+      "id": "1681",
+      "fecha": "2025-02-19",
+      "horario": "10:00",
+      "direccion": "mar del plata",
+      "descProblema": "fninidnsfsdnfisdnif",
+      "estado": "finalizada",
+      "idUs": "8583",
+      "idTr": "a8bc",
+      "calificada": true
+    },
+    {
+      "id": "bd52",
+      "fecha": "2025-12-11",
+      "horario": "10:30",
+      "direccion": "colon 2587",
+      "descProblema": "fofnofdosaodnsadass",
+      "estado": "finalizada",
+      "idUs": "42m1",
+      "idTr": "d96a"
+    },
+    {
+      "id": "97e9",
+      "fecha": "2024-12-11",
+      "horario": "14:00",
+      "direccion": "centro",
+      "descProblema": "fndonaod",
+      "estado": "finalizada",
+      "idUs": "42m1",
+      "idTr": "d96a"
     }
   ]
 }

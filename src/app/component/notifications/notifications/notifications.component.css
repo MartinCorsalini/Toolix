@@ -169,10 +169,11 @@ body {
   border-radius: 6px;
   font-size: 1em;
   font-weight: bold;
-  color: rgb(85, 82, 82);
+  color: white;
   text-transform: uppercase;
   width: fit-content;
   margin-top: 15px;
+  background-color: #9D9D9D;
 }
 
 .estado-mensaje.aceptada {

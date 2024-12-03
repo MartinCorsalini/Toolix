@@ -68,40 +68,54 @@ export class NotificationsComponent implements OnInit{
     this.authService.currentUserId$.subscribe(id => {
       this.userId = id;
     });
-
+  
     this.getById();
     this.cargarReservas();
-
+  
     if (this.user.estaLogeado()) {
       // Si el usuario está autenticado, obtiene sus reservas
       this.reservasService.getReserva().subscribe((reservas) => {
         const userId = this.user.getUserId();
-
+  
         const estadoOrden = { pendiente: 1, aceptada: 2, rechazada: 3, finalizada: 4};
-
-        // Filtra y ordena reservas recibidas
-        this.reservasRecibidas = reservas
-          .filter(res => res.idTr === userId)
-          .sort((a, b) => estadoOrden[a.estado] - estadoOrden[b.estado]);
-
-        // Filtra y ordena reservas enviadas
-        this.reservasEnviadas = reservas
-          .filter(res => res.idUs === userId)
-          .sort((a, b) => estadoOrden[a.estado] - estadoOrden[b.estado]);
-
-        // Cargar nombres de clientes y trabajadores para cada reserva recibida
-        this.reservasRecibidas.forEach((reserva) => {
-          this.mostrarCliente(reserva.idUs!);
-          this.mostrarTrabajador(reserva.idTr!);
-        });
-
-        // Cargar nombres de clientes y trabajadores para cada reserva enviada
-        this.reservasEnviadas.forEach((reserva) => {
-          this.mostrarCliente(reserva.idUs!);
-          this.mostrarTrabajador(reserva.idTr!);
-        });
+  
+        if (this.userRol === 'Admin') {
+          // Para el rol de admin, cargar nombres de todas las reservas
+          this.reservas = reservas.sort((a, b) => {
+            return estadoOrden[a.estado] - estadoOrden[b.estado];
+          });
+  
+          // Cargar nombres de clientes y trabajadores para todas las reservas
+          this.reservas.forEach((reserva) => {
+            this.mostrarCliente(reserva.idUs!);
+            this.mostrarTrabajador(reserva.idTr!);
+          });
+        } else {
+          // Lógica existente para roles de cliente y trabajador
+          // Filtra y ordena reservas recibidas
+          this.reservasRecibidas = reservas
+            .filter(res => res.idTr === userId)
+            .sort((a, b) => estadoOrden[a.estado] - estadoOrden[b.estado]);
+  
+          // Filtra y ordena reservas enviadas
+          this.reservasEnviadas = reservas
+            .filter(res => res.idUs === userId)
+            .sort((a, b) => estadoOrden[a.estado] - estadoOrden[b.estado]);
+  
+          // Cargar nombres de clientes y trabajadores para cada reserva recibida
+          this.reservasRecibidas.forEach((reserva) => {
+            this.mostrarCliente(reserva.idUs!);
+            this.mostrarTrabajador(reserva.idTr!);
+          });
+  
+          // Cargar nombres de clientes y trabajadores para cada reserva enviada
+          this.reservasEnviadas.forEach((reserva) => {
+            this.mostrarCliente(reserva.idUs!);
+            this.mostrarTrabajador(reserva.idTr!);
+          });
+        }
       });
-
+  
       // Recupera el rol del usuario y ajusta `esTrabajador` según corresponda
       this.esTrabajador = this.user.getUserRole() === 'Trabajador';
     } else {
@@ -109,8 +123,6 @@ export class NotificationsComponent implements OnInit{
       this.router.navigate(['/login']);
     }
   }
-
-
 
   irAModificarReserva(reserva: Reserva){
 
@@ -232,7 +244,7 @@ enviarCalificacion(): void {
               // Actualizar el estado de calificación de la reserva
               const reservaActualizada = {
                 ...this.reservaSeleccionada!,
-                calificada: true
+                calificada: true,
               };
 
               // Actualizar la reserva en el servidor
@@ -356,8 +368,6 @@ enviarCalificacion(): void {
   }
 
 
-
-
   //SACADO DE NOTIFICACION ADMIN:
 
   reservas: Reserva[]=[];
@@ -367,7 +377,7 @@ enviarCalificacion(): void {
       next: (reservas: Reserva[]) => {
        // this.reservas = reservas; // Asigna las reservas obtenidas del servidor
        this.reservas = reservas.sort((a, b) => {
-        const estadoOrden = { pendiente: 1, aceptada: 2, rechazada: 3, finalizada: 4 };
+        const estadoOrden = { pendiente: 1, aceptada: 2, rechazada: 3, finalizada: 4};
         return estadoOrden[a.estado] - estadoOrden[b.estado];
       });
       },
