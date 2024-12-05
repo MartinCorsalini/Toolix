@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
 import { UsuariosService } from '../../service/usuarios.service';
 import { Usuario } from '../../interface/usuario';
+import { ReservasService } from '../../service/reservas.service';
 
 @Component({
   selector: 'app-navbar-private',
@@ -12,7 +13,7 @@ import { Usuario } from '../../interface/usuario';
   templateUrl: './navbar-private.component.html',
   styleUrl: './navbar-private.component.css'
 })
-export class NavbarPrivateComponent implements OnInit {
+export class NavbarPrivateComponent implements OnInit, OnDestroy{
   ngOnInit(): void
   {
     this.auth.currentUserId$.subscribe(id => {
@@ -23,22 +24,101 @@ export class NavbarPrivateComponent implements OnInit {
     console.log('ROOOL:' + this.userRol);
     this.getById();
 
+
+    this.obtenerNotificaciones();
+     // Actualizar notificaciones inmediatamente al inicio
+     this.actualizarNotificaciones();
+
   }
 
+    //-----------------------------AGREGADO----------------------------------------
+
+  constructor(
+    private reservasService: ReservasService,
+    private authService: AuthService
+  ) {}
+
+
   userId: string | undefined = undefined;
-
-
   route = inject(Router)
-
   logoUrl: string = 'assets/images/logo.jpeg';
-
-
   isProfileOpen = false;
+
+  //-----------------------------AGREGADO----------------------------------------
+  notificacionesSinLeer: number = 0;
+  private notificacionesInterval: any;
 
 // AGREGADOO ---
 userRol : string | undefined;
 service = inject(UsuariosService);
 usuario?: Usuario; //Por si se necesita
+
+
+  //-----------------------------AGREGADO----------------------------------------
+obtenerNotificaciones() {
+  if (this.authService.estaLogeado()) {
+    const userId = this.authService.getUserId();
+    
+    this.reservasService.getReserva().subscribe((reservas) => {
+      this.notificacionesSinLeer = reservas.filter(res => 
+        // Lógica para contar notificaciones no leídas
+        (res.idTr === userId && (res.estado === 'pendiente' || !res.leida)) || 
+        (res.idUs === userId && res.estado === 'pendiente')
+      ).length;
+    });
+  }
+}
+
+ actualizarNotificaciones() {
+  const userId = this.authService.getUserId();
+  
+  if (userId) {
+    this.reservasService.getReserva().subscribe({
+      next: (reservas) => {
+        // Para trabajadores, filtra solo reservas pendientes o no finalizadas
+        if (this.userRol === 'Trabajador') {
+          this.notificacionesSinLeer = reservas.filter(res => 
+            // Solo muestra notificaciones para reservas pendientes o no leídas
+            res.idTr === userId && 
+            (res.estado === 'pendiente' || res.estado === 'aceptada') &&
+            !res.calificada
+          ).length;
+        } else {
+          // Mantén la lógica existente para otros roles
+          this.notificacionesSinLeer = reservas.filter(res => 
+            (res.idTr === userId && (res.estado === 'pendiente' || !res.leida)) || 
+            (res.idUs === userId && res.estado === 'pendiente')
+          ).length;
+        }
+      },
+      error: (error) => {
+        console.error('Error al actualizar notificaciones:', error);
+      }
+    });
+  }
+}
+
+ngOnDestroy() {
+  if (this.notificacionesInterval) {
+    clearInterval(this.notificacionesInterval);
+  }
+}
+
+marcarNotificacionComoLeida(reservaId: string) {
+  this.reservasService.marcarReservaComoLeida(reservaId).subscribe({
+    next: () => {
+      // Actualizar conteo después de marcar como leída
+      this.actualizarNotificaciones();
+    },
+    error: (error) => {
+      console.error('Error al marcar notificación:', error);
+    }
+  });
+}
+
+//---------------------------------------------------------------------
+
+
 
 getById()
   {

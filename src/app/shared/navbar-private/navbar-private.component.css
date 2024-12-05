@@ -141,3 +141,27 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
   text-align: center; /* Centra el texto */
 }
+
+/* Contenedor de la notificación */
+.notification-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 8px; /* Espaciado para facilidad de clic */
+}
+
+
+/* Badge de notificación */
+.notification-badge {
+  position: absolute;
+  top: -2px; /* Ajuste fino para acercarlo verticalmente */
+  right: -2px; /* Ajuste fino para acercarlo horizontalmente */
+  color: #ff4d4f; /* Solo el número en rojo */
+  font-size: 16px; /* Tamaño mediano */
+  font-weight: bold;
+  line-height: 1;
+  display: inline-block; /* Solo ocupa el espacio necesario */
+  font-weight: bold;
+}

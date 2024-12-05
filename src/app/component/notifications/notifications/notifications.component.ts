@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, inject, Inject, OnInit } from '@angular/core';
 import { NavbarPrivateComponent } from "../../../shared/navbar-private/navbar-private.component";
 import { Reserva } from '../../../interface/reserva';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { AltaBajaReservaComponent } from "../../Reservas/alta-baja-reserva/alta-baja-reserva.component";
 import { ReservasService } from '../../../service/reservas.service';
 
@@ -17,7 +17,7 @@ import { MatError, MatFormField, MatFormFieldModule, MatLabel } from '@angular/m
 import { MatInputModule } from '@angular/material/input'; // Importar MatInputModule
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+
 
 @Component({
   selector: 'app-notifications',
@@ -39,6 +39,20 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   styleUrl: './notifications.component.css',
 })
 export class NotificationsComponent implements OnInit{
+
+
+
+    //-----------------------------AGREGADO----------------------------------------
+  marcarComoLeida(reserva: Reserva) {
+    reserva.leida = true;
+    this.reservasService.putReserva(reserva, reserva.id).subscribe({
+      next: () => {
+        // Actualizar lista de reservas
+        this.cargarReservas();
+      }
+    });
+  }
+
    // Arreglos para almacenar reservas enviadas y recibidas por el usuario
   reservasEnviadas: Reserva[]=[];
   reservasRecibidas: Reserva[]=[];
@@ -58,8 +72,10 @@ export class NotificationsComponent implements OnInit{
     private cdr: ChangeDetectorRef,
     private service: UsuariosService,
     private authService: AuthService,
-    private fb: FormBuilder
-  ) {this.calificacionForm = this.fb.group({
+    private fb: FormBuilder,
+
+  ) 
+  {this.calificacionForm = this.fb.group({
     calificacion: [null, [Validators.required, Validators.min(1), Validators.max(10)]]
   });}
 
@@ -371,7 +387,7 @@ enviarCalificacion(): void {
   //SACADO DE NOTIFICACION ADMIN:
 
   reservas: Reserva[]=[];
-
+  /*
   cargarReservas() {
     this.reservasService.getReserva().subscribe({
       next: (reservas: Reserva[]) => {
@@ -388,6 +404,37 @@ enviarCalificacion(): void {
 
     );
   }
+*/
+
+  //-----------------------------AGREGADO----------------------------------------
+ cargarReservas() {
+    this.reservasService.getReserva().subscribe({
+      next: (reservas: Reserva[]) => {
+        const userId = this.user.getUserId();
+
+        // Filtrar y ordenar reservas como lo hacías antes
+        this.reservasRecibidas = reservas
+          .filter(res => res.idTr === userId)
+          .sort((a, b) => {
+            const estadoOrden = { pendiente: 1, aceptada: 2, rechazada: 3, finalizada: 4};
+            return estadoOrden[a.estado] - estadoOrden[b.estado];
+          });
+
+        this.reservasEnviadas = reservas
+          .filter(res => res.idUs === userId)
+          .sort((a, b) => {
+            const estadoOrden = { pendiente: 1, aceptada: 2, rechazada: 3, finalizada: 4};
+            return estadoOrden[a.estado] - estadoOrden[b.estado];
+          });
+      }
+    });
+  }
+
+
+
+
+
+
 
   usuario?: Usuario;
   userRol : string | undefined;
