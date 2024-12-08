@@ -388,6 +388,16 @@
       "estado": "finalizada",
       "idUs": "dd94",
       "idTr": "9584"
+    },
+    {
+      "id": "5704",
+      "fecha": "2024-12-11",
+      "horario": "11:00",
+      "direccion": "catamarca 1062",
+      "descProblema": "ffffffffffffffffffffffffffff",
+      "estado": "pendiente",
+      "idUs": "42m1",
+      "idTr": "d1cc"
     }
   ]
 }

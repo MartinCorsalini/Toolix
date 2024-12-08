@@ -10,24 +10,29 @@
         </div>
 
         <!------------ Reservas RECIBIDAS (solo si el usuario es trabajador) ------------>
-
+        
         <div *ngIf="esTrabajador" class="center-container">
-          <h2 class="titulos">Reservas recibidas</h2>
+          <select class="form-control estado-filtro" (change)="filtrarPorEstadoRecibidas($event)">
+            
+            <option *ngFor="let estado of estadosReserva" [value]="estado">
+              {{ estado | titlecase }}
+            </option>
+          </select>
         </div>
-
+        
         <div *ngIf="esTrabajador" class="center-container">
+          <div class="container">
+            <!-- Si no hay reservas recibidas filtradas, muestra el mensaje correspondiente -->
+            <div *ngIf="getFiltrarReservasRecibidas().length === 0; else reservasRecibidasList">
+              <p>No hay reservas con el estado seleccionado.</p>
+            </div>
 
-            <div class="container">
-              <!-- Si no hay reservas recibidas, muestra el mensaje correspondiente -->
-              <div *ngIf="reservasRecibidas.length === 0; else reservasRecibidasList">
-                <p>Aún no tienes reservas recibidas.</p>
-              </div>
+
               <!-- Si hay reservas, las muestra en una lista -->
-
               <ng-template #reservasRecibidasList>
                 <ul class="notification-list">
 
-                  <li class="notification-item" *ngFor="let reserva of reservasRecibidas">
+                  <li class="notification-item" *ngFor="let reserva of reservasRecibidasFiltradas">
 
                         <div class="reservation-details">
                           <div class="reservation-field">
@@ -87,19 +92,26 @@
         <!------------------ ROL CLIENTE ----------------------->
         <!------------------ Reservas Enviadas ----------------------->
         <div class="center-container">
-          <h2 class="titulos">Reservas enviadas</h2>
+          <select class="form-control estado-filtro" (change)="filtrarPorEstadoEnviadas($event)">
+            <option *ngFor="let estado of estadosReserva" [value]="estado">
+              {{ estado | titlecase }}
+            </option>
+          </select>
         </div>
-
+        
         <div class="center-container">
           <div class="container">
-            <!-- Si no hay reservas enviadas, muestra el mensaje correspondiente -->
-            <div *ngIf="reservasEnviadas.length === 0; else reservasEnviadasList">
-              <p>Aún no tienes reservas enviadas.</p>
+            <!-- Si no hay reservas enviadas filtradas, muestra el mensaje correspondiente -->
+            <div *ngIf="getFiltrarReservasEnviadas().length === 0; else reservasEnviadasList">
+              <p>No hay reservas con el estado seleccionado.</p>
             </div>
+            
+
+
             <!-- Si hay reservas, las muestra en una lista -->
             <ng-template #reservasEnviadasList>
               <ul class="notification-list">
-                <li class="notification-item" *ngFor="let reserva of reservasEnviadas">
+                <li class="notification-item" *ngFor="let reserva of reservasEnviadasFiltradas">
                   <div class="reservation-details">
 
                     <div class="reservation-field">
@@ -172,6 +184,17 @@
     }
     <!---------------------------- SI ES ADMIN ---------------------------->
     @else {
+
+        <!-- Dropdown de filtrado para reservas de admin -->
+        <div class="center-container">
+          <select class="form-control estado-filtro" (change)="filtrarPorEstadoAdmin($event)">
+            <option *ngFor="let estado of estadosReserva" [value]="estado">
+              {{ estado | titlecase }}
+            </option>
+          </select>
+        </div>
+
+      
       <div class="center-container">
         <h2 class="title">Reservas</h2>
       </div>
@@ -181,7 +204,7 @@
           <div class="header"></div>
 
           <ul class="notification-list">
-            <li class="notification-item" *ngFor="let reserva of reservas">
+            <li class="notification-item" *ngFor="let reserva of reservasAdminFiltradas">
 
               <div class="reservation-details">
 
