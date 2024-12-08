@@ -478,3 +478,27 @@ body {
   box-shadow: 0 0 5px #007bff; /* Sombra al enfocarse */
 }
 
+.estado-filtro {
+  position: absolute; /* Posiciona el elemento relativo a la página */
+  top: 150px; /* Despega el menú 50px desde la parte superior */
+  left: 30px; /* Ubica el menú 20px desde el borde izquierdo */
+  width: 130px; /* Ancho del menú desplegable */
+  padding: 10px; /* Espaciado interno */
+  border: 1px solid #ccc; /* Borde delgado y gris */
+  border-radius: 5px; /* Bordes redondeados */
+  background-color: #f9f9f9; /* Fondo claro */
+  font-size: 16px; /* Tamaño del texto */
+  color: #333; /* Color del texto */
+  cursor: pointer; /* Manito al pasar el mouse */
+}
+
+.estado-filtro:hover {
+  background-color: #f1f1f1; /* Fondo más oscuro al pasar el mouse */
+}
+
+.estado-filtro:focus {
+  
+  outline: none; /* Elimina el contorno predeterminado */
+  border-color: #007bff; /* Borde azul al seleccionar */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Efecto de sombra azul */
+}

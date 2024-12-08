@@ -11,12 +11,13 @@ import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../../service/auth.service';
 import { UsuariosService } from '../../../service/usuarios.service';
 import { Usuario } from '../../../interface/usuario';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatError, MatFormField, MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 
 import { MatInputModule } from '@angular/material/input'; // Importar MatInputModule
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @Component({
@@ -33,6 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       MatFormFieldModule,
       MatInputModule,
       MatButtonModule,
+      MatSelectModule,
+      FormsModule
     ],
 
   templateUrl: './notifications.component.html',
@@ -138,6 +141,10 @@ export class NotificationsComponent implements OnInit{
       // Si no está logueado, redirige a la página de login
       this.router.navigate(['/login']);
     }
+
+    this.reservasRecibidasFiltradas = this.reservasRecibidas;
+    this.reservasEnviadasFiltradas = this.reservasEnviadas;
+    this.reservasAdminFiltradas = this.reservas;
   }
 
   irAModificarReserva(reserva: Reserva){
@@ -463,6 +470,64 @@ enviarCalificacion(): void {
     // Redirige al perfil según el tipo y el ID
     this.router.navigate([`/perfil-trabajador/${id}`]);
   }
+
+
+  // Nuevas propiedades para filtrado
+  estadoFiltroRecibidas: string = 'todos';
+  estadoFiltroEnviadas: string = 'todos';
+  estadoFiltroAdmin: string = 'todos';
+
+  // Estados posibles de reserva
+  estadosReserva: string[] = ['todos', 'pendiente', 'aceptada', 'rechazada', 'finalizada'];
+
+  // Método para aplicar filtro de reservas recibidas (para trabajador)
+  getFiltrarReservasRecibidas(): Reserva[] {
+    return this.estadoFiltroRecibidas === 'todos' 
+      ? this.reservasRecibidas 
+      : this.reservasRecibidas.filter(reserva => reserva.estado === this.estadoFiltroRecibidas);
+  }
+
+  // Método para aplicar filtro de reservas enviadas (para cliente)
+  getFiltrarReservasEnviadas(): Reserva[] {
+    return this.estadoFiltroEnviadas === 'todos' 
+      ? this.reservasEnviadas 
+      : this.reservasEnviadas.filter(reserva => reserva.estado === this.estadoFiltroEnviadas);
+  }
+
+  // Método para aplicar filtro de reservas para admin
+  getFiltrarReservasAdmin(): Reserva[] {
+    return this.estadoFiltroAdmin === 'todos' 
+      ? this.reservas 
+      : this.reservas.filter(reserva => reserva.estado === this.estadoFiltroAdmin);
+  }
+
+
+    // Método para filtrar reservas recibidas
+    filtrarPorEstadoRecibidas(event: Event): void {
+      const estado = (event.target as HTMLSelectElement)?.value || ''; // Obtenemos el valor seleccionado
+      this.estadoFiltroRecibidas = estado; // Asignamos el valor seleccionado al filtro
+      this.reservasRecibidasFiltradas = this.getFiltrarReservasRecibidas(); // Filtramos las reservas
+    }
+
+  // Método para filtrar reservas enviadas
+  filtrarPorEstadoEnviadas(event: Event): void {
+    const estado = (event.target as HTMLSelectElement)?.value || ''; 
+    this.estadoFiltroEnviadas = estado;
+    this.reservasEnviadasFiltradas = this.getFiltrarReservasEnviadas();
+  }
+
+  // Método para filtrar reservas admin
+  filtrarPorEstadoAdmin(event: Event): void {
+    const estado = (event.target as HTMLSelectElement)?.value || ''; 
+    this.estadoFiltroAdmin = estado;
+    this.reservasAdminFiltradas = this.getFiltrarReservasAdmin();
+  }
+
+  // Variables para almacenar las reservas filtradas
+  reservasRecibidasFiltradas: Reserva[] = [];
+  reservasEnviadasFiltradas: Reserva[] = [];
+  reservasAdminFiltradas: Reserva[] = [];
+
 
 }
 
