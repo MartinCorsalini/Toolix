@@ -28,14 +28,18 @@
           </div>
 
   
-        
+          
           <div class="center-container">
+            
             <div class="container">
+              <h2>Reservas Recibidas</h2>
               @if (getFiltrarReservasRecibidas().length === 0) {
                 <p>No hay reservas con el estado seleccionado.</p>
-              } @else {
+              } @else 
+              {
                 <ul class="notification-list">
                   @for (reserva of getFiltrarReservasRecibidas(); track reserva.id) {
+                    
                     <li class="notification-item">
                       <div class="reservation-details">
                         <div class="reservation-field">
@@ -112,6 +116,7 @@
     
         <div class="center-container">
           <div class="container">
+            <h2>Reservas Enviadas</h2>
             <!-- Si no hay reservas enviadas filtradas, muestra el mensaje correspondiente -->
             <div *ngIf="getFiltrarReservasEnviadas().length === 0; else reservasEnviadasList">
               <p>No hay reservas con el estado seleccionado.</p>
@@ -121,7 +126,7 @@
 
             <!-- Si hay reservas, las muestra en una lista -->
             <ng-template #reservasEnviadasList>
-              <h2>Reservas enviadas</h2>
+              
               <ul class="notification-list">
                 <li class="notification-item" *ngFor="let reserva of reservasEnviadasFiltradas">
                   <div class="reservation-details">
@@ -138,7 +143,7 @@
 
                     <div class="reservation-field">
                       <span class="field-label">Fecha</span>
-                      <span class="field-value">{{ reserva.fecha }}</span>
+                      <span class="field-value">{{ reserva.fecha | date:'dd/MM/yyyy' }}</span>
                     </div>
 
                     <div class="reservation-field">
@@ -178,9 +183,13 @@
                       <span class="rechazada-badge">Reserva rechazada</span>
                     </ng-container>
 
+                    <ng-container *ngIf="reserva.estado === 'aceptada'">
+                      <span class="calificada-badge">Reserva aceptada</span>
+                    </ng-container>
+
                     <!-- Mostrar los botones "Modificar" y "Eliminar" solo si la reserva no está finalizada -->
                     <ng-template #botonesModificarEliminar>
-                      <ng-container *ngIf="reserva.estado !== 'finalizada' && reserva.estado !== 'rechazada'">
+                      <ng-container *ngIf="reserva.estado === 'pendiente'">
                         <button (click)="irAModificarReserva(reserva)" class="accept-btn">Modificar</button>
                         <button (click)="eliminarReserva(reserva.id!)" class="reject-btn">Eliminar</button>
                       </ng-container>
@@ -219,96 +228,80 @@
 
       <div class="center-container">
         <div class="container">
-          <div class="header"></div>
-
           <ul class="notification-list">
-            <li class="notification-item" *ngFor="let reserva of reservasAdminFiltradas">
+            <h2>Todas las Reservas</h2>
 
-              <div class="reservation-details">
-
-                <div class="reservation-field">
-                  <span class="field-label">Dirección</span>
-                  <span class="field-value">{{ reserva.direccion }}</span>
-                </div>
-
-                <div class="reservation-field">
-                  <span class="field-label">Problema:</span>
-                  <span class="field-value">{{ reserva.descProblema }}</span>
-                </div>
-
-                <div class="reservation-field">
-                  <span class="field-label">Fecha</span>
-                  <span class="field-value">{{ reserva.fecha }}</span>
-                </div>
-
-                <div class="reservation-field">
-                  <span class="field-label">Horario</span>
-                  <span class="field-value">{{ reserva.horario }}</span>
-                </div>
-
-                <div class="reservation-field">
-                  <span class="field-label">Estado</span>
-                  <span class="field-value">{{ reserva.estado }}</span>
-                </div>
-
-                <div class="reservation-field">
-                  <span class="field-label">Reserva ID</span>
-                  <span class="field-value">{{ reserva.id }}</span>
-                </div>
-
-                <div class="reservation-field">
-                  <span class="field-label">Cliente</span>
-                  <span class="field-value">{{ usuarioNombres[reserva.idUs!] || 'Cargando...' }}
-                    <button class="view-profile-btn" *ngIf="reserva.idUs" (click)="irAlPerfil(reserva.idUs)">
-                      Ver Perfil
-                    </button>
-                  </span>
-                </div>
-
-                <div class="reservation-field">
-                  <span class="field-label">Trabajador</span>
-                  <span class="field-value">{{ trabajadorNombres[reserva.idTr!] || 'Cargando...' }}
-                    <button class="view-profile-btn" *ngIf="reserva.idTr" (click)="irAlPerfil(reserva.idTr)">
-                      Ver Perfil
-                    </button>
-                  </span>
-                </div>
-              </div>
-
-
-              <div class="actions">
-                <!-- Mostrar el botón "Calificar" si la reserva está finalizada y no calificada -->
-                <ng-container *ngIf="reserva.estado === 'finalizada' && !reserva.calificada; else botonesModificarEliminar">
-                    <button class="accept-btn" (click)="abrirDialogoCalificacion(reserva)">Calificar</button>
-                </ng-container>
-
-                <!-- Mostrar el badge "Reserva calificada" si la reserva está finalizada y calificada -->
-                <ng-container *ngIf="reserva.estado === 'finalizada' && reserva.calificada">
-                    <span class="calificada-badge">Reserva calificada</span>
-                </ng-container>
-
-                <!-- Mostrar el badge "Reserva rechazada" si la reserva está rechazada -->
-                <ng-container *ngIf="reserva.estado === 'rechazada'">
-                    <span class="rechazada-badge">Reserva rechazada</span>
-                </ng-container>
-
-                <!-- Mostrar el badge "Reserva aceptada" si la reserva está aceptada -->
-                <ng-container *ngIf="reserva.estado === 'aceptada'">
-                    <span class="calificada-badge">Reserva aceptada</span>
-                </ng-container>
-
-                <!-- Mostrar los botones "Modificar" y "Eliminar" solo si la reserva no está finalizada, rechazada o aceptada -->
-                <ng-template #botonesModificarEliminar>
-                    <ng-container *ngIf="reserva.estado !== 'finalizada' &&
-                                         reserva.estado !== 'rechazada' &&
-                                         reserva.estado !== 'aceptada'">
+            @if (reservasAdminFiltradas.length > 0) {
+              @for (reserva of reservasAdminFiltradas; track reserva.id ) {
+                <li class="notification-item">
+                  <div class="reservation-details">
+                    <div class="reservation-field">
+                      <span class="field-label">Dirección</span>
+                      <span class="field-value">{{ reserva.direccion }}</span>
+                    </div>
+                    <div class="reservation-field">
+                      <span class="field-label">Problema:</span>
+                      <span class="field-value">{{ reserva.descProblema }}</span>
+                    </div>
+                    <div class="reservation-field">
+                      <span class="field-label">Fecha</span>
+                      <span class="field-value">{{ reserva.fecha | date:'dd/MM/yyyy' }}</span>
+                    </div>
+                    <div class="reservation-field">
+                      <span class="field-label">Horario</span>
+                      <span class="field-value">{{ reserva.horario }}</span>
+                    </div>
+                    <div class="reservation-field">
+                      <span class="field-label">Estado</span>
+                      <span class="field-value">{{ reserva.estado }}</span>
+                    </div>
+                    <div class="reservation-field">
+                      <span class="field-label">Reserva ID</span>
+                      <span class="field-value">{{ reserva.id }}</span>
+                    </div>
+                    <div class="reservation-field">
+                      <span class="field-label">Cliente</span>
+                      <span class="field-value">
+                        {{ usuarioNombres[reserva.idUs!] || 'Cargando...' }}
+                        <button *ngIf="reserva.idUs" (click)="irAlPerfil(reserva.idUs)" class="view-profile-btn">Ver Perfil</button>
+                      </span>
+                    </div>
+                    <div class="reservation-field">
+                      <span class="field-label">Trabajador</span>
+                      <span class="field-value">
+                        {{ trabajadorNombres[reserva.idTr!] || 'Cargando...' }}
+                        <button *ngIf="reserva.idTr" (click)="irAlPerfil(reserva.idTr)" class="view-profile-btn">Ver Perfil</button>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="actions">
+                    <ng-container *ngIf="reserva.estado === 'finalizada' && !reserva.calificada; else botonesModificarEliminar">
+                      <button class="accept-btn" (click)="abrirDialogoCalificacion(reserva)">Calificar</button>
+                    </ng-container>
+                    <ng-container *ngIf="reserva.estado === 'finalizada' && reserva.calificada">
+                      <span class="calificada-badge">Reserva calificada</span>
+                    </ng-container>
+                    <ng-container *ngIf="reserva.estado === 'rechazada'">
+                      <span class="rechazada-badge">Reserva rechazada</span>
+                    </ng-container>
+                    <ng-container *ngIf="reserva.estado === 'aceptada'">
+                      <span class="calificada-badge">Reserva aceptada</span>
+                    </ng-container>
+                    <ng-template #botonesModificarEliminar>
+                      <ng-container *ngIf="reserva.estado === 'pendiente'">
                         <button (click)="irAModificarReserva(reserva)" class="accept-btn">Modificar</button>
                         <button (click)="eliminarReserva(reserva.id!)" class="reject-btn">Eliminar</button>
-                    </ng-container>
-                </ng-template>
-              </div>
+                      </ng-container>
+                    </ng-template>
+                  </div>
+                </li>
+              }
+            } @else {
+              <p>No hay reservas con el estado seleccionado.</p>
+            }
 
-            </li>
+
+
           </ul>
         </div>
       </div>

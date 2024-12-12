@@ -425,7 +425,7 @@
       "horario": "23:57",
       "direccion": "catamarca 2020",
       "descProblema": "enviadisima",
-      "estado": "pendiente",
+      "estado": "aceptada",
       "idUs": "d1cc",
       "idTr": "d1cc"
     },
@@ -437,6 +437,16 @@
       "descProblema": "PROBANDOOOOOOOOOO",
       "estado": "aceptada",
       "idUs": "d1cc",
+      "idTr": "d1cc"
+    },
+    {
+      "id": "7f05",
+      "fecha": "2024-12-20",
+      "horario": "10:00",
+      "direccion": "COLONNNNNNNNNNNNN",
+      "descProblema": "pppppppppppppppppppppppppp",
+      "estado": "aceptada",
+      "idUs": "d96a",
       "idTr": "d1cc"
     }
   ]
