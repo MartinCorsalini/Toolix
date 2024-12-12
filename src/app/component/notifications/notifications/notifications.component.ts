@@ -89,54 +89,59 @@ export class NotificationsComponent implements OnInit{
     });
   
     this.getById();
-    this.cargarReservas();
+   // this.cargarReservas();
   
     if (this.user.estaLogeado()) {
       // Si el usuario está autenticado, obtiene sus reservas
-      this.reservasService.getReserva().subscribe((reservas) => {
+      this.reservasService.getReserva().subscribe((reservas) => 
+        {
         const userId = this.user.getUserId();
   
         const estadoOrden = { pendiente: 1, aceptada: 2, rechazada: 3, finalizada: 4};
   
-        if (this.userRol === 'Admin') {
-          // Para el rol de admin, cargar nombres de todas las reservas
-          this.reservas = reservas.sort((a, b) => {
-            return estadoOrden[a.estado] - estadoOrden[b.estado];
-          });
-  
-          // Cargar nombres de clientes y trabajadores para todas las reservas
-          this.reservas.forEach((reserva) => {
-            this.mostrarCliente(reserva.idUs!);
-            this.mostrarTrabajador(reserva.idTr!);
-          });
-        } else {
-          // Lógica existente para roles de cliente y trabajador
-          // Filtra y ordena reservas recibidas
-          this.reservasRecibidas = reservas
-            .filter(res => res.idTr === userId)
-            .sort((a, b) => estadoOrden[a.estado] - estadoOrden[b.estado]);
-  
-          // Filtra y ordena reservas enviadas
-          this.reservasEnviadas = reservas
-            .filter(res => res.idUs === userId)
-            .sort((a, b) => estadoOrden[a.estado] - estadoOrden[b.estado]);
-  
-          // Cargar nombres de clientes y trabajadores para cada reserva recibida
-          this.reservasRecibidas.forEach((reserva) => {
-            this.mostrarCliente(reserva.idUs!);
-            this.mostrarTrabajador(reserva.idTr!);
-          });
-  
-          // Cargar nombres de clientes y trabajadores para cada reserva enviada
-          this.reservasEnviadas.forEach((reserva) => {
-            this.mostrarCliente(reserva.idUs!);
-            this.mostrarTrabajador(reserva.idTr!);
-          });
-        }
+        if (this.userRol === 'Admin') 
+          {
+              // Para el rol de admin, cargar nombres de todas las reservas
+              this.reservas = reservas.sort((a, b) => {
+                return estadoOrden[a.estado] - estadoOrden[b.estado];
+              });
+      
+              // Cargar nombres de clientes y trabajadores para todas las reservas
+              this.reservas.forEach((reserva) => {
+                this.mostrarCliente(reserva.idUs!);
+                this.mostrarTrabajador(reserva.idTr!);
+              });
+          } 
+          else 
+          {
+              // Lógica existente para roles de cliente y trabajador
+              // Filtra y ordena reservas recibidas
+              this.reservasRecibidas = reservas
+                .filter(res => res.idTr === userId)
+                .sort((a, b) => estadoOrden[a.estado] - estadoOrden[b.estado]);
+      
+              // Filtra y ordena reservas enviadas
+              this.reservasEnviadas = reservas
+                .filter(res => res.idUs === userId)
+                .sort((a, b) => estadoOrden[a.estado] - estadoOrden[b.estado]);
+      
+              // Cargar nombres de clientes y trabajadores para cada reserva RECIBIDAS
+              this.reservasRecibidas.forEach((reserva) => {
+                this.mostrarCliente(reserva.idUs!);
+                this.mostrarTrabajador(reserva.idTr!);
+              });
+      
+              // Cargar nombres de clientes y trabajadores para cada reserva ENVIADAS
+              this.reservasEnviadas.forEach((reserva) => {
+                this.mostrarCliente(reserva.idUs!);
+                this.mostrarTrabajador(reserva.idTr!);
+              });
+            }
       });
   
       // Recupera el rol del usuario y ajusta `esTrabajador` según corresponda
       this.esTrabajador = this.user.getUserRole() === 'Trabajador';
+
     } else {
       // Si no está logueado, redirige a la página de login
       this.router.navigate(['/login']);
@@ -145,6 +150,8 @@ export class NotificationsComponent implements OnInit{
     this.reservasRecibidasFiltradas = this.reservasRecibidas;
     this.reservasEnviadasFiltradas = this.reservasEnviadas;
     this.reservasAdminFiltradas = this.reservas;
+
+
   }
 
   irAModificarReserva(reserva: Reserva){
@@ -174,8 +181,7 @@ export class NotificationsComponent implements OnInit{
           console.log('Fallo eliminar');
         }
         });
-
-  }
+      }
 
   //-------------------------------------AGREGADO------------------------------------
   // Finalizar una reserva
@@ -419,10 +425,11 @@ enviarCalificacion(): void {
       next: (reservas: Reserva[]) => {
         const userId = this.user.getUserId();
 
-        // Filtrar y ordenar reservas como lo hacías antes
+        // Filtrar y ordenar reservas 
         this.reservasRecibidas = reservas
           .filter(res => res.idTr === userId)
           .sort((a, b) => {
+            console.log("----------------------------------------------ACÁ ORDENO LAS RESERVAS RECIBIDAS:"+ this.reservasRecibidas)
             const estadoOrden = { pendiente: 1, aceptada: 2, rechazada: 3, finalizada: 4};
             return estadoOrden[a.estado] - estadoOrden[b.estado];
           });
@@ -430,6 +437,7 @@ enviarCalificacion(): void {
         this.reservasEnviadas = reservas
           .filter(res => res.idUs === userId)
           .sort((a, b) => {
+            console.log("----------------------------------------------ACÁ ORDENO LAS RESERVAS ENVIADAS:"+ this.reservasEnviadas)
             const estadoOrden = { pendiente: 1, aceptada: 2, rechazada: 3, finalizada: 4};
             return estadoOrden[a.estado] - estadoOrden[b.estado];
           });
@@ -456,7 +464,6 @@ enviarCalificacion(): void {
         {
           this.usuario = usuario;
           this.userRol = usuario.rol;
-          console.log('ROOOOL 2: '+ this.userRol);
         },
         error: () =>
         {
@@ -480,12 +487,6 @@ enviarCalificacion(): void {
   // Estados posibles de reserva
   estadosReserva: string[] = ['todos', 'pendiente', 'aceptada', 'rechazada', 'finalizada'];
 
-  // Método para aplicar filtro de reservas recibidas (para trabajador)
-  getFiltrarReservasRecibidas(): Reserva[] {
-    return this.estadoFiltroRecibidas === 'todos' 
-      ? this.reservasRecibidas 
-      : this.reservasRecibidas.filter(reserva => reserva.estado === this.estadoFiltroRecibidas);
-  }
 
   // Método para aplicar filtro de reservas enviadas (para cliente)
   getFiltrarReservasEnviadas(): Reserva[] {
@@ -501,16 +502,54 @@ enviarCalificacion(): void {
       : this.reservas.filter(reserva => reserva.estado === this.estadoFiltroAdmin);
   }
 
-
-    // Método para filtrar reservas recibidas
-    filtrarPorEstadoRecibidas(event: Event): void {
-      const estado = (event.target as HTMLSelectElement)?.value || ''; // Obtenemos el valor seleccionado
-      this.estadoFiltroRecibidas = estado; // Asignamos el valor seleccionado al filtro
-      this.reservasRecibidasFiltradas = this.getFiltrarReservasRecibidas(); // Filtramos las reservas
+      // Método para aplicar filtro de reservas recibidas (para trabajador)
+    getFiltrarReservasRecibidas(): Reserva[]
+    {
+        console.log('Estado del filtro:', this.estadoFiltroRecibidas);
+        
+        // Imprime todas las propiedades de la primera reserva
+        if (this.reservasRecibidas.length > 0) {
+          console.log('Propiedades de la primera reserva:', 
+            Object.keys(this.reservasRecibidas[0])
+          );
+        }
+      
+        // Si el filtro es 'todos', devuelve todas las reservas
+        if (this.estadoFiltroRecibidas === 'todos') {
+          return this.reservasRecibidas;
+        }
+      
+        // Filtra las reservas por el estado seleccionado
+        const reservasFiltradas = this.reservasRecibidas.filter(reserva => {
+          console.log('Reserva individual:', reserva);
+          return reserva.estado?.toLowerCase() === this.estadoFiltroRecibidas.toLowerCase();
+        });
+      
+        console.log('Reservas filtradas:', reservasFiltradas);
+        return reservasFiltradas;
     }
+
+   // Método para filtrar reservas recibidas
+   filtrarPorEstadoRecibidas(event: Event): void 
+   {
+
+    const estado = (event.target as HTMLSelectElement)?.value || ''; 
+    this.estadoFiltroRecibidas = estado;
+    this.reservasRecibidasFiltradas = this.getFiltrarReservasRecibidas();
+
+  }
+
+
+  onEstadoChange(event: Event): void {
+    // Llamar a ambas funciones
+    this.filtrarPorEstadoRecibidas(event);
+    this.filtrarPorEstadoEnviadas(event);
+  }
+  
 
   // Método para filtrar reservas enviadas
   filtrarPorEstadoEnviadas(event: Event): void {
+
     const estado = (event.target as HTMLSelectElement)?.value || ''; 
     this.estadoFiltroEnviadas = estado;
     this.reservasEnviadasFiltradas = this.getFiltrarReservasEnviadas();

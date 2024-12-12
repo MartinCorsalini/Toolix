@@ -395,8 +395,48 @@
       "horario": "11:00",
       "direccion": "catamarca 1062",
       "descProblema": "ffffffffffffffffffffffffffff",
-      "estado": "pendiente",
+      "estado": "aceptada",
       "idUs": "42m1",
+      "idTr": "d1cc"
+    },
+    {
+      "id": "fd34",
+      "fecha": "2024-12-22",
+      "horario": "23:39",
+      "direccion": "Balcarce 2022",
+      "descProblema": "AAAAAAAAAAAAAAAA",
+      "estado": "rechazada",
+      "idUs": "42m1",
+      "idTr": "d1cc"
+    },
+    {
+      "id": "025c",
+      "fecha": "2024-12-14",
+      "horario": "23:39",
+      "direccion": "catamarca 2020",
+      "descProblema": "bbbbbbbbbbbbbb",
+      "estado": "finalizada",
+      "idUs": "42m1",
+      "idTr": "d1cc"
+    },
+    {
+      "id": "0dbd",
+      "fecha": "2024-12-22",
+      "horario": "23:57",
+      "direccion": "catamarca 2020",
+      "descProblema": "enviadisima",
+      "estado": "pendiente",
+      "idUs": "d1cc",
+      "idTr": "d1cc"
+    },
+    {
+      "id": "2f86",
+      "fecha": "2024-12-29",
+      "horario": "01:15",
+      "direccion": "Balcarce 2022",
+      "descProblema": "PROBANDOOOOOOOOOO",
+      "estado": "aceptada",
+      "idUs": "d1cc",
       "idTr": "d1cc"
     }
   ]
