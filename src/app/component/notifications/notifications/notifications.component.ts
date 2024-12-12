@@ -89,12 +89,12 @@ export class NotificationsComponent implements OnInit{
     });
   
     this.getById();
-   // this.cargarReservas();
+    this.cargarReservas();
   
     if (this.user.estaLogeado()) {
       // Si el usuario está autenticado, obtiene sus reservas
       this.reservasService.getReserva().subscribe((reservas) => 
-        {
+      {
         const userId = this.user.getUserId();
   
         const estadoOrden = { pendiente: 1, aceptada: 2, rechazada: 3, finalizada: 4};
@@ -137,6 +137,11 @@ export class NotificationsComponent implements OnInit{
                 this.mostrarTrabajador(reserva.idTr!);
               });
             }
+
+            this.reservasRecibidasFiltradas = this.reservasRecibidas;
+            this.reservasEnviadasFiltradas = this.reservasEnviadas;
+            this.reservasAdminFiltradas = this.reservas;
+
       });
   
       // Recupera el rol del usuario y ajusta `esTrabajador` según corresponda
@@ -147,9 +152,9 @@ export class NotificationsComponent implements OnInit{
       this.router.navigate(['/login']);
     }
 
-    this.reservasRecibidasFiltradas = this.reservasRecibidas;
-    this.reservasEnviadasFiltradas = this.reservasEnviadas;
-    this.reservasAdminFiltradas = this.reservas;
+    
+
+    
 
 
   }
