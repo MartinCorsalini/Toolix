@@ -114,15 +114,12 @@ export class CardComponent implements OnInit{
   )
   }
 
-
- //------------------lo que estaba antes --------------------
- /*
-  @Input() idTrabajador: number | undefined = undefined; // inicializa
-  @Output() eventReserva= new EventEmitter<number>();
-
-  reservar(): void{
-    this.eventReserva.emit(this.idTrabajador) //emite el id del trabajador
-
+  //--------------------BOTON FAVORITOS----------------------
+  toggleFavorito(usuarioId: string) {
+    const usuario = this.listaUsuarios.find((u) => u.id === usuarioId);
+    if (usuario) {
+      usuario.isFavorito = !usuario.isFavorito;
+    }
   }
-    */
+
 }

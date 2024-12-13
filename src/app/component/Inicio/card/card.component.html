@@ -30,6 +30,16 @@
             <hr>
             <div class="actions">
               <button class="detalles-button" (click)="irADetalles(usuario.id!)">Detalles</button>
+
+              <button
+              class="heart-button"
+              [class.favorito]="usuario.isFavorito"
+              (click)="toggleFavorito(usuario.id!)"
+              >
+              <i class="fas fa-heart"></i>
+              </button>
+
+
               <div class="perfil-rating">
                 <p class="rating-title">Puntuación</p>
                 <span class="rating-value">{{ calcularPromedioValoracion(usuario.valoraciones) | number:'1.1-1' }}</span>
