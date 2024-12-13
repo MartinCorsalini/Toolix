@@ -31,6 +31,7 @@ body {
 }
 
 .card {
+  position: relative; /* Necesario para que los elementos hijos con position: absolute se posicionen respecto a la tarjeta */
   width: 290px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -40,7 +41,6 @@ body {
   margin: 0.5rem;
   transition: transform 0.3s ease-in-out;
 }
-
 .card:hover {
   transform: translateX(0) scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -110,6 +110,28 @@ body {
     transform: scale(1.1);
   }
 
+
+  .heart-button {
+    position: absolute; /* Permite colocarlo en una posición específica */
+    top: 15px; /* Distancia desde la parte superior */
+    right: 15px; /* Distancia desde la derecha */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.3s, transform 0.3s;
+  }
+  
+  .heart-button.favorito {
+    color: red;
+  }
+  
+  .heart-button:hover {
+    transform: scale(1.1); /* Efecto dinámico al pasar el ratón */
+    color: #ff0000; /* Rojo brillante al pasar el ratón */
+  }
+  
   .perfil-rating {
     display: flex;
     flex-direction: column; /* Ordena los elementos en columna */
@@ -152,24 +174,6 @@ body {
     margin: 0.5rem;
   }
 
-  .fav-button {
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: #ff5050;
-    cursor: pointer;
-}
-
-.fav-button:hover {
-    color: #ff0000; /* Color rojo cuando pasa el mouse */
-}
-
-.fav-button i {
-    transition: color 0.3s ease;
-}
-
-.fav-button.active i {
-    color: #ff0000; /* Cambia el color cuando está activo */
-}
+ 
 
 

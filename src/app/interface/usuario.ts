@@ -14,6 +14,7 @@ export interface Usuario {
     disponibilidad?: string,
     zona?: string,
     descripcion?: string,
-    telefono?: string
+    telefono?: string,
+    isFavorito?: boolean,
 
 }
