@@ -1,20 +1,22 @@
-import { Component, EventEmitter, inject, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, OnInit, Output, TrackByFunction } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { AltaBajaReservaComponent } from '../../Reservas/alta-baja-reserva/alta-baja-reserva.component';
 import { Usuario } from '../../../interface/usuario';
 import { UsuariosService } from '../../../service/usuarios.service';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../../service/auth.service';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [ RouterModule, CommonModule],
+  imports: [ RouterModule, CommonModule, FormsModule],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })
 export class CardComponent implements OnInit{
+
   ngOnInit(): void {
     this.accederAusuarios();
 
@@ -23,15 +25,28 @@ export class CardComponent implements OnInit{
     });
 
     this.getById();
+
+    //
+    const favoritos = this.authService.getFavoritos();
+    this.listaUsuarios.forEach((usuario) => {
+      usuario.isFavorito = favoritos?.includes(usuario.id!);
+    });
+
+    this.filtrarFavs();
   }
 
   @Input()
   listaUsuarios : Usuario[] =[];
+  opcionesFiltrado: string[] = ['Todos', 'Favoritos'];
+  filtroSeleccionado: string = 'Todos'; 
+  usuariosFiltrados: Usuario[] = [];
+
+
 
   service = inject(UsuariosService);
   router = inject(Router);
   stars: number[] = [];
-
+  favoritos: string[] = [];
 
   // Calcula el promedio de valoraciones
   calcularPromedioValoracion(valoraciones: number[] | undefined): number {
@@ -117,9 +132,31 @@ export class CardComponent implements OnInit{
   //--------------------BOTON FAVORITOS----------------------
   toggleFavorito(usuarioId: string) {
     const usuario = this.listaUsuarios.find((u) => u.id === usuarioId);
+  
     if (usuario) {
       usuario.isFavorito = !usuario.isFavorito;
+  
+      if (usuario.isFavorito) {
+        this.authService.agregarFavorito(usuarioId);
+      } else {
+        this.authService.eliminarFavorito(usuarioId);
+       
+      }
     }
   }
+  
+  // filtrar fav
+  filtrarFavs() {
+    if (this.filtroSeleccionado === 'Favoritos') {
+      // Muestra solo los usuarios favoritos
+      this.usuariosFiltrados = this.listaUsuarios.filter((u) => u.isFavorito);
+    } else {
+      // Muestra todos los usuarios
+      this.usuariosFiltrados = this.listaUsuarios;
+    }
+  }
+  //
+  trackById(index: number, item: Usuario): string {
+    return item.id!;}
 
 }

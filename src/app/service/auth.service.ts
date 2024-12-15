@@ -98,4 +98,24 @@ export class AuthService {
   getUserRole(): string | undefined {
     return this.usuarioActual?.rol || localStorage.getItem('userRole') || undefined;
   }
+
+
+  // FAVORITOS
+  agregarFavorito(id: string) {
+    if (this.usuarioActual && !this.usuarioActual.favoritos?.includes(id)) {
+      this.usuarioActual.favoritos?.push(id);
+    }
+  }
+
+  eliminarFavorito(id: string) {
+    if (this.usuarioActual) {
+      this.usuarioActual.favoritos = this.usuarioActual.favoritos?.filter(
+        (favoritoId) => favoritoId !== id
+      );
+    }
+  }
+
+  getFavoritos() {
+    return this.usuarioActual ? this.usuarioActual.favoritos : [];
+  }
 }
