@@ -22,18 +22,17 @@ export class CardComponent implements OnInit{
   router = inject(Router);
   stars: number[] = [];
 
-
+ // aksdnaasd
 
   ngOnInit(): void {
 
-    //Accedo al id del usuario actual
+
     this.authService.currentUserId$.subscribe(id => {
-      this.userId = id;
+      this.userId = id;//Accedo al id del usuario actual
+
       //Con ese id del usuario actual, me guardo los datos del usuario y su rol.
-      this.getById();
+      this.getById(); //Dentro de esta función llamo a accederAusuarios, que me carga la lista de usuarios
     });
-
-
   }
 
 
