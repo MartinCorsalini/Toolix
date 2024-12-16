@@ -59,4 +59,8 @@ export class UsuariosService {
     return this.http.post(`${this.urlBase}/${id}`, { valoracion });
   }
 
+  // Método para actualizar la foto de perfil
+  actualizarFotoPerfil(id: string, fotoPerfilBase64: string): Observable<Usuario> {
+    return this.http.patch<Usuario>(`${this.urlBase}/${id}`, { fotoPerfil: fotoPerfilBase64 });
+  }
 }
