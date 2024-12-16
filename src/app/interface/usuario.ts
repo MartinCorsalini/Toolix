@@ -16,5 +16,5 @@ export interface Usuario {
     descripcion?: string,
     telefono?: string,
     isFavorito?: boolean,
-
+    favoritos?: string[]
 }

@@ -47,17 +47,18 @@
       "rol": "Cliente"
     },
     {
-      "id": "d1cc",
       "nombre": "Tito Fernandez",
-      "email": "tito@gmail.com",
-      "password": "1234567",
-      "rol": "Trabajador",
-      "profesion": "Carpintero/a",
-      "disponibilidad": "9 a 18 hs",
-      "descripcion": "puntual, prolijo, cotizacion en el dia",
-      "zona": "Centro",
-      "telefono": "22357575757",
-      "valoraciones": []
+      "profesion": "Electricista",
+      "disponibilidad": "10 hs a 15 hs",
+      "zona": "Centro, Guemes, Puerto",
+      "descripcion": "Muy organizado",
+      "telefono": "2235952534",
+      "id": "d1cc",
+      "favoritos": [
+        "dd00",
+        "30d4",
+        "d96a"
+      ]
     },
     {
       "id": "d96a",
