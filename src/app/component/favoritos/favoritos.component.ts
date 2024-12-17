@@ -32,6 +32,7 @@ export class FavoritosComponent implements OnInit{
     });
   }
 
+  hayFavoritos: boolean = false;
 
   accederAusuarios()
   {
@@ -46,6 +47,10 @@ export class FavoritosComponent implements OnInit{
                   // Establecer si el usuario está en los favoritos del usuario actual
                 usuario.isFavorito = this.usuario?.favoritos?.includes(usuario.id!) || false;
                 });
+
+                  // Actualizar la propiedad hayFavoritos
+                this.hayFavoritos = this.listaUsuarios.some(usuario => usuario.isFavorito);
+
           },
           error: (e: Error)=>
           {
@@ -105,6 +110,9 @@ export class FavoritosComponent implements OnInit{
     if (usuario) {
       usuario.isFavorito = !esFavorito;
     }
+
+    // Actualizar la propiedad hayFavoritos
+    this.hayFavoritos = this.listaUsuarios.some(usuario => usuario.isFavorito);
 
     this.service.putUsuario(this.usuario!, this.usuario!.id!).subscribe({
       next: () => {
