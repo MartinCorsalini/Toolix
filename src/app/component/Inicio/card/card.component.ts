@@ -22,11 +22,9 @@ export class CardComponent implements OnInit{
   router = inject(Router);
   stars: number[] = [];
 
- // aksdnaasd
+
 
   ngOnInit(): void {
-
-
     this.authService.currentUserId$.subscribe(id => {
       this.userId = id;//Accedo al id del usuario actual
 
@@ -74,20 +72,25 @@ export class CardComponent implements OnInit{
 
   getById()
   {
-    this.service.getUsuarioById(this.userId!).subscribe(
-      {
-        next: (usuario : Usuario)=>
+    if(this.userId != null)
+    {
+      this.service.getUsuarioById(this.userId!).subscribe(
         {
-          this.usuario = usuario;
-          this.userRol = usuario.rol;
-          this.accederAusuarios();
-        },
-        error: () =>
-        {
-          alert('Error al acceder a los datos');
+          next: (usuario : Usuario)=>
+          {
+            this.usuario = usuario;
+            this.userRol = usuario.rol;
+            this.accederAusuarios();
+          },
+          error: () =>
+          {
+            alert('Error al acceder a los datossssssssssssssss');
+          }
         }
-      }
-    )
+      )
+    }
+
+
   }
 
  //!---------------------------- FAVORITOS--------------------------------

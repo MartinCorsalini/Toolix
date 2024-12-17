@@ -47,20 +47,6 @@
       "rol": "Cliente"
     },
     {
-      "nombre": "Tito Fernandez",
-      "profesion": "Electricista",
-      "disponibilidad": "10 hs a 15 hs",
-      "zona": "Centro, Guemes, Puerto",
-      "descripcion": "Muy organizado",
-      "telefono": "2235952534",
-      "id": "d1cc",
-      "favoritos": [
-        "dd00",
-        "30d4",
-        "d96a"
-      ]
-    },
-    {
       "id": "d96a",
       "nombre": "Beto Gimenez",
       "email": "beto@gmail.com",
@@ -74,22 +60,31 @@
       "valoraciones": [
         8,
         5
+      ],
+      "favoritos": [
+        "30d4",
+        "9584"
       ]
     },
     {
-      "id": "30d4",
       "nombre": "Fito Rodriguez",
+      "profesion": "Peluquero/a",
+      "disponibilidad": "9 a 18 hs ",
+      "zona": "Centroooooooooo",
+      "descripcion": "Local en el centro, unisex",
+      "telefono": "223456784",
       "email": "fito@gmail.com",
       "password": "1234567",
       "rol": "Trabajador",
-      "profesion": "Peluquero/a",
-      "disponibilidad": "9 a 18 hs ",
-      "descripcion": "Local en el centro, unisex",
-      "zona": "Centro",
-      "telefono": "223456784",
       "valoraciones": [
         10
-      ]
+      ],
+      "favoritos": [
+        "9584",
+        "dd00",
+        "a8bc"
+      ],
+      "id": "30d4"
     },
     {
       "id": "dd00",
@@ -449,6 +444,46 @@
       "estado": "aceptada",
       "idUs": "d96a",
       "idTr": "d1cc"
+    },
+    {
+      "id": "ea26",
+      "fecha": "2024-12-20",
+      "horario": "00:46",
+      "direccion": "San Martín 2267       ",
+      "descProblema": "Tengo la cañeria rota",
+      "estado": "pendiente",
+      "idUs": "30d4",
+      "idTr": "dd00"
+    },
+    {
+      "id": "9b05",
+      "fecha": "2024-12-21",
+      "horario": "00:48",
+      "direccion": "mmm",
+      "descProblema": "Tengo la cañeria rota",
+      "estado": "pendiente",
+      "idUs": "30d4",
+      "idTr": "d96a"
+    },
+    {
+      "id": "01b5",
+      "fecha": "2024-12-27",
+      "horario": "00:47",
+      "direccion": "Bolivar 2345",
+      "descProblema": "laaaaa",
+      "estado": "rechazada",
+      "idUs": "30d4",
+      "idTr": "d96a"
+    },
+    {
+      "id": "f9d2",
+      "fecha": "2024-12-26",
+      "horario": "00:46",
+      "direccion": "Luro 1234",
+      "descProblema": "miaaaaa",
+      "estado": "aceptada",
+      "idUs": "30d4",
+      "idTr": "30d4"
     }
   ]
 }

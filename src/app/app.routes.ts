@@ -30,6 +30,7 @@ import { InicioPageComponent } from './pages/inicio-page/inicio-page.component';
 
 //?------------------------------AUTH GUARD-----------------------------
 import { authGuard } from './guard/auth.guard';
+import { FavoritosComponent } from './component/favoritos/favoritos.component';
 
 
 
@@ -125,8 +126,19 @@ export const appRoutes: Routes = [
        canActivate : [authGuard] //SI ESTOY LOGEADO
     },
 
+     //?------------------------------- FAVORITOS --------------------------------
+     {
+      path: 'favoritos',
+      component: FavoritosComponent,
+      canActivate : [authGuard] //SI ESTOY LOGEADO
+    },
+
+    //?------------------------------- CUALQUIER OTRA COSA --------------------------------
     {
       path: '**',
       redirectTo:'login'
-    }
+    },
+
+
+
 ];

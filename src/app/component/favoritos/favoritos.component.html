@@ -1,1 +1,72 @@
-<p>favoritos works!</p>
+
+<app-navbar-private></app-navbar-private>
+
+@if (usuario?.rol === 'Admin') {
+  <div class="grid-container">
+    <h2>Listado de trabajadores</h2>
+</div>
+
+}
+
+  <div class="grid-container">
+
+      @for (usuario of listaUsuarios; track $index)
+      {
+        @if (usuario.isFavorito) {
+          <div *ngIf="usuario.rol == 'Trabajador'" class="card">
+
+
+
+                <div class="image">
+                  <img src="assets/avatar/avatar.png" alt="Imagen de perfil" class="profile-img" />
+                  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+                </div>
+
+                  <div class="info">
+                    <h4>{{usuario.nombre}}</h4>
+                  <div>{{usuario.profesion}}</div>
+                    <ul>
+                      <li>Disponibilidad: {{usuario.disponibilidad}}</li>
+                      <li>Zona: {{usuario.zona}}</li>
+                    </ul>
+                  </div>
+
+
+                  <hr>
+                  <div class="actions">
+                    <button class="detalles-button" (click)="irADetalles(usuario.id!)">Detalles</button>
+
+                    <!---------- FAVORITO ------------>
+                    <button
+                    class="heart-button"
+                    [class.favorito]="usuario.isFavorito"
+                    (click)="toggleFavorito(usuario.id!)"
+                    >
+                    <i class="fas fa-heart"></i>
+                    </button>
+
+                      <!---------- PUNTUACION ------------>
+                    <div class="perfil-rating">
+                      <p class="rating-title">Puntuación</p>
+                      <span class="rating-value">{{ calcularPromedioValoracion(usuario.valoraciones) | number:'1.1-1' }}</span>
+                      <div class="rating-stars">
+                        <ng-container *ngFor="let star of stars">
+                          <span *ngIf="star === 1">&#9733;</span>
+                          <span *ngIf="star === 0.5">&#x272E;</span>
+                          <span *ngIf="star === 0">&#9734;</span>
+                        </ng-container>
+                      </div>
+                    </div>
+                  </div>
+
+
+          </div>
+        }
+      }
+
+  </div>
+
+
+
+
