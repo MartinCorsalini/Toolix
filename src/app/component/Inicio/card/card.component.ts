@@ -57,10 +57,13 @@ export class CardComponent implements OnInit{
   }
 
 
+
   irADetalles(id:string)
   {
     this.router.navigate([`perfil-trabajador/${id}`]);
   }
+
+
 
 
    //!---------------------------- ACCEDER AL USUARIO ACTUAL Y GUARDAR SUS DATOS --------------------------------
@@ -84,14 +87,13 @@ export class CardComponent implements OnInit{
           },
           error: () =>
           {
-            alert('Error al acceder a los datossssssssssssssss');
+            alert('Error al acceder a los datosss');
           }
         }
       )
     }
-
-
   }
+
 
  //!---------------------------- FAVORITOS--------------------------------
   //--------------------BOTON FAVORITOS----------------------
@@ -158,6 +160,5 @@ export class CardComponent implements OnInit{
       ...Array(estrellasVacias).fill(0),  // Estrellas vacías
     ];
   }
-
 
 }

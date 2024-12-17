@@ -17,8 +17,8 @@ export class PerfilPropioComponent implements OnInit{
   ngOnInit(): void {
     this.accederAlosDatos();
   }
-  fotoUrl = 'assets/avatar/avatar.png';  // Ruta de la foto de perfil
 
+  fotoUrl = 'assets/avatar/avatar.png';  // Ruta de la foto de perfil
   usuario?: Usuario;
   id : string | null = null;
 
@@ -30,7 +30,9 @@ export class PerfilPropioComponent implements OnInit{
   ar= inject(ActivatedRoute);
   router = inject(Router);
 
-
+  selectedFile?: File;          // Almacena el archivo seleccionado
+  selectedFileBase64?: string;  // Almacena la representación Base64
+  
 
    // Calcula el promedio de valoraciones
    calcularPromedioValoracion() {
@@ -60,7 +62,6 @@ export class PerfilPropioComponent implements OnInit{
       ];
     }
 
-
   accederAlosDatos()
     {
       this.ar.paramMap.subscribe(
@@ -84,6 +85,7 @@ export class PerfilPropioComponent implements OnInit{
           next: (usuario : Usuario)=>
           {
             this.usuario = usuario;
+            this.fotoUrl = usuario.fotoPerfil || 'assets/avatar/avatar.png'; // Usa la foto subida o una predeterminada
             this.calcularPromedioValoracion();
             this.actualizarEstrellas(); // Cálculo de estrellas al iniciar
           },
@@ -100,5 +102,58 @@ export class PerfilPropioComponent implements OnInit{
       this.router.navigate([`modificar/${id}`]);
     }
 
+
+
+    // ---------------FOTO DE PERFIL------------------------
+      // Maneja el archivo seleccionado
+      onFileSelected(event: Event): void {
+        const input = event.target as HTMLInputElement;
+        if (input.files?.length) {
+          const file = input.files[0];
+      
+          // Validar tipo de archivo
+          if (!file.type.startsWith('image/')) {
+            alert('Por favor selecciona un archivo de imagen válido.');
+            return;
+          }
+      
+          // Validar tamaño de archivo (por ejemplo, máximo 2 MB)
+          if (file.size > 2000000) {
+            alert('El archivo es demasiado grande. Seleccione uno menor a 2 MB.');
+            return;
+          }
+      
+          this.selectedFile = file; // Almacena el archivo seleccionado
+      
+          const reader = new FileReader();
+          reader.onload = () => {
+            this.selectedFileBase64 = reader.result as string; // Almacena el string Base64
+          };
+      
+          reader.readAsDataURL(file); // Convierte el archivo a Base64
+        }
+      }
+      
+
+
+  // Subir la foto de perfil
+  uploadPhoto(): void {
+    if (this.selectedFileBase64 && this.id) {
+      this.service.actualizarFotoPerfil(this.id, this.selectedFileBase64).subscribe({
+        next: (usuarioActualizado: Usuario) => {
+          this.usuario = usuarioActualizado;
+          this.fotoUrl = usuarioActualizado.fotoPerfil || 'assets/avatar/avatar.png'; // Actualiza la vista
+          alert('Foto de perfil actualizada con éxito');
+        },
+        error: () => {
+          alert('Error al subir la foto de perfil');
+        }
+      });
+    } else {
+      alert('Por favor selecciona un archivo antes de subirlo.');
+    }
+  }
+
+  
    
 }

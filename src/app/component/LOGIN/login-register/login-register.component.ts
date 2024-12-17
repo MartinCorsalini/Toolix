@@ -43,12 +43,13 @@ export class LoginRegisterComponent implements OnInit {
          this.router.navigateByUrl('home');
       }
 
-    //me caga en vacio los elementos del formulario
+    //me carga en vacio los elementos del formulario
       this.signUpForm = this.fb.nonNullable.group({
         nombre: ['', Validators.required],
         email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.minLength(7)]],
-        rol: ['', [Validators.required]]
+        rol: ['', [Validators.required]],
+        fotoPerfil: ['assets/avatar/avatar.png']
       });
 
        // Escuchar cambios en el campo `rol` del formulario

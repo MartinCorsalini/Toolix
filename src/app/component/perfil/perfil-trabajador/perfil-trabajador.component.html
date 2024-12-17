@@ -39,24 +39,6 @@
 
       <p><strong>Descripción:</strong> {{ usuario?.descripcion }}</p>
 
-      <!-- @if(usuario?.rol === 'Trabajador'){
-        <button class="valoracion-btn" (click)="mostrarInput()">Agregar Valoración</button>
-        Input y botón para enviar valoración, visibles cuando `mostrarValoracionInput` es true 
-      <div *ngIf="mostrarValoracionInput">
-        <input
-          type="number"
-          [(ngModel)]="valoracion"
-          placeholder="Ingrese su valoración (1-10)"
-          (blur)="validarValoracion()"
-          class="valoracion-input"
-          min="1"
-          max="10"
-        />
-        <button  (click)="cargarValoracionDB()" class="valoracion-btn">Cargar valoración</button>
-      </div>
-      } -->
-
-
 
       <div class="botones">
         @if(usuario?.rol === 'Trabajador'){
