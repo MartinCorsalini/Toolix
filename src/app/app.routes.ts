@@ -31,6 +31,7 @@ import { InicioPageComponent } from './pages/inicio-page/inicio-page.component';
 //?------------------------------AUTH GUARD-----------------------------
 import { authGuard } from './guard/auth.guard';
 import { FavoritosComponent } from './component/favoritos/favoritos.component';
+import { FavoritosPageComponent } from './pages/favoritos-page/favoritos-page.component';
 
 
 
@@ -129,7 +130,7 @@ export const appRoutes: Routes = [
      //?------------------------------- FAVORITOS --------------------------------
      {
       path: 'favoritos',
-      component: FavoritosComponent,
+      component: FavoritosPageComponent,
       canActivate : [authGuard] //SI ESTOY LOGEADO
     },
 

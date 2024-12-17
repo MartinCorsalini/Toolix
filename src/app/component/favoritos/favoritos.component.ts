@@ -88,7 +88,6 @@ export class FavoritosComponent implements OnInit{
         }
       )
     }
-
   }
 
  //!---------------------------- FAVORITOS--------------------------------
