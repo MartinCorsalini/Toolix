@@ -59,8 +59,8 @@ body {
 }
 
   .image {
-    width: 130px; /* Ajusta el tamaño del contenedor de la imagen */
-    height: 130px;
+    width: 200px; /* Ajusta el tamaño del contenedor de la imagen */
+    height: 200px;
     border-radius: 50%;
     overflow: hidden; /* Oculta el desbordamiento para que sea un círculo */
     display: flex;
