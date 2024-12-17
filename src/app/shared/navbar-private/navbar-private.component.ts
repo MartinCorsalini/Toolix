@@ -62,7 +62,7 @@ obtenerNotificaciones() {
     this.reservasService.getReserva().subscribe((reservas) => {
       this.notificacionesSinLeer = reservas.filter(res =>
         // Lógica para contar notificaciones no leídas
-        (res.idTr === userId && (res.estado === 'pendiente' || !res.leida)) ||
+        (res.idTr === userId && (res.estado === 'pendiente')) ||
         (res.idUs === userId && res.estado === 'pendiente')
       ).length;
     });

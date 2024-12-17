@@ -22,6 +22,7 @@ export class ModificarReservaComponent implements OnInit {
   trabajadorId: string | null = null;
   fechaMinima: string = '';
   caracteresRestantes: number = 50; // Límite máximo de caracteres
+  reserva?: Reserva;
 
   @Output()
   eventReservaModificada = new EventEmitter<void>();
@@ -35,7 +36,8 @@ export class ModificarReservaComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void
+  {
     // Establece la fecha mínima como la fecha actual
     this.fechaMinima = this.obtenerFechaActualFormateada();
 
@@ -49,25 +51,13 @@ export class ModificarReservaComponent implements OnInit {
       }
     });
 
-    this.modificarRForm = this.fb.nonNullable.group({
-      fecha: ['', [
-        Validators.required, 
-        this.fechaFuturaValidator
-      ]],
-      horario: ['', [
-        Validators.required,
-        this.horarioValidator
-      ]],
-      direccion: ['', Validators.required],
-      descProblema: ['', [Validators.required, Validators.maxLength(50)]],
-      estado: ['pendiente']
-    });
-
     this.reservaId = this.route.snapshot.paramMap.get('id');
 
     if (this.reservaId) {
       this.cargarDatosReserva(this.reservaId);
     }
+
+
 
     // Inicializar el contador basado en el valor inicial
     this.actualizarContador();
@@ -93,7 +83,7 @@ export class ModificarReservaComponent implements OnInit {
   // Validador personalizado para horario
   horarioValidator(control: AbstractControl): {[key: string]: any} | null {
     const fechaControl = control.parent?.get('fecha');
-    
+
     if (!control.value || !fechaControl) return null;
 
     const fechaSeleccionada = new Date(fechaControl.value);
@@ -106,7 +96,7 @@ export class ModificarReservaComponent implements OnInit {
       const minutosActuales = hoy.getMinutes();
 
       // Validar que el horario no sea anterior a la hora actual
-      if (horaSeleccionada < horaActual || 
+      if (horaSeleccionada < horaActual ||
           (horaSeleccionada === horaActual && minutosSeleccionados < minutosActuales)) {
         return { 'horarioPasado': true };
       }
@@ -132,11 +122,27 @@ export class ModificarReservaComponent implements OnInit {
 
   cargarDatosReserva(id: string): void {
     this.rs.getReservaById(id).subscribe({
-      next: (reserva: Reserva) => {
+      next: (reserva2: Reserva) => {
+        this.reserva = reserva2
+
+        this.modificarRForm = this.fb.nonNullable.group({
+          fecha: ['', [
+            Validators.required,
+            this.fechaFuturaValidator
+          ]],
+          horario: ['', [
+            Validators.required,
+            this.horarioValidator
+          ]],
+          direccion: [this.reserva?.direccion, Validators.required],
+          descProblema: [this.reserva?.descProblema, [Validators.required, Validators.maxLength(50)]],
+          estado: ['pendiente']
+        });
+
+
         this.modificarRForm.patchValue({
-          fecha: reserva.fecha,
-          horario: reserva.horario,
-          direccion: reserva.direccion
+          fecha: reserva2.fecha,
+          horario: reserva2.horario
         });
       },
       error: (e: Error) => {
