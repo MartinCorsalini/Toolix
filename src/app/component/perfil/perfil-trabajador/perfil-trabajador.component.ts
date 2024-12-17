@@ -34,6 +34,7 @@ export class PerfilTrabajadorComponent implements OnInit {
   userRol : string | undefined;
 
 
+
   ngOnInit(): void {
     this.authService.currentUserId$.subscribe(id => {
       this.IdUsuarioLogeado = id;
@@ -150,9 +151,6 @@ cargarValoracionDB()
     )
     }
 
-
-
-
     getIdUsuarioLogeado(){
       this.service.getUsuarioById(this.IdUsuarioLogeado!).subscribe(
         {
@@ -175,26 +173,5 @@ cargarValoracionDB()
     }
 
 
-
-
-   // Envía la valoración al servicio y la añade a la lista de valoraciones
-   /*
-  enviarValoracion() {
-    this.validarValoracion();
-    if (this.valoracion !== null && this.usuario) {
-      this.service.agregarValoracion(this.usuario.id!, this.valoracion).subscribe(
-        (response) => {
-          // Añade la nueva valoración al array y calcula el promedio
-          this.usuario?.valoraciones!.push(this.valoracion!);
-          this.valoracion = null; // Limpia el campo de valoración
-          this.mostrarValoracionInput = false; // Oculta el input después de enviar
-        },
-        (error) => {
-          console.error('Error al enviar la valoración:', error);
-        }
-      );
-    }
-  }
-*/
 
 }

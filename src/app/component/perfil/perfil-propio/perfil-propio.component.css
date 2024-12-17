@@ -51,6 +51,21 @@
   object-fit: cover;
 }
 
+.profile-photo {
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en columna */
+  align-items: center; /* Centra horizontalmente */
+  gap: 10px; /* Espaciado entre los elementos */
+}
+
+.profile-photo button {
+  display: block;
+  margin: 10px 0; /* Espaciado vertical */
+  padding: 5px 10px; /* Reduce el espacio interno */
+  font-size: 14px; /* Ajusta el tamaño del texto */
+  width: auto; /* Permite que el ancho sea dinámico */
+  border-radius: 6px; /* Bordes ligeramente redondeados */
+}
 
 .perfil-info {
   display: flex;

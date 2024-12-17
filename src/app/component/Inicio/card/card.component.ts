@@ -74,6 +74,7 @@ export class CardComponent implements OnInit{
       this.service.getUsuarios().subscribe(
         {
           next: (usuarios: Usuario[])=>{
+
                 this.listaUsuarios = usuarios;
           },
           error: (e: Error)=>{

@@ -16,7 +16,7 @@
 
           <!---------------SUBIR FOTO DE PERFIL-------------->
           <div class="profile-photo">
-            <p><strong>Sube tu foto de perfil:</strong></p>
+            <p><strong>Subí tu foto de perfil:</strong></p>
             <input type="file" accept="image/*" (change)="onFileSelected($event)" />
             <button (click)="uploadPhoto()">Subir Foto</button>
           </div>
@@ -55,7 +55,14 @@
           <p><strong>Disponibilidad:</strong> {{ usuario?.disponibilidad }}</p>
           <p><strong>Zona:</strong> {{ usuario?.zona }}</p>
           <p><strong>Descripción:</strong> {{ usuario?.descripcion }}</p>
-          
+
+           <!---------------SUBIR FOTO DE PERFIL-------------->
+           <div class="profile-photo">
+            <p><strong>Subí tu foto de perfil:</strong></p>
+            <input type="file" accept="image/*" (change)="onFileSelected($event)" />
+            <button (click)="uploadPhoto()">Subir Foto</button>
+          </div>
+
           <div>
             <button (click)="irAModificar(usuario?.id!)">Modificar datos</button>
             <button [routerLink]="['/eliminar-cuenta', usuario?.id]">Eliminar mi cuenta</button>

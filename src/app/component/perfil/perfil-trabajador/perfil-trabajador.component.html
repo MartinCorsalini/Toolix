@@ -39,7 +39,7 @@
 
       <p><strong>Descripción:</strong> {{ usuario?.descripcion }}</p>
 
-      
+
       <div class="botones">
         @if(usuario?.rol === 'Trabajador'){
           <button (click)="irAreservar(usuario?.id!)" >Reservar</button>

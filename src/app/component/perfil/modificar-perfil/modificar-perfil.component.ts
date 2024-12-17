@@ -56,7 +56,9 @@ export class ModificarPerfilComponent implements OnInit {
         email:[this.trabajador?.email!],
         password:[this.trabajador?.password!],
         rol:[this.trabajador?.rol!],
-        valoraciones:[this.trabajador?.valoraciones!]
+        valoraciones:[this.trabajador?.valoraciones!],
+        fotoPerfil:[this.trabajador?.fotoPerfil!]
+
       }
     )
 
@@ -92,6 +94,7 @@ export class ModificarPerfilComponent implements OnInit {
                 this.formulario.controls['rol'].setValue(trabajador.rol!);
                 this.formulario.controls['telefono'].setValue(trabajador.telefono!);
                 this.formulario.controls['valoraciones'].setValue(trabajador.valoraciones!);
+                this.formulario.controls['fotoPerfil'].setValue(trabajador.fotoPerfil!);
 
           },
           error: () =>
