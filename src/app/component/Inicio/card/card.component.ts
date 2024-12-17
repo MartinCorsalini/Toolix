@@ -25,15 +25,12 @@ export class CardComponent implements OnInit{
 
 
   ngOnInit(): void {
-
-    //Accedo al id del usuario actual
     this.authService.currentUserId$.subscribe(id => {
-      this.userId = id;
+      this.userId = id;//Accedo al id del usuario actual
+
       //Con ese id del usuario actual, me guardo los datos del usuario y su rol.
-      this.getById();
+      this.getById(); //Dentro de esta función llamo a accederAusuarios, que me carga la lista de usuarios
     });
-
-
   }
 
 
@@ -75,20 +72,25 @@ export class CardComponent implements OnInit{
 
   getById()
   {
-    this.service.getUsuarioById(this.userId!).subscribe(
-      {
-        next: (usuario : Usuario)=>
+    if(this.userId != null)
+    {
+      this.service.getUsuarioById(this.userId!).subscribe(
         {
-          this.usuario = usuario;
-          this.userRol = usuario.rol;
-          this.accederAusuarios();
-        },
-        error: () =>
-        {
-          alert('Error al acceder a los datos');
+          next: (usuario : Usuario)=>
+          {
+            this.usuario = usuario;
+            this.userRol = usuario.rol;
+            this.accederAusuarios();
+          },
+          error: () =>
+          {
+            alert('Error al acceder a los datossssssssssssssss');
+          }
         }
-      }
-    )
+      )
+    }
+
+
   }
 
  //!---------------------------- FAVORITOS--------------------------------
