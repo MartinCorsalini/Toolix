@@ -1,20 +1,19 @@
-import { Component, EventEmitter, inject, Input, OnInit, Output } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
+import { Usuario } from '../../interface/usuario';
 import { Router, RouterModule } from '@angular/router';
-import { AltaBajaReservaComponent } from '../../Reservas/alta-baja-reserva/alta-baja-reserva.component';
-import { Usuario } from '../../../interface/usuario';
-import { UsuariosService } from '../../../service/usuarios.service';
+import { UsuariosService } from '../../service/usuarios.service';
+import { AuthService } from '../../service/auth.service';
 import { CommonModule } from '@angular/common';
-import { AuthService } from '../../../service/auth.service';
-
+import { NavbarPrivateComponent } from '../../shared/navbar-private/navbar-private.component';
 
 @Component({
-  selector: 'app-card',
+  selector: 'app-favoritos',
   standalone: true,
-  imports: [ RouterModule, CommonModule],
-  templateUrl: './card.component.html',
-  styleUrl: './card.component.css'
+  imports: [RouterModule, CommonModule, NavbarPrivateComponent],
+  templateUrl: './favoritos.component.html',
+  styleUrl: './favoritos.component.css'
 })
-export class CardComponent implements OnInit{
+export class FavoritosComponent implements OnInit{
 
   @Input()
   listaUsuarios : Usuario[] =[];
@@ -45,7 +44,7 @@ export class CardComponent implements OnInit{
                 // Después de obtener los usuarios, inicializamos el estado de 'isFavorito' en cada usuario
                 this.listaUsuarios.forEach(usuario => {
                   // Establecer si el usuario está en los favoritos del usuario actual
-                  usuario.isFavorito = this.usuario?.favoritos?.includes(usuario.id!) || false;
+                usuario.isFavorito = this.usuario?.favoritos?.includes(usuario.id!) || false;
                 });
           },
           error: (e: Error)=>
@@ -57,13 +56,10 @@ export class CardComponent implements OnInit{
   }
 
 
-
   irADetalles(id:string)
   {
     this.router.navigate([`perfil-trabajador/${id}`]);
   }
-
-
 
 
    //!---------------------------- ACCEDER AL USUARIO ACTUAL Y GUARDAR SUS DATOS --------------------------------
@@ -87,13 +83,12 @@ export class CardComponent implements OnInit{
           },
           error: () =>
           {
-            alert('Error al acceder a los datosss');
+            alert('Error al acceder a los datos');
           }
         }
       )
     }
   }
-
 
  //!---------------------------- FAVORITOS--------------------------------
   //--------------------BOTON FAVORITOS----------------------
@@ -160,5 +155,4 @@ export class CardComponent implements OnInit{
       ...Array(estrellasVacias).fill(0),  // Estrellas vacías
     ];
   }
-
 }

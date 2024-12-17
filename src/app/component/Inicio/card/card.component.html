@@ -10,8 +10,8 @@
 
       @for (usuario of listaUsuarios; track $index)
       {
-
         <div *ngIf="usuario.rol == 'Trabajador'" class="card">
+
           <div class="image">
             <img [src]="usuario.fotoPerfil" alt="Imagen de perfil" class="profile-img" />
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -27,11 +27,11 @@
               </ul>
             </div>
 
+
             <hr>
             <div class="actions">
               <button class="detalles-button" (click)="irADetalles(usuario.id!)">Detalles</button>
 
-              <!-------------------BOTON FAVORITOS-------------->
               <button
               class="heart-button"
               [class.favorito]="usuario.isFavorito"
@@ -39,7 +39,7 @@
               >
               <i class="fas fa-heart"></i>
               </button>
-              <!-------------------------------------------------->
+
 
               <div class="perfil-rating">
                 <p class="rating-title">Puntuación</p>
@@ -55,20 +55,20 @@
             </div>
           </div>
 
-
       }
 
   </div>
 
-
-  @if (usuario?.rol === 'Admin') {
+ <!------------------------------- VISUAL SI ES ADMIN --------------------------------->
+  @if (usuario?.rol === 'Admin')
+  {
     <div class="grid-container">
       <h2>Listado de clientes</h2>
-  </div>
+    </div>
 
     <div class="grid-container">
 
-
+         <!-------------------- Si es admin, también se muestran los CLIENTES --------------------------------->
       @for (usuario of listaUsuarios; track $index)
       {
         <div *ngIf="usuario.rol == 'Cliente' " class="card">

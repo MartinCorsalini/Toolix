@@ -16,7 +16,7 @@ export interface Usuario {
     descripcion?: string,
     telefono?: string,
     isFavorito?: boolean,
-
-    fotoPerfil?: string; // URL de la imagen de perfil
+    fotoPerfil?: string,
+    favoritos?: string[],
 
 }

@@ -58,11 +58,11 @@ usuario?: Usuario; //Por si se necesita
 obtenerNotificaciones() {
   if (this.authService.estaLogeado()) {
     const userId = this.authService.getUserId();
-    
+
     this.reservasService.getReserva().subscribe((reservas) => {
-      this.notificacionesSinLeer = reservas.filter(res => 
+      this.notificacionesSinLeer = reservas.filter(res =>
         // Lógica para contar notificaciones no leídas
-        (res.idTr === userId && (res.estado === 'pendiente' || !res.leida)) || 
+        (res.idTr === userId && (res.estado === 'pendiente' || !res.leida)) ||
         (res.idUs === userId && res.estado === 'pendiente')
       ).length;
     });
@@ -71,22 +71,22 @@ obtenerNotificaciones() {
 
  actualizarNotificaciones() {
   const userId = this.authService.getUserId();
-  
+
   if (userId) {
     this.reservasService.getReserva().subscribe({
       next: (reservas) => {
         // Para trabajadores, filtra solo reservas pendientes o no finalizadas
         if (this.userRol === 'Trabajador') {
-          this.notificacionesSinLeer = reservas.filter(res => 
+          this.notificacionesSinLeer = reservas.filter(res =>
             // Solo muestra notificaciones para reservas pendientes o no leídas
-            res.idTr === userId && 
-            (res.estado === 'pendiente' || res.estado === 'aceptada') &&
+            res.idTr === userId &&
+            (res.estado === 'pendiente' ) &&
             !res.calificada
           ).length;
         } else {
           // Mantén la lógica existente para otros roles
-          this.notificacionesSinLeer = reservas.filter(res => 
-            (res.idTr === userId && (res.estado === 'pendiente' || !res.leida)) || 
+          this.notificacionesSinLeer = reservas.filter(res =>
+            (res.idTr === userId && (res.estado === 'pendiente')) ||
             (res.idUs === userId && res.estado === 'pendiente')
           ).length;
         }
