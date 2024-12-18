@@ -50,7 +50,8 @@ export class LoginSignInComponent implements OnInit {
     // Llamamos al nuevo método del servicio que busca directamente al usuario
     this.us.getUsuarioByEmailAndPassword(email, password).subscribe({
       next: (usuarios: Usuario[]) => {
-        if (usuarios.length > 0) {
+        if (usuarios.length > 0)
+          {
           // Usuario encontrado
           const usuarioValido = usuarios[0];
           this.dialog.open(DialogoComponent, {
@@ -58,17 +59,13 @@ export class LoginSignInComponent implements OnInit {
             data: {
               message: "Inicio de sesión con éxito 😊"
             }
-          });
-          const usuarioID = usuarioValido.id;
+              });
+              const usuarioID = usuarioValido.id;
 
+              this.router.navigate(['/home', usuarioID]); // Navegar a la ruta 'home/:id' pasando el ID del usuario
 
-            this.router.navigate(['/home', usuarioID]); // Navegar a la ruta 'home/:id' pasando el ID del usuario
-
-
-
-
-          // Llama al método logIn() del AuthService para guardar el token
-          this.authService.logIn(usuarioID!);
+              // Llama al método logIn() del AuthService para guardar el token
+              this.authService.logIn(usuarioID!);
         } else {
           // Usuario no encontrado
           this.dialog.open(DialogoComponent, {
