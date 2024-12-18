@@ -79,26 +79,26 @@ export class LoginRegisterComponent implements OnInit {
       completeUserData = this.signUpForm.getRawValue();
     }
 
-
+ //--
     // Verificar el rol del usuario y proceder en consecuencia
-    if (completeUserData.rol === 'Trabajador') {
+    if (completeUserData.rol === 'Trabajador')
+    {
+        this.buscarMail(completeUserData);
+        console.log(" ");
+    }
+    else if (completeUserData.rol === 'Cliente')
+    {
+        this.buscarMail(completeUserData);
+    }
+    else
+    {
 
-      this.addUsuarioDB(completeUserData); //Agrego al trabajador a la base de datos
-     // this.buscarEmail(completeUserData.email); //busco su ID por mail, para guardarlo en el auth
-
-    } else if (completeUserData.rol === 'Cliente') {
-
-      this.addUsuarioDB(completeUserData);
-      //this.buscarEmail(completeUserData.email);
-
-    } else {
-
-      this.dialog.open(DialogoComponent, {
-        panelClass: "custom-dialog-container",
-        data: {
-          message: 'Rol de usuario inválido.'
-        }
-      });
+        this.dialog.open(DialogoComponent, {
+          panelClass: "custom-dialog-container",
+          data: {
+            message: 'Rol de usuario inválido.'
+          }
+        });
     }
   }
 
@@ -117,7 +117,7 @@ export class LoginRegisterComponent implements OnInit {
               }
             });
 
-            this.buscarEmail(usuario.email);
+            this.iniciarSesion(usuario.email);
           },
           error: (e: Error) => {
             console.log("Error al registrar usuario:", e.message);
@@ -166,21 +166,21 @@ export class LoginRegisterComponent implements OnInit {
   //----- Hago un GET para acceder al ID asginado------
   // para eso busco con el mail, ya que el id se lo asigna al hacer el get y no se cual es ------
 
-  buscarEmail(email: string)
-   {
+  iniciarSesion(email: string)
+   { //Para iniciar sesion necesito el id, lo cual todavia no tengo, pero si tengo el mail que el usuario cargo
       this.service.getUsuarioByEmail(email).subscribe({
         next: (usuarios: Usuario[]) =>
           {
               if (usuarios.length > 0)
               {
                   this.usuario = usuarios[0];
-                  console.log('EMAIL ENCONTRADO CORRECTAMENTE');
+                  console.log('Se puso acceder correctamente al id a través del email para continuar con el inicio de sesion');
                   console.log("Email:", this.usuario.email);
                   console.log("Nombre:", this.usuario.nombre);
                   console.log("ID", this.usuario.id);
 
-                  this.iniciarSesion(this.usuario?.id!);
-                  this.router.navigate([`/home`, this.usuario.id]);
+                  this.logearme(this.usuario?.id!); //!  INICIO SESIÓN !!
+                  this.router.navigate([`/home`, this.usuario.id]); //! NAVEGO AL INICIO!!
               } else
               {
                   console.log("no se encontro usuario con ese mail");
@@ -193,11 +193,41 @@ export class LoginRegisterComponent implements OnInit {
     }
 
 
+
+    buscarMail(usuario: Usuario)
+   {
+      this.service.getUsuarioByEmail(usuario.email).subscribe({
+        next: (usuarios: Usuario[]) =>
+          {
+              if (usuarios.length > 0)
+              {
+                  this.usuario = usuarios[0];
+                  console.log('El email fue utilizado con anterioridad. No puede registrarse con ese email.');
+
+                  this.dialog.open(DialogoComponent, {
+                    panelClass: "custom-dialog-container",
+                    data: {
+                      message: 'Ya existe un usuario registrado con ese email.'
+                    }
+                  });
+
+              } else
+              {
+                 this.addUsuarioDB(usuario);
+                  console.log("El email no fue utilizado con anterioridad. Puede registrarse con ese email.");
+              }
+        },
+        error: (e: Error) => {
+          console.log("ERROR AL ENCONTRAR EL MAIL: "+ e.message);
+        }
+      });
+    }
+
   //---------RUTAS PRIVADAS -------
    // probando...
    auth = inject(AuthService);
 
-   iniciarSesion (id: string)
+   logearme (id: string)
    {
     this.auth.logIn(id) //Me logeo. Coloca el "estoyLogeado" del service en true
     //this.router.navigateByUrl('home'); // al logearme me lleva a esta pagina
