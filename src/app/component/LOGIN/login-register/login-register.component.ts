@@ -79,11 +79,12 @@ export class LoginRegisterComponent implements OnInit {
       completeUserData = this.signUpForm.getRawValue();
     }
 
-
+ //--
     // Verificar el rol del usuario y proceder en consecuencia
     if (completeUserData.rol === 'Trabajador')
     {
         this.buscarMail(completeUserData);
+        console.log(" ");
     }
     else if (completeUserData.rol === 'Cliente')
     {
