@@ -2,13 +2,15 @@
     "version": 2,
     "builds": [
       {
-        "src": "angular.json",
+        "src": "package.json",
         "use": "@vercel/static-build",
         "config": {
           "distDir": "dist/prueba"
         }
       }
     ],
-    "installCommand": "npm install && npm run build"
+    "installCommand": "npm install",
+    "buildCommand": "npm run build"
   }
+  
   
