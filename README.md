@@ -8,6 +8,7 @@
 - Sistema de gestión de reservas entre clientes y trabajadores
 
 ## Uso
+(El sistema utiliza JSON SERVER, por lo cual es necesario realizar el comando json-server --watch antes de ejecutar la app)
 1. Regístrate o inicia sesión con un rol asignado.
     - Admin: 
         - Email: admin1@gmail.com Password: 1234567
